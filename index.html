@@ -1,0 +1,149 @@
+<meta charset="utf-8">
+<title>스킬 계수 패치노트 — TKoK Eastern 3.6.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f7f6f3; --surface-2:#f1f0ed;
+  --ink:#37352f; --ink-strong:#1f1e1b; --muted:#787774; --faint:#9b9a97;
+  --rule:#e9e9e7; --rule-strong:#dcdbd8;
+  --accent:#d9730d; --accent-soft:#fbf3ec; --code-bg:#f2f1ee;
+  --d2:#d44c47; --d2-soft:#fbeeed;
+  --g-green:#3f7a5c; --g-green-soft:#eaf2ed;
+  --maxw:880px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191919; --surface:#202020; --surface-2:#252525;
+    --ink:#d4d4d4; --ink-strong:#ededec; --muted:#979695; --faint:#7a7977;
+    --rule:#2e2e2c; --rule-strong:#3a3a37;
+    --accent:#e59248; --accent-soft:#2a2119; --code-bg:#2a2a28;
+    --d2:#e3776f; --d2-soft:#2f1f1e;
+    --g-green:#72b08d; --g-green-soft:#1d2a24;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191919; --surface:#202020; --surface-2:#252525;
+  --ink:#d4d4d4; --ink-strong:#ededec; --muted:#979695; --faint:#7a7977;
+  --rule:#2e2e2c; --rule-strong:#3a3a37;
+  --accent:#e59248; --accent-soft:#2a2119; --code-bg:#2a2a28;
+  --d2:#e3776f; --d2-soft:#2f1f1e;
+  --g-green:#72b08d; --g-green-soft:#1d2a24;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR","Malgun Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:44px 22px 80px}
+.crumb{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint)}
+h1{font-size:38px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
+  color:var(--ink-strong);margin:14px 0 0;text-wrap:balance}
+.lede{color:var(--muted);font-size:16px;margin:12px 0 0;max-width:64ch}
+.lede code{background:var(--code-bg);border-radius:3px;padding:1px 5px;font-size:14px}
+.status{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:12px;padding:4px 10px;border-radius:4px;
+  background:var(--surface);border:1px solid var(--rule);color:var(--muted)}
+.pill.warn{background:var(--d2-soft);border-color:transparent;color:var(--d2)}
+.rule{border:0;border-top:1px solid var(--rule-strong);margin:34px 0 22px}
+.seccap{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.pn-item{border:1px solid var(--rule);border-radius:8px;padding:14px 16px 15px;
+  margin:0 0 12px;background:var(--surface)}
+.pn-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.pn-date{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.pn-cls{font-size:11.5px;border-radius:3px;padding:1px 7px;background:var(--surface-2);color:var(--muted)}
+.pn-sk{font-size:16px;font-weight:600;color:var(--ink-strong)}
+.pn-fn{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);margin-left:auto}
+.pn-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;margin:0 0 9px}
+.pn-f{font-size:12.5px;color:var(--muted);min-width:92px}
+.pn-b,.pn-a{font-family:"IBM Plex Mono",monospace;font-size:13px;border-radius:4px;padding:2px 8px}
+.pn-b{background:var(--surface-2);color:var(--muted);text-decoration:line-through}
+.pn-a{background:var(--g-green-soft);color:var(--g-green);font-weight:600}
+.pn-ar{color:var(--faint)}
+.pn-why{margin:0;font-size:13.5px;line-height:1.75;color:var(--muted)}
+.pn-x{margin:9px 0 0;font-size:12.5px;line-height:1.7;background:var(--surface-2);
+  border-radius:5px;padding:8px 11px;color:var(--ink)}
+.pn-day{border:1px solid var(--rule);border-radius:8px;background:var(--surface);margin:0 0 10px;overflow:hidden}
+.pn-day>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;gap:12px;
+  flex-wrap:wrap;user-select:none}
+.pn-day>summary::-webkit-details-marker{display:none}
+.pn-day>summary:hover{background:var(--surface-2)}
+.pn-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pn-tri{flex:none;color:var(--faint);transition:transform .15s ease}
+.pn-day[open] .pn-tri{transform:rotate(90deg)}
+.pn-d{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-strong);font-weight:600}
+.pn-cnt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:1px 7px;border-radius:3px;
+  background:var(--surface-2);color:var(--muted)}
+.pn-peek{font-size:12.5px;color:var(--muted);margin-left:auto;text-align:right}
+.pn-body{padding:0 14px 14px}
+.pn-day .pn-item{background:var(--bg)}
+.dl{display:flex;align-items:center;gap:14px;text-decoration:none;margin:0 0 22px;
+  border:1px solid var(--rule);border-radius:10px;padding:15px 18px;
+  background:var(--surface);color:var(--ink);
+  transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
+.dl:hover{border-color:var(--accent);background:var(--accent-soft);
+  transform:translateY(-1px);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.dl:active{transform:translateY(0)}
+.dl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dl-ico{flex:none;width:40px;height:40px;border-radius:9px;display:grid;place-items:center;
+  background:var(--accent);color:#fff}
+.dl-t{display:flex;flex-direction:column;gap:1px;min-width:0}
+.dl-h{font-size:15.5px;font-weight:600;color:var(--ink-strong);line-height:1.4}
+.dl-s{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+.dl-go{flex:none;margin-left:auto;color:var(--faint);
+  transition:transform .15s ease,color .15s ease}
+.dl:hover .dl-go{color:var(--accent);transform:translateX(3px)}
+.pn-empty{font-size:14px;color:var(--muted)}
+.foot{margin:32px 0 0;font-size:12.5px;color:var(--faint);line-height:1.8}
+.foot code{background:var(--code-bg);border-radius:3px;padding:1px 5px}
+@media (max-width:560px){h1{font-size:30px}.pn-fn{margin-left:0;width:100%}.pn-peek{margin-left:0;width:100%;text-align:left}}
+</style>
+<div class="wrap">
+  <header>
+    <div class="crumb">TKoK Eastern 3.6.0 · 직업 밸런스</div>
+    <h1>스킬 계수 패치노트</h1>
+    <p class="lede"><b>스킬의 계수가 바뀐 것만</b> 날짜와 수치로 적는다. 새 스킬 이식 · 버그 수정 · 툴팁 같은 것은 여기 안 적는다 — 그건 <code>todo.md</code> 몫이다.</p>
+    <p class="lede">바뀐 계수가 <b>실제로 어떤 식에 들어가는지</b>는 <code>보스_수치표.html</code> 의 <b>06 직업별 스킬 계산식</b>에서 본다.</p>
+    <div class="status"><span class="pill">날짜 2일 · 기록 2건</span><span class="pill">최신이 위</span><span class="pill warn">⚠ 대부분 인게임 미검증</span></div>
+  </header>
+  <hr class="rule">
+  <main>
+    <a class="dl" href="https://drive.google.com/file/d/1sqiJN_oITtGjZdhSSDQcsCSpnEBWscpQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <span class="dl-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="dl-t"><span class="dl-h">TKoK RPG 현재 버전 다운로드</span><span class="dl-s">Download · Google Drive</span></span>
+      <svg class="dl-go" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="seccap">날짜를 눌러 펼친다</p>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-06</span><span class="pn-cnt">1건</span><span class="pn-peek">Barbarian Warcry</span></summary>
+        <div class="pn-body">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Warcry</span>
+            <span class="pn-fn">D9O · patch_warcrypow.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">1.0 — 1레벨부터 전 구간</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.2 (39레벨 이하) · 1.5 (40레벨 이상)</span></div>
+          <p class="pn-why">초반 구간이 이미 충분히 강했다 (사용자 지시)</p>
+          <p class="pn-x">힘 500 · 어택파워 3000 기준 — 39레벨 741 → 341, 40레벨 742 → 992. 39→40 에서 약 3배 계단이 생긴다.</p>
+        </div>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-05</span><span class="pn-cnt">1건</span><span class="pn-peek">Pyromancer Meteor</span></summary>
+        <div class="pn-body">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Pyromancer</span>
+            <span class="pn-sk">Meteor</span>
+            <span class="pn-fn">KSO · patch_pymeteor_coef.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.8</span><span class="pn-ar">&rarr;</span><span class="pn-a">2.5</span></div>
+          <p class="pn-why">메테오 상향 (사용자 지시)</p>
+          <p class="pn-x">기본 피해 40 은 그대로. 탤런트 Meteor Shower 배율(최대 ×1.50)은 그 위에 곱해진다.</p>
+        </div>
+        </div>
+      </details>
+  </main>
+  <p class="foot">이 파일은 <code>patchnote.py</code> 가 통째로 다시 쓴다 — 손으로 고치지 말고 그 안 <code>LOG</code> 에 한 줄 더한 뒤 다시 돌린다.<br>계수를 바꿨으면 <code>skillcalc → skillmodel → skillsheet → skillref → patchnote</code> 순서로 끝까지 돌린다.</p>
+</div>
