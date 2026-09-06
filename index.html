@@ -2293,7 +2293,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜를 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-06</span><span class="pn-cnt">1건</span><span class="pn-peek">Barbarian Warcry</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-06</span><span class="pn-cnt">20건</span><span class="pn-peek">Barbarian 1 · Necromancer 16 · 아이템 3</span></summary>
         <div class="pn-body">
         <div class="pn-item">
           <div class="pn-hd">
@@ -2304,6 +2304,190 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">1.0 — 1레벨부터 전 구간</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.2 (39레벨 이하) · 1.5 (40레벨 이상)</span></div>
           <p class="pn-why">초반 구간이 이미 충분히 강했다 — 9/5 에 넣은 힘 전액을 레벨로 갈랐다</p>
           <p class="pn-x">힘 500 · 어택파워 3000 기준 — 39레벨 741 → 341, 40레벨 742 → 992. 39→40 에서 약 3배 계단이 생긴다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Death Light</span>
+            <span class="pn-fn">ZzNcDL · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">틱당 피해</span><span class="pn-b">25 + 스펠파워 x 1.3 (4틱 전부)</span><span class="pn-ar">&rarr;</span><span class="pn-a">(25 + 스펠파워 x 1.3) x 0.25 (4틱 전부)</span></div>
+          <p class="pn-why">CN 대조 — 이식할 때 CN 의 x0.25 를 빠뜨려 총 피해가 4배였다</p>
+          <p class="pn-x">계수 자체는 원래도 CN 과 같았다. CN 은 그 값을 4로 나눠 4틱에 뿌린다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Death Light</span>
+            <span class="pn-fn">ZzNcNum · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">반경</span><span class="pn-b">300 고정</span><span class="pn-ar">&rarr;</span><span class="pn-a">300 x Phantom Mastery 배율</span></div>
+          <p class="pn-why">CN 대조 — CN 은 반경도 Phantom 배율을 태운다</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Undead Fly</span>
+            <span class="pn-fn">ZzNcNum · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">파리 타격 반경</span><span class="pn-b">150 고정</span><span class="pn-ar">&rarr;</span><span class="pn-a">150 x Phantom Mastery 배율</span></div>
+          <p class="pn-why">CN 대조</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Soul Sacrifice</span>
+            <span class="pn-fn">ZzNcSS · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">반경 식</span><span class="pn-b">(200 x 2배) + 20/포인트</span><span class="pn-ar">&rarr;</span><span class="pn-a">(200 + 50/포인트) x 2배</span></div>
+          <p class="pn-why">CN 대조 — 곱하는 순서와 포인트당 값이 둘 다 달랐다</p>
+          <p class="pn-x">Grand Sacrifice 5포인트 · Be With Me 2포인트 기준 500 -&gt; 900.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Empowered Undead Fly</span>
+            <span class="pn-fn">ZzNcUFHit · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">기절 확률</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">10%/포인트, 1초 (기절하는 적 한정)</span></div>
+          <p class="pn-why">CN 대조 — 추가 피해와 짝인 갈래를 빠뜨렸다</p>
+          <p class="pn-x">보스처럼 기절 안 하는 적은 그대로 0/8/16/24% 추가 피해를 받는다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Necrosummon</span>
+            <span class="pn-fn">ZzNcNS · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">추가 소환 확률</span><span class="pn-b">0.1 x Empowered + 0.05 x Netherworld Summon</span><span class="pn-ar">&rarr;</span><span class="pn-a">+ 0.1 (Be With Me 3포인트)</span></div>
+          <p class="pn-why">CN 대조 — Be With Me 항이 빠져 있었다</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Undead Harvest</span>
+            <span class="pn-fn">ZzNcUFHit · patch_necro_cnbal.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">5포인트 Death Attack 발동 피해</span><span class="pn-b">Death Attack 피해 전액</span><span class="pn-ar">&rarr;</span><span class="pn-a">Death Attack 피해 x 0.9</span></div>
+          <p class="pn-why">CN 대조</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_karma.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">작동 방식과 피해</span><span class="pn-b">영혼 n개가 각자 반경 250 을 한 번씩 (n = 1 + Empowered Karma, +3)</span><span class="pn-ar">&rarr;</span><span class="pn-a">쓸 때마다 영혼을 모으고(최대 4) 가득 차면 반경 400 에 4 몫</span></div>
+          <p class="pn-why">사용자 재설계 — 충전식으로</p>
+          <p class="pn-x">몫 하나는 그대로 18 + 스펠파워 x 1.0. Soul Attunement 5포인트면 3 몫이 더 붙는다. Empowered Karma 는 「한 번에 모이는 영혼」이 됐다 (1/2/3/4).</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Empowered Necrosummon</span>
+            <span class="pn-fn">ZzNcNS · patch_necro_tier.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">효과</span><span class="pn-b">해골을 한 마리 더 부를 확률 *0/10/20/30*%</span><span class="pn-ar">&rarr;</span><span class="pn-a">상급 사령을 부를 확률 *0/10/20/30*% (공격력 x1.9 ~ x2.5)</span></div>
+          <p class="pn-why">CN 의 티어 소환을 그대로 가져왔다 — 그동안 상위 유닛이 없어 「한 마리 더」로 대신했다</p>
+          <p class="pn-x">상급 = 인페르날 x2.0 · 둠가드 x1.9 · 미트 왜건 x2.5.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Netherworld Summon</span>
+            <span class="pn-fn">ZzNcNS · patch_necro_tier.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">효과</span><span class="pn-b">추가 소환 확률 +*0/5/10/15/20/25*%, 5포인트면 15% 로 한 마리 더</span><span class="pn-ar">&rarr;</span><span class="pn-a">상급 확률 +*0/5/10/15/20/25*%, 5포인트면 15% 로 최상급 (공격력 x3.2 ~ x4.0)</span></div>
+          <p class="pn-why">CN 의 티어 소환</p>
+          <p class="pn-x">최상급 = 데스나이트 x4.0 · 리치 x3.2 · 드레드로드 x3.2. 마나도 CN 대로 티어마다 다르다 (기본 2%+1 · 상급 4%+3 · 최상급 6%+6).</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcNum · patch_necro_karma2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.0</span><span class="pn-ar">&rarr;</span><span class="pn-a">3.0</span></div>
+          <p class="pn-why">사용자 상향 지시</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_karma2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">게이지 상한 · 한 번에 모이는 양</span><span class="pn-b">상한 4 · 한 번에 1 + Empowered Karma</span><span class="pn-ar">&rarr;</span><span class="pn-a">상한 44 · 한 번에 무작위 1~9 (+3 x Empowered Karma)</span></div>
+          <p class="pn-why">사용자 재설계 — 더 오래 모아 더 크게 터뜨린다</p>
+          <p class="pn-x">가득 차기까지 평균 시전 수: Empowered Karma 0포인트 약 8.8회 · 3포인트 약 3.1회.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_karma2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">터질 때 몫</span><span class="pn-b">4 몫 (+3 Soul Attunement 5포인트)</span><span class="pn-ar">&rarr;</span><span class="pn-a">44 몫 (+3 그대로)</span></div>
+          <p class="pn-why">게이지 상한과 같이 올렸다</p>
+          <p class="pn-x">몫 11배 x 스펠파워 계수 3배 = 약 33배. 스펠파워 3000 · 탤런트 없음 기준 12,072 -&gt; 396,792. Improved Karma 3 · Soul Attunement 5 면 약 864,000. 같은 직업 Soul Sacrifice 가 6,030 이다 — 인게임 확인 뒤 조정할 수 있다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Empowered Karma</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_karma2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">효과</span><span class="pn-b">한 번에 모이는 영혼이 *1/2/3/4*</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번에 모이는 영혼 +*0/3/6/9*</span></div>
+          <p class="pn-why">사용자 지시 — 포인트당 +3</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Soul Attunement</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_tweak3.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">5포인트 효과</span><span class="pn-b">터질 때 3 몫이 더 붙는다 (44 -&gt; 47 몫)</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번 쓸 때 영혼이 5 더 모인다 (터질 때는 44 몫 고정)</span></div>
+          <p class="pn-why">사용자 지시 — 몫이 아니라 충전 속도로</p>
+          <p class="pn-x">Empowered Karma 3 + 이것까지 찍으면 한 번에 평균 19 — 가득 차기까지 약 2.3회.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcKA · patch_necro_karma4.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">터질 때 피해</span><span class="pn-b">(18 + 스펠파워 x 3.0) x 44 몫</span><span class="pn-ar">&rarr;</span><span class="pn-a">18 + 스펠파워 x 3.0 (한 번)</span></div>
+          <p class="pn-why">영혼 수는 「몇 번 눌러야 터지는가」일 뿐 피해에 곱하지 않는다 (사용자 정정)</p>
+          <p class="pn-x">스펠파워 3000 기준 396,792 -&gt; 9,018. 탤런트 배율(Improved Karma · Soul Attunement · Necro Mastery)은 그 위에 그대로 곱해진다. 「몫(share)」 개념 자체를 없앴다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Healing Ward - Rank 1</span>
+            <span class="pn-fn">P5O · patch_healward.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">15</span><span class="pn-ar">&rarr;</span><span class="pn-a">20</span></div>
+          <p class="pn-why">상점 소모품 상향 (사용자 지시)</p>
+          <p class="pn-x">15초 유지 · 쿨다운 22초는 그대로. 총 회복 75 -&gt; 100.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Healing Ward - Rank 2</span>
+            <span class="pn-fn">P6O · patch_healward.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">30</span><span class="pn-ar">&rarr;</span><span class="pn-a">50</span></div>
+          <p class="pn-why">상점 소모품 상향 (사용자 지시)</p>
+          <p class="pn-x">15초 유지 · 쿨다운 35초는 그대로. 총 회복 150 -&gt; 250.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Healing Ward - Rank 3</span>
+            <span class="pn-fn">P7O · patch_healward.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">80 (툴팁은 65 로 적혀 있었다)</span><span class="pn-ar">&rarr;</span><span class="pn-a">100</span></div>
+          <p class="pn-why">상점 소모품 상향 (사용자 지시) + 툴팁과 코드가 어긋나 있던 것을 맞췄다</p>
+          <p class="pn-x">15초 유지 · 쿨다운 80초는 그대로. 총 회복 400 -&gt; 500. 회복량은 오브젝트가 아니라 3초 트리거(`QMO` -&gt; `MNO`) 안 상수다.</p>
         </div>
         </div>
       </details>
