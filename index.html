@@ -1,6 +1,9 @@
 <meta charset="utf-8">
 <title>스킬 계수 패치노트 — TKoK Eastern 3.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 이 파일은 wc3mpq/patchnote.py 가 통째로 다시 쓴다.
+     손으로 고치지 말고 그 안 LOG 에 한 줄 더한 뒤 다시 돌릴 것.
+     계수를 바꿨으면 skillcalc -> skillmodel -> skillsheet -> skillref -> patchnote 순서로. -->
 <style>
 :root{
   --bg:#ffffff; --surface:#f7f6f3; --surface-2:#f1f0ed;
@@ -90,16 +93,14 @@ h1{font-size:38px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
   transition:transform .15s ease,color .15s ease}
 .dl:hover .dl-go{color:var(--accent);transform:translateX(3px)}
 .pn-empty{font-size:14px;color:var(--muted)}
-.foot{margin:32px 0 0;font-size:12.5px;color:var(--faint);line-height:1.8}
-.foot code{background:var(--code-bg);border-radius:3px;padding:1px 5px}
 @media (max-width:560px){h1{font-size:30px}.pn-fn{margin-left:0;width:100%}.pn-peek{margin-left:0;width:100%;text-align:left}}
 </style>
 <div class="wrap">
   <header>
     <div class="crumb">TKoK Eastern 3.6.0 · 직업 밸런스</div>
     <h1>스킬 계수 패치노트</h1>
-    <p class="lede"><b>스킬의 계수가 바뀐 것만</b> 날짜와 수치로 적는다. 새 스킬 이식 · 버그 수정 · 툴팁 같은 것은 여기 안 적는다 — 그건 <code>todo.md</code> 몫이다.</p>
-    <p class="lede">바뀐 계수가 <b>실제로 어떤 식에 들어가는지</b>는 <code>보스_수치표.html</code> 의 <b>06 직업별 스킬 계산식</b>에서 본다.</p>
+    <p class="lede"><b>스킬의 계수가 바뀐 것만</b> 날짜와 수치로 적는다. 새 스킬이 늘거나 버그가 고쳐진 것은 여기 안 적는다.</p>
+    <p class="lede">날짜를 눌러 그날 무엇이 얼마로 바뀌었는지 펼쳐 본다.</p>
     <div class="status"><span class="pill">날짜 2일 · 기록 2건</span><span class="pill">최신이 위</span></div>
   </header>
   <hr class="rule">
