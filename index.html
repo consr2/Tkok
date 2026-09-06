@@ -110,13 +110,28 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 .pn-day>summary:hover{background:var(--surface-2)}
 .pn-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .pn-tri{flex:none;color:var(--faint);transition:transform .15s ease}
-.pn-day[open] .pn-tri{transform:rotate(90deg)}
+.pn-day[open]>summary .pn-tri{transform:rotate(90deg)}
 .pn-d{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-strong);font-weight:600}
 .pn-cnt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:1px 7px;border-radius:3px;
   background:var(--surface-2);color:var(--muted)}
 .pn-peek{font-size:12.5px;color:var(--muted);margin-left:auto;text-align:right}
 .pn-body{padding:0 14px 14px}
 .pn-day .pn-item{background:var(--bg)}
+
+/* ---- 업데이트 탭 · 날짜 안쪽 직업 토글 (2026-09-06) ---- */
+.pn-grp{border:1px solid var(--rule);border-radius:7px;background:var(--bg);
+  margin:0 0 8px;overflow:hidden}
+.pn-grp:last-child{margin-bottom:0}
+.pn-grp>summary{list-style:none;cursor:pointer;padding:10px 13px;display:flex;
+  align-items:center;gap:10px;flex-wrap:wrap;user-select:none}
+.pn-grp>summary::-webkit-details-marker{display:none}
+.pn-grp>summary:hover{background:var(--surface-2)}
+.pn-grp>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pn-grp[open]>summary{border-bottom:1px solid var(--rule)}
+.pn-grp[open]>summary .pn-tri{transform:rotate(90deg)}
+.pn-gc{font-size:13.5px;font-weight:600;color:var(--ink-strong)}
+.pn-gbody{padding:12px 12px 1px}
+.pn-grp .pn-item{background:var(--surface)}
 .pn-empty{font-size:14px;color:var(--muted)}
 @media (max-width:560px){
   h1{font-size:29px}
@@ -2291,20 +2306,13 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
       </div>
     </div>
     <div class="tabp" id="tabp-upd">
-      <p class="seccap">날짜를 눌러 펼친다 · 최신이 위</p>
+      <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-06</span><span class="pn-cnt">20건</span><span class="pn-peek">Barbarian 1 · Necromancer 16 · 아이템 3</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-06</span><span class="pn-cnt">21건</span><span class="pn-peek">Necromancer 17 · Barbarian 1 · 기타 3</span></summary>
         <div class="pn-body">
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Barbarian</span>
-            <span class="pn-sk">Warcry</span>
-            <span class="pn-fn">D9O · patch_warcrypow.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">1.0 — 1레벨부터 전 구간</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.2 (39레벨 이하) · 1.5 (40레벨 이상)</span></div>
-          <p class="pn-why">초반 구간이 이미 충분히 강했다 — 9/5 에 넣은 힘 전액을 레벨로 갈랐다</p>
-          <p class="pn-x">힘 500 · 어택파워 3000 기준 — 39레벨 741 → 341, 40레벨 742 → 992. 39→40 에서 약 3배 계단이 생긴다.</p>
-        </div>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">17건</span><span class="pn-peek">Death Light · Undead Fly · Soul Sacrifice · Empowered Undead Fly 외 7</span></summary>
+          <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
@@ -2461,6 +2469,36 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         </div>
         <div class="pn-item">
           <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Karma</span>
+            <span class="pn-fn">ZzNcNum · patch_necro_karma5.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">3.0</span><span class="pn-ar">&rarr;</span><span class="pn-a">7.0</span></div>
+          <p class="pn-why">네크로맨서 상향 (사용자 지시)</p>
+          <p class="pn-x">식은 (18 + 계수 x 스펠파워) x (1+0.12xImpKarma) x (1+0.1x칸33). 스펠파워 3000 기준 9,018 -&gt; 21,018. 이 값은 최상급 사령의 능력에도 같이 걸린다 — 데스나이트 사악한 오라·드레드로드 흡혈 오라 회복(x0.03), 죽음의 고리(x1) · 서리 노바(x0.5) · 벌떼(x0.5).</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Barbarian</span><span class="pn-cnt">1건</span><span class="pn-peek">Warcry</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Warcry</span>
+            <span class="pn-fn">D9O · patch_warcrypow.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">1.0 — 1레벨부터 전 구간</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.2 (39레벨 이하) · 1.5 (40레벨 이상)</span></div>
+          <p class="pn-why">초반 구간이 이미 충분히 강했다 — 9/5 에 넣은 힘 전액을 레벨로 갈랐다</p>
+          <p class="pn-x">힘 500 · 어택파워 3000 기준 — 39레벨 741 → 341, 40레벨 742 → 992. 39→40 에서 약 3배 계단이 생긴다.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">Healing Ward - Rank 1 · Healing Ward - Rank 2 · Healing Ward - Rank 3</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
             <span class="pn-cls">아이템</span>
             <span class="pn-sk">Healing Ward - Rank 1</span>
             <span class="pn-fn">P5O · patch_healward.py</span>
@@ -2489,49 +2527,16 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <p class="pn-why">상점 소모품 상향 (사용자 지시) + 툴팁과 코드가 어긋나 있던 것을 맞췄다</p>
           <p class="pn-x">15초 유지 · 쿨다운 80초는 그대로. 총 회복 400 -&gt; 500. 회복량은 오브젝트가 아니라 3초 트리거(`QMO` -&gt; `MNO`) 안 상수다.</p>
         </div>
+          </div>
+        </details>
         </div>
       </details>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-05</span><span class="pn-cnt">10건</span><span class="pn-peek">Barbarian 4 · Hydromancer 5 · Pyromancer 1</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-05</span><span class="pn-cnt">10건</span><span class="pn-peek">Hydromancer 5 · Barbarian 4 · Pyromancer 1</span></summary>
         <div class="pn-body">
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Barbarian</span>
-            <span class="pn-sk">Improved Berserker Rage</span>
-            <span class="pn-fn">D9O · patch_ba_asrage.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">공격 속도 증가</span><span class="pn-b">22%/포인트 (최대 2점 = 44%)</span><span class="pn-ar">&rarr;</span><span class="pn-a">44%/포인트 (최대 2점 = 88%)</span></div>
-          <p class="pn-why">바바리안 상향</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Barbarian</span>
-            <span class="pn-sk">Ravage</span>
-            <span class="pn-fn">D9O · patch_ba_asrage.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">공격 속도 증가</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">44%/포인트 (최대 3점 = 132%)</span></div>
-          <p class="pn-why">바바리안 상향</p>
-          <p class="pn-x">적용 조건도 같이 바꿨다 — 예전엔 Improved Berserker Rage 를 찍어야 값이 붙었는데, 이제 Ravage 만 찍어도 붙는다.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Barbarian</span>
-            <span class="pn-sk">Warcry</span>
-            <span class="pn-fn">D9O · patch_ba_warcry.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">없음 (힘이 안 들어갔다)</span><span class="pn-ar">&rarr;</span><span class="pn-a">1.0 — 힘 전액</span></div>
-          <p class="pn-why">바바리안 상향</p>
-          <p class="pn-x">식이 (12 + 0.5×레벨 + 0.07×어택파워) 에서 (… + 힘) 으로 바뀌었다. 이 계수는 다음 날 레벨로 갈렸다 — 아래 2026-09-06 을 볼 것.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Barbarian</span>
-            <span class="pn-sk">Improved Warcry</span>
-            <span class="pn-fn">D9O · patch_ba_warcry.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">초당 회복 레벨 계수</span><span class="pn-b">0.3</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.5</span></div>
-          <p class="pn-why">바바리안 상향</p>
-        </div>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Hydromancer</span><span class="pn-cnt">5건</span><span class="pn-peek">Water Bolt · Watery Bubble · Ice Nova · Ice Barrier 외 1</span></summary>
+          <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Hydromancer</span>
@@ -2578,6 +2583,54 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">0.16</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.2</span></div>
           <p class="pn-why">하이드로맨서 상향</p>
         </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Barbarian</span><span class="pn-cnt">4건</span><span class="pn-peek">Improved Berserker Rage · Ravage · Warcry · Improved Warcry</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Improved Berserker Rage</span>
+            <span class="pn-fn">D9O · patch_ba_asrage.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">공격 속도 증가</span><span class="pn-b">22%/포인트 (최대 2점 = 44%)</span><span class="pn-ar">&rarr;</span><span class="pn-a">44%/포인트 (최대 2점 = 88%)</span></div>
+          <p class="pn-why">바바리안 상향</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Ravage</span>
+            <span class="pn-fn">D9O · patch_ba_asrage.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">공격 속도 증가</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">44%/포인트 (최대 3점 = 132%)</span></div>
+          <p class="pn-why">바바리안 상향</p>
+          <p class="pn-x">적용 조건도 같이 바꿨다 — 예전엔 Improved Berserker Rage 를 찍어야 값이 붙었는데, 이제 Ravage 만 찍어도 붙는다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Warcry</span>
+            <span class="pn-fn">D9O · patch_ba_warcry.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Power(힘) 계수</span><span class="pn-b">없음 (힘이 안 들어갔다)</span><span class="pn-ar">&rarr;</span><span class="pn-a">1.0 — 힘 전액</span></div>
+          <p class="pn-why">바바리안 상향</p>
+          <p class="pn-x">식이 (12 + 0.5×레벨 + 0.07×어택파워) 에서 (… + 힘) 으로 바뀌었다. 이 계수는 다음 날 레벨로 갈렸다 — 아래 2026-09-06 을 볼 것.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Barbarian</span>
+            <span class="pn-sk">Improved Warcry</span>
+            <span class="pn-fn">D9O · patch_ba_warcry.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">초당 회복 레벨 계수</span><span class="pn-b">0.3</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.5</span></div>
+          <p class="pn-why">바바리안 상향</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Pyromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Meteor</span></summary>
+          <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Pyromancer</span>
@@ -2588,6 +2641,8 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <p class="pn-why">메테오 상향</p>
           <p class="pn-x">기본 피해 40 은 그대로. 탤런트 Meteor Shower 배율(최대 ×1.50)은 그 위에 곱해진다.</p>
         </div>
+          </div>
+        </details>
         </div>
       </details>
     </div>
