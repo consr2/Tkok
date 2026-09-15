@@ -2208,7 +2208,37 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-14</span><span class="pn-cnt">3건</span><span class="pn-peek">Fighter Fighting Will · Fighter Improved Fighting Will · Fighter Empowered Fighting Will</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-15</span><span class="pn-cnt">2건</span><span class="pn-peek">보스 Tal&#x27;navi — 따라다니는 바위 · 보스 Ancient Hydra (32레벨)</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Tal&#x27;navi — 따라다니는 바위 · Ancient Hydra (32레벨)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Tal&#x27;navi — 따라다니는 바위</span>
+            <span class="pn-fn">n015 Living Boulder — `RKS` 가 `IMP(J8A[39],…)` 로 만든다 · patch_unitmodel.py · patch_unitval.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">모델 · 크기</span><span class="pn-b">`Abilities\Weapons\DemonHunterMissile` · modelScale **2.9**</span><span class="pn-ar">&rarr;</span><span class="pn-a">`Abilities\Weapons\AncientProtectorMissile` · modelScale **2.8**</span></div>
+          <p class="pn-why">HD 에서 **클릭·타겟이 아예 안 됐다** — 클래식에서는 됐다</p>
+          <p class="pn-x">⭐ 원인은 **투사체 모델**이었다. 리포지드 HD 판에는 `GEOS` 청크가 아예 없고 파티클(`CORN`)뿐이라 **집을 메시가 없다** — 워크 설치 폴더(CASC)에서 직접 꺼내 확인했다: SD 지오셋 2·정점 37 / **HD 지오셋 0**. 집기 판정은 「렌더되는 메시」가 잡으므로 **크기를 키워도 소용없다**. ⚠ 같은 투사체 모델을 쓰는 유닛이 맵에 19개 더 있다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Ancient Hydra (32레벨)</span>
+            <span class="pn-fn">n05P (`UnitUI.slk` 의 modelScale) · patch_unitval.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">모델 크기</span><span class="pn-b">modelScale **1.7**</span><span class="pn-ar">&rarr;</span><span class="pn-a">modelScale **0.85**</span></div>
+          <p class="pn-why">사용자 지시 — 절반으로</p>
+          <p class="pn-x">⚠ 런타임에 크기를 덮어쓰는 `SetUnitScale` 은 이 보스에 없다(확인함) — SLK 값이 유일한 레버다. 선택원(`scale` 1.5)은 안 건드렸다. **클릭 판정도 같이 절반**이 된다(판정은 메시를 따라간다).</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-14</span><span class="pn-cnt">5건</span><span class="pn-peek">Fighter 3 · 기타 2</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">3건</span><span class="pn-peek">Fighting Will · Improved Fighting Will · Empowered Fighting Will</span></summary>
@@ -2242,6 +2272,31 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">효과 · 요구 레벨</span><span class="pn-b">공격력·마나를 **같은 비율로** x(1+0.1x pt) — 효율은 그대로 · 요구 레벨 14</span><span class="pn-ar">&rarr;</span><span class="pn-a">**초식 피해 +10% x 포인트** · 마나 소모 **+2/포인트** · 요구 레벨 **45**</span></div>
           <p class="pn-why">사용자 지시</p>
           <p class="pn-x">⚠ 요구 레벨 14 는 **선행인 Improved(16)보다 낮아** 어긋나 있었다 — 20/45 로 정리했다. ⚠ 툴팁의 「침묵 저항 0/33/66/100%」는 **구현이 없어** 문구에서 뺐다.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Avnos — 직선 불길 · Vjaier — 불 정령 돌진 자취</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Avnos — 직선 불길</span>
+            <span class="pn-fn">`F9S` 생성 · `F5S`/`V0T` 정리 · 옛 스프레이 `F8S` 는 비움 · patch_avnos_flamefx.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">연출 (HD)</span><span class="pn-b">`Environment\LargeBuildingFire\...` — **클래식 전용이라 HD 에서 안 보임**</span><span class="pn-ar">&rarr;</span><span class="pn-a">`Doodads\Cinematic\TownBurningFireEmitter` 지속 이펙트</span></div>
+          <p class="pn-why">사용자 신고 — HD 에서 불길이 안 보여 피해 구역을 알 수 없었다</p>
+          <p class="pn-x">⭐ **피해 판정은 안 건드렸다** — 보이는 것만 바꿨다. ⚠ 옛 연출을 안 비우면 **클래식에서 두 불이 겹친다.** 인게임 확인 완료.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Vjaier — 불 정령 돌진 자취</span>
+            <span class="pn-fn">`ZVQ` 생성 · `ZTQ` 정리 · 옛 스프레이 `ZWQ` 는 비움 · patch_vjaier_firefx.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">연출 (HD)</span><span class="pn-b">`Environment\LargeBuildingFire\LargeBuildingFire2.mdl` 를 0.06초마다 뿌림</span><span class="pn-ar">&rarr;</span><span class="pn-a">자취 점마다 `TownBurningFireEmitter` 지속 이펙트 (최대 10칸)</span></div>
+          <p class="pn-why">사용자 신고 — 「앞으로 갔다 돌아오면서 남기는 불길」이 HD 에서 안 보였다</p>
+          <p class="pn-x">아바노스와 **같은 병·같은 해법**이다. ⚠ 살아 있는 쪽은 난독화된 `Y8U`(돌진)·`Y7U`(복귀)이고 `VjaierFire___doCharge` 는 **죽은 쌍둥이**다. 피해(`ZXQ`)·자취 좌표는 그대로. **인게임 미검증.**</p>
         </div>
           </div>
         </details>
