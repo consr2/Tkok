@@ -2208,6 +2208,26 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-16</span><span class="pn-cnt">1건</span><span class="pn-peek">보스 Ancient Hydra (32레벨)</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">Ancient Hydra (32레벨)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Ancient Hydra (32레벨)</span>
+            <span class="pn-fn">n05P (`UnitUI.slk` 의 modelScale) · patch_unitval.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">모델 크기</span><span class="pn-b">modelScale **0.85** (원작의 0.5배)</span><span class="pn-ar">&rarr;</span><span class="pn-a">modelScale **1.275** (원작의 0.75배)</span></div>
+          <p class="pn-why">사용자 지시 — 절반은 너무 작았다. 원작 대비 75% 로</p>
+          <p class="pn-x">⚠ `unitval.json` 이 기억하는 **원래 값은 1.7 그대로**다 — `--revert` 는 0.85 가 아니라 **1.7** 로 돌아간다.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-15</span><span class="pn-cnt">2건</span><span class="pn-peek">보스 Tal&#x27;navi — 따라다니는 바위 · 보스 Ancient Hydra (32레벨)</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
@@ -2230,7 +2250,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">n05P (`UnitUI.slk` 의 modelScale) · patch_unitval.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 크기</span><span class="pn-b">modelScale **1.7**</span><span class="pn-ar">&rarr;</span><span class="pn-a">modelScale **0.85**</span></div>
-          <p class="pn-why">사용자 지시 — 절반으로</p>
+          <p class="pn-why">사용자 지시 — 절반으로 (2026-09-16 에 1.275 로 되올림)</p>
           <p class="pn-x">⚠ 런타임에 크기를 덮어쓰는 `SetUnitScale` 은 이 보스에 없다(확인함) — SLK 값이 유일한 레버다. 선택원(`scale` 1.5)은 안 건드렸다. **클릭 판정도 같이 절반**이 된다(판정은 메시를 따라간다).</p>
         </div>
           </div>
