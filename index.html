@@ -2208,6 +2208,56 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-19</span><span class="pn-cnt">2건</span><span class="pn-peek">보스 Ignisolith — 분열 미사일 · 보스 Ignisolith — 반사공</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Ignisolith — 분열 미사일 · Ignisolith — 반사공</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Ignisolith — 분열 미사일</span>
+            <span class="pn-fn">ZzSpMake / ZzSpTick 의 ZzSpW[k] · patch_s3telegraph.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">예고</span><span class="pn-b">생성 즉시 날아감</span><span class="pn-ar">&rarr;</span><span class="pn-a">**2초 예고** — 시작점에 반투명으로 서 있다가 출발 (그동안 피해 없음)</span></div>
+          <p class="pn-why">사용자 지시 — 어디서 오는지 보이게</p>
+          <p class="pn-x">벽에 튕겨 갈라진 두 발(`g==1`)은 예고 없이 그대로다. 쿨(5초·30%% 미만 3초)은 안 바뀌었다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Ignisolith — 반사공</span>
+            <span class="pn-fn">ZzMtFire 는 호출만 · 새 함수 ZzMtLaunch 가 생성 · patch_s3telegraph.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">발사 시점</span><span class="pn-b">이름 호출과 **동시에** 생성·조준</span><span class="pn-ar">&rarr;</span><span class="pn-a">이름 호출 뒤 **2초**, 그 시점 위치로 조준</span></div>
+          <p class="pn-why">사용자 지시 — 「너무 빨리 발사된다」</p>
+          <p class="pn-x">2초 사이 지목자가 죽으면 공이 안 나간다. `ZzMtDone()` 이 대기도 꺼서 폭탄·룬 중에는 안 날아온다. 쿨 33초는 그대로.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-18</span><span class="pn-cnt">1건</span><span class="pn-peek">Warrior Master Commander (Battle Orders 강화)</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Warrior</span><span class="pn-cnt">1건</span><span class="pn-peek">Master Commander (Battle Orders 강화)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Warrior</span>
+            <span class="pn-sk">Master Commander (Battle Orders 강화)</span>
+            <span class="pn-fn">MMO 의 워리어 갈래 2곳 · MKO(p) · patch_warrior_mastercmd.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">2포인트 광역 마나</span><span class="pn-b">**한 번도 안 나감** (원작자 버그)</span><span class="pn-ar">&rarr;</span><span class="pn-a">치명타 10번마다 주위 400 아군 **마나 +30**</span></div>
+          <p class="pn-why">사용자 확인 — 툴팁에는 있는데 실제로 안 나갔다</p>
+          <p class="pn-x">⭐ 원인은 **플레이어 배열 `FYD` 를 유닛 타입 id 로 인덱싱**한 것이다 — `FYD[EU]`(=1,211,117,619)는 JASS 배열 범위(0~8191) 밖이라 늘 0이었다. 순정 8e 와 동일한 **원작자 버그**. 같이 광역 부분을 `&gt;=2` 로 감쌌다 — 툴팁이 「2포인트」라고 한다(원본은 1점부터 돌 뻔했다). 정본 `mistake.md` B-287.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-17</span><span class="pn-cnt">1건</span><span class="pn-peek">Fighter Enforced Combination - Straight / - Jab</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
