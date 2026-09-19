@@ -2208,11 +2208,80 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-19</span><span class="pn-cnt">2건</span><span class="pn-peek">보스 Ignisolith — 분열 미사일 · 보스 Ignisolith — 반사공</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-20</span><span class="pn-cnt">4건</span><span class="pn-peek">Medicaster 2 · Hydromancer 1 · 기타 1</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Ignisolith — 분열 미사일 · Ignisolith — 반사공</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Medicaster</span><span class="pn-cnt">2건</span><span class="pn-peek">Remorse (R) · Sly Peace 3포인트</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Medicaster</span>
+            <span class="pn-sk">Remorse (R)</span>
+            <span class="pn-fn">A0CV 베이스 Adef -&gt; ANcl (기본 주문 defend) · NCQ 가 852055 를 전환으로 처리 · U0U (Remorse 버프 OnAdd) 에 set LTG[b]=false · patch_medi_remorse.py · patch_medi_remorse_channel.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">작동 방식</span><span class="pn-b">Defend 기반 **토글** — 침묵에 엔진이 강제로 끄거나, 적의 침묵·빙결류가 부르는 양성 버프 해제에 벗겨지면 오라와 Sly Peace 저장량이 같이 날아갔다</span><span class="pn-ar">&rarr;</span><span class="pn-a">**즉시 시전형 + 해제 불가** — R 을 누를 때마다 켜짐/꺼짐이 바뀐다(쿨 1초). 침묵·CC·적의 버프 해제로는 **절대 안 꺼진다**. 끄는 건 본인이 R 을 다시 누를 때(와 워프·죽음)뿐</span></div>
+          <p class="pn-why">플레이어 제보 — 버프 해제 차단·침묵 중 off 무시로도 끊겨서 토글 자체를 없앴다</p>
+          <p class="pn-x">버튼의 켜짐 테두리는 없어진다 — 켜져 있는지는 상태창의 Remorse 버프 아이콘으로 본다. 효과·수치는 그대로다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Medicaster</span>
+            <span class="pn-sk">Sly Peace 3포인트</span>
+            <span class="pn-fn">UYU · NQQ · NRQ + 새 버프 타입 ZzLc2 (능력 A0VD · 버프 B0V1) · patch_medi_remorse.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Remorse 를 끌 때 걸리는 Last Chance</span><span class="pn-b">대상의 Last Chance 를 **지우고** 짧은 것(본래 지속의 12~29%%)으로 덮어썼다 — 34초짜리가 4~10초가 됐다</span><span class="pn-ar">&rarr;</span><span class="pn-a">별도 버프 **Last Chance II** 를 건다(지속 식은 그대로). 기존 Last Chance 는 안 건드리고, 치명타 때 **II 부터 소모**</span></div>
+          <p class="pn-why">플레이어 제보</p>
+          <p class="pn-x">II 는 **항상 1회**다 — 55레벨 탤런트의 「한 번 더 막기」는 Last Chance(1) 에만 붙는다. **지속 치유(Improved)는 II 에 안 붙는다**(patch_lc2_plain.py). Empowered 보호막은 II 에도 붙는다 — 마이너스 체력 재생 상태에서 막은 직후 죽는 것을 그 보호막이 상쇄하기 때문이다. **35% 체력 아이템 효과는 II 에 안 붙는다** — II 는 항상 체력 1 로 남긴다. 버프 아이콘은 보랏빛 + 금색 II 배지로 따로 만들었다(patch_lc2_icon.py).</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Hydromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Breeding Water (40레벨)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Hydromancer</span>
+            <span class="pn-sk">Breeding Water (40레벨)</span>
+            <span class="pn-fn">MZN 의 MHN(XL[i],22,21) -&gt; MHN(XL[i],22,23) · patch_hydro_breedreq.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">선행 탤런트</span><span class="pn-b">Thick Ice (2포인트 전부)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**Empowered Water Bolt (3포인트 전부)**</span></div>
+          <p class="pn-x">선행 판정은 선행 칸을 최대치까지 찍었는가라서 3포인트가 된다. 탤런트 창의 Requires 줄은 저절로 바뀐다. Thick Ice 를 선행으로 쓰는 다른 칸은 그대로다.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">AOT 쫄 덩어리 (불 21 · 얼음 25)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">몬스터</span>
+            <span class="pn-sk">AOT 쫄 덩어리 (불 21 · 얼음 25)</span>
+            <span class="pn-fn">YEQ 의 FQN(xp*1.15) -&gt; FQN(xp*1.725) · patch_aotxp.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전멸 보상 경험치</span><span class="pn-b">3마리 31 / 4마리 40 / 5마리 48  (불 한 바퀴 861 · 얼음 1,029)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**+50%%** — 47 / 60 / 72  (불 한 바퀴 1,293 · 얼음 1,545)</span></div>
+          <p class="pn-why">한 바퀴 돌면 24레벨이라 애매하다. 25~26 이 되도록</p>
+          <p class="pn-x">골드는 그대로다. 난이도(Normal x1 ~ Nightmare x1.8)·무작위 0.8~1.2·레벨차·행운 배율은 그 위에 그대로 붙는다. 덩어리의 마지막 한 마리가 죽을 때 한 번에 지급된다.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-19</span><span class="pn-cnt">3건</span><span class="pn-peek">몬스터 Mana Fiend (22레벨) — 피해 반사 · 보스 Ignisolith — 분열 미사일 · 보스 Ignisolith — 반사공</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">Mana Fiend (22레벨) — 피해 반사 · Ignisolith — 분열 미사일 · Ignisolith — 반사공</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">몬스터</span>
+            <span class="pn-sk">Mana Fiend (22레벨) — 피해 반사</span>
+            <span class="pn-fn">YCQ (조건 YBQ: 맞은 유닛이 n03X) · patch_manafiend_cap.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">한 번에 되돌리는 피해 상한</span><span class="pn-b">상한 없음 — 받은 피해의 12%%(Normal) / 22%%(그 외)를 그대로 반사</span><span class="pn-ar">&rarr;</span><span class="pn-a">**상한 100 x 난이도 배율** — 1인 기준 Normal 75 / 난이도2 105 / 난이도3 125 / Nightmare 135 (인원 1명당 +5)</span></div>
+          <p class="pn-why">큰 한 방·광역으로 여러 마리를 치면 반사만으로 죽었다</p>
+          <p class="pn-x">반사 비율은 그대로이고 상한만 생겼다. 상한은 맵 표준 난이도 배율 함수 BIN(100, 피엔드) — 보스 기믹과 같은 식이다.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
@@ -2220,7 +2289,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzSpMake / ZzSpTick 의 ZzSpW[k] · patch_s3telegraph.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">예고</span><span class="pn-b">생성 즉시 날아감</span><span class="pn-ar">&rarr;</span><span class="pn-a">**2초 예고** — 시작점에 반투명으로 서 있다가 출발 (그동안 피해 없음)</span></div>
-          <p class="pn-why">사용자 지시 — 어디서 오는지 보이게</p>
+          <p class="pn-why">어디서 오는지 보이게</p>
           <p class="pn-x">벽에 튕겨 갈라진 두 발(`g==1`)은 예고 없이 그대로다. 쿨(5초·30%% 미만 3초)은 안 바뀌었다.</p>
         </div>
         <div class="pn-item">
@@ -2230,7 +2299,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzMtFire 는 호출만 · 새 함수 ZzMtLaunch 가 생성 · patch_s3telegraph.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">발사 시점</span><span class="pn-b">이름 호출과 **동시에** 생성·조준</span><span class="pn-ar">&rarr;</span><span class="pn-a">이름 호출 뒤 **2초**, 그 시점 위치로 조준</span></div>
-          <p class="pn-why">사용자 지시 — 「너무 빨리 발사된다」</p>
+          <p class="pn-why">「너무 빨리 발사된다」</p>
           <p class="pn-x">2초 사이 지목자가 죽으면 공이 안 나간다. `ZzMtDone()` 이 대기도 꺼서 폭탄·룬 중에는 안 날아온다. 쿨 33초는 그대로.</p>
         </div>
           </div>
@@ -2250,7 +2319,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">MMO 의 워리어 갈래 2곳 · MKO(p) · patch_warrior_mastercmd.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">2포인트 광역 마나</span><span class="pn-b">**한 번도 안 나감** (원작자 버그)</span><span class="pn-ar">&rarr;</span><span class="pn-a">치명타 10번마다 주위 400 아군 **마나 +30**</span></div>
-          <p class="pn-why">사용자 확인 — 툴팁에는 있는데 실제로 안 나갔다</p>
+          <p class="pn-why">툴팁에는 있는데 실제로 안 나갔다</p>
           <p class="pn-x">⭐ 원인은 **플레이어 배열 `FYD` 를 유닛 타입 id 로 인덱싱**한 것이다 — `FYD[EU]`(=1,211,117,619)는 JASS 배열 범위(0~8191) 밖이라 늘 0이었다. 순정 8e 와 동일한 **원작자 버그**. 같이 광역 부분을 `&gt;=2` 로 감쌌다 — 툴팁이 「2포인트」라고 한다(원본은 1점부터 돌 뻔했다). 정본 `mistake.md` B-287.</p>
         </div>
           </div>
@@ -2270,7 +2339,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgTree 의 MNN(XL[i],30,5,..) · MNN(XL[i],31,5,..) · patch_fighter_lv40.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">습득 레벨</span><span class="pn-b">**50**</span><span class="pn-ar">&rarr;</span><span class="pn-a">**40**</span></div>
-          <p class="pn-why">사용자 지시 — 9 팔민구단 · 10 천상십자 · 11 천장분열 · 12 천추격 을 더 일찍 쓰게</p>
+          <p class="pn-why">9 팔민구단 · 10 천상십자 · 11 천장분열 · 12 천추격 을 더 일찍 쓰게</p>
           <p class="pn-x">⚠ **선행은 그대로다** — 30 은 21(Combination - Straight), 31 은 22(- Jab) 를 먼저 찍어야 한다. 강화 초식 나머지 두 칸(33 Swing · 34 Hook, 초식 13~16)은 **50 그대로**다. 피해 계수는 안 바꿨다. 칸·초식·선행 표는 `mastery2.md` 22.23.</p>
         </div>
           </div>
@@ -2290,7 +2359,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">n015 -&gt; `Zz\\LivingBoulder.mdx` · patch_sdmodel.py + patch_unitmodel.py + patch_unitval.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 · 크기 (원복)</span><span class="pn-b">`AncientProtectorMissile` · modelScale **2.8**</span><span class="pn-ar">&rarr;</span><span class="pn-a">**원래대로** `DemonHunterMissile` · modelScale **2.9** (맵에 심은 SD 판)</span></div>
-          <p class="pn-why">사용자: 「똑같은거 쓰면서 메시만 줄 수 없어?」 — 모델을 바꾸지 않고 고치는 길이 있었다</p>
+          <p class="pn-why">모델을 바꾸지 않고 고치는 길이 있었다</p>
           <p class="pn-x">⭐⭐ **맵에 들어 있는 자산은 HD 에서도 그대로 그려진다.** 그래서 같은 모델의 **SD 판**(메시가 살아 있다)을 맵에 심으면 **생김새는 클래식 그대로이고 집을 메시가 생긴다.** 2026-09-15 의 「다른 모델로 교체」는 생김새가 바뀌는 대가를 치렀는데 그럴 필요가 없었다. 정본 `mistake.md` B-285.</p>
         </div>
         <div class="pn-item">
@@ -2300,7 +2369,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">n023 · n08D -&gt; `Zz\\WateryBubble.mdx` · patch_sdmodel.py + patch_unitmodel.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 (HD 클릭)</span><span class="pn-b">`ManaShieldCaster` — HD 판 지오셋 **0**</span><span class="pn-ar">&rarr;</span><span class="pn-a">같은 모델의 **SD 판을 맵에 심음** (삼각형 116)</span></div>
-          <p class="pn-why">사용자 신고 — 체력·마나를 빨아가는 버블을 HD 에서 **집을 수가 없다**(클래식에서는 된다)</p>
+          <p class="pn-why">체력·마나를 빨아가는 버블을 HD 에서 **집을 수가 없다**(클래식에서는 된다)</p>
           <p class="pn-x">생김새 그대로다. 참조 텍스처 4개는 HD 에도 있다(확인함).</p>
         </div>
         <div class="pn-item">
@@ -2310,7 +2379,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">B006 (**파괴물**) -&gt; `Zz\\RadioactiveCrystals.mdx` · patch_sdmodel.py + patch_destmodel.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 (HD 클릭)</span><span class="pn-b">`AnnihilationMissile` — HD 판 지오셋 **0**</span><span class="pn-ar">&rarr;</span><span class="pn-a">같은 모델의 **SD 판을 맵에 심음** (삼각형 106)</span></div>
-          <p class="pn-why">사용자 신고 — 화약통으로 부수는 크리스탈이 HD 에서 선택이 안 된다</p>
+          <p class="pn-why">화약통으로 부수는 크리스탈이 HD 에서 선택이 안 된다</p>
           <p class="pn-x">⚠ **파괴물은 유닛과 저장 위치가 다르다** — `Units\\DestructableData.slk` 의 `file` 열 한 곳뿐이다(이 맵엔 `war3map.w3b` 가 아예 없다). 그래서 `patch_destmodel.py` 를 새로 만들었다.</p>
         </div>
         <div class="pn-item">
@@ -2320,7 +2389,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">n05P (`UnitUI.slk` 의 modelScale) · patch_unitval.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 크기</span><span class="pn-b">modelScale **0.85** (원작의 0.5배)</span><span class="pn-ar">&rarr;</span><span class="pn-a">modelScale **1.275** (원작의 0.75배)</span></div>
-          <p class="pn-why">사용자 지시 — 절반은 너무 작았다. 원작 대비 75% 로</p>
+          <p class="pn-why">절반은 너무 작았다. 원작 대비 75% 로</p>
           <p class="pn-x">⚠ `unitval.json` 이 기억하는 **원래 값은 1.7 그대로**다 — `--revert` 는 0.85 가 아니라 **1.7** 로 돌아간다.</p>
         </div>
           </div>
@@ -2350,7 +2419,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">n05P (`UnitUI.slk` 의 modelScale) · patch_unitval.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">모델 크기</span><span class="pn-b">modelScale **1.7**</span><span class="pn-ar">&rarr;</span><span class="pn-a">modelScale **0.85**</span></div>
-          <p class="pn-why">사용자 지시 — 절반으로 (2026-09-16 에 1.275 로 되올림)</p>
+          <p class="pn-why">절반으로 (2026-09-16 에 1.275 로 되올림)</p>
           <p class="pn-x">⚠ 런타임에 크기를 덮어쓰는 `SetUnitScale` 은 이 보스에 없다(확인함) — SLK 값이 유일한 레버다. 선택원(`scale` 1.5)은 안 건드렸다. **클릭 판정도 같이 절반**이 된다(판정은 메시를 따라간다).</p>
         </div>
           </div>
@@ -2370,7 +2439,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgDm (초식 14개가 전부 지나는 한 곳) · patch_fighter_will.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">기본 효과</span><span class="pn-b">공격력 **(40 + 1.75 x 레벨) x (1 + 0.1 x Empowered)**</span><span class="pn-ar">&rarr;</span><span class="pn-a">**초식 피해 x (1 + 0.01 x 레벨)** — 50레벨이면 +50%</span></div>
-          <p class="pn-why">사용자 지시 — 레벨 비례 공격력 대신 초식 피해를 키운다</p>
+          <p class="pn-why">레벨 비례 공격력 대신 초식 피해를 키운다</p>
           <p class="pn-x">⭐ 켜져 있을 때만 적용된다(`ZzPgW[p]`). 옛 공격력 보너스는 Improved 쪽으로 옮겼다.</p>
         </div>
         <div class="pn-item">
@@ -2380,7 +2449,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgNum 4번 칸 · ZzPgTick drain · ZzPgTree · patch_fighter_will.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">효과 · 요구 레벨</span><span class="pn-b">**효과 없음** — 슬롯 9 는 마나 소모식에만 등장했다 (툴팁은 「공격 강도도 올린다」) · 요구 레벨 16</span><span class="pn-ar">&rarr;</span><span class="pn-a">**어택파워 +5% x 포인트**(현재 AP 기준) · 마나 소모 **+1/포인트** · 요구 레벨 **20**</span></div>
-          <p class="pn-why">사용자 지시 — 찍어도 이득이 없고 마나만 더 타던 것을 실제 버프로</p>
+          <p class="pn-why">찍어도 이득이 없고 마나만 더 타던 것을 실제 버프로</p>
           <p class="pn-x">⚠ 고치기 전에는 **찍을수록 손해**였다(마나 소모만 증가). 툴팁과 코드가 어긋나 있던 버그.</p>
         </div>
         <div class="pn-item">
@@ -2390,7 +2459,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgDm · ZzPgTick drain · ZzPgTree · patch_fighter_will.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">효과 · 요구 레벨</span><span class="pn-b">공격력·마나를 **같은 비율로** x(1+0.1x pt) — 효율은 그대로 · 요구 레벨 14</span><span class="pn-ar">&rarr;</span><span class="pn-a">**초식 피해 +10% x 포인트** · 마나 소모 **+2/포인트** · 요구 레벨 **45**</span></div>
-          <p class="pn-why">사용자 지시</p>
           <p class="pn-x">⚠ 요구 레벨 14 는 **선행인 Improved(16)보다 낮아** 어긋나 있었다 — 20/45 로 정리했다. ⚠ 툴팁의 「침묵 저항 0/33/66/100%」는 **구현이 없어** 문구에서 뺐다.</p>
         </div>
           </div>
@@ -2405,7 +2473,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">`F9S` 생성 · `F5S`/`V0T` 정리 · 옛 스프레이 `F8S` 는 비움 · patch_avnos_flamefx.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">연출 (HD)</span><span class="pn-b">`Environment\LargeBuildingFire\...` — **클래식 전용이라 HD 에서 안 보임**</span><span class="pn-ar">&rarr;</span><span class="pn-a">`Doodads\Cinematic\TownBurningFireEmitter` 지속 이펙트</span></div>
-          <p class="pn-why">사용자 신고 — HD 에서 불길이 안 보여 피해 구역을 알 수 없었다</p>
+          <p class="pn-why">HD 에서 불길이 안 보여 피해 구역을 알 수 없었다</p>
           <p class="pn-x">⭐ **피해 판정은 안 건드렸다** — 보이는 것만 바꿨다. ⚠ 옛 연출을 안 비우면 **클래식에서 두 불이 겹친다.** 인게임 확인 완료.</p>
         </div>
         <div class="pn-item">
@@ -2415,7 +2483,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">`ZVQ` 생성 · `ZTQ` 정리 · 옛 스프레이 `ZWQ` 는 비움 · patch_vjaier_firefx.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">연출 (HD)</span><span class="pn-b">`Environment\LargeBuildingFire\LargeBuildingFire2.mdl` 를 0.06초마다 뿌림</span><span class="pn-ar">&rarr;</span><span class="pn-a">자취 점마다 `TownBurningFireEmitter` 지속 이펙트 (최대 10칸)</span></div>
-          <p class="pn-why">사용자 신고 — 「앞으로 갔다 돌아오면서 남기는 불길」이 HD 에서 안 보였다</p>
+          <p class="pn-why">「앞으로 갔다 돌아오면서 남기는 불길」이 HD 에서 안 보였다</p>
           <p class="pn-x">아바노스와 **같은 병·같은 해법**이다. ⚠ 살아 있는 쪽은 난독화된 `Y8U`(돌진)·`Y7U`(복귀)이고 `VjaierFire___doCharge` 는 **죽은 쌍둥이**다. 피해(`ZXQ`)·자취 좌표는 그대로. **인게임 미검증.**</p>
         </div>
           </div>
@@ -2435,7 +2503,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">카탈로그 607 / 608 (`K4M` 인덱스 9·10) · patch_firehat_swap.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">어택파워 / 스펠파워</span><span class="pn-b">A = **스펠파워 80** · B = **어택파워 90**</span><span class="pn-ar">&rarr;</span><span class="pn-a">A = **어택파워 90** · B = **스펠파워 80**</span></div>
-          <p class="pn-why">사용자 지시 — 거꾸로 들어가 있었다</p>
+          <p class="pn-why">거꾸로 들어가 있었다</p>
           <p class="pn-x">⚠ **이름과 카탈로그 순번은 안 바꿨다** — `Name=` 은 트리거 키이고 순번은 세이브 코드에 들어간다. 저장돼 있던 `hat A` 는 여전히 `hat A` 이고 성능만 바뀐다. 나머지 스탯(방어 28 · 체력 230 · 이속 -20)은 둘 다 그대로. 설명 문구도 같이 맞바꿨다.</p>
         </div>
           </div>
@@ -2455,7 +2523,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgNum · patch_fighter_shell.py ~ patch_fighter_tree.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">전체 계수</span><span class="pn-b">없던 직업</span><span class="pn-ar">&rarr;</span><span class="pn-a">**CN 권사(hPUGI) 계수 그대로** — 기본 권법 `22 + 0.75×AP` · 투지 `40 + 1.75×레벨`</span></div>
-          <p class="pn-why">사용자 지시 「밸런스는 CN 쪽을 따라줘」</p>
+          <p class="pn-why">「밸런스는 CN 쪽을 따라줘」</p>
           <p class="pn-x">탤런트 32칸(각성기 「무상 전생」 제외). 기본 권법 Q/W/E/R + 투지 + Shuffle 여섯. 핵심은 **커맨드 초식** — 세 입력이 표와 맞으면 초식 16개 중 하나가 나가고, 초식은 따로 능력이 아니라 **같은 XAF 칸에 배율만 곱한 것**이다(ZzPgFire). 슬롯·배율은 스킬 탭의 조건 줄에 있다.</p>
         </div>
         <div class="pn-item">
@@ -2465,7 +2533,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgHurt · ZzPgAoe · ZzPgKb · ZzPgHit · ZzPgJTick (19곳) · patch_fighter_crit.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">피해 입구 (치명타)</span><span class="pn-b">`MEO` — **치명타를 한 번도 안 굴렸다** (대신 주문 회피가 걸렸다)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**`UnitDamageUnit`** = CN 의 `AbilityDamageTarget` — **공격 크리찬스·크리파워**가 걸린다</span></div>
-          <p class="pn-why">다른 직업과 계산식이 달랐다 (사용자 지시 「이거 통일해야지」)</p>
+          <p class="pn-why">다른 직업과 계산식이 달랐다</p>
           <p class="pn-x">둘 다 무작위 편차(BNN)를 한 번씩 쓰므로 편차는 그대로다. 파이터는 물리(MFO 5·6)라 주문이 아니라 **공격** 크리를 탄다. 다른 직업 660곳은 안 건드렸다.</p>
         </div>
         <div class="pn-item">
@@ -2475,7 +2543,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzPgTree → MIN · patch_fighter_abillvl.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">기본 권법 재사용 대기시간</span><span class="pn-b">**항상 2.5초** — 탤런트가 능력 레벨을 안 올려 툴팁의 「점마다 −0.5초」가 통째로 안 걸렸다</span><span class="pn-ar">&rarr;</span><span class="pn-a">3점이면 **1.0초** (능력 레벨 1→4 · 2.5 / 2.0 / 1.5 / 1.0)</span></div>
-          <p class="pn-why">배선 누락 (사용자 신고)</p>
+          <p class="pn-why">배선 누락</p>
           <p class="pn-x">맵의 「탤런트 한 점 = 능력 한 레벨」 등록 함수 `MIN(트리,칸,true,능력)` 이 파이터 트리에 한 줄도 없었다. ⚠ 레벨이 오르면 **마나 소모도 5 → 8** 로 같이 오른다(CN 레벨 수치). 5레벨(쿨 0.5)은 Style of King 3점 몫이라 아직 안 걸린다.</p>
         </div>
         <div class="pn-item">
@@ -2520,7 +2588,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">A05Q (acdn) · patch_manaward_cd.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">재사용 대기시간</span><span class="pn-b">**360초**</span><span class="pn-ar">&rarr;</span><span class="pn-a">**120초**</span></div>
-          <p class="pn-why">사용자 지시</p>
           <p class="pn-x">효과는 그대로 — 30초 동안 3초마다 최대 마나의 2.5% 회복. ⚠ 아이템 툴팁(`I05B` Ubertip)에 숫자가 **글자로 박혀** 있어(치환 표기가 아니다) 능력과 툴팁을 **둘 다** 고쳤다. Mana Ward 는 랭크가 하나뿐이고, Healing Ward 3랭크는 전부 45초 그대로다.</p>
         </div>
         <div class="pn-item">
@@ -2530,7 +2597,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">TSP · TWP · TYP (셋 다) · patch_xpcap600.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">하드캡</span><span class="pn-b">**500** — `JKA &gt;= 500` 이면 `GetRandomInt(450,550)` 으로 덮어썼다</span><span class="pn-ar">&rarr;</span><span class="pn-a">**600** — `JKA &gt;= 600` 이면 `GetRandomInt(550,650)`</span></div>
-          <p class="pn-why">사용자 지시</p>
           <p class="pn-x">⚠ 자르는 게 아니라 **그 언저리로 눌러앉히는** 장치다 — 상한을 조금 넘긴 값이 오히려 깎일 수 있다(원작 그대로). 원작의 ±50 폭을 그대로 옮겼다. 앞에 곱해지는 것(레벨차 계수 `JJA` · XP 보너스 `G7G` · 행운 2배 · 저레벨 x10)과 뒤의 `bGeneralMode`/`bPioneer` 차단은 안 건드렸다. ⚠ **누적 경험치 상한 52155(레벨 60)은 별개**이고 그대로다.</p>
         </div>
           </div>
@@ -2550,7 +2616,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNsHitDmg · patch_necro_nspotion.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">Potion of Battle 적용</span><span class="pn-b">소환수는 물약 버프를 못 받음</span><span class="pn-ar">&rarr;</span><span class="pn-a">**주인이 Potion of Battle 중이면 소환수 평타 +20%** (8초)</span></div>
-          <p class="pn-why">사용자 지시</p>
           <p class="pn-x">주인 영웅의 버프(C4A)를 보고 소환수 평타(OT 1)에 곱한다. 소환수 자체 주문은 대상 아님. 주인 스펠 크리(30% 위력)와 같은 훅.</p>
         </div>
         <div class="pn-item">
@@ -2560,7 +2625,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_mast3.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">영웅 레벨당 배율</span><span class="pn-b">5%</span><span class="pn-ar">&rarr;</span><span class="pn-a">**4%**</span></div>
-          <p class="pn-why">조정 (사용자 지시)</p>
+          <p class="pn-why">조정</p>
           <p class="pn-x">55레벨 x3.2, Soul Control 3점이면 x4.45. Necrosummon(사령 평타) · Karma · Soul Sacrifice.</p>
         </div>
         <div class="pn-item">
@@ -2570,7 +2635,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_mast3.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">영웅 레벨당 배율</span><span class="pn-b">1.35%</span><span class="pn-ar">&rarr;</span><span class="pn-a">**1.3%**</span></div>
-          <p class="pn-why">조정 (사용자 지시)</p>
+          <p class="pn-why">조정</p>
           <p class="pn-x">55레벨 x1.715, Soul Control 3점이면 x2.38. Death Attack · Death Light · Undead Fly 와 그 반경.</p>
         </div>
           </div>
@@ -2585,7 +2650,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzTtW / ZzTtWCmd · patch_twcmd.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">-tt 탤런트 설명 줄바꿈 폭</span><span class="pn-b">고정 52바이트 (한글 기준)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**플레이어별 `-tw 30~130`** · 기본 한글 52 · 영어 58 (처음 70 은 열 폭을 넘어 잘려 같은 날 58 로)</span></div>
-          <p class="pn-why">모니터 비율이 사람마다 달라 줄이 너무 일찍 접히거나 넘침 (사용자 지시)</p>
+          <p class="pn-why">모니터 비율이 사람마다 달라 줄이 너무 일찍 접히거나 넘침</p>
           <p class="pn-x">전원 사용 가능, 세이브 안 됨(판마다). 범위 밖이면 영어 안내 한 줄. `-tt` 를 다시 열면 적용. `-skill eng` 와 짝.</p>
         </div>
           </div>
@@ -2605,7 +2670,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_dl17.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수 (틱당)</span><span class="pn-b">1.5</span><span class="pn-ar">&rarr;</span><span class="pn-a">**1.7**</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">기본 25 그대로. 0.25초 × 4타(Be With Me 6타) 라 총량은 계수의 4~6배로 오른다.</p>
         </div>
         <div class="pn-item">
@@ -2615,7 +2680,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_uf08.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수 (파리 1타)</span><span class="pn-b">0.094</span><span class="pn-ar">&rarr;</span><span class="pn-a">**0.08**</span></div>
-          <p class="pn-why">너프 (사용자 지시)</p>
+          <p class="pn-why">너프</p>
           <p class="pn-x">기본 7 그대로. 파리 10~15마리 × 초당 1타 × 6~12초 라 총량은 계수의 배수로 준다.</p>
         </div>
         <div class="pn-item">
@@ -2625,7 +2690,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_fearmark10.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">받는 주문 피해 증가</span><span class="pn-b">포인트당 5% (최대 2 = 10%) × Phantom Mastery 배율</span><span class="pn-ar">&rarr;</span><span class="pn-a">**10% 고정** (Phantom 배율 제외) · 1포인트</span></div>
-          <p class="pn-why">사용자 지시 「Phantom Mastery 에 버프되면 안 됨, 최종 피해 +10%」</p>
+          <p class="pn-why">「Phantom Mastery 에 버프되면 안 됨, 최종 피해 +10%」</p>
           <p class="pn-x">Death Unleashed 의 포인트당 +3% 는 그대로 더해진다. 적용은 원래부터 최종 피해에 곱(IncreaseDamageMultiplicative).</p>
         </div>
         <div class="pn-item">
@@ -2635,7 +2700,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_bal3.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">Soul Sacrifice 피해</span><span class="pn-b">제물만 안 소모</span><span class="pn-ar">&rarr;</span><span class="pn-a">제물 안 소모 + **피해 +40%**</span></div>
-          <p class="pn-why">사용자 지시</p>
           <p class="pn-x">XAF5 에 x(1 + 0.4 x T26). Grand Sacrifice(포인트당 +10%)·Necro Mastery 와 곱으로 겹친다.</p>
         </div>
         <div class="pn-item">
@@ -2645,7 +2709,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_bal3.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">영웅 레벨당 배율</span><span class="pn-b">1.5%</span><span class="pn-ar">&rarr;</span><span class="pn-a">**1.35%**</span></div>
-          <p class="pn-why">너프 (사용자 지시)</p>
+          <p class="pn-why">너프</p>
           <p class="pn-x">55레벨 x1.7425, Soul Control 3점이면 x2.42.</p>
         </div>
         <div class="pn-item">
@@ -2655,7 +2719,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_nm5.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">영웅 레벨당 배율</span><span class="pn-b">4%</span><span class="pn-ar">&rarr;</span><span class="pn-a">**5%**</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">55레벨 x3.75, Soul Control 3점이면 x5.21. Necrosummon(사령 평타) · Karma · Soul Sacrifice 에 걸린다.</p>
         </div>
         <div class="pn-item">
@@ -2665,7 +2729,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_pm15.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">영웅 레벨당 배율</span><span class="pn-b">4% (같은 날 낮에 0.4%→4%)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**1.5%**</span></div>
-          <p class="pn-why">사용자 지시 — Necro Mastery 는 4% 그대로</p>
+          <p class="pn-why">Necro Mastery 는 4% 그대로</p>
           <p class="pn-x">55레벨 x1.825, Soul Control 3점이면 x2.54. Death Attack · Death Light · Undead Fly 와 그 반경·Fear Mark 에 걸린다.</p>
         </div>
         <div class="pn-item">
@@ -2675,7 +2739,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">0.74</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.88</span></div>
-          <p class="pn-why">버프 (사용자 지시)</p>
+          <p class="pn-why">버프</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
@@ -2684,7 +2748,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수 (사령 평타)</span><span class="pn-b">0.4</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.5</span></div>
-          <p class="pn-why">버프 (사용자 지시)</p>
+          <p class="pn-why">버프</p>
           <p class="pn-x">티어 배율(x0.8~x4.0)은 그대로 이 값에 곱해진다.</p>
         </div>
         <div class="pn-item">
@@ -2694,7 +2758,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNS / ZzNcTree · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">상급 사령 확률</span><span class="pn-b">포인트당 10% · 최대 3포인트 (30%)</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트당 20% · 최대 2포인트 (40%)</span></div>
-          <p class="pn-why">버프 (사용자 지시)</p>
+          <p class="pn-why">버프</p>
           <p class="pn-x">Be With Me 3포인트 +10% · Netherworld Summon 포인트당 +5% 는 그대로 더해진다. ⚠ 옛 세이브에 3포인트가 있으면 로드 때 그대로 들어가 60% 가 된다 — 리스펙하면 정리.</p>
         </div>
         <div class="pn-item">
@@ -2704,7 +2768,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNsLeash · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">사령 유지 범위</span><span class="pn-b">1150</span><span class="pn-ar">&rarr;</span><span class="pn-a">1100</span></div>
-          <p class="pn-why">너프 (사용자 지시)</p>
+          <p class="pn-why">너프</p>
           <p class="pn-x">설명 3곳(트리 한/영 · 버튼)도 1100. Undead Fly 의 1000 은 별개다.</p>
         </div>
         <div class="pn-item">
@@ -2714,7 +2778,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum / QQN·T4O·T5O · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">배율 · 선택 제한</span><span class="pn-b">(1 + 영웅레벨 x 0.4%) x (1 + Soul Control x 13%) · 둘 다 찍음</span><span class="pn-ar">&rarr;</span><span class="pn-a">**(1 + 영웅레벨 x 4%)** x (1 + Soul Control x 13%) · **둘 중 하나만**</span></div>
-          <p class="pn-why">사용자 지시 「둘 중 1개만 찍을 수 있게 · 1렙당 4%」</p>
+          <p class="pn-why">「둘 중 1개만 찍을 수 있게 · 1렙당 4%」</p>
           <p class="pn-x">55레벨 x3.2, Soul Control 3점이면 x4.45. 잠금은 워리어 스탠스(6↔8)와 같은 세 곳 — 툴팁 「Requires: No Phantom Mastery」 · 잠금 그림 · 잠금 판정. 「1렙당」을 영웅 레벨로 읽었다 — 포인트당 뜻이면 상수 하나(`.04`)만 다시 본다.</p>
         </div>
         <div class="pn-item">
@@ -2724,7 +2788,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_bal2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">7</span><span class="pn-ar">&rarr;</span><span class="pn-a">6</span></div>
-          <p class="pn-why">너프 (사용자 지시)</p>
+          <p class="pn-why">너프</p>
         </div>
           </div>
         </details>
@@ -2738,7 +2802,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">w3a A03U/A03N/A0A7 acdn · patch_ward_cd45.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">쿨다운</span><span class="pn-b">22 / 35 / 80초</span><span class="pn-ar">&rarr;</span><span class="pn-a">**45 / 45 / 45초**</span></div>
-          <p class="pn-why">통일 (사용자 지시)</p>
+          <p class="pn-why">통일</p>
           <p class="pn-x">셋은 `cooldownID=Ahwd` 를 공유해 하나를 쓰면 셋이 같이 쿨이 돈다(원래 그렇다). 툴팁의 「쿨다운: n초」도 45.</p>
         </div>
           </div>
@@ -2758,7 +2822,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum / ZzNsTick · patch_necro_dlbuff.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">범위 안 사령이 얻는 공격력</span><span class="pn-b">Necrosummon 공격력의 0/5/10/15%</span><span class="pn-ar">&rarr;</span><span class="pn-a">**그 사령 자신의** 공격력의 0/15/30/45%</span></div>
-          <p class="pn-why">기준이 1티어(해골 전사) 고정값이라 상급 사령일수록 손해였다 (사용자 지시)</p>
+          <p class="pn-why">기준이 1티어(해골 전사) 고정값이라 상급 사령일수록 손해였다</p>
           <p class="pn-x">태그(슬롯 2)에 **비율**을 담고 `ZzNsTick` 이 그 사령의 실제 공격력 `ZzNsD` 를 곱한다 — 소환 때 박힌 값이라 **티어 배율(x1.0~x4.0)이 이미 들어가 있다**. 3포인트 기준 해골 전사 x3배 · 데스나이트 x12배. ⚠ 보너스는 능력으로 붙는 초록 `+n`(`ZzDmgBon`) 이라 기본 공격력에 안 섞인다 — 되먹임 없음.</p>
         </div>
         <div class="pn-item">
@@ -2768,7 +2832,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">war3map.w3a `amcs` · patch_necro_mana2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">마나 소모</span><span class="pn-b">T30 Y30 E15</span><span class="pn-ar">&rarr;</span><span class="pn-a">T60 Y60 E30</span></div>
-          <p class="pn-why">상향 6건 뒤 셋만 2배로 너프 (사용자 지시)</p>
+          <p class="pn-why">상향 6건 뒤 셋만 2배로 너프</p>
           <p class="pn-x">T Karma · Y Soul Sacrifice · E Undead Fly. Q(10) · W(15) · R(25)는 하이드로맨서와 같은 값 그대로다. ⚠ `Necrosummon` 은 이 값과 별개로 JASS 가 최대 마나의 2/4/6% 를 추가로 깎는다.</p>
         </div>
         <div class="pn-item">
@@ -2778,7 +2842,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">한 번에 모이는 영혼</span><span class="pn-b">1~9</span><span class="pn-ar">&rarr;</span><span class="pn-a">1~19</span></div>
-          <p class="pn-why">게이지가 너무 느리게 찼다 (사용자 지시)</p>
+          <p class="pn-why">게이지가 너무 느리게 찼다</p>
           <p class="pn-x">터지는 기준은 **44 그대로**. 평균 5 → 10 이라 44 까지 약 9회 → **약 4.4회**. `Empowered Karma`(+3/pt) 와 `Soul Attunement` 5포인트(+5)는 그대로 더해진다.</p>
         </div>
         <div class="pn-item">
@@ -2788,7 +2852,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.3</span><span class="pn-ar">&rarr;</span><span class="pn-a">1.5</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">기본값 25 는 그대로. 4틱(`Be With Me` 1점이면 6틱)에 나눠 들어간다.</p>
         </div>
         <div class="pn-item">
@@ -2798,7 +2862,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">2.0</span><span class="pn-ar">&rarr;</span><span class="pn-a">2.7</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">기본값 30 은 그대로.</p>
         </div>
         <div class="pn-item">
@@ -2808,7 +2872,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">0.072</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.094</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">파리 한 마리가 1초에 한 번 치는 값이다 — 10마리 x 6초라 총량은 이 값의 60배 쪽이다.</p>
         </div>
         <div class="pn-item">
@@ -2818,7 +2882,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">0.35</span><span class="pn-ar">&rarr;</span><span class="pn-a">0.4</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">소환수 공격력의 밑값이다. 티어 배율(x1.0~x4.0)이 여기에 곱해진다.</p>
         </div>
         <div class="pn-item">
@@ -2828,7 +2892,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">Fear Mark 포인트당</span><span class="pn-b">+2%p (5점 10%)</span><span class="pn-ar">&rarr;</span><span class="pn-a">+3%p (5점 15%)</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
@@ -2837,7 +2901,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcDA · patch_necro_buff2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">5포인트 3배 피해 확률</span><span class="pn-b">20%</span><span class="pn-ar">&rarr;</span><span class="pn-a">30%</span></div>
-          <p class="pn-why">상향 (사용자 지시)</p>
+          <p class="pn-why">상향</p>
           <p class="pn-x">**확률은 포인트로 안 오른다** — 5포인트에서 한 번에 열린다. 터질 때 마나 10 을 더 쓴다.</p>
         </div>
         <div class="pn-item">
@@ -2847,7 +2911,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">war3map.w3a `amcs` · patch_necro_mana.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">마나 소모</span><span class="pn-b">Q40 W70 E80 R120 T90 Y60</span><span class="pn-ar">&rarr;</span><span class="pn-a">Q10 W15 E15 R25 T30 Y30</span></div>
-          <p class="pn-why">다른 직업의 몇 배였다 — 하이드로맨서와 같은 값으로 (사용자 지시)</p>
+          <p class="pn-why">다른 직업의 몇 배였다 — 하이드로맨서와 같은 값으로</p>
           <p class="pn-x">키 문자로 짝을 맞춰 하이드로맨서 1레벨 값을 그대로 옮겼다 (Q Water Bolt · W Watery Bubble · E Ice Nova · R Purify · T Ice Barrier · Y Waterspout). ⚠ `Necrosummon` 은 소환 등급에 따라 JASS 가 **최대 마나의 2/4/6% + 1/3/6** 을 따로 더 깎는다 — 이번에 안 건드렸다.</p>
         </div>
         <div class="pn-item">
@@ -2857,7 +2921,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">A0S0 · patch_necro_dacd.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">쿨다운</span><span class="pn-b">6초</span><span class="pn-ar">&rarr;</span><span class="pn-a">3초</span></div>
-          <p class="pn-why">다른 직업의 주력 단타와 맞췄다 (사용자 지시)</p>
+          <p class="pn-why">다른 직업의 주력 단타와 맞췄다</p>
           <p class="pn-x">이 능력은 탤런트로 레벨이 안 올라 레벨 1 값이 곧 실효 쿨다운이다.</p>
         </div>
           </div>
@@ -2872,7 +2936,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">G2O · patch_hydro_icenova.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.52</span><span class="pn-ar">&rarr;</span><span class="pn-a">1.42</span></div>
-          <p class="pn-why">너프 (사용자 지시)</p>
+          <p class="pn-why">너프</p>
           <p class="pn-x">기본값 19 는 그대로. 탤런트 0점 기준 피해가 2,280 → 2,149 가 된다.</p>
         </div>
           </div>
@@ -2887,7 +2951,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">P5O · patch_ward_pct.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">20 고정</span><span class="pn-ar">&rarr;</span><span class="pn-a">최대 체력의 5%</span></div>
-          <p class="pn-why">고정값이라 만렙에서는 사실상 회복이 없었다 (사용자 지시)</p>
+          <p class="pn-why">고정값이라 만렙에서는 사실상 회복이 없었다</p>
           <p class="pn-x">⚠ **같은 랭크를 여러 개 깔아도 안 겹친다** — 오라 버프가 유닛당 하나이고, 훑는 쪽(`QMO`)이 개수를 안 세고 존재만 본다. 랭크가 다르면 서로 겹친다. 와드 지속 15초 · 3초 틱 = 5틱.</p>
         </div>
         <div class="pn-item">
@@ -2992,7 +3056,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_karma.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">작동 방식과 피해</span><span class="pn-b">영혼 n개가 각자 반경 250 을 한 번씩 (n = 1 + Empowered Karma, +3)</span><span class="pn-ar">&rarr;</span><span class="pn-a">쓸 때마다 영혼을 모으고(최대 4) 가득 차면 반경 400 에 4 몫</span></div>
-          <p class="pn-why">사용자 재설계 — 충전식으로</p>
+          <p class="pn-why">재설계 — 충전식으로</p>
           <p class="pn-x">몫 하나는 그대로 18 + 스펠파워 x 1.0. Soul Attunement 5포인트면 3 몫이 더 붙는다. Empowered Karma 는 「한 번에 모이는 영혼」이 됐다 (1/2/3/4).</p>
         </div>
         <div class="pn-item">
@@ -3022,7 +3086,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_karma2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.0</span><span class="pn-ar">&rarr;</span><span class="pn-a">3.0</span></div>
-          <p class="pn-why">사용자 상향 지시</p>
+          <p class="pn-why">상향</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
@@ -3031,7 +3095,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_karma2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">게이지 상한 · 한 번에 모이는 양</span><span class="pn-b">상한 4 · 한 번에 1 + Empowered Karma</span><span class="pn-ar">&rarr;</span><span class="pn-a">상한 44 · 한 번에 무작위 1~9 (+3 x Empowered Karma)</span></div>
-          <p class="pn-why">사용자 재설계 — 더 오래 모아 더 크게 터뜨린다</p>
+          <p class="pn-why">재설계 — 더 오래 모아 더 크게 터뜨린다</p>
           <p class="pn-x">가득 차기까지 평균 시전 수: Empowered Karma 0포인트 약 8.8회 · 3포인트 약 3.1회.</p>
         </div>
         <div class="pn-item">
@@ -3051,7 +3115,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_karma2.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">효과</span><span class="pn-b">한 번에 모이는 영혼이 *1/2/3/4*</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번에 모이는 영혼 +*0/3/6/9*</span></div>
-          <p class="pn-why">사용자 지시 — 포인트당 +3</p>
+          <p class="pn-why">포인트당 +3</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
@@ -3060,7 +3124,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_tweak3.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">5포인트 효과</span><span class="pn-b">터질 때 3 몫이 더 붙는다 (44 -&gt; 47 몫)</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번 쓸 때 영혼이 5 더 모인다 (터질 때는 44 몫 고정)</span></div>
-          <p class="pn-why">사용자 지시 — 몫이 아니라 충전 속도로</p>
+          <p class="pn-why">몫이 아니라 충전 속도로</p>
           <p class="pn-x">Empowered Karma 3 + 이것까지 찍으면 한 번에 평균 19 — 가득 차기까지 약 2.3회.</p>
         </div>
         <div class="pn-item">
@@ -3070,7 +3134,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcKA · patch_necro_karma4.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">터질 때 피해</span><span class="pn-b">(18 + 스펠파워 x 3.0) x 44 몫</span><span class="pn-ar">&rarr;</span><span class="pn-a">18 + 스펠파워 x 3.0 (한 번)</span></div>
-          <p class="pn-why">영혼 수는 「몇 번 눌러야 터지는가」일 뿐 피해에 곱하지 않는다 (사용자 정정)</p>
+          <p class="pn-why">영혼 수는 「몇 번 눌러야 터지는가」일 뿐 피해에 곱하지 않는다</p>
           <p class="pn-x">스펠파워 3000 기준 396,792 -&gt; 9,018. 탤런트 배율(Improved Karma · Soul Attunement · Necro Mastery)은 그 위에 그대로 곱해진다. 「몫(share)」 개념 자체를 없앴다.</p>
         </div>
         <div class="pn-item">
@@ -3080,7 +3144,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzNcNum · patch_necro_karma5.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">3.0</span><span class="pn-ar">&rarr;</span><span class="pn-a">7.0</span></div>
-          <p class="pn-why">네크로맨서 상향 (사용자 지시)</p>
+          <p class="pn-why">네크로맨서 상향</p>
           <p class="pn-x">식은 (18 + 계수 x 스펠파워) x (1+0.12xImpKarma) x (1+0.1x칸33). 스펠파워 3000 기준 9,018 -&gt; 21,018. 이 값은 최상급 사령의 능력에도 같이 걸린다 — 데스나이트 사악한 오라·드레드로드 흡혈 오라 회복(x0.03), 죽음의 고리(x1) · 서리 노바(x0.5) · 벌떼(x0.5).</p>
         </div>
           </div>
@@ -3110,7 +3174,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">P5O · patch_healward.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">15</span><span class="pn-ar">&rarr;</span><span class="pn-a">20</span></div>
-          <p class="pn-why">상점 소모품 상향 (사용자 지시)</p>
+          <p class="pn-why">상점 소모품 상향</p>
           <p class="pn-x">15초 유지 · 쿨다운 22초는 그대로. 총 회복 75 -&gt; 100.</p>
         </div>
         <div class="pn-item">
@@ -3120,7 +3184,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">P6O · patch_healward.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">30</span><span class="pn-ar">&rarr;</span><span class="pn-a">50</span></div>
-          <p class="pn-why">상점 소모품 상향 (사용자 지시)</p>
+          <p class="pn-why">상점 소모품 상향</p>
           <p class="pn-x">15초 유지 · 쿨다운 35초는 그대로. 총 회복 150 -&gt; 250.</p>
         </div>
         <div class="pn-item">
@@ -3130,7 +3194,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">P7O · patch_healward.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">3초마다 회복량</span><span class="pn-b">80 (툴팁은 65 로 적혀 있었다)</span><span class="pn-ar">&rarr;</span><span class="pn-a">100</span></div>
-          <p class="pn-why">상점 소모품 상향 (사용자 지시) + 툴팁과 코드가 어긋나 있던 것을 맞췄다</p>
+          <p class="pn-why">상점 소모품 상향 + 툴팁과 코드가 어긋나 있던 것을 맞췄다</p>
           <p class="pn-x">15초 유지 · 쿨다운 80초는 그대로. 총 회복 400 -&gt; 500. 회복량은 오브젝트가 아니라 3초 트리거(`QMO` -&gt; `MNO`) 안 상수다.</p>
         </div>
           </div>
