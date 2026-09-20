@@ -1574,7 +1574,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <p class="sr-fn">근거: M7Q</p>
 </div>
 <div class="sr-sk">
-<h4><span class="sr-n">3</span>Remorse <span class="dps-kind dmg">피해</span></h4>
+<h4><span class="sr-n">3</span>Remorse <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 1초</span></h4>
 <p class="sr-desc">.1초 틱 × <i class="sr-f">지속</i> 초: (6-<b class="sr-t">Sly Peace</b>-[<b class="sr-t">Sage&#x27;s Hour</b> 5점]) 틱마다 무작위 적에 ×<i class="sr-f">피해[2번 스킬]</i>/3 (=4, <b class="sr-t">Sage&#x27;s Hour</b> 5점 만), 종료 시 ×<i class="sr-f">피해[2번 스킬]</i> 광역 (<span class="sr-ty">주문</span>). 1초마다 <i class="sr-f">치유</i> 회복</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0.8×레벨</td><td class="sr-why"><span class="sr-fld">치유</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Remorse</b></td><td class="sr-eq"><b>×1.40</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 10 · 2점까지</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Mana Prophet</b></td><td class="sr-eq"><b>×3.10</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 17 · 3점까지</span></td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">치유</span></td><td class="sr-eq">0회</td><td class="sr-why"><span class="sr-ty">순수</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">3.472×레벨</td><td class="sr-why"><span class="sr-fld">치유</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
@@ -2208,8 +2208,53 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-20</span><span class="pn-cnt">4건</span><span class="pn-peek">Medicaster 2 · Hydromancer 1 · 기타 1</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-20</span><span class="pn-cnt">9건</span><span class="pn-peek">Phantom Stalker 4 · Medicaster 2 · Hydromancer 1 · Venomancer 1 · 기타 1</span></summary>
         <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Phantom Stalker</span><span class="pn-cnt">4건</span><span class="pn-peek">Apotheosis (40레벨) — 즉사 효과 · Bladefury · Critical Injury (50레벨) · Soul Cut (50레벨)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Phantom Stalker</span>
+            <span class="pn-sk">Apotheosis (40레벨) — 즉사 효과</span>
+            <span class="pn-fn">ZzDsIcon (U8P · G4Q 에서 호출) — 능력 A0VE · 버프 B0V2 · patch_ps_dsready.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">상태창 아이콘</span><span class="pn-b">즉사가 장전된 몇 초 동안만 「Deathstrike」 아이콘이 보였다 — 내부 쿨(20초)이 끝났는지는 알 수 없었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">쿨이 끝나면 상태창에 **「Deathstrike Ready」 아이콘**이 뜬다</span></div>
+          <p class="pn-why">즉사를 쓸 수 있는 때를 눈으로 알 수 있게</p>
+          <p class="pn-x">아이콘이 보이면 즉사를 쓸 수 있다: Ready(쿨 끝) → Shuriken 명중으로 Assassin Dash → Deathstrike(장전, 같은 그림) → Puncture → 20초 동안 없음. Apotheosis 2포인트 이상일 때만 뜬다. Soul Cut 5포인트의 20% 쿨 초기화가 터지면 1초 안에 Ready 가 다시 뜬다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Phantom Stalker</span>
+            <span class="pn-sk">Bladefury</span>
+            <span class="pn-fn">SFU (Bladefury 버프 HJD 의 OnAdd) — 버프 칸 L0G · patch_ps_bladefury_ap.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">버프 중 평타 공격력</span><span class="pn-b">없음 (공격속도 +50% · 방어도 30 만)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**+ 어택파워 x 1** (버프가 끝나면 빠진다)</span></div>
+          <p class="pn-why">상향</p>
+          <p class="pn-x">값은 Bladefury 를 누른 순간의 어택파워로 고정된다. 챔피언 아이템의 「레벨 x 3」과 Spiritual Unity 의 「70 + 2 x 레벨」(5초)과는 따로 더해진다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Phantom Stalker</span>
+            <span class="pn-sk">Critical Injury (50레벨)</span>
+            <span class="pn-fn">HKO (XMF·XIF) · R8U (출혈 버프 OnAdd) · GRQ (Gash 명중) · patch_ps_critinjury.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Gash 출혈</span><span class="pn-b">출혈 시간 +0.61초/포인트 (5포인트 7초) · 추가 순수 피해 어택파워 x 0.05/포인트 · **5포인트만 3회 중첩** (적용마다 마나 +5)</span><span class="pn-ar">&rarr;</span><span class="pn-a">출혈 시간 **4초 고정** · 추가 순수 피해 **어택파워 x 0.25 (1포인트부터)** · **최대 중첩 = 포인트 수 (1~5)** · 5포인트: **Gash 를 두 번 써야 쿨타임이 돈다** + Gash 마나 +10</span></div>
+          <p class="pn-why">보스가 사라졌다 다시 나타나면 출혈 디버프가 같이 없어진다 — 길게 쌓는 대신 빨리 쌓게</p>
+          <p class="pn-x">1~4포인트 중첩에는 추가 마나가 없다. 5포인트의 두 번 쓰기는 시간 제한이 없다 — 첫 번째를 쓰고 한참 뒤에 써도 그게 두 번째다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Phantom Stalker</span>
+            <span class="pn-sk">Soul Cut (50레벨)</span>
+            <span class="pn-fn">GXQ (Puncture 명중) — HDD 적용 -&gt; MEO 타입 8 · 발동 조건에서 11% 제거 · HID[p] 초기화 · patch_ps_soulcut.py · patch_ps_soulcut2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">즉사 효과 발동 시 추가 효과 · 5포인트 효과</span><span class="pn-b">대상 **최대 체력** 을 포인트당 1% 깎는 영구 디버프, 5중첩(5포인트 약 22.6%) · 5포인트: Puncture 마다 **11%** 로 즉사 효과가 쿨·Dash 와 무관하게 추가 발동</span><span class="pn-ar">&rarr;</span><span class="pn-a">대상 **현재 체력의 포인트당 0.8%** (5포인트 **4%**) 고정 피해 — 발동할 때마다 · 5포인트: 즉사 효과가 발동할 때 **20%** 로 그 쿨타임(20초) 초기화</span></div>
+          <p class="pn-why">보스가 사라졌다 다시 나타나면 디버프가 없어져 의미가 없었다 · 즉사 효과(2.75배 + Soul Cut)가 Dash 없이 따로 터지지 않게</p>
+          <p class="pn-x">즉사 효과는 이제 **즉사 준비 버프가 있을 때만** 터진다 — Apotheosis 2포인트 이상에서 Shuriken 이 맞아 Assassin Dash 가 시작될 때 붙고(내부 쿨 20초), 그 창 안에 Puncture 를 넣어야 한다. 즉사 면역 대상은 2.75배 피해. Soul Cut 피해는 고정 피해라 방어력·치명타를 안 탄다. 회복(포인트당 4%)은 그대로. 툴팁(한/영)에 조건을 적었다.</p>
+        </div>
+          </div>
+        </details>
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Medicaster</span><span class="pn-cnt">2건</span><span class="pn-peek">Remorse (R) · Sly Peace 3포인트</span></summary>
           <div class="pn-gbody">
@@ -2229,7 +2274,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-sk">Sly Peace 3포인트</span>
             <span class="pn-fn">UYU · NQQ · NRQ + 새 버프 타입 ZzLc2 (능력 A0VD · 버프 B0V1) · patch_medi_remorse.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">Remorse 를 끌 때 걸리는 Last Chance</span><span class="pn-b">대상의 Last Chance 를 **지우고** 짧은 것(본래 지속의 12~29%%)으로 덮어썼다 — 34초짜리가 4~10초가 됐다</span><span class="pn-ar">&rarr;</span><span class="pn-a">별도 버프 **Last Chance II** 를 건다(지속 식은 그대로). 기존 Last Chance 는 안 건드리고, 치명타 때 **II 부터 소모**</span></div>
+          <div class="pn-row"><span class="pn-f">Remorse 를 끌 때 걸리는 Last Chance</span><span class="pn-b">대상의 Last Chance 를 **지우고** 짧은 것(본래 지속의 12~29%)으로 덮어썼다 — 34초짜리가 4~10초가 됐다</span><span class="pn-ar">&rarr;</span><span class="pn-a">별도 버프 **Last Chance II** 를 건다(지속 식은 그대로). 기존 Last Chance 는 안 건드리고, 치명타 때 **II 부터 소모**</span></div>
           <p class="pn-why">플레이어 제보</p>
           <p class="pn-x">II 는 **항상 1회**다 — 55레벨 탤런트의 「한 번 더 막기」는 Last Chance(1) 에만 붙는다. **지속 치유(Improved)는 II 에 안 붙는다**(patch_lc2_plain.py). Empowered 보호막은 II 에도 붙는다 — 마이너스 체력 재생 상태에서 막은 직후 죽는 것을 그 보호막이 상쇄하기 때문이다. **35% 체력 아이템 효과는 II 에 안 붙는다** — II 는 항상 체력 1 로 남긴다. 버프 아이콘은 보랏빛 + 금색 II 배지로 따로 만들었다(patch_lc2_icon.py).</p>
         </div>
@@ -2250,6 +2295,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Venomancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Toxic Nail (Q)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Toxic Nail (Q)</span>
+            <span class="pn-fn">war3map.w3a A0IP aran · patch_ancl_range.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">시전 사거리 (버그 수정)</span><span class="pn-b">스킬 레벨이 높으면 **근접 사거리**로 나갔다</span><span class="pn-ar">&rarr;</span><span class="pn-a">**1~5레벨 전부 500** (원래 값 그대로)</span></div>
+          <p class="pn-why">맵에 사거리 값이 없어 클라이언트 기본값에 기대고 있었다 — 기본 표에 없는 높은 레벨에서 0 이 됐다</p>
+          <p class="pn-x">같은 구조의 Putrefaction (W) · Emerald Rose (E) · Arcanist Drain Spirit (E) · Chronowarper Transcendimension (E) 에도 사거리 500 을 명시했다. 이 넷은 체감 변화가 없다.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">AOT 쫄 덩어리 (불 21 · 얼음 25)</span></summary>
           <div class="pn-gbody">
         <div class="pn-item">
@@ -2258,7 +2318,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-sk">AOT 쫄 덩어리 (불 21 · 얼음 25)</span>
             <span class="pn-fn">YEQ 의 FQN(xp*1.15) -&gt; FQN(xp*1.725) · patch_aotxp.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">전멸 보상 경험치</span><span class="pn-b">3마리 31 / 4마리 40 / 5마리 48  (불 한 바퀴 861 · 얼음 1,029)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**+50%%** — 47 / 60 / 72  (불 한 바퀴 1,293 · 얼음 1,545)</span></div>
+          <div class="pn-row"><span class="pn-f">전멸 보상 경험치</span><span class="pn-b">3마리 31 / 4마리 40 / 5마리 48  (불 한 바퀴 861 · 얼음 1,029)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**+50%** — 47 / 60 / 72  (불 한 바퀴 1,293 · 얼음 1,545)</span></div>
           <p class="pn-why">한 바퀴 돌면 24레벨이라 애매하다. 25~26 이 되도록</p>
           <p class="pn-x">골드는 그대로다. 난이도(Normal x1 ~ Nightmare x1.8)·무작위 0.8~1.2·레벨차·행운 배율은 그 위에 그대로 붙는다. 덩어리의 마지막 한 마리가 죽을 때 한 번에 지급된다.</p>
         </div>
@@ -2278,7 +2338,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-sk">Mana Fiend (22레벨) — 피해 반사</span>
             <span class="pn-fn">YCQ (조건 YBQ: 맞은 유닛이 n03X) · patch_manafiend_cap.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">한 번에 되돌리는 피해 상한</span><span class="pn-b">상한 없음 — 받은 피해의 12%%(Normal) / 22%%(그 외)를 그대로 반사</span><span class="pn-ar">&rarr;</span><span class="pn-a">**상한 100 x 난이도 배율** — 1인 기준 Normal 75 / 난이도2 105 / 난이도3 125 / Nightmare 135 (인원 1명당 +5)</span></div>
+          <div class="pn-row"><span class="pn-f">한 번에 되돌리는 피해 상한</span><span class="pn-b">상한 없음 — 받은 피해의 12%(Normal) / 22%(그 외)를 그대로 반사</span><span class="pn-ar">&rarr;</span><span class="pn-a">**상한 100 x 난이도 배율** — 1인 기준 Normal 75 / 난이도2 105 / 난이도3 125 / Nightmare 135 (인원 1명당 +5)</span></div>
           <p class="pn-why">큰 한 방·광역으로 여러 마리를 치면 반사만으로 죽었다</p>
           <p class="pn-x">반사 비율은 그대로이고 상한만 생겼다. 상한은 맵 표준 난이도 배율 함수 BIN(100, 피엔드) — 보스 기믹과 같은 식이다.</p>
         </div>
@@ -2290,7 +2350,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
           <div class="pn-row"><span class="pn-f">예고</span><span class="pn-b">생성 즉시 날아감</span><span class="pn-ar">&rarr;</span><span class="pn-a">**2초 예고** — 시작점에 반투명으로 서 있다가 출발 (그동안 피해 없음)</span></div>
           <p class="pn-why">어디서 오는지 보이게</p>
-          <p class="pn-x">벽에 튕겨 갈라진 두 발(`g==1`)은 예고 없이 그대로다. 쿨(5초·30%% 미만 3초)은 안 바뀌었다.</p>
+          <p class="pn-x">벽에 튕겨 갈라진 두 발(`g==1`)은 예고 없이 그대로다. 쿨(5초·30% 미만 3초)은 안 바뀌었다.</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
