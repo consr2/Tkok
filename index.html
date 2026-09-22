@@ -2209,7 +2209,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-22</span><span class="pn-cnt">12건</span><span class="pn-peek">Paladin 5 · 기타 7</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-22</span><span class="pn-cnt">16건</span><span class="pn-peek">Paladin 5 · 기타 11</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Paladin</span><span class="pn-cnt">5건</span><span class="pn-peek">Divine Hammer (T16, 패시브) · Light Infusion (T) · Unbreakable Spirit (T13) · Divine Touch (E) · Holy Trial (T26) 5점 · Mark of Sanctuary (W) · Improved M. of S. (T4) 외 1</span></summary>
@@ -2262,8 +2262,44 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">7건</span><span class="pn-peek">큐브 (27번) — 공격 · 기믹 순서 · 특수기믹 뽑기 · 색깔 · 테두리 큐브 · 찾기 · 큐브 (27번) — 지뢰 · 큐브 (27번) — 70% 찾기 · 45% 빙고 · 바운티 (노말 · 하드 · 에픽) 외 3</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">11건</span><span class="pn-peek">Cursing Crystal (상점 결정) · Fading Cloak (상점 결정) · Curse Saver Spar (상점 결정) · Force Gem (상점 결정) 외 7</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Cursing Crystal (상점 결정)</span>
+            <span class="pn-fn">F5P (D5A) · patch_crystal4.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">방어력 증가 지속 시간</span><span class="pn-b">3초</span><span class="pn-ar">&rarr;</span><span class="pn-a">**5초**</span></div>
+          <p class="pn-x">방어력 증가량(레벨×8)과 쿨다운 40초는 그대로.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Fading Cloak (상점 결정)</span>
+            <span class="pn-fn">A0HO (acdn) · patch_crystal4.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">쿨다운</span><span class="pn-b">60초</span><span class="pn-ar">&rarr;</span><span class="pn-a">**40초**</span></div>
+          <p class="pn-x">효과(3초간 어그로 생성 0%)는 그대로.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Curse Saver Spar (상점 결정)</span>
+            <span class="pn-fn">F5P · ZzSvRgGo · ZzSvRgAdd (버프 칸 L5G) · patch_crystal4.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">비정상 상태 해제 뒤 효과</span><span class="pn-b">모든 비정상 상태 해제만</span><span class="pn-ar">&rarr;</span><span class="pn-a">해제 + **10초 동안 체력 재생 +100** (버프 아이콘이 뜬다)</span></div>
+          <p class="pn-x">쿨다운 60초는 그대로.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Force Gem (상점 결정)</span>
+            <span class="pn-fn">GVP (EBA 종료 콜백 MGU 제거) · patch_crystal4.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">사용 뒤 부작용</span><span class="pn-b">3초간 치명타 100% 뒤 **2초간 치명타 0%**</span><span class="pn-ar">&rarr;</span><span class="pn-a">3초간 치명타 100% — **부작용 없음**</span></div>
+          <p class="pn-x">쿨다운 60초는 그대로.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
