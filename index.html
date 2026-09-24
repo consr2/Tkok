@@ -2209,11 +2209,36 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-24</span><span class="pn-cnt">19건</span><span class="pn-peek">Necromancer 12 · 기타 7</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-24</span><span class="pn-cnt">23건</span><span class="pn-peek">명령어 1 · Necromancer 13 · 기타 9</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">12건</span><span class="pn-peek">Necrosummon — 사악한 오라 이속 · 리치 Frost Armor · Soul Shock · Int -&gt; 스펠파워 (스탯 장부) · Death Light (W) · Soul Control 외 5</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk — 마지막 보스전 스킬별 미터기</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-sk — 마지막 보스전 스킬별 미터기</span>
+            <span class="pn-fn">ZzSkDmg · ZzSkTag · ZzSkMb · patch_skmeter.py ~ patch_skmeter11.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">새 명령 (전원용)</span><span class="pn-b">보스전 성적표(`-ls`)는 플레이어 합계뿐 — 어느 스킬이 얼마나 넣었는지는 알 수 없었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">채팅에 **`-sk`** 를 치면 **마지막 보스전을 스킬 줄마다** 피해 · 지분 · DPS · 회복 · HPS · MP 회복 · 시전 횟수로 보여 준다 (멀티보드, 본인만 · 다시 치면 닫힘). 줄 = Q/W/E/R/T/Y 6개 + 평타 + 소환수·기타 유닛 + 미분류</span></div>
+          <p class="pn-why">스킬별 딜 비중을 보고 탤런트·장비를 고르기 위해</p>
+          <p class="pn-x">보스 구역에서 들어간 첫 피해가 기록을 열고, 처치·리셋이 닫는다(다른 보스로 넘어가면 새로 연다). 도트·투사체·소환수 피해도 시전한 스킬 줄로 간다. 「미분류」는 시전 문맥 없이 들어온 피해(패시브 발동·전역 틱)다. 마나 환불(실패한 스킬 비용 되돌림)은 MP 회복으로 안 센다. 같은 날 고친 것 (버그 수정): ① 보스전을 **여는** 첫 시전이 횟수 0 으로 빠지던 것(네크로 Q 하나로 전투를 열면 피해는 찍히고 횟수 0) — 이제 1. ② 비전투 회복(3초 뒤 0.5초마다 체력·마나 10%)·마나 재생 틱이 시전과 같은 순간에 돌면 그 스킬 줄의 MP 회복으로 잡히던 것(네크로 Q 에 190) — 이제 안 잡힌다.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">13건</span><span class="pn-peek">Necrosummon — 상급·최상급 사령 확률 · Necrosummon — 사악한 오라 이속 · 리치 Frost Armor · Soul Shock · Int -&gt; 스펠파워 (스탯 장부) · Death Light (W) 외 8</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Necrosummon — 상급·최상급 사령 확률</span>
+            <span class="pn-fn">ZzNcNS · patch_necro_empgate.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Empowered Necrosummon 을 안 배웠을 때 (버그 수정)</span><span class="pn-b">Be With Me 3포인트(+10%) · Netherworld Summon(+5~25%, 5포인트 최상급 15%)만으로도 **상급·최상급 사령이 나왔다**</span><span class="pn-ar">&rarr;</span><span class="pn-a">상급 사령을 여는 **Empowered Necrosummon 이 0 이면 확률 보너스도 0** — 배운 뒤에만 더해진다 (툴팁 한/영에 「Empowered Necrosummon 필요」)</span></div>
+          <p class="pn-why">상급 소환 스킬을 안 찍었는데 40레벨 탤런트가 상급 확률을 올려 주는 것은 맞지 않다</p>
+          <p class="pn-x">Empowered Necrosummon 을 배운 뒤의 수치는 그대로다: 20/40% + Be With Me 3포인트 10% + Netherworld 5~25%, 5포인트 최상급 15%.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
@@ -2246,10 +2271,10 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
             <span class="pn-sk">Soul Control</span>
-            <span class="pn-fn">ZzNcNum · A0S5 · patch_necro_bwmsc_orig.py</span>
+            <span class="pn-fn">ZzNcNum (sc) · A0S5 · ZzNcTree (MNN) · ZzTtLv · patch_necro_bwmsc_orig.py · patch_necro_sc13.py · patch_necro_bwmsc_lv.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">효과 2가지 제거 (원위치)</span><span class="pn-b">포인트당 +15% + 2포인트: Be With Me 감소 제거 · 3포인트: Karma 쿨 18 -&gt; 15</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트당 +15% **뿐** (2026-09-23 이전으로)</span></div>
-          <p class="pn-x">Karma 능력은 다시 1레벨 하나 — 쿨·툴팁 18초.</p>
+          <div class="pn-row"><span class="pn-f">마스터리 배율 · 효과 2가지 제거 · 요구 레벨 (원위치)</span><span class="pn-b">포인트당 **+15%** + 2포인트: Be With Me 감소 제거 · 3포인트: Karma 쿨 18 -&gt; 15 · 요구 레벨 40</span><span class="pn-ar">&rarr;</span><span class="pn-a">**포인트당 +13% 뿐** (2026-09-21 이전 값으로 완전 원위치) · 요구 레벨 1포인트 **12** · 2포인트 **20** · 3포인트 **24**</span></div>
+          <p class="pn-x">Necro Mastery · Phantom Mastery 둘 다에 곱한다 — 55레벨 + 3포인트: Necro x2.919 · Phantom x2.331. Karma 능력은 다시 1레벨 하나(쿨·툴팁 18초). 선행 관계(Be With Me 의 선행 = Soul Control)는 그대로.</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
@@ -2290,15 +2315,6 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
-            <span class="pn-sk">Soul Control</span>
-            <span class="pn-fn">ZzNcNum (sc) · patch_necro_sc13.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">마스터리 배율 (포인트당)</span><span class="pn-b">포인트당 **+15%**</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트당 **+13%** (2026-09-21 이전 값)</span></div>
-          <p class="pn-x">Necro Mastery · Phantom Mastery 둘 다에 곱한다. 55레벨 + 3포인트: Necro x3.045 -&gt; x2.919 · Phantom x2.432 -&gt; x2.331.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Necromancer</span>
             <span class="pn-sk">Be With Me</span>
             <span class="pn-fn">ZzNcTree (MNN) · ZzTtLv · patch_necro_bwmsc_lv.py</span>
           </div>
@@ -2308,25 +2324,46 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
-            <span class="pn-sk">Soul Control</span>
-            <span class="pn-fn">ZzNcTree (MNN) · ZzTtLv · patch_necro_bwmsc_lv.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">요구 레벨</span><span class="pn-b">40</span><span class="pn-ar">&rarr;</span><span class="pn-a">1포인트 **12** · 2포인트 **20** · 3포인트 **24**</span></div>
-          <p class="pn-x">선행 관계(Be With Me 의 선행 = Soul Control)는 그대로.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Necromancer</span>
             <span class="pn-sk">Be With Me</span>
             <span class="pn-fn">ZzTtLv · patch_necro_bwmsc_orig.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">요구 레벨 (원위치)</span><span class="pn-b">1포인트 12 · 2포인트 **20** · 3포인트 24</span><span class="pn-ar">&rarr;</span><span class="pn-a">1~2포인트 **12** · 3포인트 24</span></div>
         </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Soul Shock · 주문 치명 탤런트</span>
+            <span class="pn-fn">ZzNcFix · 새 ZzNcSync (ZzTempTick 매초) · patch_necro_resync.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">불러오기 뒤 적용 (버그 수정)</span><span class="pn-b">로드 직후 탤런트 스탯 보너스(Int→SP · 치명 확률/위력)가 **0** — 레벨업·탤런트 지출·사망 뒤에야 붙었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">로드 끝에 재계산 + 매초 Int·레벨·탤런트가 바뀌면 재계산(장비 착탈 포함)</span></div>
+          <p class="pn-why">같은 장비인데 캐릭·로드 순서마다 SP·주문 치명이 달랐다</p>
+          <p class="pn-x">수치 계수는 안 바뀌었다. 원작 직업은 수치 함수가 스탯을 안 건드려 무관.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Undead Harvest</span>
+            <span class="pn-fn">ZzNcUFHit · patch_necro_uhdummy.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">훈련장 더미 (버그 수정)</span><span class="pn-b">더미(Practice Target)도 포인트당 1% **즉사**</span><span class="pn-ar">&rarr;</span><span class="pn-a">더미는 **보스 갈래** — 즉사 없음 · 보스식 피해 ×(1+0.1×포인트)</span></div>
+          <p class="pn-why">훈련장 더미가 죽어 버렸다 — 더미는 템플릿이 없어 보스 판정(K9H)에 안 걸렸다</p>
+          <p class="pn-x">즉사 확률·보스 계수는 안 바뀌었다. 실제 몬스터에는 영향 없음.</p>
+        </div>
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">7건</span><span class="pn-peek">Fate Card — Justice · The Hanged Man · Death (힘 · 민첩 · 지능) · Fate Card — The Emperor (최대 체력) · Fate Card — The Empress (최대 마나) · Fate Card — The Hermit (마나 재생) 외 3</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">9건</span><span class="pn-peek">Mana Fiend (22레벨) — 피해 반사 · Fate Card — Justice · The Hanged Man · Death (힘 · 민첩 · 지능) · Fate Card — The Emperor (최대 체력) · Fate Card — The Empress (최대 마나) 외 5</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">몬스터</span>
+            <span class="pn-sk">Mana Fiend (22레벨) — 피해 반사</span>
+            <span class="pn-fn">YCQ · patch_manafiend_cap300.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">한 번에 되돌리는 피해 상한</span><span class="pn-b">**100 x 난이도 배율** — 1인 기준 Normal 75 / 난이도2 105 / 난이도3 125 / Nightmare 135 (인원 1명당 +5)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**300 x 난이도 배율** — 1인 기준 Normal 225 / 난이도2 315 / 난이도3 375 / Nightmare 405 (인원 1명당 +15)</span></div>
+          <p class="pn-why">상한 100 은 너무 낮아 반사가 거의 의미가 없었다</p>
+          <p class="pn-x">반사 비율(Normal 12% / 그 외 22%)과 피해 경로는 그대로다. 마법 저항이 걸리니 실제 수치는 더 낮게 뜬다.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
@@ -2387,6 +2424,16 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
           <div class="pn-row"><span class="pn-f">스펠파워</span><span class="pn-b">**2**</span><span class="pn-ar">&rarr;</span><span class="pn-a">**13**</span></div>
           <p class="pn-x">나머지 능력치는 그대로.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Ignisolith — 전멸 리셋</span>
+            <span class="pn-fn">ZzS3Reset · ZzBmEnd(폭탄 뒤 15초 유예) · patch_s3reset_circle.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">판정 범위 (버그 수정)</span><span class="pn-b">원형 **+ 통로** 어느 쪽이든 산 영웅이 있으면 리셋 안 함</span><span class="pn-ar">&rarr;</span><span class="pn-a">**원형 안**에 산 영웅이 없으면(5초 연속) 리셋 — 통로는 **폭탄 기믹 중에만** 센다</span></div>
+          <p class="pn-why">통로에 한 명 서 있으면 원 안이 전멸해도 보스가 안 풀렸다</p>
+          <p class="pn-x">보스 이탈 리셋은 그대로 즉시. 폭탄은 원 안 빨간 링에 닿아야 끝나므로 끝나는 순간엔 원 안에 사람이 있다.</p>
         </div>
           </div>
         </details>
@@ -3391,8 +3438,23 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         </div>
       </details>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-09</span><span class="pn-cnt">4건</span><span class="pn-peek">Necromancer 3 · 기타 1</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-09</span><span class="pn-cnt">5건</span><span class="pn-peek">명령어 1 · Necromancer 3 · 기타 1</span></summary>
         <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-tw &lt;30~130&gt; — 탤런트 창 설명 줄바꿈 폭</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-tw &lt;30~130&gt; — 탤런트 창 설명 줄바꿈 폭</span>
+            <span class="pn-fn">ZzTwCmd · patch_twcmd.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">새 명령 (전원용)</span><span class="pn-b">`-tt` 탤런트 설명의 한 줄 폭이 고정이라 모니터 비율에 따라 오른쪽이 잘리거나 줄이 너무 짧았다</span><span class="pn-ar">&rarr;</span><span class="pn-a">**`-tw 숫자`**(30~130, 바이트)로 **자기 화면의 줄바꿈 폭**을 정한다. 기본 한글 52 · 영어 58. 범위 밖이면 사용법 한 줄</span></div>
+          <p class="pn-why">모니터 비율이 달라 같은 폭이 어떤 화면에서는 잘렸다</p>
+          <p class="pn-x">플레이어별 설정이고 세이브에는 안 들어간다 — 판마다 다시 친다.</p>
+        </div>
+          </div>
+        </details>
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">3건</span><span class="pn-peek">Necrosummon 사령 평타 · Necro Mastery · Phantom Mastery</span></summary>
           <div class="pn-gbody">
@@ -4097,6 +4159,26 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">스펠파워 계수</span><span class="pn-b">1.8</span><span class="pn-ar">&rarr;</span><span class="pn-a">2.5</span></div>
           <p class="pn-why">메테오 상향</p>
           <p class="pn-x">기본 피해 40 은 그대로. 탤런트 Meteor Shower 배율(최대 ×1.50)은 그 위에 곱해진다.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-04</span><span class="pn-cnt">1건</span><span class="pn-peek">명령어 -skill eng / -skill kor — 설명 언어</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-skill eng / -skill kor — 설명 언어</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-skill eng / -skill kor — 설명 언어</span>
+            <span class="pn-fn">ZzLangEn[p] · ZzLangS · ZzMsg/ZzMsgT · patch_ttlang.py · patch_bossmsg_lang.py · patch_vxlang.py · patch_itemlang.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">새 명령 (전원용)</span><span class="pn-b">탤런트 설명·보스 기믹 문구가 한국어뿐</span><span class="pn-ar">&rarr;</span><span class="pn-a">**`-skill eng`** 로 자기 화면만 영어, **`-skill kor`** 로 한국어(기본). 스킬 **이름**은 늘 영어다</span></div>
+          <p class="pn-why">영어 사용자와 같이 놀 수 있게 — 방장이 모두의 것을 바꾸는 방식은 쓰지 않았다</p>
+          <p class="pn-x">바뀌는 범위(넣은 날짜순): 탤런트 창 `-tt` 설명 548칸(09-04) · 이름을 부르는 보스 기믹 문구 73줄(09-06) · VX 안내문·업적 티어 표(09-19) · 아이템 추가 특수능력 84종의 장비 상세판 문구(09-22). 스킬 버튼 툴팁·아이템 마우스 툴팁은 아직 한국어 고정. 세이브에는 안 들어간다 — 판마다 다시 친다.</p>
         </div>
           </div>
         </details>
