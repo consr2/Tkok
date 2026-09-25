@@ -2209,7 +2209,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">2건</span><span class="pn-peek">Fighter Power Control (15) · Senior Heart (16) · Broken Force (17) · Warpath Burst (55탤런트 36) · Necromancer Death Wisper (탤런트 15) · Soul Shock (탤런트 16)</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">6건</span><span class="pn-peek">Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 3</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">1건</span><span class="pn-peek">Power Control (15) · Senior Heart (16) · Broken Force (17) · Warpath Burst (55탤런트 36)</span></summary>
@@ -2227,6 +2227,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Medicaster</span><span class="pn-cnt">1건</span><span class="pn-peek">Sage&#x27;s Hour (55탤런트 31) · Sheltering Spirit (34)·Last Chance · Dirge (33)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Medicaster</span>
+            <span class="pn-sk">Sage&#x27;s Hour (55탤런트 31) · Sheltering Spirit (34)·Last Chance · Dirge (33)</span>
+            <span class="pn-fn">M7Q · QHN · ZzTknQ · NRQ · PRO · ZzNfCond · patch_medi55_fix.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">효과 (버그 수정) · 설명</span><span class="pn-b">① Sage&#x27;s Hour 5포인트로 Remorse 를 켜면 Sly Peace 가 최대(Payback 4회분)로 때리다가 **Payback 을 쓰면 3회분으로 약해졌다** ② **체력이 낮을 때 평타**를 맞으면 Last Chance(쉐도우 샤먼 죽음 방지도)가 거의 안 터져 즉사했다 — 큰 한 방에는 정상 ③ Dirge 5포인트의 「주문 피해 60% 감소」가 적의 주문이 아니라 **Natural Fluctuating 을 받은 아군 자신이 주는 주문 피해**를 깎고 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">① 5포인트면 Payback 이 Sly Peace 위력을 건드리지 않는다(이식 원본 CN 과 같다) — Sly Peace 3포인트 기준 Payback 3회 쌓은 상태의 2배 ② 평타로 죽을 피해도 Last Chance·쉐도우 샤먼 죽음 방지가 정상적으로 막는다 ③ Natural Fluctuating 을 받은 아군이 **받는** 주문 피해(주문·광역·지속)가 60% 준다 — 아군의 주문 피해는 원래대로. 설명: Sage&#x27;s Hour 5포인트 문구 구체화 · Dirge 의 +10%/포인트는 Natural Prey 의 추가 방어도 · 「NF 걸린 아군이 받는」</span></div>
+          <p class="pn-why">메디캐스터 55탤런트 버그 제보</p>
+          <p class="pn-x">② 는 원작 8e 부터 있던 버그 — 평타 피해는 체력을 미리 채운 채 처리돼 「남은 체력」 판정이 맞기 전 체력 기준이 됐다. Dirge 를 올려도 Natural Fluctuating 의 피해 증가량은 오르지 않는다(원래 설계 — 오르는 것은 추가 방어도).</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Death Wisper (탤런트 15) · Soul Shock (탤런트 16)</span></summary>
           <div class="pn-gbody">
         <div class="pn-item">
@@ -2238,6 +2253,38 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">스탯 창 스펠파워 · 주문 치명 확률/위력 (버그 수정 · 계산 방식 정리)</span><span class="pn-b">다른 사람이 먼저 불러온 판에서 네크로를 불러오면, **그 사람 탤런트 트리의 15·16번 포인트만큼** 스펠파워(지능×0.1×포인트)·주문 치명 확률(레벨×0.075×포인트)·위력(레벨×0.3×포인트)이 빠진 채로 고정됐다. 두 탤런트의 스탯은 다른 직업과 다른 별도 장치(매초 검사)로 계산하고 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">영웅 확정 도중 탤런트 트리가 아직 없을 때는 계산하지 않고, 두 탤런트의 스탯을 **다른 직업과 같은 원작 재계산 경로**로 옮겼다 — 장비 교체·레벨업·탤런트 찍기·스탯 리스펙·부활 때 다시 계산된다. 식(지능×0.1 · 레벨×0.075/0.3 × 포인트)은 그대로. 불러오는 순서와 상관없이 같은 장비·탤런트면 같은 수치</span></div>
           <p class="pn-why">「불러오는 순서에 따라 주문 치명이 빠진다」는 신고가 두 번의 수정 뒤에도 남아 있었고, 원작의 같은 탤런트(지능→스펠파워 · 레벨당 주문 치명)와 방식을 맞추기로 했다</p>
           <p class="pn-x">이미 빠진 캐릭은 다시 불러오면 정상으로 돌아온다(세이브에는 기본 스탯만 들어간다). 09-24 신고의 차이 12.15/48.6 은 레벨 54 × 3포인트 — 네크로 16번 칸은 최대 2포인트라 남의 트리였다는 증거.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">25번 Frostmaw 드롭 11종 · 26번 Ignisolith 드롭 10종 · 25 Frostmaw — 등장 시점 · 25 Frostmaw · 26 Ignisolith · 27 Chaos Cube</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">25번 Frostmaw 드롭 11종 · 26번 Ignisolith 드롭 10종</span>
+            <span class="pn-fn">카탈로그 K4M — ZzDropId(25번) · ZzS3DrpId(26번) 풀 21종 · patch_bossdrop75.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">능력치 25% 하향(25번 크리파워 제외) · ice wand 마나 삭제</span><span class="pn-b">예: ice wand 지능 100 · 마나 400 · 스펠파워 120 · 스펠크리 8% · 스펠크리파워 60% · 마법 저항 5% / fire amulet A 방어력 30 · 어택파워 333 / ice ring 힘·민첩·지능 80 · 이동 속도 100 · 체력 350 · 공격 속도 80% · 추가 경험치 50% · 추가 골드 70%</span><span class="pn-ar">&rarr;</span><span class="pn-a">좋은 능력치(양수)를 모두 ×0.75 — **단, 25번 아이템의 어택·스펠 크리파워는 그대로** — 예: ice wand 지능 75 · **마나 없음** · 스펠파워 90 · 스펠크리 6% · 스펠크리파워 60%(그대로) · 마법 저항 3.75% / fire amulet A 방어력 23 · 어택파워 250 / ice ring 힘·민첩·지능 60 · 이동 속도 75 · 체력 263 · 공격 속도 60% · 추가 경험치 37.5% · 추가 골드 52.5%. 불이익(체력 재생 −20 · 체력 −250 · 방어력 −100 · 이동 속도 −20 등)은 그대로</span></div>
+          <p class="pn-x">정수로 보이는 능력치는 반올림, 소수로 보이는 능력치(재생·공속·크리·회피·블럭·경험치·골드·마법 저항)는 정확히 25% 뺐다. 이미 가진 아이템도 불러오면 새 수치다.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw — 등장 시점</span>
+            <span class="pn-fn">KNN (Frostmaw 워프 Func) · ZzS2GateIn · ZzS2SpawnBoss · patch_s2warpspawn.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">보스가 생기는 시점</span><span class="pn-b">Gant 의 Frostmaw 워프로 입구 마당에 도착한 뒤 원형 경기장 입구까지 걸어가야 보스가 생겼다</span><span class="pn-ar">&rarr;</span><span class="pn-a">워프를 누르는 순간 보스가 경기장에 생긴다 — 전투는 그대로 원형 경기장(링) 안에 들어가야 시작한다. 한 판에 한 번만 생기는 것도 그대로</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw · 26 Ignisolith · 27 Chaos Cube</span>
+            <span class="pn-fn">ZzBossAtk · ZzBossRescale · ZzBossHpTo · ZzPlayN · ZzS4Hp · patch_bossscale.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">난이도 추가 공격력 (버그 수정) · 인원이 줄 때 체력</span><span class="pn-b">난이도 공격력 오라가 **레전더리에서만** 걸렸다 — 하드코어·나이트메어에서는 보스 공격력 보너스가 +20~30 으로 노말과 같았다(26번: 노말 +23 · 레전더리 +2,000 · 하드코어 +23). 보스 체력은 입장할 때의 인원으로 한 번만 정해져, 누가 저장 후 나가도 그대로였다</span><span class="pn-ar">&rarr;</span><span class="pn-a">난이도 공격력을 보스 기본 공격력의 **레전더리 9% · 하드코어 15% · 나이트메어 23%**(챔피언 모드 하드코어 23% · 엠파워드 타워 27%) 고정 보너스로 준다 — 26번 +1,980 / +3,300 / +5,060 · 25번 +2,257 / +3,762 / +5,768 · 27번 +2,700 / +4,500 / +6,900. 누가 저장 후 나가면 **1초 안에** 남은 인원으로 보스 최대 체력을 다시 계산한다(체력 % 는 그대로, 인원당 +35% 식 그대로)</span></div>
+          <p class="pn-why">난이도 공격력 오라가 원작 데이터 버그로 하드코어 이상에서 아무에게도 안 걸렸다 · 원작 보스는 전투를 시작할 때마다 그때 인원으로 체력을 다시 정한다</p>
+          <p class="pn-x">저장 후 나간 사람은 인원에서 빠진다(원작 보스와 같은 기준). 일반 몬스터는 원작 그대로다(난이도 오라는 레전더리에서만 9%).</p>
         </div>
           </div>
         </details>
