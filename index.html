@@ -2209,8 +2209,35 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">6건</span><span class="pn-peek">Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 3</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">13건</span><span class="pn-peek">명령어 1 · Earthquaker 1 · Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 8</span></summary>
         <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk — 스킬별 미터기 창</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-sk — 스킬별 미터기 창</span>
+            <span class="pn-fn">ZzMbKeep (ZzTempTick) · patch_mbkeep.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">창이 금방 닫히던 것 (버그 수정)</span><span class="pn-b">포션 같은 아이템을 쓰거나 줍거나, ESC·인벤토리·탤런트 창을 여닫으면 기본 점수판이 다시 떠서 -sk 창이 사라졌다</span><span class="pn-ar">&rarr;</span><span class="pn-a">-sk 를 켜 둔 동안은 기본 점수판에 밀려도 곧바로 다시 보인다 — 인벤토리·탤런트 창을 연 동안만 비켜 준다. 끄는 것은 그대로 -sk 한 번 더</span></div>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Earthquaker</span><span class="pn-cnt">1건</span><span class="pn-peek">Rebirth Totem (부활 토템 — 탤런트)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Earthquaker</span>
+            <span class="pn-sk">Rebirth Totem (부활 토템 — 탤런트)</span>
+            <span class="pn-fn">DNP (사망 처리) · C9P (토템 부활) · patch_eqtotemc1d.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">부활 대기 중 보스 초기화 (버그 수정)</span><span class="pn-b">부활 토템으로 되살아나는 2초 동안 「완전히 죽은 사람」으로 취급됐다 — 보스 방 안에 산 사람이 어스퀘이커 혼자였으면 되살아나기 전에 보스가 초기화됐다(25번은 1초 만에)</span><span class="pn-ar">&rarr;</span><span class="pn-a">부활 토템 대기도 앙크·탤런트 부활처럼 「제자리 부활 중」으로 친다 — 되살아날 때까지 보스가 초기화되지 않는다(25·26·27번 · 원작 탑 보스방 · 어스퀘이커 전직 시험 공통)</span></div>
+          <p class="pn-why">원작에서 부활 토템만 「제자리 부활 중」 표시가 빠져 있었다</p>
+        </div>
+          </div>
+        </details>
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">1건</span><span class="pn-peek">Power Control (15) · Senior Heart (16) · Broken Force (17) · Warpath Burst (55탤런트 36)</span></summary>
           <div class="pn-gbody">
@@ -2257,15 +2284,56 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">25번 Frostmaw 드롭 11종 · 26번 Ignisolith 드롭 10종 · 25 Frostmaw — 등장 시점 · 25 Frostmaw · 26 Ignisolith · 27 Chaos Cube</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">8건</span><span class="pn-peek">25 Frostmaw — 유도탄 · 25 Frostmaw — 화로 · 26 Ignisolith — 룬 퍼즐 · 26 Ignisolith — 룬 퍼즐 실패 페널티 외 4</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw — 유도탄</span>
+            <span class="pn-fn">ZzS2Reset · ZzTempTick · patch_s2mist.py · patch_s2pattern.py · patch_s2duowarm.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">생성 주기 · 30% 이하 회차별 개수</span><span class="pn-b">체력 30% 초과 10초 · 30% 이하 5초</span><span class="pn-ar">&rarr;</span><span class="pn-a">체력 30% 초과 **14초** · 30% 이하 **7초**. 30% 이하에서는 화로·유도탄 모두 2명 **1·1·1·1**, 3~4명 **1·1·1·2**, 5명 이상 **2·2·2·2** 패턴. 유도탄은 탱커 제외·중복 대상 없음(2명 중 탱커 1명이면 매회 1발). 화로 12개 상한 유지. 30% 초과 화로는 10초 주기 유지</span></div>
+          <p class="pn-why">일반 유도탄 기믹 대응 시간을 늘림</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw — 화로</span>
+            <span class="pn-fn">ZzWarmSpawn · ZzWarmOne · ZzHeroN · patch_s2warm2.py · patch_s2pattern.py · patch_s2duowarm.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">한 번에 생기는 개수</span><span class="pn-b">화로는 인원과 상관없이 한 번에 1개씩 생겼다(유도탄만 5인 이상일 때 2발)</span><span class="pn-ar">&rarr;</span><span class="pn-a">경기장 안에 살아 있는 영웅이 **5명 이상**이면 화로가 **매회 2개**씩 생긴다. 30% 이하에서 1~2명은 **1·1·1·1**, 3~4명은 **1·1·1·2**, 5명 이상은 **2·2·2·2** 패턴. 최대 12개는 그대로</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">26 Ignisolith — 룬 퍼즐</span>
+            <span class="pn-fn">ZzRnHit · QHN · QFN (평타 파이프라인 표시) · patch_s3runeatk.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">룬을 부술 수 있는 피해</span><span class="pn-b">룬은 어떤 피해로든 깎였다 — 샤먼 뱀 토템·소환수 평타, 메디캐스터 주변 지속 피해, 광역 스킬에 엉뚱한 룬이 먼저 부서져 순서가 꼬였다</span><span class="pn-ar">&rarr;</span><span class="pn-a">룬은 **영웅 본체의 기본공격으로만** 깎인다(근접·원거리 모두). 스킬·지속 피해·평타 부가 효과·소환수·와드·환영의 피해는 룬에 들어가지 않는다</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">26 Ignisolith — 룬 퍼즐 실패 페널티</span>
+            <span class="pn-fn">ZzS3Blk (ZzRnPen) · patch_s3penblk.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Z 막기 성공 보상</span><span class="pn-b">룬 퍼즐을 실패하면 게이지 자동 회복만 절반(2초당 +1)이었고, 막기 성공 보상은 그대로였다 — 파동 +10(즉시 가득) · 분열 미사일 +5 · 반사공 +5</span><span class="pn-ar">&rarr;</span><span class="pn-a">룬 퍼즐 실패 뒤에는 막기 성공 보상도 절반(소수점 버림) — **파동 +5 · 분열 미사일 +2 · 반사공 +2**. 리셋 뒤 다음 전투는 원래대로</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">딜미터기(기본 점수판) · 스탯창</span>
+            <span class="pn-fn">T4O · A5U · UNO · AWU (창 닫기) · ZzMbKeep (ZzTempTick) · patch_mbclose.py · patch_mbkeep.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">다른 창을 가리던 것 (버그 수정)</span><span class="pn-b">**다른 플레이어**가 탤런트·인벤토리 창을 닫기만 해도 모든 플레이어 화면이 딜미터기로 바뀌었다. 스탯창을 열어 둬도 누가 캐릭터를 불러오거나 나가거나, 아이템을 쓰거나 줍거나, 탤런트·인벤토리 창을 닫으면 딜미터기가 다시 떠서 스탯창이 사라졌다</span><span class="pn-ar">&rarr;</span><span class="pn-a">탤런트·인벤토리 창을 닫을 때 딜미터기는 **닫은 사람 화면에만** 뜬다. 스탯창을 열어 둔 동안은 딜미터기가 다시 떠도 곧바로 스탯창이 돌아온다(-sk 창도 같은 방식). 닫는 것은 그대로 스탯창 버튼</span></div>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">아이템</span>
             <span class="pn-sk">25번 Frostmaw 드롭 11종 · 26번 Ignisolith 드롭 10종</span>
             <span class="pn-fn">카탈로그 K4M — ZzDropId(25번) · ZzS3DrpId(26번) 풀 21종 · patch_bossdrop75.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">능력치 25% 하향(25번 크리파워 제외) · ice wand 마나 삭제</span><span class="pn-b">예: ice wand 지능 100 · 마나 400 · 스펠파워 120 · 스펠크리 8% · 스펠크리파워 60% · 마법 저항 5% / fire amulet A 방어력 30 · 어택파워 333 / ice ring 힘·민첩·지능 80 · 이동 속도 100 · 체력 350 · 공격 속도 80% · 추가 경험치 50% · 추가 골드 70%</span><span class="pn-ar">&rarr;</span><span class="pn-a">좋은 능력치(양수)를 모두 ×0.75 — **단, 25번 아이템의 어택·스펠 크리파워는 그대로** — 예: ice wand 지능 75 · **마나 없음** · 스펠파워 90 · 스펠크리 6% · 스펠크리파워 60%(그대로) · 마법 저항 3.75% / fire amulet A 방어력 23 · 어택파워 250 / ice ring 힘·민첩·지능 60 · 이동 속도 75 · 체력 263 · 공격 속도 60% · 추가 경험치 37.5% · 추가 골드 52.5%. 불이익(체력 재생 −20 · 체력 −250 · 방어력 −100 · 이동 속도 −20 등)은 그대로</span></div>
+          <div class="pn-row"><span class="pn-f">능력치 25% 하향(25번 크리파워 제외) · ice wand 마나 삭제 · fire hat 조정</span><span class="pn-b">예: ice wand 지능 100 · 마나 400 · 스펠파워 120 · 스펠크리 8% · 스펠크리파워 60% · 마법 저항 5% / fire amulet A 방어력 30 · 어택파워 333 / ice ring 힘·민첩·지능 80 · 이동 속도 100 · 체력 350 · 공격 속도 80% · 추가 경험치 50% · 추가 골드 70% / fire hat A·B 방어력 28 · 체력 230 · 어택파워(A) 90 · 스펠파워(B) 80 · 이동 속도 −20</span><span class="pn-ar">&rarr;</span><span class="pn-a">좋은 능력치(양수)를 모두 ×0.75 — **단, 25번 아이템의 어택·스펠 크리파워는 그대로** — 예: ice wand 지능 75 · **마나 없음** · 스펠파워 90 · 스펠크리 6% · 스펠크리파워 60%(그대로) · 마법 저항 3.75% / fire amulet A 방어력 23 · 어택파워 250 / ice ring 힘·민첩·지능 60 · 이동 속도 75 · 체력 263 · 공격 속도 60% · 추가 경험치 37.5% · 추가 골드 52.5% / fire hat A·B 방어력 **33** · 체력 173 · 어택파워(A)·스펠파워(B) **96** · **이동 속도 감소 없음**. 그 밖의 불이익(체력 재생 −20 · 체력 −250 · 방어력 −100 등)은 그대로</span></div>
           <p class="pn-x">정수로 보이는 능력치는 반올림, 소수로 보이는 능력치(재생·공속·크리·회피·블럭·경험치·골드·마법 저항)는 정확히 25% 뺐다. 이미 가진 아이템도 불러오면 새 수치다.</p>
         </div>
         <div class="pn-item">

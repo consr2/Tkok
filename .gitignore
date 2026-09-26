@@ -14,3 +14,6 @@ $RECYCLE.BIN/
 *.md
 보스_수치표.html
 _base
+
+# Local Claude project snapshot (includes conversation history)
+/_claude_import/
