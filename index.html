@@ -2209,7 +2209,35 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">25건</span><span class="pn-peek">명령어 1 · Aeromancer 2 · Hydromancer 2 · Warrior 2 · Earthquaker 1 · Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 14</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-27</span><span class="pn-cnt">2건</span><span class="pn-peek">시스템 인벤토리·제련창 · 시스템 스탯·탤런트 초기화</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">인벤토리·제련창 · 스탯·탤런트 초기화</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">인벤토리·제련창</span>
+            <span class="pn-fn">W5O · XDO · patch_inventory_owner.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">다른 플레이어 선택 상태 간섭 수정</span><span class="pn-b">1번 플레이어가 특수 아이템 칸을 선택하면 다른 플레이어의 장비·제련칸 클릭도 막힐 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">클릭한 플레이어를 먼저 찾고 **본인의 선택 상태만 확인**. 오래된 클릭 영역 검색도 안전하게 종료</span></div>
+          <p class="pn-why">플레이어를 찾기 전에 p=0의 선택 상태를 검사하던 오류</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">스탯·탤런트 초기화</span>
+            <span class="pn-fn">TOO · TQO · TUO · KFU · KGU · patch_respec_cost.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">초반 초기화 비용 인하</span><span class="pn-b">20레벨까지 레벨당150골드, 이후 초과 레벨당500골드</span><span class="pn-ar">&rarr;</span><span class="pn-a">20레벨까지 **레벨당30골드**, 이후 초과 레벨당500골드 유지. 20레벨600 / 30레벨5600 / 60레벨20600골드. 두 초기화 책 설명 동기화</span></div>
+          <p class="pn-why">초보자의 스탯·스킬 재분배 비용 부담 완화</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">28건</span><span class="pn-peek">명령어 1 · Aeromancer 2 · Hydromancer 2 · Warrior 2 · Earthquaker 1 · Fighter 1 · Medicaster 1 · Necromancer 1 · Shadowblade 1 · 기타 16</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk — 스킬별 미터기 창</span></summary>
@@ -2353,8 +2381,40 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">14건</span><span class="pn-peek">25 Frostmaw · 25 Frostmaw — 화로 / 유도탄 · 25 Frostmaw — ice axe · 체력 엘릭서 — Fortification / Rampart / Divine Shield 외 8</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Shadowblade</span><span class="pn-cnt">1건</span><span class="pn-peek">Time Strike</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Shadowblade</span>
+            <span class="pn-sk">Time Strike</span>
+            <span class="pn-fn">TAU · JJQ · JHQ · patch_timestrike_meter.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">-sk 피해 분류 수정</span><span class="pn-b">평타에서 발동한 Time Strike 중첩 피해와 지연 추가타가 평타/미분류로 합산될 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">Time Strike의 중첩 피해·지연 추가타를 **Time Strike 항목**으로 집계. 기본 평타는 평타 항목 유지</span></div>
+          <p class="pn-why">평타 프록과 타이머 콜백에 누락된 스킬 출처 지정</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">16건</span><span class="pn-peek">-sk · 25 Frostmaw / 26 Ignisolith · 25 Frostmaw · 25 Frostmaw — 화로 / 유도탄 외 10</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">-sk</span>
+            <span class="pn-fn">ZzSkCmd · patch_sk_width.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">8자리 숫자 표시 폭 확장</span><span class="pn-b">숫자 칸 폭이 좁아 7~8자리 누적 수치가 잘려 보였다</span><span class="pn-ar">&rarr;</span><span class="pn-a">피해·DPS·회복·마나·시전 횟수 칸을 **8자리 표시 폭**으로 확대. 버프의 증가·감소 동시 표시 칸도 확대</span></div>
+          <p class="pn-why">큰 누적 수치를 잘리지 않게 표시</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw / 26 Ignisolith</span>
+            <span class="pn-fn">ZzAgTick · ZzBreathFire · ZzMisBurst · ZzWarmBoom · ZzGazeBoom · ZzStormBurn · ZzChainTick · ZzFzTick · patch_boss_damage.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">기믹 피해 상향</span><span class="pn-b">메테오6300·숨결6500·유도탄충돌/화로폭발4000·시선폭발3500·폭풍초당1500·사슬0.1초당300·절대영도오라초당500</span><span class="pn-ar">&rarr;</span><span class="pn-a">메테오 **7000** · 숨결 **7300** · 유도탄충돌/화로폭발 **5000** · 시선폭발 **4500** · 폭풍 **초당1800** · 사슬 **0.1초당400** · 절대영도오라 **초당1000** (난이도·저항 적용 전)</span></div>
+          <p class="pn-why">25·26번 기믹 피해 상향 및 보스 수치표·인원별 난이도 표 동기화</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
