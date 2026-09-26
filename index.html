@@ -1809,14 +1809,14 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 </div>
 <div class="sr-sk">
 <h4><span class="sr-n">2</span>Nucleus <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 0.1초</span></h4>
-<p class="sr-desc">핵 4개를 다 놓고 영웅이 4번째 핵 600 안에 있으면 1초마다 핵 600 안 적에게 <i class="sr-f">피해</i>×(1+<i class="sr-f">부가1</i>) (<span class="sr-ty">주문</span>, <b class="sr-t">Electromagnetic Field</b> 필요, 마나 -3/s). 핵은 사라지지 않는다</p>
+<p class="sr-desc"><b class="sr-t">Electromagnetic Field</b> 습득 후 핵 4개 모두의 600 범위에 든 적에게 매초 피해. <b class="sr-t">Magnetic Monopole</b> 5포인트면 기존 핵을 정리하고 새 핵 1개로 발동. 영웅은 마지막 핵 600 안에 있어야 하며 복귀 시 재개. <i class="sr-f">피해</i>, 영웅이 핵 450 안이면 ×(1+<i class="sr-f">부가1</i>), <span class="sr-ty">주문</span>, 작동 중 마나 -3/s</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">8.25 + 0.3×스펠파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Electromagnetic Field</b></td><td class="sr-eq"><b>×2.00</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 20 · 3점까지</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Magnetic Monopole</b></td><td class="sr-eq"><b>×1.50</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 31 · 5점까지</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">24.75 + 0.9×스펠파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: P1Q/P0Q/PZQ</p>
 </div>
 <div class="sr-sk">
 <h4><span class="sr-n">3</span>Current Surge (R) <span class="dps-kind buff">버프</span><span class="sr-cd">쿨 45초</span></h4>
-<p class="sr-desc">Current Surge 버프 <i class="sr-f">지속</i> 초. 핵이 받은 피해 <i class="sr-f">부가2</i> 배 누적 → <i class="sr-f">피해</i> 넘으면 광역 200 <i class="sr-f">피해</i> 방출 (/)</p>
+<p class="sr-desc">Current Surge 버프 <i class="sr-f">지속</i> 초. 버프 대상의 주문 피해(<span class="sr-ty">주문</span>/3/4)×시전자 XIF3를 대상 주변 450 안의 시전자 핵 하나에 누적. <i class="sr-f">피해</i> 이상이고 쿨다운이 끝나면 광역 200 <i class="sr-f">피해</i> 방출. 평타 제외. 방출 피해는 R로 집계</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">32 + 1.46×스펠파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Electron Cloud</b></td><td class="sr-eq"><b>×1.25</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 33 · 5점까지</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">40 + 1.825×스펠파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: P7Q/QAQ</p>
@@ -2209,7 +2209,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">13건</span><span class="pn-peek">명령어 1 · Earthquaker 1 · Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 8</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-26</span><span class="pn-cnt">25건</span><span class="pn-peek">명령어 1 · Aeromancer 2 · Hydromancer 2 · Warrior 2 · Earthquaker 1 · Fighter 1 · Medicaster 1 · Necromancer 1 · 기타 14</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk — 스킬별 미터기 창</span></summary>
@@ -2221,6 +2221,75 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
             <span class="pn-fn">ZzMbKeep (ZzTempTick) · patch_mbkeep.py</span>
           </div>
           <div class="pn-row"><span class="pn-f">창이 금방 닫히던 것 (버그 수정)</span><span class="pn-b">포션 같은 아이템을 쓰거나 줍거나, ESC·인벤토리·탤런트 창을 여닫으면 기본 점수판이 다시 떠서 -sk 창이 사라졌다</span><span class="pn-ar">&rarr;</span><span class="pn-a">-sk 를 켜 둔 동안은 기본 점수판에 밀려도 곧바로 다시 보인다 — 인벤토리·탤런트 창을 연 동안만 비켜 준다. 끄는 것은 그대로 -sk 한 번 더</span></div>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Aeromancer</span><span class="pn-cnt">2건</span><span class="pn-peek">Nucleus / Current Surge · Nucleus / Magnetic Monopole / Current Surge</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Aeromancer</span>
+            <span class="pn-sk">Nucleus / Current Surge</span>
+            <span class="pn-fn">PZQ · P9Q · QAQ · PUQ · patch_aero_charge.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">지속 피해 분류 · 아군 충전 (버그 수정)</span><span class="pn-b">Nucleus 필드가 미분류로 집계되고 R 충전이 버프 시전자 대신 공격자의 특성·핵을 조회해 일반 아군의 주문으로는 충전되지 않았다</span><span class="pn-ar">&rarr;</span><span class="pn-a">핵 필드 피해는 **Nucleus**, 충전 방출은 **Current Surge**로 집계한다. R을 받은 아군의 주문 피해가 시전자의 특성 비율로 아군 주변 450 안에 있는 시전자의 핵 하나를 충전한다. 평타는 제외한다</span></div>
+          <p class="pn-why">초기화 타이머의 스킬 분류 누락과 버프 소유자 조회 오류 수정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Aeromancer</span>
+            <span class="pn-sk">Nucleus / Magnetic Monopole / Current Surge</span>
+            <span class="pn-fn">CKM · PZQ · ZzAeShow · patch_aero_orbs.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">단일 핵 지속 피해 · 충전 표시 (버그 수정)</span><span class="pn-b">Magnetic Monopole 5포인트 전환 뒤 기존 핵이 남고 핵 1개로는 지속 피해가 발동하지 않았다</span><span class="pn-ar">&rarr;</span><span class="pn-a">5포인트 전환 시 기존 핵·충전량을 정리하고 새 핵 1개가 600 범위에 매초 피해를 준다. 마지막 핵에서 600을 벗어나면 중단, 복귀하면 재개한다. 각 핵 위에 충전율 1~99를 작은 숫자로 표시하고 미충전·방출 후에는 숨긴다</span></div>
+          <p class="pn-why">핵 개수 변경과 지속 피해 조건을 맞추고 실제 충전 상태를 표시</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Hydromancer</span><span class="pn-cnt">2건</span><span class="pn-peek">Water Bolt / Ice Nova · Purify / Waterstream</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Hydromancer</span>
+            <span class="pn-sk">Water Bolt / Ice Nova</span>
+            <span class="pn-fn">DYQ · patch_hydro_novameter.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">추가 발동 노바 미터기 귀속 (버그 수정)</span><span class="pn-b">Water Bolt에서 발동한 Ice Nova가 Q의 분류를 이어받아 집계됐다</span><span class="pn-ar">&rarr;</span><span class="pn-a">추가 발동한 Ice Nova의 직접 피해와 주변 피해를 **Ice Nova(E)**에 합산한다. Water Bolt 자체 피해는 Q에 유지한다</span></div>
+          <p class="pn-why">추가 발동의 원인이 아닌 실제 피해 스킬로 집계</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Hydromancer</span>
+            <span class="pn-sk">Purify / Waterstream</span>
+            <span class="pn-fn">EJQ · Q5U · patch_hydro_streammeter.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">50제 물줄기 미터기 귀속 (버그 수정)</span><span class="pn-b">Waterstream 켜기 명령에 스킬 분류가 없어 연속 물줄기가 Purify 집계에서 누락될 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">Waterstream 활성화 및 매 물줄기 발사에 R 분류를 지정해 피해와 회복을 **Purify**에 합산한다</span></div>
+          <p class="pn-why">일반 시전 이벤트를 거치지 않는 토글 스킬의 분류 누락 수정</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Warrior</span><span class="pn-cnt">2건</span><span class="pn-peek">Battle Orders / Champion Orders · Intimidating Bellow / Battle Orders</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Warrior</span>
+            <span class="pn-sk">Battle Orders / Champion Orders</span>
+            <span class="pn-fn">QLU · patch_orders_selfhp.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">50제 체력 보너스 본인 전용</span><span class="pn-b">50제 체력 보너스가 팀원에게도 적용되고 팀원 HP·MP·저항은 30%로 제한됐다</span><span class="pn-ar">&rarr;</span><span class="pn-a">50제의 추가 체력 최대50%는 **본인에게만** 적용. 팀원30% 제한을 제거해 기존 강화특성·아이템 효과·마나·피해저항을 **100%** 받는다</span></div>
+          <p class="pn-why">추가 체력 보너스의 대상과 팀원 적용률 변경</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Warrior</span>
+            <span class="pn-sk">Intimidating Bellow / Battle Orders</span>
+            <span class="pn-fn">ZzPwCond · ZzPwCut · QLU · patch_war_bellow_orders.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">55제 표식 수정 · 아군 효과 조정</span><span class="pn-b">E 강화 표식이 Q 디버프를 검사했고 지속 주문 피해가 감소 대상에서 빠졌다. Battle Orders는 자신과 아군에 동일 효과</span><span class="pn-ar">&rarr;</span><span class="pn-a">E 디버프 대상 평타로 표식을 쌓고 주문 피해 타입 2·3·4를 표식당 1.5%, 최대 9% 감소. Battle Orders 최대 HP·MP·피해 저항은 **자신 100% / 다른 아군 30%**</span></div>
+          <p class="pn-why">잘못된 디버프 판정 수정 및 아군 버프 효과 조정</p>
         </div>
           </div>
         </details>
@@ -2284,8 +2353,62 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">8건</span><span class="pn-peek">25 Frostmaw — 유도탄 · 25 Frostmaw — 화로 · 26 Ignisolith — 룬 퍼즐 · 26 Ignisolith — 룬 퍼즐 실패 페널티 외 4</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">14건</span><span class="pn-peek">25 Frostmaw · 25 Frostmaw — 화로 / 유도탄 · 25 Frostmaw — ice axe · 체력 엘릭서 — Fortification / Rampart / Divine Shield 외 8</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw</span>
+            <span class="pn-fn">ZzS2Reset · ZzTempTick · patch_s2_bossout.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">보스 원형 이탈 초기화</span><span class="pn-b">생존자가 남아 있으면 보스가 밖으로 나가도 위치만 복귀했다</span><span class="pn-ar">&rarr;</span><span class="pn-a">보스가 **원형 경기장 밖으로 나가면 생존자 유무와 관계없이 초기화**한다. 플레이어 개인 사망·이탈은 전투를 유지하고, 생존자가 아무도 없을 때도 초기화한다</span></div>
+          <p class="pn-why">보스 이탈과 플레이어 이탈 조건을 분리</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw</span>
+            <span class="pn-fn">ZzS2Start · ZzTempTick · patch_s2_entrydelay.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">입장 후 기믹 시작 지연 (버그 수정)</span><span class="pn-b">입장 감지보다 기믹 처리가 먼저 실행되고 전투 전에도 타이머가 진행되어 입장 즉시 부채꼴이 시작될 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">전투 시작 후 **3초 대기**한 뒤 기믹 타이머 진행. 입장 전에는 진행하지 않으며 뒤늦은 합류로 대기 시간이 연장되지 않는다</span></div>
+          <p class="pn-why">입장 직후 대응 시간을 보장</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw — 화로 / 유도탄</span>
+            <span class="pn-fn">ZzTempTick · ZzMisSpawn · patch_s2_spawnpairs.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">실제 생성 개수 1:1 (버그 수정)</span><span class="pn-b">30% 초과에서 화로 10초·유도탄 14초가 별도로 돌고, 30% 이하도 대상·생성 칸에 따라 개수가 달라졌다</span><span class="pn-ar">&rarr;</span><span class="pn-a">화로 독립 생성 경로를 제거하고 **유도탄 1발 생성 시 화로 1개를 동시 생성**. 한쪽 칸이 부족하거나 대상이 사망·이탈하면 둘 다 생성하지 않는다. 30% 이하 2인1111 / 3~4인1112 / 5인 이상2222</span></div>
+          <p class="pn-why">계획 개수가 아닌 실제 생성 개수를 일치시킴</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25 Frostmaw</span>
+            <span class="pn-fn">ZzS2Reset · ZzS2LeaveChk · ZzTempTick · patch_s2_emptyreset.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전투 초기화 조건 (버그 수정)</span><span class="pn-b">참가자 한 명의 이탈 또는 보스의 경기장 이탈만으로 남은 인원까지 초기화될 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">원형 경기장 안에 생존자가 한 명이라도 있으면 전투 유지. 아무도 없을 때만 자동 초기화하며 생존자가 있는데 보스만 밖으로 나가면 체력·진행을 유지하고 위치만 복귀한다</span></div>
+          <p class="pn-why">개별 사망·이탈 후 남아 있는 파티의 전투가 끊기는 문제 수정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">25 Frostmaw — ice axe</span>
+            <span class="pn-fn">VJM · patch_iceaxe_offhand.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">장착 슬롯 변경</span><span class="pn-b">Mainhand: Axe (주무기)</span><span class="pn-ar">&rarr;</span><span class="pn-a">**Offhand: Dual Axe (보조무기)**. 기존 능력치·착용 레벨·드롭 유지</span></div>
+          <p class="pn-why">얼음 도끼를 보조 도끼로 장착하도록 변경</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">체력 엘릭서 — Fortification / Rampart / Divine Shield</span>
+            <span class="pn-fn">ZzElHpBase · ZzElHpUpdate · patch_elixir_hpgear.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">추가 체력 재계산 (버그 수정)</span><span class="pn-b">체력을 높인 상태로 마시면 장비·스탯을 바꾸거나 일시 버프가 끝난 뒤에도 높은 증가량이 남을 수 있었다</span><span class="pn-ar">&rarr;</span><span class="pn-a">추가 체력 12%·16%·20%를 **현재 장비와 영구 스탯** 기준으로 **1초마다 재계산**한다. 기본 체력·투자 스탯·장비 체력/힘·영구 카드 기여분을 포함하고 일시 스킬·버프 체력/힘은 제외한다. 종료 시 마지막 증가량을 제거하며 재계산 자체로 회복되지 않는다</span></div>
+          <p class="pn-why">섭취 시점의 체력 세팅과 버프를 이용해 증가량을 유지하던 문제 수정</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
