@@ -2209,11 +2209,66 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-27</span><span class="pn-cnt">2건</span><span class="pn-peek">시스템 인벤토리·제련창 · 시스템 스탯·탤런트 초기화</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-28</span><span class="pn-cnt">2건</span><span class="pn-peek">보스 25번 Frostmaw · 시스템 캐릭터 불러오기</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">인벤토리·제련창 · 스탯·탤런트 초기화</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">25번 Frostmaw · 캐릭터 불러오기</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2Hp · ZzWarmBurst · ZzTempTick · ZzS2Reset · ZzBreathFire · nmgd.cool1 · patch_s2_balance.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">체력·공격 간격·서리 기믹 조정</span><span class="pn-b">유도탄→화로 체온 +35, 1인 일반 체력 2,000만, 공격 간격 0.5초, 호명 14초/30% 이하 7초, 숨결 7,300</span><span class="pn-ar">&rarr;</span><span class="pn-a">**체온 +40 · 체력 1,500만 · 공격 간격 0.75초 · 호명 13초/30% 이하 9초 · 숨결 9,500**. 난이도·인원 보정 및 유도탄/화로 1:1 생성 유지</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">캐릭터 불러오기</span>
+            <span class="pn-fn">ZzAlfRead · ZzLuRender · ZzLlLocalStep · patch_load_nodiag.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">판독 진단 제거</span><span class="pn-b">불러올 때 readStatus.txt 진단 파일과 진단 번호를 생성</span><span class="pn-ar">&rarr;</span><span class="pn-a">**진단 파일 생성·진단 번호 제거**. 정상 확인된 자동 저장·불러오기 방식 유지. 파일 없음과 읽기 실패는 일반 안내로 표시</span></div>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-27</span><span class="pn-cnt">5건</span><span class="pn-peek">명령어 1 · 기타 4</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-sk</span>
+            <span class="pn-fn">ZzSkRender · ZzSkRowCount · ZzSkTickCb · ZzSkCmd · patch_sk_live.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">스킬 미터 실시간 갱신</span><span class="pn-b">명령을 입력해 보드를 열 때의 수치만 표시</span><span class="pn-ar">&rarr;</span><span class="pn-a">보드를 켜 두면 **0.5초마다** 피해·지분·DPS·회복·MP·버프·시전 횟수와 전투 시간을 갱신. 새 기록 항목은 자동으로 행 추가. 다시 입력하면 닫힘. **-sk 1 / -sk 2** 수동 기록 시작·종료 유지</span></div>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">Campfire · 캐릭터 불러오기 · 인벤토리·제련창 · 스탯·탤런트 초기화</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Campfire</span>
+            <span class="pn-fn">ZzCampSummon · ZzCampHas · MVO · PXO · PUO · patch_camp_rest.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전투 해제·휴식 회복 주기</span><span class="pn-b">전투 종료 후 3초마다 회복</span><span class="pn-ar">&rarr;</span><span class="pn-a">반경 **500** 안의 아군 영웅은 설치·진입 **1초 후** 전투 해제(0.5초 주기로 확인). 단, 피격 후 **6.5초** 전투 유지. 모닥불이 있고 휴식 중이면 HP·MP를 **0.5초마다** 회복. 1회 회복량·25초 지속·30초 쿨다운 유지</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">캐릭터 불러오기</span>
+            <span class="pn-fn">ZzAlfPut · ZzAlfWrite · ZzAlfRead · patch_load_direct.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">저장 코드 조각 판독 수정</span><span class="pn-b">TXT 내부에서 이전 조각을 읽어 이어 붙이던 방식 때문에 실제 게임에서는 마지막 조각만 남아 목록이 비었음</span><span class="pn-ar">&rarr;</span><span class="pn-a">**캐릭터 코드 두 개와 계정 코드를 각각 직접 기록·판독**. 개인 목록 및 선택 후 기존 로더 호출 유지. 기존 형식은 코드 보존 변환이 필요하며 현재 테스트 파일은 코드값을 보존해 복구</span></div>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
