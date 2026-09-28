@@ -207,7 +207,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <li><b>치명타</b> — 공격 크리</li>
 </ul>
 <div class="sr-sk">
-<h4><span class="sr-n">0</span>Shield Slam <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 3.5초 → 3초</span></h4>
+<h4><span class="sr-n">0</span>Shield Slam <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 3초</span></h4>
 <p class="sr-desc">단일 타격. 대상이 보스면 ×(1+<i class="sr-f">부가1</i>), <i class="sr-f">부가1</i>=.16×<b class="sr-t">Improved Shield Slam</b></p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">20 + 1.6×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Shield Spike</b></td><td class="sr-eq"><b>×1.30</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 21 · 2점까지</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Unity of Arms</b></td><td class="sr-eq"><b>×1.50</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 34 · 5점까지</span></td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">피해</span></td><td class="sr-eq">1회</td><td class="sr-why"><span class="sr-ty">물리</span> <span class="sr-lb">대상 ×(1+<i class="sr-f">부가1</i>)</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">36 + 2.88×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
@@ -2209,11 +2209,45 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-28</span><span class="pn-cnt">3건</span><span class="pn-peek">보스 27번 Chaos Cube · 보스 25번 Frostmaw · 시스템 캐릭터 불러오기</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-28</span><span class="pn-cnt">6건</span><span class="pn-peek">명령어 1 · Warrior 1 · 기타 4</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">27번 Chaos Cube · 25번 Frostmaw · 캐릭터 불러오기</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-repick</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-repick</span>
+            <span class="pn-fn">CTP · XIP · CJP · CIP · CGP · patch_hero_repick_fix.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">히어로 체험모드 재선택·초기화 순서 보완</span><span class="pn-b">연습모드에 잘못 연결. 준비 구역 퇴장 시 초기화 완료 전에 선택 환경 정리가 실행될 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">**히어로 체험모드에서 재선택**. 기존 체험 템플릿 로드 유지, 스킬·인벤 UI 재연결. 초기화 완료 후 선택 환경 정리, 동일 영웅 중복 초기화 차단</span></div>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Warrior</span><span class="pn-cnt">1건</span><span class="pn-peek">Shield Slam</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Warrior</span>
+            <span class="pn-sk">Shield Slam</span>
+            <span class="pn-fn">A01M acdn 1·2 · patch_slam_cooldown.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">쿨다운 3초 통일</span><span class="pn-b">기본형·강화형 실제 쿨다운 3.5초, 아이콘 설명은 3초로 표시</span><span class="pn-ar">&rarr;</span><span class="pn-a">**기본형·강화형 모두 실제 쿨다운 3.0초**. 아이콘 설명과 일치</span></div>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">-sk · 27번 Chaos Cube · 25번 Frostmaw · 캐릭터 불러오기</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">-sk</span>
+            <span class="pn-fn">ZzSkRender · patch_sk_buff_width.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">버프 열 여백 축소</span><span class="pn-b">증가·감소 두 수치용 넓은 폭을 항상 사용</span><span class="pn-ar">&rarr;</span><span class="pn-a">버프 수치가 없거나 한쪽만 있으면 **열 폭을 절반으로 축소**. 증가·감소가 함께 있으면 기존 폭으로 표시</span></div>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
