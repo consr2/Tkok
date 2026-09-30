@@ -2209,6 +2209,52 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-01</span><span class="pn-cnt">4건</span><span class="pn-peek">기타 4</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">전역 길막 · 폭탄 피하기 구역</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">전역 길막</span>
+            <span class="pn-fn">war3map.doo · blocker_positions_ym_20261001/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">에디터 자동 위치 이동 복구 (ym)</span><span class="pn-b">기존 일반 길막이 편집기 저장 시 격자에 맞춰 자동 이동해 원래 경계와 어긋남</span><span class="pn-ar">&rarr;</span><span class="pn-a">이식 전후 비교로 자동 이동이 확인된 5,399개를 원래 좌표로 복원. 이후 직접 이동한 길막 및 신규 배치는 유지</span></div>
+          <p class="pn-why">기존 지역 길막 위치 복구</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">전역 길막</span>
+            <span class="pn-fn">war3map.doo · blocker_restore_yl_20261001/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">추가 누락 길막 3종 복구 (yl)</span><span class="pn-b">앞선 복구에서 초대형·대형·소형 커스텀 길막 3종이 빠져 사막 등 일부 경계가 계속 뚫림</span><span class="pn-ar">&rarr;</span><span class="pn-a">이식 직전 배치 기준 추가 1,868개 복원. 이식 전에 제거된 359개와 현재 사용자 배치는 유지</span></div>
+          <p class="pn-why">남아 있던 길막 누락 보완</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">전역 길막</span>
+            <span class="pn-fn">war3map.doo · blocker_restore_yk_20261001/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">누락된 기존 길막 복구 (yk)</span><span class="pn-b">에디터 이식 중 커스텀 소형·대형 길막이 누락되어 사막 등 기존 지역의 경계가 뚫림</span><span class="pn-ar">&rarr;</span><span class="pn-a">3515와 이식 전 맵에 공통으로 있던 길막 1,688개 복구. 완전히 동일한 중복 1개는 제외하고 현재 사용자 배치는 유지</span></div>
+          <p class="pn-why">기존 지역의 통행 경계 복구</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">폭탄 피하기 구역</span>
+            <span class="pn-fn">war3map.doo · floor_restore_yj_20261001/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">바닥 장식 크기 복구 (yj)</span><span class="pn-b">지형 이식으로 바닥 장식 40개의 배율이 0.325에서 1.0으로 확대됨</span><span class="pn-ar">&rarr;</span><span class="pn-a">3515 원본 기준 배율 0.325로 복구. 위치·개수·길막은 유지</span></div>
+          <p class="pn-why">확대된 바닥 장식을 원래 크기로 복원</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-30</span><span class="pn-cnt">6건</span><span class="pn-peek">기타 6</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
