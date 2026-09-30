@@ -2209,11 +2209,20 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-30</span><span class="pn-cnt">5건</span><span class="pn-peek">기타 5</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-30</span><span class="pn-cnt">6건</span><span class="pn-peek">기타 6</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">5건</span><span class="pn-peek">전역 두다드 · 25번 Frostmaw · 신규 지역 · 27번 Chaos Cube</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">6건</span><span class="pn-peek">관문·퀘스트 장애물 · 전역 두다드 · 25번 Frostmaw · 신규 지역 외 1</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">관문·퀘스트 장애물</span>
+            <span class="pn-fn">war3map.doo · build_yi.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">중복 표시 복구 (yi)</span><span class="pn-b">지형 이식 중 숨김 상태였던 배치 58개가 표시 상태로 바뀌어 코드 생성 관문과 겹치고 퀘스트 제거 뒤에도 남음</span><span class="pn-ar">&rarr;</span><span class="pn-a">관문·차단물 58개의 배치 상태를 이전 정상값으로 복원. 위치·지형·사용자 길막은 유지하고 이식 검사에 숨김 상태 보호 추가</span></div>
+          <p class="pn-why">퀘스트에서 제거하는 실제 관문만 표시하도록 복구</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">지형</span>
