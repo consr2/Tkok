@@ -2209,11 +2209,76 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-01</span><span class="pn-cnt">4건</span><span class="pn-peek">기타 4</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">3건</span><span class="pn-peek">지형 트윈 보스 구역 · 아이템 골드 증가 두루마리 · 아이템 판매 골드</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">전역 길막 · 폭탄 피하기 구역</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">트윈 보스 구역 · 골드 증가 두루마리 · 판매 골드</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">트윈 보스 구역</span>
+            <span class="pn-fn">war3map.w3e · war3map.doo · war3map.wpm · twins_restore_yr_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">이식 전 지형 복구 (yr)</span><span class="pn-b">지형 이식 이후 트윈 구역 절벽 종류·장식물·이동 차단이 원본과 달라짐</span><span class="pn-ar">&rarr;</span><span class="pn-a">트윈 구역과 인접 테두리를 이식 전 360 백업 기준으로 복구. 중복 나무 제거 유지, 다른 지역 보존</span></div>
+          <p class="pn-why">기존 트윈 경기장 복구</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">골드 증가 두루마리</span>
+            <span class="pn-fn">AYP · scroll_cap_yq_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">판매가 상한 2만 (yq)</span><span class="pn-b">두루마리로 증가하는 아이템 판매가 최대 10,000골드</span><span class="pn-ar">&rarr;</span><span class="pn-a">아이템 판매가 상한 20,000골드. 기존 증가 방식과 판매 시 캐릭터 골드 보너스 유지</span></div>
+          <p class="pn-why">두루마리 판매가 상한 상향</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">판매 골드</span>
+            <span class="pn-fn">VTO · sale_cap_yp_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">업적별 상한 제거 (yp)</span><span class="pn-b">업적에 따라 골드 보너스 상한 +100% 또는 +400%</span><span class="pn-ar">&rarr;</span><span class="pn-a">업적과 무관하게 보너스 상한 +900%, 최종 판매금 최대 기본 판매가의 10배. 실제 골드 보너스와 30레벨 미만 아이템 제한 유지</span></div>
+          <p class="pn-why">판매 골드 상한 통일</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-02</span><span class="pn-cnt">1건</span><span class="pn-peek">아이템 특수효과 설명</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">특수효과 설명</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">특수효과 설명</span>
+            <span class="pn-fn">ZzILFx · ZzILInit · item_effects_yo_20261002/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">한글 누락 59종 보완 (yo)</span><span class="pn-b">Dark Frost 등 일부 아이템의 공통·직업별 특수효과가 영어로만 표시됨</span><span class="pn-ar">&rarr;</span><span class="pn-a">누락된 설명 59종을 기본 한국어로 표시. 각 플레이어가 -skill eng를 선택하면 기존 영어 설명 표시</span></div>
+          <p class="pn-why">아이템 특수효과 언어 전환 누락 수정</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-01</span><span class="pn-cnt">5건</span><span class="pn-peek">기타 5</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">5건</span><span class="pn-peek">테스터 권한 · 전역 길막 · 폭탄 피하기 구역</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">테스터 권한</span>
+            <span class="pn-fn">ZzOwner · tester_nelu_yn_20261001/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">nelu 추가 (yn)</span><span class="pn-b">consr 닉네임만 자동으로 테스터 권한 부여</span><span class="pn-ar">&rarr;</span><span class="pn-a">nelu도 consr와 같은 테스터 권한 부여. 기존과 동일하게 대소문자 구분 없이 닉네임에 포함된 이름으로 판정</span></div>
+          <p class="pn-why">테스터 추가</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">지형</span>
