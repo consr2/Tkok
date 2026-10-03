@@ -2209,11 +2209,65 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">8건</span><span class="pn-peek">기타 8</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">14건</span><span class="pn-peek">기타 14</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">8건</span><span class="pn-peek">25번 Frostmaw · Ortakna 시작 구역 · 크루탈 6웨이브 Larthil · 트윈 보스 구역 외 2</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">14건</span><span class="pn-peek">25번 Frostmaw · Ortakna 시작 구역 · 크루탈 6웨이브 Larthil · 트윈 보스 구역 외 2</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2OrbTick · s2_orb_zc_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">순찰 구체 속도 감소 (zc)</span><span class="pn-b">초당500 · 한 바퀴15.4초</span><span class="pn-ar">&rarr;</span><span class="pn-a">초당200 · 한 바퀴38.5초. 이동 반경1225 유지</span></div>
+          <p class="pn-why">테두리 구체의 이동 속도를 낮춰 회피 여유 확대</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">war3map.doo · war3map.wpm · s2_corridor_zb_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">입구 복도 아래 얼음벽 정렬 (zb)</span><span class="pn-b">아래 얼음벽 기준Y -30336, 파란 기둥Y -29951.28</span><span class="pn-ar">&rarr;</span><span class="pn-a">아래 얼음벽을 북쪽384.72 이동하여 기둥Y에 정렬. 원 안으로 들어가는 끝부분16개 정리, 실제 길막도 벽에 맞춤</span></div>
+          <p class="pn-why">복도 아래 벽과 입구 기둥 위치 일치</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2Start · ZzS2RingTick · s2_entry_za_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">입구 전투 무한 재시작 (버그 수정, za)</span><span class="pn-b">전투 시작·참가자 등록 반경1560, 생존자 유지 판정1350 불일치</span><span class="pn-ar">&rarr;</span><span class="pn-a">시작·참가자 등록·전투 유지·보스 이탈을 모두 반경1350에 맞춤</span></div>
+          <p class="pn-why">경기장 축소 시 누락된 시작 범위 때문에 입구에서 시작과 초기화가 반복되던 문제 수정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzStormMark · s2_storm_yz_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">서리폭풍 원 전체 무작위 생성 (yz)</span><span class="pn-b">중심 거리150~1225, 기존 지대와 최소450 거리 제한</span><span class="pn-ar">&rarr;</span><span class="pn-a">반경1350 원 전체에서 면적 기준 균등 무작위 생성, 중심 제외·지대 간 거리 제한 제거로 겹침 허용. 중첩 위치 피해는 기존처럼 초당1회</span></div>
+          <p class="pn-why">경기장 전역에 서리폭풍 배치. 구체는 실제 호출 기준 초당500 확인, 속도 변경 없음</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2Setup · ZzS2OrbTick · ZzWarmOne · ZzStormMark · s2_resize_yy_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">경기장 지름 재조정 (yy)</span><span class="pn-b">지름2500, 구체·쫄 반경1125, 화로501~800, 서리폭풍150~1125</span><span class="pn-ar">&rarr;</span><span class="pn-a">지름2700, 구체·쫄·유도탄 발사 반경1225, 화로501~850, 서리폭풍150~1225. 구체 이속500 유지(1바퀴15.4초). 테두리·길막·입구 연결 벽 재조정</span></div>
+          <p class="pn-why">최종 경기장 크기에 맞춰 기믹 배치 조정. 캠프 온기500 및 피해·주기·피격 범위 유지</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2Setup · ZzS2OrbTick · ZzWarmOne · ZzStormMark · s2_resize_yx_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">경기장 축소 및 기믹 배치 조정 (yx)</span><span class="pn-b">지름3220, 순찰·쫄 반경1450, 화로501~1000, 서리폭풍150~1450</span><span class="pn-ar">&rarr;</span><span class="pn-a">지름2500, 순찰·쫄·유도탄 발사 반경1125, 화로501~800, 서리폭풍150~1125. 구체 이속500 유지(1바퀴 약14.1초). 얼음 테두리·실제 길막·입구 연결 벽 조정</span></div>
+          <p class="pn-why">작아진 경기장에 기믹 위치와 경계 판정을 맞춤. 피해·주기·피격 범위와 중앙 캠프 온기500 유지</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
