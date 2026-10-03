@@ -2127,7 +2127,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 </tbody></table>
 </div>
 <div class="sr-cls" data-cls="fighter" hidden>
-<div class="sr-hd"><h3>Fighter</h3><span class="who">스킬 5 · 탤런트 슬롯 32</span></div>
+<div class="sr-hd"><h3>Fighter</h3><span class="who">스킬 6 · 탤런트 슬롯 32</span></div>
 <ul class="sr-rule">
 <li><b>타는 스탯</b> — 어택파워</li>
 <li><b>피해 타입</b> — 물리 스킬 — 마법저항 X</li>
@@ -2163,10 +2163,15 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 </div>
 <div class="sr-sk">
 <h4><span class="sr-n">4</span>Fighting Will <span class="dps-kind buff">버프</span></h4>
-<p class="sr-desc">토글. <i class="sr-f">피해</i> = AP x 0.05 x <b class="sr-t">Improved Fighting Will</b> 는 피해가 아니라 공격력 보너스다 — 켜면 그만큼 더하고 마나를 계속 태운다. 마나가 바닥나면 저절로 꺼진다. 초당 소모 (2 + 0.5×Improved) × (1 + 0.1×Empowered) × (1 + 0.2×Warpath Burst)</p>
-<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Fighting Will</b></td><td class="sr-eq">225</td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 9 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">⚠ 이 칸을 피해로 쓰는 초식이 하나 있다 — <i class="sr-f">피해</i> ×0.9 를 반경 565.6 에 5번 (CN 그대로)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Improved Fighting Will</td><td class="sr-eq">어택파워도 함께 오른다</td><td class="sr-why">조건</td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">0.15×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
+<p class="sr-desc">토글. <i class="sr-f">피해</i> = AP x 0.05 x <b class="sr-t">Improved Fighting Will</b> 는 피해가 아니라 공격력 보너스다 — 켜면 그만큼 더하고 마나를 계속 태운다. 마나가 바닥나면 저절로 꺼진다. 초당 소모 (2 + Improved 포인트 + Empowered 포인트) × (1 + 0.2×Warpath Burst 포인트)</p>
+<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Fighting Will</b></td><td class="sr-eq">225</td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 9 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">(85 + AP ×0.05) × 투지 강화 포인트 ×0.9 를 반경 565.6 에 5번. 추가 초식 보정 적용</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Improved Fighting Will</td><td class="sr-eq">어택파워도 함께 오른다</td><td class="sr-why">조건</td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">0.15×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: ZzPgWOn/ZzPgWOff/ZzPgTick</p>
+</div>
+<div class="sr-sk">
+<h4><span class="sr-n">5</span>Shuffle <span class="dps-kind buff">버프</span><span class="sr-cd">쿨 40초 → 25초</span></h4>
+<p class="sr-desc">모든 초식 쿨타임 초기화. 지속 중 초식 피해 ×(1.25 + Ace 포인트 ×0.06). -sk 버프 칸에 추가 피해를 별도 집계한다.</p>
+<p class="sr-fn">근거: ZzPgShuf/ZzPgSfM</p>
 </div>
 <p class="sr-cap">탤런트 슬롯 — 설명에 나오는 이름이 여기 있다</p>
 <table class="sr-tab sr-slots"><thead><tr><th>슬롯</th><th>이름</th><th>최대</th></tr></thead><tbody>
@@ -2209,11 +2214,97 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">14건</span><span class="pn-peek">기타 14</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">23건</span><span class="pn-peek">Fighter 6 · 기타 17</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">14건</span><span class="pn-peek">25번 Frostmaw · Ortakna 시작 구역 · 크루탈 6웨이브 Larthil · 트윈 보스 구역 외 2</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">6건</span><span class="pn-peek">Fighting Will / Shuffle · Empowered Fighting Will (45레벨) · 풍차참 (RWQ) · 강화 초식 외 1</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">Fighting Will / Shuffle</span>
+            <span class="pn-fn">ZzPgDm · ZzPgJAdd · ZzPgJTick · ZzSkDmg · fighter_buff_zl_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">-sk 버프 기여 집계 (zl)</span><span class="pn-b">T·Y의 초식 피해 증가분이 버프 칸에 기록되지 않음</span><span class="pn-ar">&rarr;</span><span class="pn-a">T의 AP·초식 배율과 Y의 초식 배율 증가분을 버프 칸에 기록. 지연타는 시전 당시 비율 유지. 기존 초식 전체 피해는 그대로 표시</span></div>
+          <p class="pn-why">파이터 자기 강화 효과의 피해 기여 누락 수정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">Empowered Fighting Will (45레벨)</span>
+            <span class="pn-fn">ZzPgTick · ZzPgTree · fighter_mana_zk_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">투지 추가 마나 소모 감소 (zk)</span><span class="pn-b">포인트당 초당 마나2 추가</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트당 초당 마나1 추가. 초식 피해 증가 및55제 마나배율 유지. 스킬 설명 수정</span></div>
+          <p class="pn-why">투지 유지 비용 완화</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">풍차참 (RWQ)</span>
+            <span class="pn-fn">ZzPgFire · fighter_scale_zj_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">기본 피해에 강화 포인트 배율 적용 (zj)</span><span class="pn-b">(85 + AP ×0.05 × 포인트) ×0.9</span><span class="pn-ar">&rarr;</span><span class="pn-a">(85 + AP ×0.05) × 포인트 ×0.9. 초식 보정 및 총5타 유지</span></div>
+          <p class="pn-why">기본값과 AP 계수 모두 투지 강화 포인트에 비례</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">풍차참 (RWQ)</span>
+            <span class="pn-fn">ZzPgFire · fighter_base_zg_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">기본 피해 추가 (zg)</span><span class="pn-b">1타: (AP ×0.05 × 투지 강화 포인트) ×0.9</span><span class="pn-ar">&rarr;</span><span class="pn-a">1타: (85 + AP ×0.05 × 투지 강화 포인트) ×0.9. 기존 초식 보정 및 총5타 유지</span></div>
+          <p class="pn-why">낮은 공격력에서도 기본 피해 확보</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">강화 초식</span>
+            <span class="pn-fn">ZzPgTree · fighter_lv_zf_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">두 강화 항목 요구 레벨 복원 (zf)</span><span class="pn-b">팔민구단·천상십자 / 천장분열·천추격 해금 항목 요구40레벨</span><span class="pn-ar">&rarr;</span><span class="pn-a">두 항목 모두 요구50레벨. 선행 스킬과 포인트 조건 유지</span></div>
+          <p class="pn-why">이전에 낮춘 강화 초식 해금 레벨을50으로 복원</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">초식</span>
+            <span class="pn-fn">ZzPgFire · ZzPgJAdd · ZzPgJTick · fighter_sk_ze_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">-sk 초식 피해 분류 (버그 수정, ze)</span><span class="pn-b">초식에 자체 집계 정보가 없어 즉시·후속 피해가 다른 스킬 또는 미분류에 잡힐 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">16개 초식을 첫 입력 키 기준 기존 Q/W/E/R 행에 합산. QWE·QEW는 Q. 도트·투사체·짝 초식·후속 피해도 해당 분류 유지</span></div>
+          <p class="pn-why">기본 스킬과 연결된 초식 피해를 같은 행에서 확인</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">17건</span><span class="pn-peek">스킬·스탯 초기화 · 테스터 권한 · 25번 Frostmaw · Ortakna 시작 구역 외 4</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">스킬·스탯 초기화</span>
+            <span class="pn-fn">ItemFunc I015/I016 · respec_tip_zi_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">상점 설명 수정 (zi)</span><span class="pn-b">설명에 레벨당30 / 20레벨600 / 30레벨5600 표기 잔존</span><span class="pn-ar">&rarr;</span><span class="pn-a">두 초기화 아이템 설명을 레벨당25 / 20레벨500 / 30레벨5500으로 수정</span></div>
+          <p class="pn-why">실제 비용과 설명 일치</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">스킬·스탯 초기화</span>
+            <span class="pn-fn">TOO · respec_zh_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">저레벨 초기화 비용 인하 (zh)</span><span class="pn-b">20레벨까지 레벨당30골드, 20레벨600</span><span class="pn-ar">&rarr;</span><span class="pn-a">20레벨까지 레벨당25골드, 20레벨500. 이후 레벨당 추가500 유지</span></div>
+          <p class="pn-why">초반 초기화 비용 조정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">테스터 권한</span>
+            <span class="pn-fn">ZzUseTester · HPP · G8P · HCP · tester_zd_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">최고 관리자와 테스터 저장 권한 분리 (zd)</span><span class="pn-b">consr·nelu 및 추가 테스터가 같은 권한 사용</span><span class="pn-ar">&rarr;</span><span class="pn-a">consr은 테스트 명령 사용에 따른 저장 제한 없음. nelu 및 추가 테스터는 테스트 명령 사용 시 본인의 캐릭터·계정 저장을 해당 판 끝까지 차단. 리픽·권한 해제로 해제되지 않음</span></div>
+          <p class="pn-why">테스트로 변경한 캐릭터와 계정 정보 저장 방지. 일반 플레이 및 다른 플레이어 저장은 기존 유지</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
