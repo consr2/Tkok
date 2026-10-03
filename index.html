@@ -2209,11 +2209,38 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">3건</span><span class="pn-peek">지형 트윈 보스 구역 · 아이템 골드 증가 두루마리 · 아이템 판매 골드</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-03</span><span class="pn-cnt">6건</span><span class="pn-peek">기타 6</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">트윈 보스 구역 · 골드 증가 두루마리 · 판매 골드</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">6건</span><span class="pn-peek">25번 Frostmaw · Ortakna 시작 구역 · 크루탈 6웨이브 Larthil · 트윈 보스 구역 외 2</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">25번 Frostmaw</span>
+            <span class="pn-fn">ZzS2Reset · ZzS2CoalClear · coal_reset_yu_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">초기화 시 석탄 전부 제거 (yu)</span><span class="pn-b">경기장 바닥의 석탄만 삭제되어 인벤토리·경기장 밖 석탄을 다음 도전에 보관 가능</span><span class="pn-ar">&rarr;</span><span class="pn-a">실제 초기화 시 맵 전체 바닥과 모든 유닛 인벤토리의 석탄 제거. 다른 아이템 유지</span></div>
+          <p class="pn-why">석탄을 모아 재도전하는 방식 방지</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">Ortakna 시작 구역</span>
+            <span class="pn-fn">war3map.doo · ortakna_wall_yt_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">누락 돌벽 5개 복구 (yt)</span><span class="pn-b">(-5109, -19092) 주변 서쪽과 모서리 돌벽 배치 누락</span><span class="pn-ar">&rarr;</span><span class="pn-a">3515 및 이식 전 360에 있던 돌벽 5개를 원래 위치·크기로 복구. 기존 배치와 지형 유지</span></div>
+          <p class="pn-why">누락된 경기장 벽 복구</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">크루탈 6웨이브 Larthil</span>
+            <span class="pn-fn">BTR · BRR · larthil_net_ys_20261003/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">그물 포획 고정 (ys)</span><span class="pn-b">그물은 남지만 일반 속박 저항·지속시간 단축으로 대상이 이동 가능</span><span class="pn-ar">&rarr;</span><span class="pn-a">그물 생존 중 포획 위치 유지. 그물 파괴·대상 사망·전투 종료 시 해제. 공격과 스킬 사용 가능</span></div>
+          <p class="pn-why">파괴해야 해제되는 그물 기믹 복구</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">지형</span>
