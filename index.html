@@ -2214,11 +2214,20 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">9건</span><span class="pn-peek">명령어 1 · Arcanist 1 · Necromancer 1 · 기타 6</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">13건</span><span class="pn-peek">명령어 2 · Arcanist 1 · Necromancer 1 · 기타 9</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-qs / -quickstart</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">2건</span><span class="pn-peek">절대영도 테스트 · -qs / -quickstart</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">절대영도 테스트</span>
+            <span class="pn-fn">ZzFzTestCmd · fz_test_aap_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">솔로 더미 테스트 (aap)</span><span class="pn-b">혼자서는 다인 절대영도 테스트 불가</span><span class="pn-ar">&rarr;</span><span class="pn-a">-영도테스트 3: 본인+더미2, 해동 더미 직접 이동. 2~7 지원, 종료 명령 제공</span></div>
+          <p class="pn-why">실제 동결·해동·유도탄 코드로 발사 횟수와 이어달리기 확인</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">명령어</span>
@@ -2259,8 +2268,35 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">6건</span><span class="pn-peek">Frostmaw VX · Frostmaw · Frostmaw 절대영도 · 훈련 더미 외 2</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">9건</span><span class="pn-peek">Frostmaw 등장 · 맵 로딩 · Frostmaw 절대영도 · Frostmaw VX 외 4</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw 등장</span>
+            <span class="pn-fn">ZzS2IgniteTick · s2_dialogue_aar_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">점화 등장 대사 (aar)</span><span class="pn-b">보스 : 쿠오오오!</span><span class="pn-ar">&rarr;</span><span class="pn-a">Frostmaw: 누가 이 추위에 불을 지폈는가 / 영어 설정 시 영문 대사</span></div>
+          <p class="pn-why">큰 석탄 점화에 반응하는 보스 등장 대사</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">맵 로딩</span>
+            <span class="pn-fn">ZzTorchTick · fz_syntax_aaq_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">절대영도 테스트 문법 수정 (aaq)</span><span class="pn-b">aap의 중첩 배열 괄호 오류로 맵 열기 실패</span><span class="pn-ar">&rarr;</span><span class="pn-a">횃불 처리의 함수/배열 괄호4곳 수정, 전체 JASS 괄호 검사 통과</span></div>
+          <p class="pn-why">자동 치환이 잘못 만든 괄호 순서 수정</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw 절대영도</span>
+            <span class="pn-fn">ZzFzShoot / ZzFzTick · s2_shots_aao_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">발사 횟수 고정 (aao)</span><span class="pn-b">남은 동결자가0명이면 예정탄 취소·조기종료</span><span class="pn-ar">&rarr;</span><span class="pn-a">시작 시 확정한 발사수 유지. 3인 생존 시작은2발, 마지막 발사 후 보스 재개</span></div>
+          <p class="pn-why">해동·사망으로 동결자 수가 변해도 두 번째 발사 누락 방지</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
