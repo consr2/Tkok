@@ -2214,7 +2214,34 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">16건</span><span class="pn-peek">명령어 3 · Arcanist 1 · Necromancer 1 · 기타 11</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-05</span><span class="pn-cnt">2건</span><span class="pn-peek">아이템 Morningstar of War · 보스 Frostmaw 절대영도</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Morningstar of War · Frostmaw 절대영도</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Morningstar of War</span>
+            <span class="pn-fn">VJM · K4M · morningstar_aax_20261005/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">29레벨 메이스 공격력 (aax)</span><span class="pn-b">공격력 90</span><span class="pn-ar">&rarr;</span><span class="pn-a">공격력 250</span></div>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw 절대영도</span>
+            <span class="pn-fn">ZzFzTick · s2_resume_aaw_20261005/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">마지막 발사 후 행동 재개 지연 (aaw)</span><span class="pn-b">마지막 유도탄 발사 직후 보스 행동 재개</span><span class="pn-ar">&rarr;</span><span class="pn-a">마지막 발사 5초 뒤 보스 행동 재개. 대기 중에도 유도탄 추적·해동 계속</span></div>
+          <p class="pn-why">마지막 유도탄을 유도할 시간 확보</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">17건</span><span class="pn-peek">명령어 3 · Arcanist 1 · Necromancer 1 · Pyromancer 1 · 기타 11</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">3건</span><span class="pn-peek">절대영도 테스트 · -qs / -quickstart</span></summary>
@@ -2273,6 +2300,20 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
           <div class="pn-row"><span class="pn-f">밴시 투명도·타격음 (aah)</span><span class="pn-b">불투명 밴시, 기본 번개 타격음</span><span class="pn-ar">&rarr;</span><span class="pn-a">밴시 투명도 약70%, 전용 타격음 볼륨38/127(약30%)</span></div>
           <p class="pn-why">밴시 다수의 시야 가림과 타격 소음 완화</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Pyromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Q Ignition</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Pyromancer</span>
+            <span class="pn-sk">Q Ignition</span>
+            <span class="pn-fn">YYP · pyro_q_fx_aav_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">발밑 불꽃 제거 (aav)</span><span class="pn-b">대상 발밑 SmallFlameSpawn 1.7초</span><span class="pn-ar">&rarr;</span><span class="pn-a">해당 불꽃 연출 제거</span></div>
+          <p class="pn-why">시야를 가리는 과도한 효과 완화. 피해·강화·적중시점 유지</p>
         </div>
           </div>
         </details>
