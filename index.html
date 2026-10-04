@@ -2214,7 +2214,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">6건</span><span class="pn-peek">명령어 1 · Arcanist 1 · Necromancer 1 · 기타 3</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-04</span><span class="pn-cnt">9건</span><span class="pn-peek">명령어 1 · Arcanist 1 · Necromancer 1 · 기타 6</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-qs / -quickstart</span></summary>
@@ -2259,8 +2259,35 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">3건</span><span class="pn-peek">훈련 더미 · Broodmother · Ortakna Dark 검은 구체</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">6건</span><span class="pn-peek">Frostmaw VX · Frostmaw · Frostmaw 절대영도 · 훈련 더미 외 2</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw VX</span>
+            <span class="pn-fn">ZzS2CoalUse / ZzS2Win / ZzS2Reset · s2_vx_aan_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">비탱커 석탄 투척 조건 (aan)</span><span class="pn-b">화로 보존90% + 캠프파이어HP50</span><span class="pn-ar">&rarr;</span><span class="pn-a">비탱커 일반 석탄 투척90% 이상 + 캠프파이어HP50 이상. 성공 투척1회 이상 필수</span></div>
+          <p class="pn-why">비탱커의 석탄 투척을 통한 어그로 관리 평가. 점화용 큰 석탄·실패 제외</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw</span>
+            <span class="pn-fn">ZzFzTick / ZzTempTick · s2_tuning_aam_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">절대영도·쫄 간격 조정 (aam)</span><span class="pn-b">절대영도 오라5000/초, 쫄1초 간격</span><span class="pn-ar">&rarr;</span><span class="pn-a">동결자·보스 오라3000/초, 30% 쫄4마리0.25초 간격</span></div>
+          <p class="pn-why">절대영도 피해 완화 및 이동 구체의 쫄 생성 위치 간격 축소</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Frostmaw 절대영도</span>
+            <span class="pn-fn">ZzFzTick / ZzFzClear · s2_absolute_aal_20261004/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">오라 피해·마지막 유도탄 (aal)</span><span class="pn-b">오라 1000/초, 마지막 발사 5초 후 잔여탄 삭제</span><span class="pn-ar">&rarr;</span><span class="pn-a">오라 5000/초, 마지막 발사 직후 보스만 행동 재개. 잔여탄 추적·구조 및 미구조자 동결 유지</span></div>
+          <p class="pn-why">마지막 유도탄 삭제 방지 및 절대영도 위험도 조정</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
