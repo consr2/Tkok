@@ -2214,11 +2214,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-06</span><span class="pn-cnt">1건</span><span class="pn-peek">지형 동부 도로 바위 통로</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-06</span><span class="pn-cnt">2건</span><span class="pn-peek">시스템 부활 시야 · 지형 동부 도로 바위 통로</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">동부 도로 바위 통로</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">부활 시야 · 동부 도로 바위 통로</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">부활 시야</span>
+            <span class="pn-fn">DBP · DAP · ZzVsCmd · deathward_timing_abh_20261006/build.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">데스와드 부활 시점·시야 진단 (abh)</span><span class="pn-b">영웅 사망 처리 3초 도중 데스와드가 2초에 제자리 부활. 시야 축소가 남고 설정 명령으로도 확대되지 않는 제보</span><span class="pn-ar">&rarr;</span><span class="pn-a">데스와드 부활 3.25초로 조정하고 사망 좌표를 따로 보존. 시야 진단 명령 유지</span></div>
+          <p class="pn-why">사망 처리 완료 전에 부활하는 시점 충돌을 피한다. 살아 있을 때 시야 설정은 정상이라는 실측 반영</p>
+          <p class="pn-x">현재 영웅 25종의 death=3초. 사망 2초 부활과 좁은 시야 잔존의 연결은 코드·사용자 시험·엔진 버그 보고를 토대로 한 유력 원인으로, 수정 뒤 실제 시야는 인게임 확인 필요. 부활 체력75%·마나20% 유지. -시야 값 조회/직접 설정/갱신/30초 확대/해제 유지. abf 위치 갱신과 abg 진단을 같은 날 기록에 합침</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">지형</span>
