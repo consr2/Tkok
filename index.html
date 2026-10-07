@@ -1243,7 +1243,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <p class="sr-desc">Unholy Embrace 종료 시: 지속 중 누적치×<i class="sr-f">부가1</i>% (상한 <i class="sr-f">부가3</i>) (<span class="sr-ty">주문</span>). <b class="sr-t">Improved Unholy Embrace</b> 면 주변 회복</p>
 <p class="sr-note">⚠ 55강화 Abyssal Touch 5포인트: 3초마다 누적치×<i class="sr-f">부가1</i>%를 터뜨린다(상한 <i class="sr-f">부가3</i>×0.4). 매3회 폭발마다 아군 최대체력50% 회복. 종료 시 남은 누적 폭발은 유지</p>
 <p class="sr-note">⚠ -sk: 기본 종료 폭발과 55강화 주기 폭발의 주대상·주변 피해를 모두 T에 기록. 회복·아이템 마나 회복은 T의 해당 열에 기록</p>
-<p class="sr-note">⚠ 같은 대상에게 자신이 건 T 재사용: 누적 피해 유지, 실제 남은 시간에 새 지속시간 추가. 55강화의 다음3초 폭발·매3회 회복 카운터 유지. 다른 시전자의 저주는 기존처럼 교체</p>
+<p class="sr-note">⚠ 같은 대상에게 자신이 건 T 재사용: 기존 저주를 정상 종료시켜 누적 피해를 즉시 종료 폭발로 처리한 뒤, 살아 있는 대상에 누적 피해0·새 지속시간으로 다시 적용. 55강화의3초 폭발·매3회 회복 카운터도 새 시전 기준 초기화. 이전 타이머 취소, 사망 시 새 저주 없음. 다른 시전자의 저주는 기존처럼 교체</p>
 <p class="sr-note">⚠ 저주 대상 아래 작은 연보라 숫자로 다음 폭발 예정 피해 표시: 저장 피해×현재 T 피해비율에 상한 적용. 종료 폭발은 <i class="sr-f">부가3</i>, 먼저 오는55강화 주기 폭발은 <i class="sr-f">부가3</i>×0.4. 0.05초 갱신·이동 추적·시야 밖 숨김·종료/사망/제거 정리 유지. 실제 타격 때의 치명타·대상 마법저항·피해 증감 적용 전 값</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">450×레벨</td><td class="sr-why"><span class="sr-fld">부가3</span></td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">부가3</span></td><td class="sr-eq">1회</td><td class="sr-why"><span class="sr-ty">주문</span> <span class="sr-lb">상한 <i class="sr-f">부가3</i> 를 다 채운 것으로</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">585×레벨</td><td class="sr-why"><span class="sr-fld">부가3</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
@@ -2284,11 +2284,11 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-hd">
             <span class="pn-cls">Shadowblade</span>
             <span class="pn-sk">T Unholy Embrace / Abyssal Touch</span>
-            <span class="pn-fn">JFQ · S8U · ZzAtBurst · ZzUtWatch · ZzUtTick · ZzUtShow · ZzAtInit · patch_shadowblade_trefresh.py · patch_shadowblade_tmeter.py · patch_shadowblade_storage_text.py · patch_shadowblade_damage_text.py</span>
+            <span class="pn-fn">JFQ · E2O → EZO → S8U · ZzAtOn · ZzAtBurst · ZzUtWatch · ZzUtShow · ZzUtTick · patch_shadowblade_trecast.py · patch_shadowblade_tmeter.py · patch_shadowblade_storage_text.py · patch_shadowblade_damage_text.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">재사용 누적 보존·시간 추가 / -sk 기록 / 폭발 예정 피해 표시 (abw)</span><span class="pn-b">같은 대상에게 T를 다시 걸면 저장 피해 초기화·지속시간 갱신. 55강화 주기 폭발은 -sk 미분류 · 몹 아래 숫자는 저장 피해100%</span><span class="pn-ar">&rarr;</span><span class="pn-a">자신의 T가 남은 대상에 재사용 시 저장 피해 유지·남은 시간에 새 지속시간 추가. 55강화 폭발·회복 주기 유지. 종료/주기 폭발 모두 T 기록 · 몹 아래 작은 연보라 숫자로 T 계수·상한을 반영한 다음 폭발 예정 피해 표시, 0.05초 갱신</span></div>
-          <p class="pn-why">재사용으로 이미 쌓인 피해가 사라지고 55강화 폭발이 미뤄지는 문제 및 주기 폭발 기록 누락 수정 · 큰 저장량 대신 실제 폭발 계수·상한을 반영한 수치를 확인하기 쉽게 표시</p>
-          <p class="pn-x">기본 지속시간5.5초, Time Twisting 강화당12% 유지. 남은2초+새5.5초=7.5초. 다른 시전자의 저주 교체·피해/회복 공식·폭발 상한·마나 발동 유지. 한·영 툴팁 반영. 실제 게임 확인 필요 표시=저장량×현재 T 피해비율, 종료 상한XOF4·주기 상한XOF4×0.4. 기존1초 주기 타이머를 읽어 다음 실제 폭발 종류 선택. 치명타·대상 저항/피해 증감 전 예정치. 이동 추적·시야 밖 숨김·종료/사망/제거 정리. 피해 공식 유지.</p>
+          <div class="pn-row"><span class="pn-f">재사용 즉시 폭발·새 저주 / -sk 기록 / 폭발 예정 피해 표시 (abx)</span><span class="pn-b">같은 대상에게 자신이 건 T 재사용 시 누적 피해 유지·남은 시간에 새 지속시간 추가, 55강화 폭발·회복 카운터 유지. 주기 폭발 기록 누락 및 저장 피해100% 표시도 있었음</span><span class="pn-ar">&rarr;</span><span class="pn-a">자신의 T가 남은 대상에 재사용하면 기존 누적 피해를 즉시 정상 종료 폭발로 처리하고, 대상이 살아 있으면 누적 피해0·새 지속시간으로 다시 적용. 55강화 카운터 초기화. 종료/주기 폭발 모두 T 기록, 몹 아래 숫자는 계수·상한을 반영한 다음 폭발 예정 피해</span></div>
+          <p class="pn-why">재사용 시 기존 피해를 즉시 터뜨리고 새 저주를 시작하도록 변경. T 피해 기록과 실제 폭발 예정치 표시 유지</p>
+          <p class="pn-x">기본 지속시간5.5초, Time Twisting 강화당12% 유지. 남은 시간이 있어도 새5.5초부터 시작하며 시간 합산 없음. 재사용 종료 폭발은 기존 정상 종료의 피해·상한XOF4·회복·범위 피해·마나 옵션 그대로 사용. 55강화의 주기 상한XOF4×0.4 유지, 주기 카운터3·회복 횟수0으로 초기화. 기존 타이머 취소해 중복 종료 방지. 폭발로 사망하면 새 저주 없음. 다른 시전자의 저주 교체 방식 유지. 한·영 툴팁 반영. 표시=저장량×현재 T 피해비율, 다음 실제 폭발의 상한 적용·치명타 및 대상 저항/피해 증감 전 예정치. 새 저주는 표시0, 이동 추적·시야 밖 숨김·종료/사망/제거 정리 유지. 실제 게임 확인 필요.</p>
         </div>
           </div>
         </details>
