@@ -2220,11 +2220,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-07</span><span class="pn-cnt">6건</span><span class="pn-peek">명령어 1 · Fighter 2 · Earthquaker 1 · Shadowblade 1 · 기타 1</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-07</span><span class="pn-cnt">9건</span><span class="pn-peek">명령어 2 · Fighter 3 · Earthquaker 1 · Hydromancer 1 · Shadowblade 1 · 기타 1</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-skill eng / -skill kor</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">2건</span><span class="pn-peek">-sk 체력 재생 기록 · -skill eng / -skill kor</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-sk 체력 재생 기록</span>
+            <span class="pn-fn">ESO · ZzHrgNote · ZzHrgTick · U0N · patch_skmeter_regen_source.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">회복 기여의 버프 출처 수정 (aby)</span><span class="pn-b">체력 재생 수치가 복구·재계산될 때 방금 사용한 스킬의 회복으로 기록. 재생 감소 디버프가 다른 시전자의 기록을 삭제할 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">아군에게 재생을 올려 준 실제 버프의 시전자·스킬에 회복을 기록. 감소 디버프 해제와 장비·스탯 재계산은 회복 기여를 생성하지 않음</span></div>
+          <p class="pn-why">올타 전투에서 워리어 Q·W·E·R·T·Y에 다른 원인의 재생이 붙는 오분류 수정</p>
+          <p class="pn-x">샤먼 Q Unstable Herb 등 실제 재생 버프의 저장된 시전 정보를 사용. 버프 해제는 그 스킬의 기여만 제거. 재생 감소 오라 중 집계 합이 실제 회복을 넘지 않도록 비례 배분. 만피 회복0·유효 회복만 기록. 실제 체력 재생·회복량·스킬/보스 수치 불변. 실제 게임 확인 필요.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">명령어</span>
@@ -2238,8 +2248,18 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">2건</span><span class="pn-peek">풍차참 (RWQ) · 직업 아이콘</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">3건</span><span class="pn-peek">왕자의 풍모 (Style of King, 40레벨) · 풍차참 (RWQ) · 직업 아이콘</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">왕자의 풍모 (Style of King, 40레벨)</span>
+            <span class="pn-fn">ZzPgHit · ZzPgBKAdd · FFO · patch_fighter_king_duration.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">중첩 유지시간 증가 (abz)</span><span class="pn-b">초식 사용 후 전체 중첩 4초 유지</span><span class="pn-ar">&rarr;</span><span class="pn-a">전체 중첩 10초 유지. 초식 사용 시 남은 유지시간을 다시 10초로 갱신</span></div>
+          <p class="pn-why">초식 사이에 왕자 중첩을 유지할 수 있는 시간 확대</p>
+          <p class="pn-x">포인트별 최대5/10/15중첩과 중첩당 피해1.5%는 유지. 한·영 스킬 설명에 유지시간/갱신 방식 추가. 실제 게임 확인 필요.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Fighter</span>
@@ -2274,6 +2294,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">전이 버프 마나 회복 대상 수정 (abt)</span><span class="pn-b">팀원에게 전이한 버프가 발동해도 원래 시전자 어스퀘이커의 마나2 회복</span><span class="pn-ar">&rarr;</span><span class="pn-a">버프를 가진 공격자 본인의 마나2 회복. 회복 숫자도 그 사람에게 표시</span></div>
           <p class="pn-why">전이 버프 수혜자의 타격 보상이 원래 시전자에게 돌아가는 문제 수정</p>
           <p class="pn-x">시전자의 Roar of the Land 40제2포인트 조건·마나2·피해타입1/5/6/7·회복/능력치 누적·전이범위/지속시간 유지. -sk의 원래 시전자 R기여 기록 유지. 실제 게임 확인 필요</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Hydromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Waterstream · Mirror Water</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Hydromancer</span>
+            <span class="pn-sk">Waterstream · Mirror Water</span>
+            <span class="pn-fn">Q5U · ZzMwTick · patch_hydro_stream_light.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전용 경량 물줄기 모델 적용 (aca)</span><span class="pn-b">본체와55제 거울이 기존 물결 모델 사용</span><span class="pn-ar">&rarr;</span><span class="pn-a">본체·거울 모두 전용 모델 사용. 원본 대비 입자 발생량20%·입자 유지시간30%·잔상 유지시간10%</span></div>
+          <p class="pn-why">연속 물줄기의 물보라와 긴 잔상을 줄여 화면의 시야 확보 및 그래픽 부담 완화</p>
+          <p class="pn-x">동일 초당5발씩·비행속도500·사거리650·피격폭200 유지. 피해·회복·마나·55강화·-sk 귀속 유지. 다른 스킬의 기존 물결 모델 유지. 실제 게임 프레임 개선량은 측정 필요.</p>
         </div>
           </div>
         </details>
