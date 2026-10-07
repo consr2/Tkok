@@ -17,3 +17,4 @@ _base
 
 # Local Claude project snapshot (includes conversation history)
 /_claude_import/
+/_editor/*

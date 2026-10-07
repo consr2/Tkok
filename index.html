@@ -1241,6 +1241,10 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="sr-sk">
 <h4><span class="sr-n">4</span>Unholy Embrace <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 20초</span></h4>
 <p class="sr-desc">Unholy Embrace 종료 시: 지속 중 누적치×<i class="sr-f">부가1</i>% (상한 <i class="sr-f">부가3</i>) (<span class="sr-ty">주문</span>). <b class="sr-t">Improved Unholy Embrace</b> 면 주변 회복</p>
+<p class="sr-note">⚠ 55강화 Abyssal Touch 5포인트: 3초마다 누적치×<i class="sr-f">부가1</i>%를 터뜨린다(상한 <i class="sr-f">부가3</i>×0.4). 매3회 폭발마다 아군 최대체력50% 회복. 종료 시 남은 누적 폭발은 유지</p>
+<p class="sr-note">⚠ -sk: 기본 종료 폭발과 55강화 주기 폭발의 주대상·주변 피해를 모두 T에 기록. 회복·아이템 마나 회복은 T의 해당 열에 기록</p>
+<p class="sr-note">⚠ 같은 대상에게 자신이 건 T 재사용: 누적 피해 유지, 실제 남은 시간에 새 지속시간 추가. 55강화의 다음3초 폭발·매3회 회복 카운터 유지. 다른 시전자의 저주는 기존처럼 교체</p>
+<p class="sr-note">⚠ 저주 대상 아래 작은 연보라 숫자로 다음 폭발 예정 피해 표시: 저장 피해×현재 T 피해비율에 상한 적용. 종료 폭발은 <i class="sr-f">부가3</i>, 먼저 오는55강화 주기 폭발은 <i class="sr-f">부가3</i>×0.4. 0.05초 갱신·이동 추적·시야 밖 숨김·종료/사망/제거 정리 유지. 실제 타격 때의 치명타·대상 마법저항·피해 증감 적용 전 값</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">450×레벨</td><td class="sr-why"><span class="sr-fld">부가3</span></td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">부가3</span></td><td class="sr-eq">1회</td><td class="sr-why"><span class="sr-ty">주문</span> <span class="sr-lb">상한 <i class="sr-f">부가3</i> 를 다 채운 것으로</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">585×레벨</td><td class="sr-why"><span class="sr-fld">부가3</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: S8U</p>
@@ -1904,6 +1908,8 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="sr-sk">
 <h4><span class="sr-n">3</span>Bloody Axe <span class="dps-kind buff">버프</span><span class="sr-cd">쿨 30초</span></h4>
 <p class="sr-desc">Bloody Axe 버프 <i class="sr-f">지속</i> 초</p>
+<p class="sr-note">⚠ 55제 Sanguine Chain 5포인트: 반경500 안 팀원에게도 Bloody Axe 전이</p>
+<p class="sr-note">⚠ 시전자의 40제 Roar of the Land 2포인트 이상: Bloody Axe 발동 시 버프를 가진 공격자 본인의 마나2 회복. 팀원 타격으로 시전자 마나를 회복하지 않는다. 기존 발동 피해<span class="sr-ty">평타</span>/5/6/7 유지</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">15 + 0.5×레벨</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Molten Stance</b></td><td class="sr-eq"><b>×1.24</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 6 · 1점까지</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">25 + 0.5×레벨</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: RRQ</p>
@@ -2157,14 +2163,14 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="sr-sk">
 <h4><span class="sr-n">3</span>Hook <span class="dps-kind dmg">피해</span><span class="sr-cd">쿨 2.5초 → 1초</span></h4>
 <p class="sr-desc">단일 대상 <i class="sr-f">피해</i> = (22 + 0.75xAP) x (1 + 0.15xT25) (<span class="sr-ty">물리</span>·방어력 O). 초식의 R 입력이다</p>
-<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">22 + 0.75×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Empowered Hook</b></td><td class="sr-eq"><b>×1.45</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 25 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→Q→W 철산고</td><td class="sr-eq"><i class="sr-f">피해</i> ×4 (둘레 300) — 보스·미니보스는 ×1.25 이고 안 밀린다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ E→Q→W 용신권</td><td class="sr-eq"><i class="sr-f">피해</i> ×1.5 를 6번 (둘레 600 을 도는 용 10마리)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ E→W→Q 첩동권</td><td class="sr-eq"><i class="sr-f">피해</i> ×3 을 두 번 — 그리고 다음 초식 ×2 표식. ⚠ 이 초식만 위 보정(Shuffle·투지·×2)을 하나도 안 탄다 (생값)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→E 주작 전상</td><td class="sr-eq"><i class="sr-f">피해</i> ×0.4 유도탄을 0.25초마다 40번(10초)· 방어력 X</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ R→E→W 쌍우낙조</td><td class="sr-eq"><i class="sr-f">피해</i> ×8 한 번 (주작이 있어야 나간다)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ 초식 피해 = 슬롯값 × 초식배수 × 아래 보정</td><td class="sr-eq">곱하는 것은 아래 셋뿐이다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ Shuffle 창 안 (Improved Shuffle 필요)</td><td class="sr-eq">× (1.25 + 0.06×<b class="sr-t">Ace</b>)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ 투지(Fighting Will) ON</td><td class="sr-eq">× (1 + 0.01×영웅레벨 + 0.1×<b class="sr-t">Empowered Fighting Will</b>)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ E→W→Q 첩동권 표식 (2초)</td><td class="sr-eq">× 2 — 한 번 쓰면 사라진다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Warpath Burst 5점 + 투지(Fighting Will) ON</td><td class="sr-eq">초식이 나갈 때 15% 확률로 짝 초식(같은 탤런트의 다른 초식)도 쿨·마나 없이 함께 나간다</td><td class="sr-why">조건</td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">피해</span></td><td class="sr-eq">1회</td><td class="sr-why"><span class="sr-ty">물리</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">31.9 + 1.0875×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
+<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">22 + 0.75×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Empowered Hook</b></td><td class="sr-eq"><b>×1.45</b></td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 25 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→Q→W 철산고</td><td class="sr-eq"><i class="sr-f">피해</i> ×4 (둘레 300) — 보스·미니보스는 ×1.25 이고 안 밀린다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">5초 동안 초당 8발씩 총 40발을 현재 위치에서 사방으로 발사. 사거리 565.6· 속도 800· 피격 반경 80. 명중한 칼날마다 (85 + AP ×0.05) × 투지 강화 포인트 ×0.9 및 초식 보정. 같은 칼날은 같은 적을 한 번만 타격하며, 계산 피해가 0이면 기존 공용 함수의 최소 1 보정 적용(방어력 적용 전)</td><td class="sr-why">/</td></tr><tr class="sr-r2"><td class="sr-cond">+ E→Q→W 용신권</td><td class="sr-eq"><i class="sr-f">피해</i> ×1.5 를 6번 (둘레 600 을 도는 용 10마리)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ E→W→Q 첩동권</td><td class="sr-eq"><i class="sr-f">피해</i> ×3 을 두 번 — 그리고 다음 초식 ×2 표식. ⚠ 이 초식만 위 보정(Shuffle·투지·×2)을 하나도 안 탄다 (생값)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→E 주작 전상</td><td class="sr-eq"><i class="sr-f">피해</i> ×0.4 유도탄을 0.25초마다 40번(10초)· 방어력 X</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ R→E→W 쌍우낙조</td><td class="sr-eq"><i class="sr-f">피해</i> ×8 한 번 (주작이 있어야 나간다)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ 초식 피해 = 슬롯값 × 초식배수 × 아래 보정</td><td class="sr-eq">곱하는 것은 아래 셋뿐이다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ Shuffle 창 안 (Improved Shuffle 필요)</td><td class="sr-eq">× (1.25 + 0.06×<b class="sr-t">Ace</b>)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ 투지(Fighting Will) ON</td><td class="sr-eq">× (1 + 0.01×영웅레벨 + 0.1×<b class="sr-t">Empowered Fighting Will</b>)</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ └ E→W→Q 첩동권 표식 (2초)</td><td class="sr-eq">× 2 — 한 번 쓰면 사라진다</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Warpath Burst 5점 + 투지(Fighting Will) ON</td><td class="sr-eq">초식이 나갈 때 15% 확률로 짝 초식(같은 탤런트의 다른 초식)도 쿨·마나 없이 함께 나간다</td><td class="sr-why">조건</td></tr><tr class="sr-r3"><td class="sr-cond">맞는 횟수 <span class="sr-sl">피해</span></td><td class="sr-eq">1회</td><td class="sr-why"><span class="sr-ty">물리</span></td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">31.9 + 1.0875×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: ZzPgHit</p>
 </div>
 <div class="sr-sk">
 <h4><span class="sr-n">4</span>Fighting Will <span class="dps-kind buff">버프</span></h4>
 <p class="sr-desc">토글. <i class="sr-f">피해</i> = AP x 0.05 x <b class="sr-t">Improved Fighting Will</b> 는 피해가 아니라 공격력 보너스다 — 켜면 그만큼 더하고 마나를 계속 태운다. 마나가 바닥나면 저절로 꺼진다. 초당 소모 (2 + Improved 포인트 + Empowered 포인트) × (1 + 0.2×Warpath Burst 포인트)</p>
-<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Fighting Will</b></td><td class="sr-eq">225</td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 9 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">(85 + AP ×0.05) × 투지 강화 포인트 ×0.9 를 반경 565.6 에 5번. 추가 초식 보정 적용</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Improved Fighting Will</td><td class="sr-eq">어택파워도 함께 오른다</td><td class="sr-why">조건</td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">0.15×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
+<table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Fighting Will</b></td><td class="sr-eq">225</td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 9 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">5초 동안 칼날 40발을 사방으로 흩뿌리며 명중할 때만 (85 + AP ×0.05) × 투지 강화 포인트 ×0.9 피해. 같은 칼날은 같은 적을 한 번만 타격하며, 계산 피해가 0이면 기존 공용 함수의 최소 1 보정 적용(방어력 적용 전). 추가 초식 보정 적용</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Improved Fighting Will</td><td class="sr-eq">어택파워도 함께 오른다</td><td class="sr-why">조건</td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">0.15×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: ZzPgWOn/ZzPgWOff/ZzPgTick</p>
 </div>
@@ -2213,6 +2219,96 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     </div>
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-07</span><span class="pn-cnt">6건</span><span class="pn-peek">명령어 1 · Fighter 2 · Earthquaker 1 · Shadowblade 1 · 기타 1</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">명령어</span><span class="pn-cnt">1건</span><span class="pn-peek">-skill eng / -skill kor</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">명령어</span>
+            <span class="pn-sk">-skill eng / -skill kor</span>
+            <span class="pn-fn">ZzIconTipApply · ZzShopUiTick · ZzShopNativeRow · ZzShopUiInit · ZzShopDataInit · CRP · W2O · patch_tooltip_lang.py · patch_shop_selection_lang.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">아이콘·상점·캐릭터 선택 언어 전환과 표시 복구 (abq)</span><span class="pn-b">자동 배치 물약 상점은 native 툴팁 텍스트 판독 실패 시 영어 구매 설명이 표시되지 않음</span><span class="pn-ar">&rarr;</span><span class="pn-a">물약·엘릭서 상점 판매 목록과 기존 버튼 자리를 영어 설명에 직접 연결하는 보완 경로 추가. 캐릭터 소개 실제 줄바꿈과 아이콘 배치 복구 유지</span></div>
+          <p class="pn-why">기본 한국어·개인 영어 전환을 유지하면서 상점 물약 구매 툴팁의 영어 표시 누락 보완</p>
+          <p class="pn-x">두 언어 정본·능력601·아이템699종·직업20개 유지. 물약/엘릭서51종을 판매하는19상점의175개 구매 버튼 연결 추가. 서로 다른 배치 해석에서 위치가 같은 항목만 등록하며 native 상품명 판독 우선. 가방6칸은 실제 아이템으로 조회. UI 표시·구매·가격·이름·Hotkey·Art·Buttonpos·효과·저장·전투·지형 불변. 실제 상점 화면과 엔진 자동배치 일치는 새 판 확인 필요</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">2건</span><span class="pn-peek">풍차참 (RWQ) · 직업 아이콘</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">풍차참 (RWQ)</span>
+            <span class="pn-fn">ZzPgRwSpawn · ZzPgRwTick · UnitDamageUnit/BNN · patch_fighter_rwq_stream.py · patch_fighter_rwq_min_hit.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">5초간 칼날40발·최소피해 처리 복구 (abp)</span><span class="pn-b">20발 동시 발사. 이후5초40발로 바꿨으나 투지20제0포인트의 계산피해0은 칼날이 피해함수 호출을 생략</span><span class="pn-ar">&rarr;</span><span class="pn-a">5초간 초당8발씩 총40발. 칼날 명중 시 항상 기존 피해함수 호출하여 최소1보정 적용(방어력 적용 전)</span></div>
+          <p class="pn-why">피해가0인 명중도 원래 공용 최소피해 처리를 거치도록 복구</p>
+          <p class="pn-x">T9 0포인트는 계산값0이지만 공용함수에서1로보정. AP100·다른초식보정 전 T9 1/2/3포인트는81/162/243으로 유지. 방어력/치명타와최종피해 처리는기존경로. 현재위치 발사·직선비행·사거리565.6·속도800·피격80·칼날별같은적1회·다른칼날각각 피해·R미터기/T-Y기여 유지. 마지막탄은비행완료후정리. 실제게임 확인필요</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">직업 아이콘</span>
+            <span class="pn-fn">HumanUnitFunc H05T · A0NB aart · WKO · CHP · patch_fighter_fire_icon.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">불의 판다렌 초상화로 변경 (abm)</span><span class="pn-b">일반 판다렌 아이콘이 공간술사의 폭풍 판다렌 얼굴과 비슷해 구분하기 어려움</span><span class="pn-ar">&rarr;</span><span class="pn-a">좌측 상단 영웅 아이콘·N 상호작용 메뉴·아이템 툴팁 직업 그림·영웅 UI 그림을 불의 판다렌으로 통일</span></div>
+          <p class="pn-why">붉은 배경의 초상화로 직업을 쉽게 구분</p>
+          <p class="pn-x">기존 워크래프트 기본 아이콘 사용. 일반·리포지드·Definitive Edition의 활성/비활성 그림 확인. 유닛 모델·스킬·아이콘 위치·저장 코드·다른 직업 아이콘은 유지. 실제 게임 표시 확인 필요</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Earthquaker</span><span class="pn-cnt">1건</span><span class="pn-peek">R Bloody Axe</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Earthquaker</span>
+            <span class="pn-sk">R Bloody Axe</span>
+            <span class="pn-fn">RUQ · patch_earthquaker_rmana.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전이 버프 마나 회복 대상 수정 (abt)</span><span class="pn-b">팀원에게 전이한 버프가 발동해도 원래 시전자 어스퀘이커의 마나2 회복</span><span class="pn-ar">&rarr;</span><span class="pn-a">버프를 가진 공격자 본인의 마나2 회복. 회복 숫자도 그 사람에게 표시</span></div>
+          <p class="pn-why">전이 버프 수혜자의 타격 보상이 원래 시전자에게 돌아가는 문제 수정</p>
+          <p class="pn-x">시전자의 Roar of the Land 40제2포인트 조건·마나2·피해타입1/5/6/7·회복/능력치 누적·전이범위/지속시간 유지. -sk의 원래 시전자 R기여 기록 유지. 실제 게임 확인 필요</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Shadowblade</span><span class="pn-cnt">1건</span><span class="pn-peek">T Unholy Embrace / Abyssal Touch</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Shadowblade</span>
+            <span class="pn-sk">T Unholy Embrace / Abyssal Touch</span>
+            <span class="pn-fn">JFQ · S8U · ZzAtBurst · ZzUtWatch · ZzUtTick · ZzUtShow · ZzAtInit · patch_shadowblade_trefresh.py · patch_shadowblade_tmeter.py · patch_shadowblade_storage_text.py · patch_shadowblade_damage_text.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">재사용 누적 보존·시간 추가 / -sk 기록 / 폭발 예정 피해 표시 (abw)</span><span class="pn-b">같은 대상에게 T를 다시 걸면 저장 피해 초기화·지속시간 갱신. 55강화 주기 폭발은 -sk 미분류 · 몹 아래 숫자는 저장 피해100%</span><span class="pn-ar">&rarr;</span><span class="pn-a">자신의 T가 남은 대상에 재사용 시 저장 피해 유지·남은 시간에 새 지속시간 추가. 55강화 폭발·회복 주기 유지. 종료/주기 폭발 모두 T 기록 · 몹 아래 작은 연보라 숫자로 T 계수·상한을 반영한 다음 폭발 예정 피해 표시, 0.05초 갱신</span></div>
+          <p class="pn-why">재사용으로 이미 쌓인 피해가 사라지고 55강화 폭발이 미뤄지는 문제 및 주기 폭발 기록 누락 수정 · 큰 저장량 대신 실제 폭발 계수·상한을 반영한 수치를 확인하기 쉽게 표시</p>
+          <p class="pn-x">기본 지속시간5.5초, Time Twisting 강화당12% 유지. 남은2초+새5.5초=7.5초. 다른 시전자의 저주 교체·피해/회복 공식·폭발 상한·마나 발동 유지. 한·영 툴팁 반영. 실제 게임 확인 필요 표시=저장량×현재 T 피해비율, 종료 상한XOF4·주기 상한XOF4×0.4. 기존1초 주기 타이머를 읽어 다음 실제 폭발 종류 선택. 치명타·대상 저항/피해 증감 전 예정치. 이동 추적·시야 밖 숨김·종료/사망/제거 정리. 피해 공식 유지.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">4번 Lord Naztar</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">4번 Lord Naztar</span>
+            <span class="pn-fn">KNN 목적지 RectX 등록 · patch_naztar_teleport.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">5,000골드 텔레포트 도착 위치 (abr)</span><span class="pn-b">도착 기준좌표 (-14528, -8960)</span><span class="pn-ar">&rarr;</span><span class="pn-a">도착 기준좌표 (-13700, -8960)</span></div>
+          <p class="pn-why">텔레포트 직후 보스와 가까이 마주치는 불편 완화</p>
+          <p class="pn-x">X만 동쪽으로828 이동. 비용5000·Y좌표·진행도·전투 시작 처리·다른 텔레포트 유지. 도착 주변 지형 이동가능 확인, 실제 도착 화면은 새 판에서 확인 필요</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
       <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-06</span><span class="pn-cnt">2건</span><span class="pn-peek">시스템 부활 시야 · 지형 동부 도로 바위 통로</span></summary>
         <div class="pn-body">
