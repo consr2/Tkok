@@ -2220,6 +2220,51 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
       <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-08</span><span class="pn-cnt">3건</span><span class="pn-peek">시스템 어그로 · 시스템 일반 몬스터 스킬 · Druid Shapeshifting</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Druid</span><span class="pn-cnt">1건</span><span class="pn-peek">Shapeshifting</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Druid</span>
+            <span class="pn-sk">Shapeshifting</span>
+            <span class="pn-fn">KAQ · JTQ · J9Q · JQQ · patch_druid_shift.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">변신 완료 확인·아이콘 복원 (acb)</span><span class="pn-b">선택 직후 영웅 정지 및0.01초 뒤 변신 완료 가정. T 복원 시 기본1레벨</span><span class="pn-ar">&rarr;</span><span class="pn-a">즉시 정지 제거, 실제 형태 변경 후 스킬·능력치 적용. T 강화 레벨 및 형태 아이콘 복원</span></div>
+          <p class="pn-why">형태 선택 후 변신하지 않고 다음 선택창의 아이콘이 달라지는 문제에 대응</p>
+          <p class="pn-x">기존 영웅·인벤토리·스킬 수치와 변신용 기본 능력 유지. 대기 중 받은 피해 유지. 실패 시 원래 형태로 재계산, 사망·교체된 영웅의 이전 콜백 차단. 실제 Warcraft III에서 최종 동작 확인 필요.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">어그로 · 일반 몬스터 스킬</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">어그로</span>
+            <span class="pn-fn">OEN · N0N · NZN · N1N · patch_aggro_resume.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">건너뛴 공격 대상 변경 복귀 (acd)</span><span class="pn-b">위협 대상만 바뀌고 스킬 중 생략한 공격 명령을 정기 관리에서 재시도하지 않음</span><span class="pn-ar">&rarr;</span><span class="pn-a">일반 공격 상태 복귀 후 다음0.03125초 관리 주기에 누락된 대상 변경을 한 번 적용</span></div>
+          <p class="pn-why">어그로 표시가 빨간색인데 잠시 다른 사람에게 평타가 들어가는 기존 대상 갱신 누락 보완</p>
+          <p class="pn-x">원래 위협 수치·110% 전환 조건·스킬/이동 유지. 기존 이전대상 배열만 사용, 새 타이머/함수/전역 없음. 성공한 기존 명령은 다시 보내지 않음. 실제 게임에서 확인 필요.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">일반 몬스터 스킬</span>
+            <span class="pn-fn">TEP · ZzMcCast · ZzMcEffect · patch_monster_cast_commit.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">스킬 쿨타임 취소 대응 (acc)</span><span class="pn-b">시전 효과 이벤트 안에서 정지·공격 복귀/일시정지 실행</span><span class="pn-ar">&rarr;</span><span class="pn-a">시전자·대상·능력 정보를 보관하고 이벤트 종료 직후 기존 스킬 효과와 공격 복귀 실행</span></div>
+          <p class="pn-why">워크3.0.1 업데이트 뒤 기존 스킬이 쿨타임 없이 반복되는 문제에 대응</p>
+          <p class="pn-x">AOT 황소·샤먼·오크전사의 공용 공격 스킬 쿨타임11초, 샤먼 회복6초 유지. 기존 피해/마나/재사용 대기시간 수치 변경 없음. 실제 게임에서 반복 시전 간격 확인 필요.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-07</span><span class="pn-cnt">9건</span><span class="pn-peek">명령어 2 · Fighter 3 · Earthquaker 1 · Hydromancer 1 · Shadowblade 1 · 기타 1</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
