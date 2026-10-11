@@ -102,20 +102,23 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 .pn-why{margin:0;font-size:13.5px;line-height:1.75;color:var(--muted)}
 .pn-x{margin:9px 0 0;font-size:12.5px;line-height:1.7;background:var(--surface-2);
   border-radius:5px;padding:8px 11px;color:var(--ink)}
-.pn-day{border:1px solid var(--rule);border-radius:8px;background:var(--surface);
+.pn-month,.pn-day{border:1px solid var(--rule);border-radius:8px;background:var(--surface);
   margin:0 0 10px;overflow:hidden}
-.pn-day>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;
+.pn-month>summary,.pn-day>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;
   gap:12px;flex-wrap:wrap;user-select:none}
-.pn-day>summary::-webkit-details-marker{display:none}
-.pn-day>summary:hover{background:var(--surface-2)}
-.pn-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pn-month>summary::-webkit-details-marker,.pn-day>summary::-webkit-details-marker{display:none}
+.pn-month>summary:hover,.pn-day>summary:hover{background:var(--surface-2)}
+.pn-month>summary:focus-visible,.pn-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .pn-tri{flex:none;color:var(--faint);transition:transform .15s ease}
+.pn-month[open]>summary .pn-tri{transform:rotate(90deg)}
 .pn-day[open]>summary .pn-tri{transform:rotate(90deg)}
 .pn-d{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-strong);font-weight:600}
 .pn-cnt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:1px 7px;border-radius:3px;
   background:var(--surface-2);color:var(--muted)}
 .pn-peek{font-size:12.5px;color:var(--muted);margin-left:auto;text-align:right}
 .pn-body{padding:0 14px 14px}
+.pn-mbody{padding:0 14px 14px}
+.pn-mbody>.pn-day:last-child{margin-bottom:0}
 .pn-day .pn-item{background:var(--bg)}
 
 /* ---- 업데이트 탭 · 날짜 안쪽 직업 토글 (2026-09-06) ---- */
@@ -2219,7 +2222,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
       </div>
     </div>
     <div class="tabp" id="tabp-upd">
-      <p class="seccap">날짜 &rarr; 직업 순으로 눌러 펼친다 · 최신이 위</p>
+      <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-11</span><span class="pn-cnt">6건</span><span class="pn-peek">Necromancer 3 · Fighter 1 · 기타 2</span></summary>
         <div class="pn-body">
@@ -3302,6 +3305,9 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         </details>
         </div>
       </details>
+      <details class="pn-month" data-month="2026-09">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026년 9월</span><span class="pn-cnt">253건</span><span class="pn-peek">25일의 업데이트</span></summary>
+        <div class="pn-mbody">
       <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-09-30</span><span class="pn-cnt">6건</span><span class="pn-peek">기타 6</span></summary>
         <div class="pn-body">
@@ -6183,6 +6189,8 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
         </div>
           </div>
         </details>
+        </div>
+      </details>
         </div>
       </details>
     </div>
