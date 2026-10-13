@@ -2224,11 +2224,21 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-13</span><span class="pn-cnt">7건</span><span class="pn-peek">기타 7</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-13</span><span class="pn-cnt">8건</span><span class="pn-peek">기타 8</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">7건</span><span class="pn-peek">Inner Temple · Strange Merchant · 물약 · 와드 · 엘릭서 상점 · Grom&#x27;Gol · Elixir Merchant · Lord Naztar · UVX 외 3</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">8건</span><span class="pn-peek">상점 영어 툴팁 · Inner Temple · Strange Merchant · 물약 · 와드 · 엘릭서 상점 · Grom&#x27;Gol · Elixir Merchant 외 4</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">상점 영어 툴팁</span>
+            <span class="pn-fn">ZzShopFrameRow / ZzShopNativeRow / ZzShopInspectCmd · patch_shop_selection_lang.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">NPC 선택·툴팁 동기화 위험 제거 (adp, 버그 수정)</span><span class="pn-b">미등록 상점에서 개인 화면의 하위 UI를 탐색하여 클라이언트별 객체 참조가 달라질 위험</span><span class="pn-ar">&rarr;</span><span class="pn-a">하위 UI 탐색 제거. 기존 59종 상점 연결표·719개 아이템 설명·개인별 한영 전환 유지</span></div>
+          <p class="pn-why">장비 상인과 마을 장로 선택 직후 두 동기화 오류 사례의 공통 위험 경로 제거</p>
+          <p class="pn-x">미등록 상점은 공통 초기화에서 확보한 부모 툴팁의 텍스트만 확인하며 읽지 못하면 기본 설명 유지. 아이템 위치·판매·고용·저장 불변. 실제 멀티플레이 재확인 필요.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">아이템</span>
