@@ -2224,7 +2224,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-14</span><span class="pn-cnt">6건</span><span class="pn-peek">Pyromancer 5 · Necromancer 1</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-14</span><span class="pn-cnt">7건</span><span class="pn-peek">Pyromancer 5 · Necromancer 2</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Pyromancer</span><span class="pn-cnt">5건</span><span class="pn-peek">Charm of Wind · Dragon&#x27;s Breath · Meteor · 화염 파편 폭발 · Meteor · Dragon&#x27;s Breath</span></summary>
@@ -2282,8 +2282,18 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Undead Fly</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">2건</span><span class="pn-peek">Undead Fly</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Undead Fly</span>
+            <span class="pn-fn">ZzNcUFHit · patch_necro_locust_impact.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Locust 타격 효과 표시 수정 (adw)</span><span class="pn-b">타격 효과를 비행 유닛 origin에 부착 후 즉시 종료</span><span class="pn-ar">&rarr;</span><span class="pn-a">타격 위치·비행 높이에 독립 효과를 생성하여 0.8초 재생</span></div>
+          <p class="pn-why">Locust 모델 교체 후 타격 효과가 보이지 않는 현상 보정</p>
+          <p class="pn-x">Locust에 ATCH 부착점 없음. 기존 타격 모델의 Stand 800ms 재생 후 공용 타이머로 정리. 벌레 투명도 유지, 효과 배율0.8. 피해·소환·공격간격·타격음38/127 유지.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Necromancer</span>
