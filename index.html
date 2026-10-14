@@ -2224,7 +2224,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-14</span><span class="pn-cnt">7건</span><span class="pn-peek">Pyromancer 5 · Necromancer 2</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-14</span><span class="pn-cnt">12건</span><span class="pn-peek">Pyromancer 5 · Necromancer 2 · 기타 5</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Pyromancer</span><span class="pn-cnt">5건</span><span class="pn-peek">Charm of Wind · Dragon&#x27;s Breath · Meteor · 화염 파편 폭발 · Meteor · Dragon&#x27;s Breath</span></summary>
@@ -2303,6 +2303,61 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">E 비행 모델 교체 (adu)</span><span class="pn-b">밴시</span><span class="pn-ar">&rarr;</span><span class="pn-a">작은 Locust 벌레</span></div>
           <p class="pn-why">밴시 대신 작은 벌레 모습으로 시야 가림 감소</p>
           <p class="pn-x">선택한 SD Locust 모델과 텍스처를 맵에 포함. 기존 크기 배율 0.8, 투명도 약 70%, 낮춘 타격음, 피해·소환 수·지속·이동·SK 집계 유지.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">5건</span><span class="pn-peek">전기 구체 구역 · Elixir of Heavystrike · 스킬·스탯 초기화 · Crypt Fiend</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">전기 구체 구역</span>
+            <span class="pn-fn">D0BK · Doodads.slk · war3map.w3d · patch_lightning_cutout.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">갈색 지면 숨김용 오브젝트 정의 보완 (aeb)</span><span class="pn-b">빈 공간 배치 복구 후에도 갈색 지면이 표시됨</span><span class="pn-ar">&rarr;</span><span class="pn-a">CN 방식의 지형 제거용 정의와 유효한 빈 모델·전용4×4영역을 포함</span></div>
+          <p class="pn-why">타일길 사이에 갈색 지면이 남는 문제 수정</p>
+          <p class="pn-x">기존 타일길·전기 구체·일반 두다드·길막·지형높이·전투로직 보존. 단일 current 에디터에도 동일 정의 반영. 실제 게임 표시 확인 필요.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Elixir of Heavystrike</span>
+            <span class="pn-fn">LPU · ZzShopDataInit9 · ItemFunc I0N3/I0N4 · patch_heavystrike_elixir.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">공격 치명타 확률 증가량 상향 (aea)</span><span class="pn-b">공격 치명타 확률 +12%p</span><span class="pn-ar">&rarr;</span><span class="pn-a">공격 치명타 확률 +15%p</span></div>
+          <p class="pn-why">상위 공격 치명타 엘릭서 성능 상향</p>
+          <p class="pn-x">치명타 위력 +25%p 및 지속시간20분 유지. 상점·인벤토리 한글/영어 설명과 WTS 원본 동기화.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">스킬·스탯 초기화</span>
+            <span class="pn-fn">TOO · ZzShopDataInit0 · ItemFunc I015/I016 · patch_respec_level30.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">저레벨 초기화 비용 구간을 30레벨까지 확대 (adz)</span><span class="pn-b">20레벨까지 레벨당25골드, 21레벨부터 초과레벨당500골드 추가</span><span class="pn-ar">&rarr;</span><span class="pn-a">30레벨까지 레벨당25골드, 31레벨부터 초과레벨당500골드 추가</span></div>
+          <p class="pn-why">초반 스킬·스탯 재분배 비용 완화</p>
+          <p class="pn-x">30레벨750골드 / 31레벨1250골드 / 32레벨1750골드. 상점·인벤토리 한글/영어 설명 및 두 언어 WTS 원본도 동기화.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">전기 구체 구역</span>
+            <span class="pn-fn">war3map.doo 특수 배치 D0BK · patch_lightning_void.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">타일길 사이 흙 바닥 숨김 복구 (ady)</span><span class="pn-b">전기 구체·타일길 사이로 흙 지형이 노출</span><span class="pn-ar">&rarr;</span><span class="pn-a">CN맵의 해당 구역 빈 공간 배치121개 복구</span></div>
+          <p class="pn-why">타일길만 보이고 길 사이가 빈 공간으로 보이도록 수정</p>
+          <p class="pn-x">사진 좌표 X+4542/Y-29265 기준. 일반 두다드·전기 구체·길막·지형 높이 및 게임 로직 유지. 단일 current 에디터에도 동일 범위 반영.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Crypt Fiend</span>
+            <span class="pn-fn">AYT · patch_crypt_babies_target.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">분신 초기화 대상 오류 수정 (adx)</span><span class="pn-b">다른 몬스터에 분신 능력치 보정이 반복 적용될 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">분신 4마리 각각에만 한 번씩 보정</span></div>
+          <p class="pn-why">템플 일반 몬스터의 비정상적인 체력 증가 방지</p>
+          <p class="pn-x">3515 원본에도 존재하던 공용 생성 대상 JQA 지정 누락. 분신 초기화 동안만 대상을 지정하고 기존 값 복원. 공용 보정 공식·보스 패턴·VX 조건 유지.</p>
         </div>
           </div>
         </details>
