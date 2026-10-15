@@ -2224,6 +2224,51 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-15</span><span class="pn-cnt">3건</span><span class="pn-peek">Pyromancer Meteor Shower · Pyromancer Burning Desire · Rekindling · 시스템 워리어 · 카오틱 나이트 어그로</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Pyromancer</span><span class="pn-cnt">2건</span><span class="pn-peek">Meteor Shower · Burning Desire · Rekindling</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Pyromancer</span>
+            <span class="pn-sk">Meteor Shower</span>
+            <span class="pn-fn">ZzPyBoom · ZNP · patch_pyro_shower_visual.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">55레벨 메테오 샤워 후속 연출 간소화 (aej)</span><span class="pn-b">연속 운석마다 착탄 폭발·불기둥2.5초·잔불4초 및 중복 폭발 효과 생성</span><span class="pn-ar">&rarr;</span><span class="pn-a">연속 운석은 착탄 폭발1개(2초)만 생성; 불기둥·잔불·중복 폭발 생략</span></div>
+          <p class="pn-why">연속 착탄 효과가 겹쳐 시야를 가리는 현상 완화</p>
+          <p class="pn-x">낙하·피해·범위·화상·기생충·발사 횟수·0.25초 간격·일반 메테오 연출 유지. 미리보기에서 선택한 착탄 폭발 모델 재사용.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Pyromancer</span>
+            <span class="pn-sk">Burning Desire · Rekindling</span>
+            <span class="pn-fn">ZzRkBoom · patch_pyro_rekindling_owner.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">60초 회복·폭발의 본인 제한 (aei, 버그 수정)</span><span class="pn-b">R 버프를 받은 다른 직업도 같은 강화 슬롯5포인트면 회복·폭발 발동 가능</span><span class="pn-ar">&rarr;</span><span class="pn-a">Rekindling 5포인트를 찍고 자신이 사용한 R 버프를 보유한 파이로맨서만 발동</span></div>
+          <p class="pn-why">직업·버프 시전자 검사 누락으로 팀원에게 강화 효과가 잘못 발동하던 오류 수정</p>
+          <p class="pn-x">60초 검사 주기·체력/마나 완전 회복·주변600/본인SP×7.2 피해 유지. 팀원에게 주는 일반 R 버프는 유지.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">워리어 · 카오틱 나이트 어그로</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">워리어 · 카오틱 나이트 어그로</span>
+            <span class="pn-fn">K8O · patch_warrior_chaotic_threat.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">탱커 기본 위협 배율 상향 (aeh)</span><span class="pn-b">2.9 + 레벨 × 0.0525 (60레벨 6.05배)</span><span class="pn-ar">&rarr;</span><span class="pn-a">3.6 + 레벨 × 0.0675 (60레벨 7.65배), 어스퀘이크와 동일</span></div>
+          <p class="pn-why">워리어·카오틱 나이트의 탱커 어그로 확보력 상향</p>
+          <p class="pn-x">해당 탱커 스탠스 습득 시 적용. 워리어 강화 포인트·월드레벨·평타·장비·버프 보정은 기존대로 추가 적용.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
         <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-14</span><span class="pn-cnt">17건</span><span class="pn-peek">Pyromancer 5 · Necromancer 2 · 기타 10</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
