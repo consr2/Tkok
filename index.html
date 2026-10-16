@@ -2224,11 +2224,51 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-16</span><span class="pn-cnt">32건</span><span class="pn-peek">기타 32</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-16</span><span class="pn-cnt">36건</span><span class="pn-peek">기타 36</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">32건</span><span class="pn-peek">Broodmother&#x27;s Web · Broodmother&#x27;s Mandible · Vormur Archmage Signet · Vormur Fighter Signet 외 28</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">36건</span><span class="pn-peek">장비 필드 표시 · 퀘스트 보상 · 시작 안내 NPC · Broodmother&#x27;s Web 외 31</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">UI</span>
+            <span class="pn-sk">장비 필드 표시</span>
+            <span class="pn-fn">ZzTowerGroundName · patch_ground_armor_amr.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">방어력 약어 DEF → AMR (afz)</span><span class="pn-b">바닥 장비의 방어력이 DEF로 표시</span><span class="pn-ar">&rarr;</span><span class="pn-a">모든 바닥 장비의 방어력을 AMR로 표시</span></div>
+          <p class="pn-why">방어력 능력치 표기를 AMR로 통일</p>
+          <p class="pn-x">실제 방어력과 강화 배율, 다른 능력치 표시는 동일.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">UI</span>
+            <span class="pn-sk">퀘스트 보상</span>
+            <span class="pn-fn">DRO · patch_quest_reward_level_ko.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">보상 수령 요구 레벨 안내 한국어화 (afy)</span><span class="pn-b">요구 레벨이 부족할 때 Your level must be at least … 영어 안내 표시</span><span class="pn-ar">&rarr;</span><span class="pn-a">기본 한글: 이 퀘스트 보상을 받으려면 최소 N레벨이어야 합니다. -skill eng는 기존 영어 유지</span></div>
+          <p class="pn-why">보상을 받지 못한 이유와 필요한 레벨을 알기 쉽게 안내</p>
+          <p class="pn-x">N은 각 퀘스트의 실제 요구 레벨. 수령 조건·경험치·골드·보상 지급 로직 동일.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">UI</span>
+            <span class="pn-sk">장비 필드 표시</span>
+            <span class="pn-fn">ZzTowerGroundName · ZzGroundNumber · ZzGroundStatText · patch_ground_equipment_stats.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">모든 장비의 실제 능력치 요약 추가 (afx)</span><span class="pn-b">바닥 장비의 이름과 레벨·타입만 표시하여 능력치를 바로 비교하기 어려움</span><span class="pn-ar">&rarr;</span><span class="pn-a">이름 / 레벨·타입 아래에 STR·AGI·INT·AP·SP·SCC·SCP 등 0이 아닌 실제 수치를 표시. 강화 배율과 음수 옵션 포함</span></div>
+          <p class="pn-why">장비를 줍기 전에 능력치를 빠르게 확인할 수 있도록 표시 확대</p>
+          <p class="pn-x">확률·배율 옵션은 %로 표시하고 긴 줄은 줄바꿈. 물약·퀘스트 아이템은 기존 표시 유지. 실제 아이템 능력치와 저장 데이터는 동일.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">UI</span>
+            <span class="pn-sk">시작 안내 NPC</span>
+            <span class="pn-fn">LIN · ZzShopDataInit0 · ZzShopDataInit1 · patch_npc_help_ko.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">6개 도움말의 제목·본문 한국어화 (afw)</span><span class="pn-b">명령어·행동 메뉴·장비·탤런트·기본 지식·연락처 안내 제목과 클릭 후 본문이 영어로 표시</span><span class="pn-ar">&rarr;</span><span class="pn-a">기본 한글로 버튼 제목6개와 안내37문구 표시. -skill eng에서는 기존 영어 안내 유지</span></div>
+          <p class="pn-why">처음 시작하는 플레이어가 메뉴와 장비·성장 방식을 쉽게 확인하도록 안내 번역</p>
+          <p class="pn-x">기존 선택 연결·아이콘·단축키·배치·출력 시간 유지. 클릭한 플레이어에게만 표시. 새 판 확인 필요.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">아이템</span>
