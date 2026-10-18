@@ -2252,20 +2252,110 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">11건</span><span class="pn-peek">Venomancer 1 · 기타 10</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">20건</span><span class="pn-peek">Venomancer 10 · 기타 10</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Venomancer</span><span class="pn-cnt">1건</span><span class="pn-peek">독·꽃·Catalyst Flame·Great Being’s Coming·Divinity</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Venomancer</span><span class="pn-cnt">10건</span><span class="pn-peek">Improved Putrefaction · Ajax’s Flower · Pandora’s Flower · Improved Toxic Nail 외 5</span></summary>
           <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">Venomancer</span>
-            <span class="pn-sk">독·꽃·Catalyst Flame·Great Being’s Coming·Divinity</span>
-            <span class="pn-fn">VAU/VWU/U8U/VDU/VGU/VPU/NUQ/N9Q/H3O/OAQ/VYU/VZU/ZzVnBurst/E6O/I7U/VQU/NSQ/N0Q/N5Q/N8Q/X8T/X9T/YET/YFT/VFU/ZzVnApply/ZzVnTempo · patch_venomancer_fixes.py + patch_venomancer_regen.py + patch_venomancer_divinity.py + patch_venomancer_snapshot.py</span>
+            <span class="pn-sk">Improved Putrefaction</span>
+            <span class="pn-fn">VAU/H2O/H3O · patch_venomancer_fixes.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">특성·독 틱 가속·시전 판정·재생·원소 폭발 수정 (ahn)</span><span class="pn-b">W 1포인트에 두 효과, 꽃 증감 중복, Q 독중첩 7.5%/3%, 원소 중복 추첨, Y 피해 증가·틱 수 감소; Great Being 재생은 Y 종료 시 발동, Revelation 5포인트가 다음 E 추가 피해 강화; Divinity 3포인트가 어둠을 포함한 6원소 요구; 지연 독이 적중 순간 Y 상태로 가속을 다시 판정</span><span class="pn-ar">&rarr;</span><span class="pn-a">W 1포인트 공속/2포인트 마저, 꽃 증감 1회, 독중첩당 5%, 원소 중복 제외, Y 동일 피해·틱 수로 가속; Y 중 T 시전 즉시 6초 재생, Revelation 5포인트는 해당 마나 재생만 2배; 서로 다른 5원소 이상이면 다음 독 틱에 5종 소모 후 폭발, 어둠 필수 조건 제거; Y 시전 조건을 스킬 시전 순간에 고정하고 후속 독·분열탄에 단일 배율 전달. 종료 뒤 새 Q·W·E·R·T는 정상 속도</span></div>
-          <p class="pn-why">설명과 실제 효과를 일치시키고 강화도 독 틱 가속으로 통일</p>
-          <p class="pn-x">Y 기본 2배 속도, Divinity·Revelation 최대 3.1배. 독과 Rainbow Pansy는 타격당 피해·총 횟수 유지. 기존 진행 효과에는 소급 적용하지 않음. 한·영 설명 갱신. 55레벨 재생: HPS 27.5, MPS 5.5(5포인트는 11). 재시전은 중첩 대신 6초로 갱신하며 Y 종료 시 재지급하지 않음. Divinity 폭발 기본 배율은 기존 Rainbow Pansy 기준 피해×7.5 유지. 6종이 모두 있으면 기존처럼 어둠을 남기고 5종만 소모. 가속은 중복 곱하지 않고 재시전한 스킬의 배율로 교체. Y 중 시전한 기존 독은 끝까지 저장된 가속 유지. T 발사 타이머와 각 독 타이머는 독립.</p>
+          <div class="pn-row"><span class="pn-f">포인트별 효과 분리 (ahj)</span><span class="pn-b">1포인트만 찍어도 공격속도 감소와 마법 피해 증폭이 모두 적용되어 2포인트째 효과가 없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">1포인트는 공격속도 감소, 2포인트는 마법 피해 증폭까지 적용</span></div>
+          <p class="pn-why">특성 설명에 적힌 포인트별 효과와 실제 적용을 일치</p>
+          <p class="pn-x">효과를 갱신하거나 낮은 포인트로 다시 적용해도 이전 단계의 수치가 남지 않음.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Ajax’s Flower</span>
+            <span class="pn-fn">VWU/OFQ · patch_venomancer_fixes.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">아군 피해 감소 중복 적용 수정 (ahj)</span><span class="pn-b">같은 효과가 두 번 계산되어 기본 약 15.36%, Twin Bloom 5포인트에서 약 29.44% 감소</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번만 계산되어 기본 8%, Twin Bloom 5포인트에서 16% 감소</span></div>
+          <p class="pn-why">설명과 Twin Bloom 강화 수치대로 한 단계만 적용</p>
+          <p class="pn-x">꽃의 0.4초 갱신과 Twin Bloom의 강화 비율은 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Pandora’s Flower</span>
+            <span class="pn-fn">VWU/OFQ · patch_venomancer_fixes.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">적이 받는 피해 증가 중복 적용 수정 (ahj)</span><span class="pn-b">같은 효과가 두 번 계산되어 기본 약 10.25%, Twin Bloom 5포인트에서 21% 증가</span><span class="pn-ar">&rarr;</span><span class="pn-a">한 번만 계산되어 기본 5%, Twin Bloom 5포인트에서 10% 증가</span></div>
+          <p class="pn-why">설명과 Twin Bloom 강화 수치대로 한 단계만 적용</p>
+          <p class="pn-x">꽃의 0.4초 갱신과 기존 피해 처리 방식은 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Improved Toxic Nail</span>
+            <span class="pn-fn">U8U/VAU/VDU/VGU/VPU · patch_venomancer_fixes.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">독 중첩당 피해 증가율 통일 (ahj)</span><span class="pn-b">Toxic Nail 독은 중첩당 7.5%, W·E·Mandala 독은 3%, 어둠 독은 증가 없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">모든 독이 Toxic Nail 중첩당 5% 증가</span></div>
+          <p class="pn-why">받는 독 피해가 중첩당 5% 증가한다는 설명과 실제 수치를 일치</p>
+          <p class="pn-x">직접 피해·비독 공격·중첩 상한과 Inner Poison 부여 수는 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Poison Elemental</span>
+            <span class="pn-fn">NUQ · patch_venomancer_fixes.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">중복 없는 원소 추첨 (ahj)</span><span class="pn-b">각 원소를 독립 추첨하여 같은 원소가 중복되면 설명보다 적은 종류가 적용될 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트에 따라 서로 다른 원소 1·2·3종을 적용</span></div>
+          <p class="pn-why">설명에 적힌 원소 수를 항상 보장</p>
+          <p class="pn-x">Fire·Water·Earth·Wind·Holy·Dark 6종에서 중복 없이 추첨하며 한·영 설명의 누락된 Earth도 추가.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Catalyst Flame</span>
+            <span class="pn-fn">N9Q/H3O/ZzVnPoisonStart/ZzVnTempo · patch_venomancer_fixes.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">피해 배율을 실제 독 틱 가속으로 변경 (ahj)</span><span class="pn-b">새 독의 틱 피해를 늘리고 지속시간을 줄여 고정 틱 반올림에 따라 총 피해가 달라질 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">틱당 피해와 총 틱 수를 유지한 채 독의 실제 틱 간격을 단축</span></div>
+          <p class="pn-why">설명의 틱 가속 효과를 그대로 구현하고 강화 효과도 같은 방식으로 통일</p>
+          <p class="pn-x">기본 2배, Divinity·Revelation 최대 3.1배 속도. Rainbow Pansy도 발당 피해와 총 발수를 유지하며 가속. 이미 진행 중인 효과에는 소급하지 않음.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Great Being’s Coming</span>
+            <span class="pn-fn">OAQ/VYU/VZU · patch_venomancer_regen.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">재생 효과 즉시 발동 (ahk)</span><span class="pn-b">Catalyst Flame 중 Rainbow Pansy를 사용해도 재생이 Catalyst Flame 종료 시점에 지급</span><span class="pn-ar">&rarr;</span><span class="pn-a">Rainbow Pansy 시전 즉시 6초간 HPS·MPS 재생을 지급</span></div>
+          <p class="pn-why">특성 설명의 발동 시점과 실제 효과를 일치</p>
+          <p class="pn-x">55레벨 기준 HPS 27.5, MPS 5.5. 재사용은 중첩하지 않고 지속시간을 6초로 갱신하며 Catalyst Flame 종료 시 다시 지급하지 않음.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Revelation</span>
+            <span class="pn-fn">H3O/VZU · patch_venomancer_regen.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">5포인트 마나 재생 보너스 연결 수정 (ahk)</span><span class="pn-b">5포인트가 Great Being’s Coming의 마나 재생 대신 다음 Emerald Rose 추가 피해를 강화</span><span class="pn-ar">&rarr;</span><span class="pn-a">Great Being’s Coming의 6초 마나 재생만 2배로 강화</span></div>
+          <p class="pn-why">특성 설명에 적힌 마나 재생 보너스에 효과를 연결</p>
+          <p class="pn-x">55레벨 기준 MPS 5.5→11. HPS는 27.5로 유지하며 Great Being’s Coming 2포인트의 기존 다음 E 강화는 별도로 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Divinity</span>
+            <span class="pn-fn">ZzVnBurst/E6O/I7U/VQU · patch_venomancer_divinity.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">서로 다른 5원소 폭발 조건 수정 (ahl)</span><span class="pn-b">3포인트 폭발에 어둠을 포함한 6원소가 모두 필요</span><span class="pn-ar">&rarr;</span><span class="pn-a">서로 다른 원소 5종 이상이면 다음 독 틱에 5종을 소모하고 폭발</span></div>
+          <p class="pn-why">설명의 5원소 조건과 실제 발동 조건을 일치</p>
+          <p class="pn-x">어둠은 필수가 아님. 폭발 피해는 기존 Rainbow Pansy 기준 피해×7.5 유지. 6종이 모두 있으면 기존처럼 어둠을 남기고 5종만 소모.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Venomancer</span>
+            <span class="pn-sk">Catalyst Flame</span>
+            <span class="pn-fn">NSQ/N0Q/N5Q/N8Q/X8T/X9T/YET/YFT/VFU/ZzVnApply/ZzVnTempo · patch_venomancer_snapshot.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">독 가속 판정을 시전 시점으로 고정 (ahn)</span><span class="pn-b">Q·E·T의 지연 독이 시전할 때가 아니라 적중할 때 Catalyst Flame 상태를 다시 확인</span><span class="pn-ar">&rarr;</span><span class="pn-a">Q·W·E·R·T가 시전될 때 가속 배율을 저장하여 후속 독과 분열탄까지 같은 배율 적용</span></div>
+          <p class="pn-why">투사체 이동이나 지연 발동 때문에 가속 여부가 뒤바뀌지 않도록 판정 시점을 통일</p>
+          <p class="pn-x">가속은 중복 곱하지 않고 재시전한 스킬의 배율로 교체. Y 중 시전한 효과는 종료 후에도 저장된 가속을 유지하고, 종료 뒤 새 스킬은 정상 속도. T 발사와 각 독의 타이머는 독립.</p>
         </div>
           </div>
         </details>
