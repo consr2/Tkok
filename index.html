@@ -2252,7 +2252,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">20건</span><span class="pn-peek">Venomancer 10 · 기타 10</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">27건</span><span class="pn-peek">Venomancer 10 · Necromancer 1 · 기타 16</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Venomancer</span><span class="pn-cnt">10건</span><span class="pn-peek">Improved Putrefaction · Ajax’s Flower · Pandora’s Flower · Improved Toxic Nail 외 5</span></summary>
@@ -2360,8 +2360,83 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">10건</span><span class="pn-peek">캐릭터 자동 저장·불러오기 · 히어로 체험모드 · Parvin · Elixir of Attack Critical 외 6</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Necrosummon</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Necromancer</span>
+            <span class="pn-sk">Necrosummon</span>
+            <span class="pn-fn">ZzNcRaise · patch_necro_healthbar.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">무적 소환물 체력바 숨김 (ahp, 표시 개선)</span><span class="pn-b">무적 소환물의 머리 위 체력바가 표시됨</span><span class="pn-ar">&rarr;</span><span class="pn-a">기본·상급·최상급 사령 9종의 머리 위 체력바를 숨기도록 변경</span></div>
+          <p class="pn-why">여러 소환물이 전투 화면을 가리는 현상 완화</p>
+          <p class="pn-x">소환물 선택·제물 스킬·기본 공격·특수 행동·무적·지속시간 로직 유지. 실제 새 판에서 표시 확인 필요.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">16건</span><span class="pn-peek">Blade of the Fallen · Bow of the Fallen · Dagger of the Fallen · Staff of the Fallen 외 12</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Blade of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">힘 4 · 공격 치명타 위력 0%</span><span class="pn-ar">&rarr;</span><span class="pn-a">힘 8 · 공격 치명타 위력 5.34%</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Bow of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">민첩 4 · 공격 치명타 위력 0%</span><span class="pn-ar">&rarr;</span><span class="pn-a">민첩 8 · 공격 치명타 위력 5.34%</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Dagger of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">민첩 4 · 에너지 0 · 공격 치명타 위력 0% · 주문 치명타 확률 0% · 주문 치명타 위력 0%</span><span class="pn-ar">&rarr;</span><span class="pn-a">민첩 5 · 에너지 5 · 공격 치명타 위력 5.34% · 주문 치명타 확률 1.13% · 주문 치명타 위력 5.34%</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Staff of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">에너지 3 · 스펠파워 12 · 주문 치명타 위력 0% · 마나 재생 0.22/초</span><span class="pn-ar">&rarr;</span><span class="pn-a">에너지 8 · 스펠파워 13 · 주문 치명타 위력 5.34% · 마나 재생 0.42/초</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Mace of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">힘 3 · 에너지 3 · 어택파워 2 · 스펠파워 7 · 마나 재생 0.22/초</span><span class="pn-ar">&rarr;</span><span class="pn-a">힘 5 · 에너지 5 · 어택파워 4 · 스펠파워 13 · 마나 재생 0.42/초</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Axe of the Fallen</span>
+            <span class="pn-fn">VIM · patch_fallen_items.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">14레벨 Fallen 무기 능력치 상향 (ahq)</span><span class="pn-b">힘 3 · 민첩 0 · 어택파워 7</span><span class="pn-ar">&rarr;</span><span class="pn-a">힘 5 · 민첩 5 · 어택파워 13</span></div>
+          <p class="pn-why">14레벨 에픽 무기의 옵션과 활용도 조정</p>
+          <p class="pn-x">기본(+0) 수치. 기존 아이템의 등급·요구 레벨·타입·강화 단계·드롭 및 교환 조건 유지.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
@@ -7428,7 +7503,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div></div>
 <div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p></div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="레벨별 기본 포인트 표">
-<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0aho</caption>
+<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahq</caption>
 <thead><tr><th scope="col">레벨</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
 <tbody>
 <tr data-level="1"><th scope="row">1</th><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
