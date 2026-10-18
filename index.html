@@ -2252,7 +2252,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">10건</span><span class="pn-peek">Venomancer 1 · 기타 9</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">11건</span><span class="pn-peek">Venomancer 1 · 기타 10</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Venomancer</span><span class="pn-cnt">1건</span><span class="pn-peek">독·꽃·Catalyst Flame·Great Being’s Coming·Divinity</span></summary>
@@ -2270,8 +2270,18 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">9건</span><span class="pn-peek">히어로 체험모드 · Parvin · Elixir of Attack Critical · Elixir of Wisdom 외 5</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">10건</span><span class="pn-peek">캐릭터 자동 저장·불러오기 · 히어로 체험모드 · Parvin · Elixir of Attack Critical 외 6</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">캐릭터 자동 저장·불러오기</span>
+            <span class="pn-fn">ZzLlValid / ZzAlfWrite · patch_autoload20.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">다수 캐릭터 저장·목록 검사 경량화 (aho, 버그 수정)</span><span class="pn-b">여러 캐릭터를 저장하면 자동 목록 갱신이 누락될 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">저장 코드 검사량을 줄이고 자동 파일의 중복 수동 코드 문구 제거. 기존 파일과 20직업 목록 지원 유지</span></div>
+          <p class="pn-why">캐릭터가 늘어날 때 반복 검사가 과도해지는 경로를 경량화</p>
+          <p class="pn-x">개별 캐릭터 TXT의 복구용 -l·-l2는 유지. 기존 캐릭터·계정 코드는 그대로 사용하며 실제 새 판 확인 필요.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
@@ -7328,7 +7338,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div></div>
 <div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p></div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="레벨별 기본 포인트 표">
-<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahn</caption>
+<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0aho</caption>
 <thead><tr><th scope="col">레벨</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
 <tbody>
 <tr data-level="1"><th scope="row">1</th><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
