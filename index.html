@@ -2250,18 +2250,48 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">4건</span><span class="pn-peek">기타 4</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-18</span><span class="pn-cnt">7건</span><span class="pn-peek">기타 7</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">Magic Guardian · Magical Brown Bear · Emerith 우물 · 바닥 장비 능력치 · Save My Baby!</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">7건</span><span class="pn-peek">Elixir of Attack Critical · Elixir of Wisdom · Elixir of Haste · Magic Guardian · Magical Brown Bear 외 3</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Elixir of Attack Critical</span>
+            <span class="pn-fn">KYU · patch_attackcrit_elixir.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">어택 크리 확률 상향 (ahh)</span><span class="pn-b">어택 크리 확률 11%</span><span class="pn-ar">&rarr;</span><span class="pn-a">어택 크리 확률 15%</span></div>
+          <p class="pn-why">주문 치명타 엘릭서와 같은 확률 증가량 적용</p>
+          <p class="pn-x">지속시간 10분·가격 150골드 유지. 사용/진열 사본과 상점·가방 한영 설명 동기화.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Elixir of Wisdom</span>
+            <span class="pn-fn">K9U · K8U · patch_elixir_wisdom_haste.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">AP·SP 증가율 통일 (ahg)</span><span class="pn-b">스펠 파워 8% · 어택 파워 5%</span><span class="pn-ar">&rarr;</span><span class="pn-a">스펠 파워 6% · 어택 파워 6%</span></div>
+          <p class="pn-why">공격·주문 계열 증가율을 동일하게 조정</p>
+          <p class="pn-x">최대 마나 100·지속시간 10분 유지. 적용 직후와 유지 중 재계산 및 상점·가방 한영 설명 동기화.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">아이템</span>
+            <span class="pn-sk">Elixir of Haste</span>
+            <span class="pn-fn">K1U · patch_elixir_wisdom_haste.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">이동속도 고정 증가로 변경 (ahg)</span><span class="pn-b">공격속도 25% · 기본 이동속도의 18%</span><span class="pn-ar">&rarr;</span><span class="pn-a">이동속도 50 · 공격속도 25%</span></div>
+          <p class="pn-why">기본 이동속도와 관계없이 같은 이동속도 보너스 적용</p>
+          <p class="pn-x">지속시간 10분 유지. 상점·가방 한영 설명 모두 이동속도부터 표시.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">몬스터</span>
             <span class="pn-sk">Magic Guardian · Magical Brown Bear</span>
-            <span class="pn-fn">ZzMobTauntTargets · QEP · QDP · SVP · SUP · patch_mob_taunt_single.py · patch_mob_taunt_windup.py</span>
+            <span class="pn-fn">ZzMobTauntTargets · QEP · QDP · SVP · SUP · patch_mob_taunt_single.py · patch_mob_taunt_windup.py · patch_mob_taunt_windup3.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">도발 무작위 1명·쿨타임15초·포효 전조1초 (ahd)</span><span class="pn-b">반경 안 전원 도발 / 쿨타임11초 / 포효 직후 발동</span><span class="pn-ar">&rarr;</span><span class="pn-a">기존 반경 안 무작위1명 도발 / 쿨타임15초 / 포효 이펙트 후1초에 도발 시작</span></div>
+          <div class="pn-row"><span class="pn-f">도발 무작위 1명·쿨타임15초·포효 전조3초 (ahe)</span><span class="pn-b">반경 안 전원 도발 / 쿨타임11초 / 포효 직후 발동</span><span class="pn-ar">&rarr;</span><span class="pn-a">기존 반경 안 무작위1명 도발 / 쿨타임15초 / 포효 이펙트 후3초에 도발 시작</span></div>
           <p class="pn-why">여러 파티원이 동시에 행동 제한을 받는 부담을 줄이고 포효를 보고 대응할 시간 확보</p>
           <p class="pn-x">가디언 반경600·3.7초, 곰 반경400·3초 유지. 최초 대상 선택 방식과 정화 반지의 도발 단축·마나25 유지. 공용 A00S 객체와 다른 몬스터는 변경하지 않음.</p>
         </div>
@@ -7261,7 +7291,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div></div>
 <div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p></div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="레벨별 기본 포인트 표">
-<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahd</caption>
+<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahh</caption>
 <thead><tr><th scope="col">레벨</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
 <tbody>
 <tr data-level="1"><th scope="row">1</th><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
