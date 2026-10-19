@@ -2201,7 +2201,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 </div>
 <div class="sr-sk">
 <h4><span class="sr-n">4</span>Fighting Will <span class="dps-kind buff">버프</span><span class="sr-cd">쿨 1초</span></h4>
-<p class="sr-desc">켜기·끄기 각각 쿨타임 1초. 활성 중 Status 버프 아이콘 표시. <i class="sr-f">피해</i> = AP x 0.05 x <b class="sr-t">Improved Fighting Will</b> 는 피해가 아니라 공격력 보너스다 — 켜면 그만큼 더하고 마나를 계속 태운다. 마나 부족·침묵·사망·스킬 해제 시 꺼지며 버프 아이콘도 제거된다. 침묵이 끝나도 자동 재활성화하지 않는다. 초당 소모 (2 + Improved 포인트 + Empowered 포인트) × (1 + 0.2×Warpath Burst 포인트)</p>
+<p class="sr-desc">켜기·끄기 각각 쿨타임 1초. 활성 중 Status 버프 아이콘 표시. <i class="sr-f">피해</i> = AP x 0.05 x <b class="sr-t">Improved Fighting Will</b> 는 피해가 아니라 공격력 보너스다 — 켜면 그만큼 더하고 마나를 계속 태운다. 마나 부족·침묵·사망·스킬 해제 시 꺼지며 버프 아이콘도 제거된다. 침묵이 끝나도 자동 재활성화하지 않는다. 초당 소모 (1 + Improved 포인트 + Empowered 포인트) × (1 + 0.2×Warpath Burst 포인트)</p>
 <table class="sr-tab sr-build"><thead><tr><th>조건</th><th>피해 / 배율</th><th>비고</th></tr></thead><tbody><tr class="sr-r0"><td class="sr-cond"><b>기본</b> <span class="sr-sl">탤런트 0점</span></td><td class="sr-eq">0</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr><tr class="sr-r1"><td class="sr-cond">+ <b class="sr-t">Improved Fighting Will</b></td><td class="sr-eq">225</td><td class="sr-why">탤런트 <span class="sr-sl">슬롯 9 · 3점까지</span></td></tr><tr class="sr-r2"><td class="sr-cond">+ R→W→Q 풍차참</td><td class="sr-eq">5초 동안 칼날 40발을 사방으로 흩뿌리며 명중할 때만 (85 + AP ×0.05) × 투지 강화 포인트 ×0.9 피해. 같은 칼날은 같은 적을 한 번만 타격하며, 계산 피해가 0이면 기존 공용 함수의 최소 1 보정 적용(방어력 적용 전). 추가 초식 보정 적용</td><td class="sr-why">조건</td></tr><tr class="sr-r2"><td class="sr-cond">+ Improved Fighting Will</td><td class="sr-eq">어택파워도 함께 오른다</td><td class="sr-why">조건</td></tr><tr class="sr-r4"><td class="sr-cond"><b>전부 최대</b> <span class="sr-sl">이론치</span></td><td class="sr-eq">0.15×어택파워</td><td class="sr-why"><span class="sr-fld">피해</span></td></tr></tbody></table>
 <p class="sr-fn">위에서 아래로 곱해 읽는다 · 타격 횟수는 탤런트 0점 · 보스 1마리 기준</p>
 <p class="sr-fn">근거: ZzPgWOn/ZzPgWOff/ZzPgTick</p>
@@ -2252,8 +2252,23 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-19</span><span class="pn-cnt">1건</span><span class="pn-peek">시스템 직업 퀘스트</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-19</span><span class="pn-cnt">2건</span><span class="pn-peek">Fighter Fighting Will (T) · 시스템 직업 퀘스트</span></summary>
         <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Fighter</span><span class="pn-cnt">1건</span><span class="pn-peek">Fighting Will (T)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Fighter</span>
+            <span class="pn-sk">Fighting Will (T)</span>
+            <span class="pn-fn">ZzPgTick · ZzPgTree · 영어 탤런트 설명 · patch_fighter_t_base_mana.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">기본 마나 소모 감소 (ahu)</span><span class="pn-b">기본 초당 마나 소모 2</span><span class="pn-ar">&rarr;</span><span class="pn-a">기본 초당 마나 소모 1</span></div>
+          <p class="pn-why">투지 유지에 필요한 기본 마나 부담 완화</p>
+          <p class="pn-x">초당 소모=(1+Improved 포인트+Empowered 포인트)×(1+0.2×Warpath Burst 포인트). 강화 추가 소모·피해·토글 쿨타임은 유지.</p>
+        </div>
+          </div>
+        </details>
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">1건</span><span class="pn-peek">직업 퀘스트</span></summary>
           <div class="pn-gbody">
@@ -2261,9 +2276,9 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
             <span class="pn-sk">직업 퀘스트</span>
-            <span class="pn-fn">ZzTrialCdReset · 직업별 실패 처리20곳 · patch_trial_retry_cooldowns.py</span>
+            <span class="pn-fn">ZzTrialCdReset · 직업별 실패 처리20곳 · 가방 보관 유닛2개 · patch_trial_retry_cooldowns.py · patch_trial_bag_cooldowns.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">실패 후 재도전 쿨타임 초기화 (ahs)</span><span class="pn-b">직업 퀘스트 실패 후에도 물약·소모품과 스킬의 재사용 대기시간이 남음</span><span class="pn-ar">&rarr;</span><span class="pn-a">20개 직업의 퀘스트 실패 시 해당 캐릭터의 스킬·물약·소모품 쿨을 한 번 초기화. 데스와드 재구매 대기와 파이터 초식 쿨도 포함</span></div>
+          <div class="pn-row"><span class="pn-f">실패 후 재도전 쿨타임 초기화 (aht)</span><span class="pn-b">직업 퀘스트 실패 후에도 물약·소모품과 스킬의 재사용 대기시간이 남음</span><span class="pn-ar">&rarr;</span><span class="pn-a">20개 직업의 퀘스트 실패 시 스킬·물약·소모품 쿨을 초기화. 별도 가방·메뉴 보관함의 크리스탈·잼, 데스와드 재구매 대기와 파이터 초식 쿨까지 포함</span></div>
           <p class="pn-why">재도전 전에 소모품 재사용 대기시간을 기다리는 불편 완화</p>
           <p class="pn-x">성공 시에는 초기화하지 않음. 아이템 수량·버프 지속시간·체력·마나·성공 보상·전직 진행도는 유지. 실제 새 판 확인 필요.</p>
         </div>
@@ -7533,7 +7548,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div></div>
 <div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p></div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="레벨별 기본 포인트 표">
-<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahs</caption>
+<table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0ahu</caption>
 <thead><tr><th scope="col">레벨</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
 <tbody>
 <tr data-level="1"><th scope="row">1</th><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
