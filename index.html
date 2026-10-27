@@ -2464,7 +2464,57 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-26</span><span class="pn-cnt">9건</span><span class="pn-peek">Medicaster 1 · Shadow Shaman 1 · 기타 7</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-27</span><span class="pn-cnt">4건</span><span class="pn-peek">기타 4</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">4건</span><span class="pn-peek">타워 4층 아서스 · Chaos Cube · 마을 퀘스트 NPC · Eastern Road</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">타워 4층 아서스</span>
+            <span class="pn-fn">ZzT4Back · TRR · TZR · patch_tower4_resetpos2.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">전멸·초기화 때 보내는 위치 (anm·ann)</span><span class="pn-b">4층 입구 (31418, -28100)</span><span class="pn-ar">&rarr;</span><span class="pn-a">10만 골드 Special Teleport: Forge 도착 지점 (30848, -26432)</span></div>
+          <p class="pn-why">초기화 뒤 다시 걷지 않고 유료 텔레포트 자리에서 재도전</p>
+          <p class="pn-x">전멸 시 경기장 안 영웅과 초기화 5초 중 들어온 영웅에 적용. 전투 중 난입 차단은 입구 그대로. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">보스</span>
+            <span class="pn-sk">Chaos Cube</span>
+            <span class="pn-fn">ZzS4DcTick · ZzS4DcHit · patch_cube_edge_armor0.py · patch_cube_edge_share33.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">테두리 큐브 방어력 · 본체 피해 전달 (ano·anp)</span><span class="pn-b">방어력 100(+난이도) · 본체에 25% 전달</span><span class="pn-ar">&rarr;</span><span class="pn-a">방어력 0 · 본체에 33% 전달</span></div>
+          <p class="pn-why">테두리 큐브 처리 부담 완화와 본체 딜 기여 상향</p>
+          <p class="pn-x">전달은 큐브가 받은 최종 피해 기준이며 본체 방어·감소가 다시 적용됨. 체력·평타·어그로 변경 없음. 보스 수치표 동기화. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">지형</span>
+            <span class="pn-sk">마을 퀘스트 NPC</span>
+            <span class="pn-fn">O6C · O8C · patch_npc_gunner_move.py · patch_npc_gunsmith_move.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">NPC 위치 이동 (anq·anr)</span><span class="pn-b">Gunner(Save the Fallen) (-4555, -1133) · Gunman Smith(Unexplained Evil) 마을 오른쪽 (-3814, -1201)</span><span class="pn-ar">&rarr;</span><span class="pn-a">Gunner 아래로 (-4574, -1561) · Gunman Smith 마을 왼쪽 (-4583, -1198)</span></div>
+          <p class="pn-why">마을 배치 정리</p>
+          <p class="pn-x">퀘스트 내용·진행·보상 변경 없음. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">몬스터</span>
+            <span class="pn-sk">Eastern Road</span>
+            <span class="pn-fn">PDR · patch_eastroad_roamers.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">돌아다니는 몹 수 · 생성 주기 (ans)</span><span class="pn-b">최대 24마리(앞길 18 · 뒷길 6), 23초마다 생성</span><span class="pn-ar">&rarr;</span><span class="pn-a">최대 12마리(앞길 9 · 뒷길 3), 60초마다 생성</span></div>
+          <p class="pn-why">길 위에 몹이 과도하게 쌓이던 문제 완화</p>
+          <p class="pn-x">길가 캠프 18곳(전멸 320초 뒤 영웅이 들어가면 재생성)과 몹 종류·능력은 그대로. 헌신 리스폰 제거 효과 그대로. 실제 게임 확인 대기.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-10-26</span><span class="pn-cnt">13건</span><span class="pn-peek">Medicaster 1 · Paladin 2 · Shadow Shaman 1 · 기타 9</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Medicaster</span><span class="pn-cnt">1건</span><span class="pn-peek">Last Chance · Sheltering Spirit</span></summary>
@@ -2478,6 +2528,31 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           <div class="pn-row"><span class="pn-f">55 강화 첫 발동의 음수 HPS 보호 누락 (amz)</span><span class="pn-b">55 강화 5포인트에서는 두 번째 죽음 방지 때만 보호막이 생겨 첫 발동 직후 음수 HPS로 사망할 수 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">죽음을 막을 때마다 기존 Empowered Last Chance 보호막을 즉시 적용하여 발동 당시 음수 HPS 상쇄</span></div>
           <p class="pn-why">55 강화로 죽음 방지 횟수가 늘어나도 기존 보호 효과가 첫 발동부터 유지되도록 수정</p>
           <p class="pn-x">죽음 방지 2회·Last Chance II 1회·보호막 수치와 지속시간·체력35% 아이템 조건 유지. 보호막이 전부 막은 피해에는 남은 라찬 횟수를 소모하지 않음. 한영 스킬 트리·계산식 설명 동기화. 실제 게임 확인 대기.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Paladin</span><span class="pn-cnt">2건</span><span class="pn-peek">Divine Favor · Divine Touch (E)</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Paladin</span>
+            <span class="pn-sk">Divine Favor · Holy Field · Divine Touch 툴팁</span>
+            <span class="pn-fn">patch_divfavor_desc.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">지속시간 안내 문구 정정 (ani)</span><span class="pn-b">Divine Favor 설명에 옛 이름(Improved Divine Touch)과 Holy Field 바닥 회복 문장이 섞여 있음</span><span class="pn-ar">&rarr;</span><span class="pn-a">Divine Favor 는 본문의 「2초간」만 남김. Holy Field 는 2포인트 holy flame 유지 시간(Holy Trial 0~5포인트 5.2/6/7.2/8/9.2/10초)만 안내</span></div>
+          <p class="pn-why">수치는 그대로이고 엉뚱한 자리에 붙은 문장만 정리</p>
+          <p class="pn-x">디버프 2초·holy flame 실제 유지 시간 변경 없음. 한영 스킬 트리·Divine Touch 아이콘 툴팁·계산식 메모 동기화.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Paladin</span>
+            <span class="pn-sk">Divine Touch (E) · Holy Trial 5점</span>
+            <span class="pn-fn">F9Q · patch_pal_touchrad300.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">광역 회복 · 광역 피해 반경 (ank)</span><span class="pn-b">대상 주변 600 (빛 이펙트 둘레 550)</span><span class="pn-ar">&rarr;</span><span class="pn-a">대상 주변 300 (빛 이펙트 둘레 250)</span></div>
+          <p class="pn-why">원작 250 대비 지나치게 넓던 반경 축소</p>
+          <p class="pn-x">대상 본인은 본 타격만 받고 광역에서는 제외(기존과 같음). 회복·피해 계수 변경 없음. 계산식 설명 동기화. 실제 게임 확인 대기.</p>
         </div>
           </div>
         </details>
@@ -2497,8 +2572,28 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">7건</span><span class="pn-peek">25~27번 보스 VX · 25~27번 보스 · 보스·유닛 처치 경험치 · Chaos Cube · 25~27번 보스 외 3</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">9건</span><span class="pn-peek">두 번 써야 재사용 대기 탤런트 · Special Teleport Master · 25~27번 보스 VX · 25~27번 보스 · 보스·유닛 처치 경험치 외 4</span></summary>
           <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">두 번 써야 재사용 대기 탤런트 (공통)</span>
+            <span class="pn-fn">ZzChg · ZzChgClr · patch_zzchg_fix.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">2회 시전 순서와 스킬별 상태 (anj)</span><span class="pn-b">첫 시전 직후 재사용 대기에 들어가고 그 뒤에야 연속 2회 가능. 상태가 영웅당 1개라 이런 탤런트를 2개 찍으면(예: Paladin Final Crusade + Perfect Judgment) 번갈아 쓸 때마다 초기화되어 추가 시전 불가</span><span class="pn-ar">&rarr;</span><span class="pn-a">첫 시전은 재사용 대기 없이 바로 한 번 더, 두 번째 시전 뒤 재사용 대기. 상태를 스킬 칸마다 따로 저장해 여러 개를 찍어도 각자 작동</span></div>
+          <p class="pn-why">「두 번 써야 재사용 대기」 설명대로 동작하도록 수정</p>
+          <p class="pn-x">해당 탤런트 12곳 모두 적용. 탤런트 조건·재사용 대기 시간 변경 없음. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">UI</span>
+            <span class="pn-sk">Special Teleport Master</span>
+            <span class="pn-fn">Units\ItemFunc.txt · patch_tpshop_hotkey.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">텔레포트 9칸 단축키 (anl)</span><span class="pn-b">단축키 없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">Narith Q · Temple of Sanctity Inner W · Orc Tomb Final E · Crueltis R · Outer Corridor A · Inner Corridor S · Inner Temple Corridor D · Stellar Observatory F · Forge Z</span></div>
+          <p class="pn-why">버튼 배치 그대로 키보드로 바로 이동</p>
+          <p class="pn-x">가격·이동 조건·도착 위치 변경 없음. 한영 툴팁 제목에 키 표시.</p>
+        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">보스</span>
