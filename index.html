@@ -2465,7 +2465,63 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
     <div class="tabp" id="tabp-upd">
       <p class="seccap">이번 달은 날짜별 · 지난 기록은 월 &rarr; 날짜 &rarr; 직업 순으로 펼친다 · 최신이 위</p>
       <details class="pn-day">
-        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-11-01</span><span class="pn-cnt">9건</span><span class="pn-peek">Necromancer 1 · 기타 8</span></summary>
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-11-02</span><span class="pn-cnt">4건</span><span class="pn-peek">Druid 2 · 기타 2</span></summary>
+        <div class="pn-body">
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Druid</span><span class="pn-cnt">2건</span><span class="pn-peek">Improved Maul · Lunar Ascendance</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Druid</span>
+            <span class="pn-sk">Improved Maul</span>
+            <span class="pn-fn">LRQ · patch_maul_taunt_frenzy.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">도발 조건</span><span class="pn-b">Improved Maul 만 있으면 발동</span><span class="pn-ar">&rarr;</span><span class="pn-a">Frenzy 1포인트 이상 필요</span></div>
+          <p class="pn-why">곰 탱커 투자를 한 경우에만 어그로를 끌도록 했다</p>
+          <p class="pn-x">Crush 피해 증가 디버프와 내부 쿨다운 20초는 그대로다. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Druid</span>
+            <span class="pn-sk">Lunar Ascendance</span>
+            <span class="pn-fn">KTQ · patch_starfall_dual.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">Starfall 두 번째 시전</span><span class="pn-b">지속 시간만 다시 시작</span><span class="pn-ar">&rarr;</span><span class="pn-a">독립으로 동시 실행</span></div>
+          <p class="pn-why">두 번 쓸 수 있는데 기존 시전을 덮어써서 효과가 거의 없었다</p>
+          <p class="pn-x">5포인트에서 두 Starfall 이 각자 지속되고 피해를 준다. 최대 2개. 실제 게임 확인 대기.</p>
+        </div>
+          </div>
+        </details>
+        <details class="pn-grp">
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">2건</span><span class="pn-peek">Elixir of Ascendance · Elixir of Purification</span></summary>
+          <div class="pn-gbody">
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">Elixir of Ascendance</span>
+            <span class="pn-fn">ZzEl9Add · patch_elixir_speed.py · patch_elixir_cd15.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">효과</span><span class="pn-b">어택 파워·스펠 파워 5%</span><span class="pn-ar">&rarr;</span><span class="pn-a">이동 속도 60</span></div>
+          <div class="pn-row"><span class="pn-f">쿨타임</span><span class="pn-b">60초</span><span class="pn-ar">&rarr;</span><span class="pn-a">15초</span></div>
+          <p class="pn-why">3초마다 최대 마나 3% 회복은 그대로 두고 강화 효과를 바꿨다</p>
+          <p class="pn-x">같은 쿨타임 그룹인 Elixir of Purification 과 Rejuvenation Potion: Powerful 도 함께 묶일 수 있다. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">시스템</span>
+            <span class="pn-sk">Elixir of Purification</span>
+            <span class="pn-fn">A0OT · patch_elixir_cd15.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">쿨타임</span><span class="pn-b">60초</span><span class="pn-ar">&rarr;</span><span class="pn-a">15초</span></div>
+          <p class="pn-why">엘릭서를 바꿔 쓸 때 기다리는 시간을 줄였다</p>
+          <p class="pn-x">같은 쿨타임 그룹인 Elixir of Ascendance 와 Rejuvenation Potion: Powerful 도 함께 묶일 수 있다. 실제 게임 확인 대기.</p>
+        </div>
+          </div>
+        </details>
+        </div>
+      </details>
+      <details class="pn-day">
+        <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-d">2026-11-01</span><span class="pn-cnt">6건</span><span class="pn-peek">Necromancer 1 · 기타 5</span></summary>
         <div class="pn-body">
         <details class="pn-grp">
           <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Necromancer</span><span class="pn-cnt">1건</span><span class="pn-peek">Undead Fly</span></summary>
@@ -2482,47 +2538,17 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">8건</span><span class="pn-peek">Improved Maul · Lunar Ascendance · Elixir of Purification 외 5</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">기타</span><span class="pn-cnt">5건</span><span class="pn-peek">Elixir of Ascendance · 소울 조각 저장 상한 · 게임 캐시 초기화 외 2</span></summary>
           <div class="pn-gbody">
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Druid</span>
-            <span class="pn-sk">Improved Maul</span>
-            <span class="pn-fn">LRQ · patch_maul_taunt_frenzy.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">도발 조건 (apk)</span><span class="pn-b">Improved Maul 만 있으면 발동</span><span class="pn-ar">&rarr;</span><span class="pn-a">Frenzy 1포인트 이상 필요</span></div>
-          <p class="pn-why">곰 탱커 투자를 한 경우에만 어그로를 끌도록 했다</p>
-          <p class="pn-x">Crush 피해 증가 디버프와 내부 쿨다운 20초는 그대로다. 실제 게임 확인 대기.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Druid</span>
-            <span class="pn-sk">Lunar Ascendance</span>
-            <span class="pn-fn">KTQ · patch_starfall_dual.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">Starfall 두 번째 시전 (apj)</span><span class="pn-b">지속 시간만 다시 시작</span><span class="pn-ar">&rarr;</span><span class="pn-a">독립으로 동시 실행</span></div>
-          <p class="pn-why">두 번 쓸 수 있는데 기존 시전을 덮어써서 효과가 거의 없었다</p>
-          <p class="pn-x">5포인트에서 두 Starfall 이 각자 지속되고 피해를 준다. 최대 2개. 실제 게임 확인 대기.</p>
-        </div>
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">시스템</span>
-            <span class="pn-sk">Elixir of Purification</span>
-            <span class="pn-fn">A0OT · patch_elixir_cd15.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">쿨타임 (aph)</span><span class="pn-b">60초</span><span class="pn-ar">&rarr;</span><span class="pn-a">15초</span></div>
-          <p class="pn-why">엘릭서를 바꿔 쓸 때 기다리는 시간을 줄였다</p>
-          <p class="pn-x">같은 쿨타임 그룹인 Elixir of Ascendance 와 Rejuvenation Potion: Powerful 도 함께 묶일 수 있다. 실제 게임 확인 대기.</p>
-        </div>
         <div class="pn-item">
           <div class="pn-hd">
             <span class="pn-cls">시스템</span>
             <span class="pn-sk">Elixir of Ascendance</span>
-            <span class="pn-fn">ZzEl9Go · n091 · patch_elixir_ascendance.py · patch_elixir_hotkey.py · patch_elixir_speed.py · patch_elixir_cd15.py</span>
+            <span class="pn-fn">ZzEl9Go · n091 · patch_elixir_ascendance.py · patch_elixir_hotkey.py</span>
           </div>
-          <div class="pn-row"><span class="pn-f">새 엘릭서 (aph)</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">3초마다 최대 마나 3% 회복, 이동 속도 60, 20분</span></div>
+          <div class="pn-row"><span class="pn-f">새 엘릭서 (apb)</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">3초마다 최대 마나 3% 회복, 어택 파워·스펠 파워 5%, 20분</span></div>
           <p class="pn-why">High Master Graham 의 빈 Z 칸에 넣었다</p>
-          <p class="pn-x">가격 5000 골드. 쿨타임 15초. 다른 엘릭서와 함께 유지되지 않는다. 단축키 A. 실제 게임 확인 대기.</p>
+          <p class="pn-x">가격 5000 골드. 다른 엘릭서와 함께 유지되지 않는다. 단축키 A. 실제 게임 확인 대기.</p>
         </div>
         <div class="pn-item">
           <div class="pn-hd">
