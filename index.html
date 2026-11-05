@@ -2486,7 +2486,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Chaotic Knight</span><span class="pn-cnt">1건</span><span class="pn-peek">Power of the Chaotic</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Chaotic Knight</span><span class="pn-cnt">2건</span><span class="pn-peek">Power of the Chaotic · 스킬 초기화</span></summary>
           <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
@@ -2496,6 +2496,16 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
           <div class="pn-row"><span class="pn-f">어그로 생성 증가</span><span class="pn-b">없음</span><span class="pn-ar">&rarr;</span><span class="pn-a">포인트당 9% (0/9/18/27%)</span></div>
           <p class="pn-x">Chaotic Stance 를 배웠을 때만 적용된다. 실제 게임 확인 대기.</p>
+        </div>
+        <div class="pn-item">
+          <div class="pn-hd">
+            <span class="pn-cls">Chaotic Knight</span>
+            <span class="pn-sk">스킬 초기화 · -sk 스킬별 미터기</span>
+            <span class="pn-fn">TUO · KGU · patch_respec_lxn.py</span>
+          </div>
+          <div class="pn-row"><span class="pn-f">초기화 뒤 스킬명·집계 (버그 수정)</span><span class="pn-b">-sk 스킬 이름이 Default string 으로 바뀌고 쓴 스킬이 전부 미분류 — 다시 불러오기 전까지 유지</span><span class="pn-ar">&rarr;</span><span class="pn-a">초기화해도 스킬 이름·집계·자동 시전 판정이 그대로 유지된다</span></div>
+          <p class="pn-why">원작 초기화 함수가 플레이어 번호 대신 반복문 변수로 스킬 표를 비워, 처음 들어온 영웅의 표가 지워졌다 (버그 수정)</p>
+          <p class="pn-x">다른 직업도 초기화 직후 첫 탤런트를 찍기 전까지 같은 증상이 있었고, 여럿이 하면 초기화한 사람이 아니라 처음 들어온 사람의 표가 지워졌다. 실제 게임 확인 대기.</p>
         </div>
           </div>
         </details>
@@ -2514,22 +2524,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
           </div>
         </details>
         <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">Chaotic Knight</span><span class="pn-cnt">1건</span><span class="pn-peek">스킬 초기화 · -sk</span></summary>
-          <div class="pn-gbody">
-        <div class="pn-item">
-          <div class="pn-hd">
-            <span class="pn-cls">Chaotic Knight</span>
-            <span class="pn-sk">스킬 초기화 · -sk 스킬별 미터기</span>
-            <span class="pn-fn">TUO · KGU · patch_respec_lxn.py</span>
-          </div>
-          <div class="pn-row"><span class="pn-f">초기화 뒤 스킬명·집계 (버그 수정)</span><span class="pn-b">-sk 스킬 이름이 Default string 으로 바뀌고 쓴 스킬이 전부 미분류 — 다시 불러오기 전까지 유지</span><span class="pn-ar">&rarr;</span><span class="pn-a">초기화해도 스킬 이름·집계·자동 시전 판정이 그대로 유지된다</span></div>
-          <p class="pn-why">원작 초기화 함수가 플레이어 번호 대신 반복문 변수로 스킬 표를 비워, 처음 들어온 영웅의 표가 지워졌다 (버그 수정)</p>
-          <p class="pn-x">다른 직업도 초기화 직후 첫 탤런트를 찍기 전까지 같은 증상이 있었고, 여럿이 하면 초기화한 사람이 아니라 처음 들어온 사람의 표가 지워졌다. 실제 게임 확인 대기.</p>
-        </div>
-          </div>
-        </details>
-        <details class="pn-grp">
-          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">시스템</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk 비전투 회복</span></summary>
+          <summary><svg class="pn-tri" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 L8.5 6 L4 9.5 Z" fill="currentColor"/></svg><span class="pn-gc">시스템</span><span class="pn-cnt">1건</span><span class="pn-peek">-sk 스킬별 미터기</span></summary>
           <div class="pn-gbody">
         <div class="pn-item">
           <div class="pn-hd">
