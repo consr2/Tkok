@@ -200,7 +200,7 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 .lp-table .lp-key>*{font-weight:600}
 .bxi-ctl{display:flex;flex-wrap:wrap;gap:10px 18px;margin:0 0 14px;font-size:14px}
 .bxi-ctl input[type=number]{width:5.5em}
-.bxi-table td.bxi-c{text-align:left;white-space:normal;min-width:11em;color:var(--muted);font-size:13px}
+.bxi-table{min-width:0;font-size:13px}.bxi-table th,.bxi-table td{padding:8px 7px}.bxi-table thead th{white-space:normal;line-height:1.3;word-break:keep-all}.bxi-table thead th:nth-child(1),.bxi-table thead th:nth-child(5){text-align:left}.bxi-table tbody th{white-space:normal;min-width:6.5em}.bxi-table td:nth-child(4){white-space:normal}.bxi-table td.bxi-c{text-align:left;white-space:normal;min-width:8em;color:var(--muted);font-size:12.5px}
 .lp-extra{margin-top:22px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
 .lp-extra>summary{cursor:pointer;padding:13px 16px;font-weight:600}
 .lp-extra>div{padding:0 16px 16px;font-size:14px}
@@ -10244,74 +10244,74 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
       </details>
     </div>
 <div class="tabp" id="tabp-points" hidden>
-<p class="seccap">1~60레벨 · 스킬포인트와 스탯포인트</p>
+<p class="seccap">1~60레벨 · 필요 경험치 · 스킬포인트와 스탯포인트</p>
 <p class="lede">레벨업으로 받는 포인트와 누적 총량이다. 누적에는 이미 사용한 포인트도 포함하며, 전직·월드레벨·업적·특수 옵션 보너스는 제외한다.</p>
-<div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div></div>
-<div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p></div>
+<div class="lp-summary"><div class="lp-card"><span>60레벨 기본 스킬포인트</span><strong>47점</strong></div><div class="lp-card"><span>60레벨 기본 스탯포인트</span><strong>276점</strong></div><div class="lp-card"><span>60레벨 누적 경험치</span><strong>51,255</strong></div></div>
+<div class="lp-guide"><p><b>스킬:</b> 1레벨 시작1점 → 2~44레벨 짝수마다1점 → 45~54레벨 매 레벨1점 → 55~60레벨 매 레벨2점. <b>50레벨은 보너스2점을 더해 총3점.</b></p><p><b>스탯:</b> 1레벨 시작0점 → 2~50레벨 매 레벨4점 → 51~60레벨 매 레벨8점.</p><p><b>경험치:</b> 다음 레벨 필요량 = 이전 필요량 + 28 × 레벨 + 1.2 (2레벨 30). 필요 경험치는 바로 전 레벨에서 그 레벨까지, 누적은 1레벨부터의 총량이다. 경험치는 60레벨에서 52,155까지 쌓이고 그 이상은 버려진다.</p></div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="레벨별 기본 포인트 표">
 <table class="lp-table" id="level-points-table"><caption>기본 성장 기준 · v3.6.0asl</caption>
-<thead><tr><th scope="col">레벨</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
+<thead><tr><th scope="col">레벨</th><th scope="col">필요 경험치</th><th scope="col">누적 경험치</th><th scope="col">스킬 지급</th><th scope="col">스킬 누적</th><th scope="col">스탯 지급</th><th scope="col">스탯 누적</th></tr></thead>
 <tbody>
-<tr data-level="1"><th scope="row">1</th><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
-<tr data-level="2"><th scope="row">2</th><td>+1</td><td>2</td><td>+4</td><td>4</td></tr>
-<tr data-level="3"><th scope="row">3</th><td>+0</td><td>2</td><td>+4</td><td>8</td></tr>
-<tr data-level="4"><th scope="row">4</th><td>+1</td><td>3</td><td>+4</td><td>12</td></tr>
-<tr data-level="5"><th scope="row">5</th><td>+0</td><td>3</td><td>+4</td><td>16</td></tr>
-<tr data-level="6"><th scope="row">6</th><td>+1</td><td>4</td><td>+4</td><td>20</td></tr>
-<tr data-level="7"><th scope="row">7</th><td>+0</td><td>4</td><td>+4</td><td>24</td></tr>
-<tr data-level="8"><th scope="row">8</th><td>+1</td><td>5</td><td>+4</td><td>28</td></tr>
-<tr data-level="9"><th scope="row">9</th><td>+0</td><td>5</td><td>+4</td><td>32</td></tr>
-<tr data-level="10"><th scope="row">10</th><td>+1</td><td>6</td><td>+4</td><td>36</td></tr>
-<tr data-level="11"><th scope="row">11</th><td>+0</td><td>6</td><td>+4</td><td>40</td></tr>
-<tr data-level="12"><th scope="row">12</th><td>+1</td><td>7</td><td>+4</td><td>44</td></tr>
-<tr data-level="13"><th scope="row">13</th><td>+0</td><td>7</td><td>+4</td><td>48</td></tr>
-<tr data-level="14"><th scope="row">14</th><td>+1</td><td>8</td><td>+4</td><td>52</td></tr>
-<tr data-level="15"><th scope="row">15</th><td>+0</td><td>8</td><td>+4</td><td>56</td></tr>
-<tr data-level="16"><th scope="row">16</th><td>+1</td><td>9</td><td>+4</td><td>60</td></tr>
-<tr data-level="17"><th scope="row">17</th><td>+0</td><td>9</td><td>+4</td><td>64</td></tr>
-<tr data-level="18"><th scope="row">18</th><td>+1</td><td>10</td><td>+4</td><td>68</td></tr>
-<tr data-level="19"><th scope="row">19</th><td>+0</td><td>10</td><td>+4</td><td>72</td></tr>
-<tr data-level="20"><th scope="row">20</th><td>+1</td><td>11</td><td>+4</td><td>76</td></tr>
-<tr data-level="21"><th scope="row">21</th><td>+0</td><td>11</td><td>+4</td><td>80</td></tr>
-<tr data-level="22"><th scope="row">22</th><td>+1</td><td>12</td><td>+4</td><td>84</td></tr>
-<tr data-level="23"><th scope="row">23</th><td>+0</td><td>12</td><td>+4</td><td>88</td></tr>
-<tr data-level="24"><th scope="row">24</th><td>+1</td><td>13</td><td>+4</td><td>92</td></tr>
-<tr data-level="25"><th scope="row">25</th><td>+0</td><td>13</td><td>+4</td><td>96</td></tr>
-<tr data-level="26"><th scope="row">26</th><td>+1</td><td>14</td><td>+4</td><td>100</td></tr>
-<tr data-level="27"><th scope="row">27</th><td>+0</td><td>14</td><td>+4</td><td>104</td></tr>
-<tr data-level="28"><th scope="row">28</th><td>+1</td><td>15</td><td>+4</td><td>108</td></tr>
-<tr data-level="29"><th scope="row">29</th><td>+0</td><td>15</td><td>+4</td><td>112</td></tr>
-<tr data-level="30"><th scope="row">30</th><td>+1</td><td>16</td><td>+4</td><td>116</td></tr>
-<tr data-level="31"><th scope="row">31</th><td>+0</td><td>16</td><td>+4</td><td>120</td></tr>
-<tr data-level="32"><th scope="row">32</th><td>+1</td><td>17</td><td>+4</td><td>124</td></tr>
-<tr data-level="33"><th scope="row">33</th><td>+0</td><td>17</td><td>+4</td><td>128</td></tr>
-<tr data-level="34"><th scope="row">34</th><td>+1</td><td>18</td><td>+4</td><td>132</td></tr>
-<tr data-level="35"><th scope="row">35</th><td>+0</td><td>18</td><td>+4</td><td>136</td></tr>
-<tr data-level="36"><th scope="row">36</th><td>+1</td><td>19</td><td>+4</td><td>140</td></tr>
-<tr data-level="37"><th scope="row">37</th><td>+0</td><td>19</td><td>+4</td><td>144</td></tr>
-<tr data-level="38"><th scope="row">38</th><td>+1</td><td>20</td><td>+4</td><td>148</td></tr>
-<tr data-level="39"><th scope="row">39</th><td>+0</td><td>20</td><td>+4</td><td>152</td></tr>
-<tr data-level="40"><th scope="row">40</th><td>+1</td><td>21</td><td>+4</td><td>156</td></tr>
-<tr data-level="41"><th scope="row">41</th><td>+0</td><td>21</td><td>+4</td><td>160</td></tr>
-<tr data-level="42"><th scope="row">42</th><td>+1</td><td>22</td><td>+4</td><td>164</td></tr>
-<tr data-level="43"><th scope="row">43</th><td>+0</td><td>22</td><td>+4</td><td>168</td></tr>
-<tr data-level="44"><th scope="row">44</th><td>+1</td><td>23</td><td>+4</td><td>172</td></tr>
-<tr data-level="45" class="lp-key"><th scope="row">45</th><td>+1</td><td>24</td><td>+4</td><td>176</td></tr>
-<tr data-level="46"><th scope="row">46</th><td>+1</td><td>25</td><td>+4</td><td>180</td></tr>
-<tr data-level="47"><th scope="row">47</th><td>+1</td><td>26</td><td>+4</td><td>184</td></tr>
-<tr data-level="48"><th scope="row">48</th><td>+1</td><td>27</td><td>+4</td><td>188</td></tr>
-<tr data-level="49"><th scope="row">49</th><td>+1</td><td>28</td><td>+4</td><td>192</td></tr>
-<tr data-level="50" class="lp-key"><th scope="row">50</th><td>+3</td><td>31</td><td>+4</td><td>196</td></tr>
-<tr data-level="51" class="lp-key"><th scope="row">51</th><td>+1</td><td>32</td><td>+8</td><td>204</td></tr>
-<tr data-level="52"><th scope="row">52</th><td>+1</td><td>33</td><td>+8</td><td>212</td></tr>
-<tr data-level="53"><th scope="row">53</th><td>+1</td><td>34</td><td>+8</td><td>220</td></tr>
-<tr data-level="54"><th scope="row">54</th><td>+1</td><td>35</td><td>+8</td><td>228</td></tr>
-<tr data-level="55" class="lp-key"><th scope="row">55</th><td>+2</td><td>37</td><td>+8</td><td>236</td></tr>
-<tr data-level="56"><th scope="row">56</th><td>+2</td><td>39</td><td>+8</td><td>244</td></tr>
-<tr data-level="57"><th scope="row">57</th><td>+2</td><td>41</td><td>+8</td><td>252</td></tr>
-<tr data-level="58"><th scope="row">58</th><td>+2</td><td>43</td><td>+8</td><td>260</td></tr>
-<tr data-level="59"><th scope="row">59</th><td>+2</td><td>45</td><td>+8</td><td>268</td></tr>
-<tr data-level="60" class="lp-key"><th scope="row">60</th><td>+2</td><td>47</td><td>+8</td><td>276</td></tr>
+<tr data-level="1"><th scope="row">1</th><td>시작</td><td>0</td><td>시작 1</td><td>1</td><td>+0</td><td>0</td></tr>
+<tr data-level="2"><th scope="row">2</th><td>30</td><td>30</td><td>+1</td><td>2</td><td>+4</td><td>4</td></tr>
+<tr data-level="3"><th scope="row">3</th><td>85</td><td>115</td><td>+0</td><td>2</td><td>+4</td><td>8</td></tr>
+<tr data-level="4"><th scope="row">4</th><td>113</td><td>228</td><td>+1</td><td>3</td><td>+4</td><td>12</td></tr>
+<tr data-level="5"><th scope="row">5</th><td>141</td><td>369</td><td>+0</td><td>3</td><td>+4</td><td>16</td></tr>
+<tr data-level="6"><th scope="row">6</th><td>169</td><td>538</td><td>+1</td><td>4</td><td>+4</td><td>20</td></tr>
+<tr data-level="7"><th scope="row">7</th><td>197</td><td>735</td><td>+0</td><td>4</td><td>+4</td><td>24</td></tr>
+<tr data-level="8"><th scope="row">8</th><td>226</td><td>961</td><td>+1</td><td>5</td><td>+4</td><td>28</td></tr>
+<tr data-level="9"><th scope="row">9</th><td>253</td><td>1,214</td><td>+0</td><td>5</td><td>+4</td><td>32</td></tr>
+<tr data-level="10"><th scope="row">10</th><td>281</td><td>1,495</td><td>+1</td><td>6</td><td>+4</td><td>36</td></tr>
+<tr data-level="11"><th scope="row">11</th><td>309</td><td>1,804</td><td>+0</td><td>6</td><td>+4</td><td>40</td></tr>
+<tr data-level="12"><th scope="row">12</th><td>337</td><td>2,141</td><td>+1</td><td>7</td><td>+4</td><td>44</td></tr>
+<tr data-level="13"><th scope="row">13</th><td>366</td><td>2,507</td><td>+0</td><td>7</td><td>+4</td><td>48</td></tr>
+<tr data-level="14"><th scope="row">14</th><td>393</td><td>2,900</td><td>+1</td><td>8</td><td>+4</td><td>52</td></tr>
+<tr data-level="15"><th scope="row">15</th><td>421</td><td>3,321</td><td>+0</td><td>8</td><td>+4</td><td>56</td></tr>
+<tr data-level="16"><th scope="row">16</th><td>449</td><td>3,770</td><td>+1</td><td>9</td><td>+4</td><td>60</td></tr>
+<tr data-level="17"><th scope="row">17</th><td>477</td><td>4,247</td><td>+0</td><td>9</td><td>+4</td><td>64</td></tr>
+<tr data-level="18"><th scope="row">18</th><td>506</td><td>4,753</td><td>+1</td><td>10</td><td>+4</td><td>68</td></tr>
+<tr data-level="19"><th scope="row">19</th><td>533</td><td>5,286</td><td>+0</td><td>10</td><td>+4</td><td>72</td></tr>
+<tr data-level="20"><th scope="row">20</th><td>561</td><td>5,847</td><td>+1</td><td>11</td><td>+4</td><td>76</td></tr>
+<tr data-level="21"><th scope="row">21</th><td>589</td><td>6,436</td><td>+0</td><td>11</td><td>+4</td><td>80</td></tr>
+<tr data-level="22"><th scope="row">22</th><td>617</td><td>7,053</td><td>+1</td><td>12</td><td>+4</td><td>84</td></tr>
+<tr data-level="23"><th scope="row">23</th><td>646</td><td>7,699</td><td>+0</td><td>12</td><td>+4</td><td>88</td></tr>
+<tr data-level="24"><th scope="row">24</th><td>673</td><td>8,372</td><td>+1</td><td>13</td><td>+4</td><td>92</td></tr>
+<tr data-level="25"><th scope="row">25</th><td>701</td><td>9,073</td><td>+0</td><td>13</td><td>+4</td><td>96</td></tr>
+<tr data-level="26"><th scope="row">26</th><td>729</td><td>9,802</td><td>+1</td><td>14</td><td>+4</td><td>100</td></tr>
+<tr data-level="27"><th scope="row">27</th><td>757</td><td>10,559</td><td>+0</td><td>14</td><td>+4</td><td>104</td></tr>
+<tr data-level="28"><th scope="row">28</th><td>786</td><td>11,345</td><td>+1</td><td>15</td><td>+4</td><td>108</td></tr>
+<tr data-level="29"><th scope="row">29</th><td>813</td><td>12,158</td><td>+0</td><td>15</td><td>+4</td><td>112</td></tr>
+<tr data-level="30"><th scope="row">30</th><td>841</td><td>12,999</td><td>+1</td><td>16</td><td>+4</td><td>116</td></tr>
+<tr data-level="31"><th scope="row">31</th><td>869</td><td>13,868</td><td>+0</td><td>16</td><td>+4</td><td>120</td></tr>
+<tr data-level="32"><th scope="row">32</th><td>897</td><td>14,765</td><td>+1</td><td>17</td><td>+4</td><td>124</td></tr>
+<tr data-level="33"><th scope="row">33</th><td>926</td><td>15,691</td><td>+0</td><td>17</td><td>+4</td><td>128</td></tr>
+<tr data-level="34"><th scope="row">34</th><td>953</td><td>16,644</td><td>+1</td><td>18</td><td>+4</td><td>132</td></tr>
+<tr data-level="35"><th scope="row">35</th><td>981</td><td>17,625</td><td>+0</td><td>18</td><td>+4</td><td>136</td></tr>
+<tr data-level="36"><th scope="row">36</th><td>1,009</td><td>18,634</td><td>+1</td><td>19</td><td>+4</td><td>140</td></tr>
+<tr data-level="37"><th scope="row">37</th><td>1,037</td><td>19,671</td><td>+0</td><td>19</td><td>+4</td><td>144</td></tr>
+<tr data-level="38"><th scope="row">38</th><td>1,066</td><td>20,737</td><td>+1</td><td>20</td><td>+4</td><td>148</td></tr>
+<tr data-level="39"><th scope="row">39</th><td>1,093</td><td>21,830</td><td>+0</td><td>20</td><td>+4</td><td>152</td></tr>
+<tr data-level="40"><th scope="row">40</th><td>1,121</td><td>22,951</td><td>+1</td><td>21</td><td>+4</td><td>156</td></tr>
+<tr data-level="41"><th scope="row">41</th><td>1,149</td><td>24,100</td><td>+0</td><td>21</td><td>+4</td><td>160</td></tr>
+<tr data-level="42"><th scope="row">42</th><td>1,177</td><td>25,277</td><td>+1</td><td>22</td><td>+4</td><td>164</td></tr>
+<tr data-level="43"><th scope="row">43</th><td>1,206</td><td>26,483</td><td>+0</td><td>22</td><td>+4</td><td>168</td></tr>
+<tr data-level="44"><th scope="row">44</th><td>1,233</td><td>27,716</td><td>+1</td><td>23</td><td>+4</td><td>172</td></tr>
+<tr data-level="45" class="lp-key"><th scope="row">45</th><td>1,261</td><td>28,977</td><td>+1</td><td>24</td><td>+4</td><td>176</td></tr>
+<tr data-level="46"><th scope="row">46</th><td>1,289</td><td>30,266</td><td>+1</td><td>25</td><td>+4</td><td>180</td></tr>
+<tr data-level="47"><th scope="row">47</th><td>1,317</td><td>31,583</td><td>+1</td><td>26</td><td>+4</td><td>184</td></tr>
+<tr data-level="48"><th scope="row">48</th><td>1,346</td><td>32,929</td><td>+1</td><td>27</td><td>+4</td><td>188</td></tr>
+<tr data-level="49"><th scope="row">49</th><td>1,373</td><td>34,302</td><td>+1</td><td>28</td><td>+4</td><td>192</td></tr>
+<tr data-level="50" class="lp-key"><th scope="row">50</th><td>1,401</td><td>35,703</td><td>+3</td><td>31</td><td>+4</td><td>196</td></tr>
+<tr data-level="51" class="lp-key"><th scope="row">51</th><td>1,429</td><td>37,132</td><td>+1</td><td>32</td><td>+8</td><td>204</td></tr>
+<tr data-level="52"><th scope="row">52</th><td>1,457</td><td>38,589</td><td>+1</td><td>33</td><td>+8</td><td>212</td></tr>
+<tr data-level="53"><th scope="row">53</th><td>1,486</td><td>40,075</td><td>+1</td><td>34</td><td>+8</td><td>220</td></tr>
+<tr data-level="54"><th scope="row">54</th><td>1,513</td><td>41,588</td><td>+1</td><td>35</td><td>+8</td><td>228</td></tr>
+<tr data-level="55" class="lp-key"><th scope="row">55</th><td>1,541</td><td>43,129</td><td>+2</td><td>37</td><td>+8</td><td>236</td></tr>
+<tr data-level="56"><th scope="row">56</th><td>1,569</td><td>44,698</td><td>+2</td><td>39</td><td>+8</td><td>244</td></tr>
+<tr data-level="57"><th scope="row">57</th><td>1,597</td><td>46,295</td><td>+2</td><td>41</td><td>+8</td><td>252</td></tr>
+<tr data-level="58"><th scope="row">58</th><td>1,626</td><td>47,921</td><td>+2</td><td>43</td><td>+8</td><td>260</td></tr>
+<tr data-level="59"><th scope="row">59</th><td>1,653</td><td>49,574</td><td>+2</td><td>45</td><td>+8</td><td>268</td></tr>
+<tr data-level="60" class="lp-key"><th scope="row">60</th><td>1,681</td><td>51,255</td><td>+2</td><td>47</td><td>+8</td><td>276</td></tr>
 </tbody></table></div>
 <details class="lp-extra"><summary>별도로 더해지는 보너스와 예외</summary><div><ul>
 <li><b>월드레벨:</b> 월드레벨1은 추가0점. 이후 단계마다 스킬+1점·스탯+15점. 월드레벨7은 기본 누적에 <b>스킬+6점·스탯+90점</b>이다. 예: 60레벨·월드레벨7은 다른 보너스 없이 스킬53점·스탯366점.</li>
@@ -10332,9 +10332,28 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <label><input id="bxi-luck" type="checkbox"> 행운 2배 발동</label>
 </div>
 <div class="lp-scroll" tabindex="0" role="region" aria-label="보스별 경험치 표">
-<table class="lp-table bxi-table"><caption>현재 맵 기준 · v3.6.0apv</caption>
+<table class="lp-table bxi-table"><caption>현재 맵 기준 · v3.6.0asl</caption>
 <thead><tr><th scope="col">보스</th><th scope="col">레벨</th><th scope="col">기준 XP</th><th scope="col">VX 추가</th><th scope="col">VX 조건</th><th scope="col">Normal</th><th scope="col">Legendary</th><th scope="col">Heartcore</th><th scope="col">Nightmare</th></tr></thead>
 <tbody>
+<tr><th scope="row">Broodmother</th><td>8</td><td>60</td><td>+23</td><td class="bxi-c">알을 하나도 깨지 않기</td><td id="bxi-bm-1"></td><td id="bxi-bm-2"></td><td id="bxi-bm-3"></td><td id="bxi-bm-4"></td></tr>
+<tr><th scope="row">Narith</th><td>15</td><td>70</td><td>+25</td><td class="bxi-c">Narith 만 공격하고 통(container)을 하나도 부수지 않기</td><td id="bxi-nr-1"></td><td id="bxi-nr-2"></td><td id="bxi-nr-3"></td><td id="bxi-nr-4"></td></tr>
+<tr><th scope="row">Sand Golem</th><td>19</td><td>70</td><td>+26</td><td class="bxi-c">shardling 을 하나도 죽이지 않기</td><td id="bxi-sg-1"></td><td id="bxi-sg-2"></td><td id="bxi-sg-3"></td><td id="bxi-sg-4"></td></tr>
+<tr><th scope="row">Lord Naztar</th><td>21</td><td>80</td><td>없음</td><td class="bxi-c">항상 VX (경험치 추가 없음)</td><td id="bxi-nz-1"></td><td id="bxi-nz-2"></td><td id="bxi-nz-3"></td><td id="bxi-nz-4"></td></tr>
+<tr><th scope="row">Karrix</th><td>23</td><td>70</td><td>+28</td><td class="bxi-c">입장하자마자 새끼 전갈 5마리 먼저 처치</td><td id="bxi-kx-1"></td><td id="bxi-kx-2"></td><td id="bxi-kx-3"></td><td id="bxi-kx-4"></td></tr>
+<tr><th scope="row">Avnos</th><td>25</td><td>70</td><td>+28</td><td class="bxi-c">하수인 4마리를 잡아 Fire Orb 를 띄운 뒤 처치</td><td id="bxi-av-1"></td><td id="bxi-av-2"></td><td id="bxi-av-3"></td><td id="bxi-av-4"></td></tr>
+<tr><th scope="row">Karnos</th><td>25</td><td>70</td><td>+28</td><td class="bxi-c">Frostbite 50중첩 쌓기</td><td id="bxi-kn-1"></td><td id="bxi-kn-2"></td><td id="bxi-kn-3"></td><td id="bxi-kn-4"></td></tr>
+<tr><th scope="row">Karavnos</th><td>26</td><td>70</td><td>+29</td><td class="bxi-c">1페이즈에 파티 전원이 Avnos·Karnos 중첩 35 얻기</td><td id="bxi-kv-1"></td><td id="bxi-kv-2"></td><td id="bxi-kv-3"></td><td id="bxi-kv-4"></td></tr>
+<tr><th scope="row">Muarki</th><td>27</td><td>70</td><td>+29</td><td class="bxi-c">되살아난 수호자를 하나도 죽이지 않기</td><td id="bxi-mu-1"></td><td id="bxi-mu-2"></td><td id="bxi-mu-3"></td><td id="bxi-mu-4"></td></tr>
+<tr><th scope="row">원소 정령 (4종 각각)</th><td>27</td><td>70</td><td>없음</td><td class="bxi-c">없음 (Vjaier 전투 중 처치)</td><td id="bxi-el-1"></td><td id="bxi-el-2"></td><td id="bxi-el-3"></td><td id="bxi-el-4"></td></tr>
+<tr><th scope="row">Harbinger Ithan · Larthil</th><td>28</td><td>70</td><td>없음</td><td class="bxi-c">없음</td><td id="bxi-hb-1"></td><td id="bxi-hb-2"></td><td id="bxi-hb-3"></td><td id="bxi-hb-4"></td></tr>
+<tr><th scope="row">Vjaier</th><td>28</td><td>150</td><td>+29</td><td class="bxi-c">광선의 Empowered 중첩을 전체의 10% 넘게 받지 않기</td><td id="bxi-vj-1"></td><td id="bxi-vj-2"></td><td id="bxi-vj-3"></td><td id="bxi-vj-4"></td></tr>
+<tr><th scope="row">Warlord Crueltis</th><td>29</td><td>155</td><td>+30</td><td class="bxi-c">소환된 켄타우로스를 전부 Darkness 가 죽이게 두기</td><td id="bxi-cr-1"></td><td id="bxi-cr-2"></td><td id="bxi-cr-3"></td><td id="bxi-cr-4"></td></tr>
+<tr><th scope="row">Tal'navi</th><td>30</td><td>160</td><td>+30</td><td class="bxi-c">Living Boulder 가 하나도 죽지 않기</td><td id="bxi-tn-1"></td><td id="bxi-tn-2"></td><td id="bxi-tn-3"></td><td id="bxi-tn-4"></td></tr>
+<tr><th scope="row">M'Karsa</th><td>31</td><td>175</td><td>+30</td><td class="bxi-c">화로가 부서지기 전에 Rune of the Ages 꽂기</td><td id="bxi-mk-1"></td><td id="bxi-mk-2"></td><td id="bxi-mk-3"></td><td id="bxi-mk-4"></td></tr>
+<tr><th scope="row">Ancient Hydra</th><td>32</td><td>180</td><td>+31</td><td class="bxi-c">검은 책(black tome)을 먼저 집기</td><td id="bxi-ah-1"></td><td id="bxi-ah-2"></td><td id="bxi-ah-3"></td><td id="bxi-ah-4"></td></tr>
+<tr><th scope="row">Ortakna</th><td>33</td><td>215</td><td>+31 (항상)</td><td class="bxi-c">항상 VX</td><td id="bxi-ot-1"></td><td id="bxi-ot-2"></td><td id="bxi-ot-3"></td><td id="bxi-ot-4"></td></tr>
+<tr><th scope="row">Crypt Fiend</th><td>34</td><td>150</td><td>+42</td><td class="bxi-c">spawnling 4마리를 모두 잡아 처치</td><td id="bxi-cf-1"></td><td id="bxi-cf-2"></td><td id="bxi-cf-3"></td><td id="bxi-cf-4"></td></tr>
+<tr><th scope="row">Ghoul</th><td>35</td><td>170</td><td>+43</td><td class="bxi-c">작은 구울 4마리 처치 후 1명(6인 이상 2명)만 남기고 먹히기</td><td id="bxi-gh-1"></td><td id="bxi-gh-2"></td><td id="bxi-gh-3"></td><td id="bxi-gh-4"></td></tr>
 <tr><th scope="row">Twins</th><td>39</td><td>285</td><td>+33</td><td class="bxi-c">Glyph of Sun and Moon 을 줍고 시작</td><td id="bxi-tw-1"></td><td id="bxi-tw-2"></td><td id="bxi-tw-3"></td><td id="bxi-tw-4"></td></tr>
 <tr><th scope="row">Zanatath</th><td>41</td><td>180</td><td>실패 시 ×0.25</td><td class="bxi-c">고대 토템 셋이 모두 봉인되지 않기</td><td id="bxi-za-1"></td><td id="bxi-za-2"></td><td id="bxi-za-3"></td><td id="bxi-za-4"></td></tr>
 <tr><th scope="row">1F Parvin</th><td>44</td><td>210</td><td>+35</td><td class="bxi-c">단계 전환 2회 이상</td><td id="bxi-t1-1"></td><td id="bxi-t1-2"></td><td id="bxi-t1-3"></td><td id="bxi-t1-4"></td></tr>
@@ -10342,21 +10361,22 @@ h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
 <tr><th scope="row">3F Arkham</th><td>46</td><td>270</td><td>+35</td><td class="bxi-c">전투 120초 초과</td><td id="bxi-t3-1"></td><td id="bxi-t3-2"></td><td id="bxi-t3-3"></td><td id="bxi-t3-4"></td></tr>
 <tr><th scope="row">4F Artoria</th><td>46</td><td>300</td><td>+35</td><td class="bxi-c">항상</td><td id="bxi-t4-1"></td><td id="bxi-t4-2"></td><td id="bxi-t4-3"></td><td id="bxi-t4-4"></td></tr>
 <tr><th scope="row">Talus</th><td>47</td><td>330</td><td>+36</td><td class="bxi-c">구석 대포 4개 모두 생존</td><td id="bxi-t5-1"></td><td id="bxi-t5-2"></td><td id="bxi-t5-3"></td><td id="bxi-t5-4"></td></tr>
-<tr><th scope="row">25 Ignisolith</th><td>50</td><td>350</td><td>+100</td><td class="bxi-c">보스별 VX 조건</td><td id="bxi-247-1"></td><td id="bxi-247-2"></td><td id="bxi-247-3"></td><td id="bxi-247-4"></td></tr>
-<tr><th scope="row">26 Frostmaw</th><td>51</td><td>400</td><td>+110</td><td class="bxi-c">보스별 VX 조건</td><td id="bxi-244-1"></td><td id="bxi-244-2"></td><td id="bxi-244-3"></td><td id="bxi-244-4"></td></tr>
-<tr><th scope="row">27 Chaos Cube</th><td>52</td><td>430</td><td>+120</td><td class="bxi-c">보스별 VX 조건</td><td id="bxi-250-1"></td><td id="bxi-250-2"></td><td id="bxi-250-3"></td><td id="bxi-250-4"></td></tr>
+<tr><th scope="row">25 Ignisolith</th><td>50</td><td>350</td><td>+100</td><td class="bxi-c">메테오 조각을 한 번에 떨어진 것 전부 부수지 않기(1개 남기면 됨) + 광석 파편 하나도 부수지 않기</td><td id="bxi-247-1"></td><td id="bxi-247-2"></td><td id="bxi-247-3"></td><td id="bxi-247-4"></td></tr>
+<tr><th scope="row">26 Frostmaw</th><td>51</td><td>400</td><td>+110</td><td class="bxi-c">석탄 투척의 90% 이상을 탱커가 아닌 사람이 넣기 + 중앙 캠프파이어 체력 50 이상 유지</td><td id="bxi-244-1"></td><td id="bxi-244-2"></td><td id="bxi-244-3"></td><td id="bxi-244-4"></td></tr>
+<tr><th scope="row">27 Chaos Cube</th><td>52</td><td>430</td><td>+120</td><td class="bxi-c">보스에게 준 피해 중 직접 피해 비율 45~55% (테두리 피해와 반반)</td><td id="bxi-250-1"></td><td id="bxi-250-2"></td><td id="bxi-250-3"></td><td id="bxi-250-4"></td></tr>
 <tr><th scope="row">28 Voltrion</th><td>53</td><td>450</td><td>+130 (조건 미연결)</td><td class="bxi-c">조건 미연결</td><td id="bxi-28-1"></td><td id="bxi-28-2"></td><td id="bxi-28-3"></td><td id="bxi-28-4"></td></tr>
 </tbody></table></div>
 <details class="lp-extra"><summary>계산 방식</summary><div><ul>
 <li><b>기본:</b> 기준 XP × 난이도(1 / 1.25 / 1.4 / 1.8) × 무작위 × (1 + 0.18 × (보스 기준 레벨 − 영웅 레벨, 최대 3)) × (1 + XP 보너스). 보스 기준 레벨 = 유닛 레벨 + 난이도 단계(0~3), 41레벨 이상이면 −1.</li>
 <li><b>VX 추가:</b> (20 + 0.33 × 보스 레벨) × 무작위 × (1 + XP 보너스). 기본 경험치가 0 이면 붙지 않는다. 25~28번은 보스별 고정값.</li>
+<li><b>Avnos·Karnos·Karavnos·Muarki:</b> 넷 다 Avnos 의 기준 XP 70 을 쓰고, 레벨만 각자 것이 들어간다. Crypt Fiend·Ghoul 은 VX 추가에 +11 이 더 붙는다. Lord Naztar 는 일반 처치 경로라 VX 추가가 없다.</li>
 <li><b>0 이 되는 경우:</b> 영웅 레벨이 보스 기준 레벨보다 6 이상 높을 때. Talus 는 영웅 48~53레벨에서만 준다.</li>
 <li><b>Zanatath:</b> 별도 공식. Normal 40~45 · Legendary 40~48(절반) · Heartcore 이상 40~51레벨 구간에서 레벨당 −9%. VX 를 놓치면 25%. 행운 2배는 적용되지 않는다.</li>
 <li><b>행운 2배:</b> 사람마다 따로 굴린다. 확률 = 100 × (√행운 − 200)/(√행운 + 200) + 100 (행운 150 ≈ 11.5%). Lucky Star 는 장착해야 +35.</li>
 </ul></div></details>
 <script>
 (function(){
-const BXI={"version": "v3.6.0apv", "ov": [1.0, 1.25, 1.4, 1.8], "rows": [{"code": "n07D", "name": "Twins", "level": 39, "registered": 285.0, "id": "tw", "base": 285.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Glyph of Sun and Moon 을 줍고 시작"}, {"code": "n06M", "name": "Zanatath", "level": 41, "registered": 180.0, "id": "za", "base": 180.0, "route": "MMT", "extra": "false", "tz": 0, "nightBlocked": false, "note": "고대 토템 셋이 모두 봉인되지 않기 · 실패 시 25%"}, {"code": "n08E", "name": "1F Parvin", "level": 44, "registered": 210.0, "id": "t1", "base": 210.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "단계 전환 2회 이상"}, {"code": "n08N", "name": "2F Villard", "level": 45, "registered": 240.0, "id": "t2", "base": 240.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08O", "name": "3F Arkham", "level": 46, "registered": 270.0, "id": "t3", "base": 270.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "전투 120초 초과"}, {"code": "n08Q", "name": "4F Artoria", "level": 46, "registered": 300.0, "id": "t4", "base": 300.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08S", "name": "Talus", "level": 47, "registered": 330.0, "id": "t5", "base": 330.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "talus": true, "note": "대포 4개 모두 생존"}, {"code": "ninf", "name": "25 Ignisolith", "level": 50, "registered": 350.0, "id": 247, "base": 350.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 100.0, "vx_ready": true}, {"code": "nmgd", "name": "26 Frostmaw", "level": 51, "registered": 400.0, "id": 244, "base": 400.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 110.0, "vx_ready": true}, {"code": "n0CB", "name": "27 Chaos Cube", "level": 52, "registered": 430.0, "id": 250, "base": 430.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 120.0, "vx_ready": true}, {"code": "nZDT", "name": "28 Voltrion", "level": 53, "registered": 450.0, "id": 28, "base": 450.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 130.0, "vx_ready": false}], "aux": [], "cap": 700, "cap_low": 650, "cap_high": 750};
+const BXI={"version": "v3.6.0asl", "ov": [1.0, 1.25, 1.4, 1.8], "rows": [{"code": "n00M", "name": "Broodmother", "level": 8, "registered": 60.0, "id": "bm", "base": 60.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "알을 하나도 깨지 않기"}, {"code": "n04W", "name": "Narith", "level": 15, "registered": 70.0, "id": "nr", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Narith 만 공격하고 통(container)을 하나도 부수지 않기"}, {"code": "n026", "name": "Sand Golem", "level": 19, "registered": 70.0, "id": "sg", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "shardling 을 하나도 죽이지 않기"}, {"code": "n03H", "name": "Lord Naztar", "level": 21, "registered": 80.0, "id": "nz", "base": 80.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "항상 VX (경험치 추가 없음)", "vx_bonus": 0.0, "vx_ready": false}, {"code": "n03P", "name": "Karrix", "level": 23, "registered": 70.0, "id": "kx", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "입장하자마자 새끼 전갈 5마리 먼저 처치"}, {"code": "n03U", "name": "Avnos", "level": 25, "registered": 70.0, "id": "av", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "하수인 4마리를 잡아 Fire Orb 를 띄운 뒤 처치"}, {"code": "n04B", "name": "Karnos", "level": 25, "registered": 70.0, "id": "kn", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Frostbite 50중첩 쌓기"}, {"code": "n053", "name": "Karavnos", "level": 26, "registered": 70.0, "id": "kv", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "1페이즈에 파티 전원이 Avnos·Karnos 중첩 35 얻기"}, {"code": "n05B", "name": "Muarki", "level": 27, "registered": 70.0, "id": "mu", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "되살아난 수호자를 하나도 죽이지 않기"}, {"code": "n01J", "name": "원소 정령 (4종 각각)", "level": 27, "registered": 70.0, "id": "el", "base": 70.0, "route": "TYP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "없음 (Vjaier 전투 중 처치)"}, {"code": "n02F", "name": "Harbinger Ithan · Larthil", "level": 28, "registered": 70.0, "id": "hb", "base": 70.0, "route": "TYP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "없음"}, {"code": "n012", "name": "Vjaier", "level": 28, "registered": 150.0, "id": "vj", "base": 150.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "광선의 Empowered 중첩을 전체의 10% 넘게 받지 않기"}, {"code": "n029", "name": "Warlord Crueltis", "level": 29, "registered": 155.0, "id": "cr", "base": 155.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "소환된 켄타우로스를 전부 Darkness 가 죽이게 두기"}, {"code": "n00U", "name": "Tal'navi", "level": 30, "registered": 160.0, "id": "tn", "base": 160.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Living Boulder 가 하나도 죽지 않기"}, {"code": "n02V", "name": "M'Karsa", "level": 31, "registered": 175.0, "id": "mk", "base": 175.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "화로가 부서지기 전에 Rune of the Ages 꽂기"}, {"code": "n05P", "name": "Ancient Hydra", "level": 32, "registered": 180.0, "id": "ah", "base": 180.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "검은 책(black tome)을 먼저 집기"}, {"code": "n05O", "name": "Ortakna", "level": 33, "registered": 215.0, "id": "ot", "base": 215.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n062", "name": "Crypt Fiend", "level": 34, "registered": 150.0, "id": "cf", "base": 150.0, "route": "TYP", "extra": "vx", "tz": 11, "nightBlocked": false, "note": "spawnling 4마리를 모두 잡아 처치"}, {"code": "n067", "name": "Ghoul", "level": 35, "registered": 170.0, "id": "gh", "base": 170.0, "route": "TYP", "extra": "vx", "tz": 11, "nightBlocked": false, "note": "작은 구울 4마리 처치 후 1명(6인 이상 2명)만 남기고 먹히기"}, {"code": "n07D", "name": "Twins", "level": 39, "registered": 285.0, "id": "tw", "base": 285.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Glyph of Sun and Moon 을 줍고 시작"}, {"code": "n06M", "name": "Zanatath", "level": 41, "registered": 180.0, "id": "za", "base": 180.0, "route": "MMT", "extra": "false", "tz": 0, "nightBlocked": false, "note": "고대 토템 셋이 모두 봉인되지 않기 · 실패 시 25%"}, {"code": "n08E", "name": "1F Parvin", "level": 44, "registered": 210.0, "id": "t1", "base": 210.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "단계 전환 2회 이상"}, {"code": "n08N", "name": "2F Villard", "level": 45, "registered": 240.0, "id": "t2", "base": 240.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08O", "name": "3F Arkham", "level": 46, "registered": 270.0, "id": "t3", "base": 270.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "전투 120초 초과"}, {"code": "n08Q", "name": "4F Artoria", "level": 46, "registered": 300.0, "id": "t4", "base": 300.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08S", "name": "Talus", "level": 47, "registered": 330.0, "id": "t5", "base": 330.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "talus": true, "note": "대포 4개 모두 생존"}, {"code": "ninf", "name": "25 Ignisolith", "level": 50, "registered": 350.0, "id": 247, "base": 350.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 100.0, "vx_ready": true}, {"code": "nmgd", "name": "26 Frostmaw", "level": 51, "registered": 400.0, "id": 244, "base": 400.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 110.0, "vx_ready": true}, {"code": "n0CB", "name": "27 Chaos Cube", "level": 52, "registered": 430.0, "id": 250, "base": 430.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 120.0, "vx_ready": true}, {"code": "nZDT", "name": "28 Voltrion", "level": 53, "registered": 450.0, "id": 28, "base": 450.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 130.0, "vx_ready": false}], "aux": [], "cap": 700, "cap_low": 650, "cap_high": 750};
 function bossXpValue(b,d,h,bonus,vx,luck,doubleXP,party,random){
   if(b.nightBlocked&&d===4)return null;
   if(b.route==='none'||b.route==='unimplemented')return 0;
