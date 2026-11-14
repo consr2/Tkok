@@ -10507,7 +10507,7 @@ bxiRefresh();
 </script>
 </div>
 <div class="tabp" id="tabp-bhp" hidden>
-<p class="seccap">보스 체력 · 데미지 · 몹 체력 — 인원·난이도 배율</p>
+<p class="seccap">보스 체력 · 데미지 — 인원·난이도 배율</p>
 <p class="lede">보스 체력은 에디터에 적힌 기본 체력에 난이도와 인원 배율을 곱해서 정해진다. 표의 칸은 기본 체력에 곱하는 실제 배율, 괄호는 1인 대비 배율이다.</p>
 
 <p class="seccap">① 스토리 보스 — Broodmother ~ Ghoul · Twins · Zanatath · 25~28번</p>
@@ -10554,38 +10554,6 @@ bxiRefresh();
 <tr><th scope="row">7</th><td>1.05 (1.40)</td><td>1.35 (1.29)</td><td>1.55 (1.24)</td><td>1.65 (1.22)</td></tr>
 </tbody></table></div>
 
-<p class="seccap">④ 나이트메어 받는 피해 감소 — 유효 체력</p>
-<div class="lp-guide"><p>최대 체력은 위 표대로지만, 일부 보스는 <b>받는 피해 감소</b>가 붙어 실제로 깎아야 하는 체력(유효 체력 = 체력 ÷ (1 − 감소))이 더 크다. 나이트메어에서 특히 크다. 체력 표와 별개라 표를 바꿔도 그대로다.</p><p>난이도와 무관한 감소: Parvin 25% · Villard 25~45% · Arkham 35% · Artoria 물리 15% / 마법 45% (Legendary 이상). Twins · Zanatath 는 마법 피해만 20~40% 줄어든다. 25~28번은 없다.</p></div>
-<div class="lp-scroll" tabindex="0" role="region" aria-label="나이트메어 받는 피해 감소">
-<table class="lp-table"><caption>보스별 받는 피해 감소 · v3.6.0asy</caption>
-<thead><tr><th scope="col">보스</th><th scope="col">Normal</th><th scope="col">Legendary</th><th scope="col">Heartcore</th><th scope="col">Nightmare</th><th scope="col">Nightmare 유효 체력</th></tr></thead>
-<tbody>
-<tr><th scope="row">Avnos</th><td>0</td><td>0</td><td>0</td><td><b>85%</b> (특정 조건) · 그 외 60%</td><td>×6.7 / ×2.5</td></tr>
-<tr><th scope="row">Karnos</th><td>0</td><td>0</td><td>0</td><td><b>90%</b> · UVX 조건 달성 시 70%</td><td>×10 / ×3.3</td></tr>
-<tr><th scope="row">Karavnos</th><td>0</td><td>0</td><td>0</td><td><b>85%</b></td><td>×6.7</td></tr>
-<tr><th scope="row">Vjaier</th><td>0</td><td>0</td><td>0</td><td><b>50%</b></td><td>×2</td></tr>
-<tr><th scope="row">Talus 본체</th><td>35%</td><td>40%</td><td>45%</td><td><b>90%</b></td><td>×10</td></tr>
-<tr><th scope="row">Talus 다른 두 형태</th><td>20%</td><td>25%</td><td>30%</td><td><b>50%</b></td><td>×2</td></tr>
-</tbody></table></div>
-<p class="seccap">⑤ 보스 기본 체력 (에디터 값)</p>
-<div class="lp-scroll" tabindex="0" role="region" aria-label="보스 기본 체력">
-<table class="lp-table"><caption>위 배율을 곱하기 전 값 · v3.6.0asy</caption>
-<thead><tr><th scope="col">보스</th><th scope="col">기본 체력</th><th scope="col">레벨</th><th scope="col">적용 식</th></tr></thead>
-<tbody>
-<tr><th scope="row">Twins (Grak · Krit)</th><td>150,000 (각)</td><td>39</td><td>스토리 보스</td></tr>
-<tr><th scope="row">Parvin</th><td>490,519</td><td>44</td><td>타워 보스</td></tr>
-<tr><th scope="row">Villard</th><td>936,460</td><td>45</td><td>타워 보스</td></tr>
-<tr><th scope="row">Arkham</th><td>585,250</td><td>46</td><td>타워 보스</td></tr>
-<tr><th scope="row">Artoria</th><td>1,170,679</td><td>46</td><td>타워 보스</td></tr>
-<tr><th scope="row">Talus (3형태 각)</th><td>1,977,966</td><td>47</td><td>타워 보스</td></tr>
-<tr><th scope="row">Ripper</th><td>8</td><td>48</td><td>영혼 조각을 부수는 방식</td></tr>
-<tr><th scope="row">25 Ignisolith</th><td>노말 1인 500만</td><td>50</td><td>25~28번 (표 ÷ 1.53)</td></tr>
-<tr><th scope="row">26 Frostmaw</th><td>노말 1인 750만</td><td>51</td><td>25~28번 (표 ÷ 1.53)</td></tr>
-<tr><th scope="row">27 Chaos Cube</th><td>노말 1인 1,000만</td><td>52</td><td>25~28번 (표 ÷ 1.53)</td></tr>
-<tr><th scope="row">28 Voltrion</th><td>노말 1인 1,800만</td><td>53</td><td>25~28번 (표 ÷ 1.53)</td></tr>
-</tbody></table></div>
-<p class="seccap">⑥ 일반 몹 체력 — 지역 등급별</p>
-<div class="lp-guide"><p><b>지역 등급 1~8</b> (놀 · 거미 · 정령 · 카타콤 · 켄타우로스 · 나가 · 고대 오크·트롤 · 켄타우로스·원소, 25~28번 보스방 쫄 포함): 몹체력 × 난이도배율 × 몹종류계수(0.985 / 1.125 / 1.145 / 1.275) × (인원수 + 난이도추가분) — 스토리 보스의 <b>예전 계산식</b>과 같은 꼴이다(보스 표는 몹에 안 쓴다). 7인/1인 = Normal 5.77배 · Nightmare 3.10배.</p><p><b>지역 등급 9 이상</b> (해안 머록·마크루라 · 언데드 지역 · 오모그 지역·타워 몹): 몹체력 × 난이도배율(Normal 0.7437 · Legendary 1 · Heartcore 1.217 · Nightmare 1.521 · Empowered Tower 1.8) × 인원배율(1 / 1.7 / 2.4 / 3.2 / 4.1 / 5 / 6). 7인/1인 = 모든 난이도 6배.</p><p>둘 다 몹이 생길 때 한 번만 계산한다.</p></div>
 <details class="lp-extra"><summary>알아둘 점</summary><div><ul>
 <li><b>계산 시점:</b> 스토리 보스·타워 보스는 보스가 생길 때 한 번만 계산한다. 전투 중 누가 나가도 그 판 체력은 그대로다. 25~28번만 매초 다시 맞춘다(실제 플레이어만 센다).</li>
 <li><b>인원:</b> 원작 보스의 인원에는 AI 몫도 들어간다.</li>
