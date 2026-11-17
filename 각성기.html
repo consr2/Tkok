@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>각성기 이식 현황</title>
+<style>
+:root{
+  --bg:#f6f5f2; --panel:#ffffff; --ink:#1d1f23; --muted:#5d6470; --line:#dcd9d2;
+  --ok:#1f7a4d; --ok-bg:#e3f3ea; --warn:#9a5b00; --warn-bg:#fdf0d9; --miss:#a8322d; --miss-bg:#fbe5e3;
+  --info:#2557a7; --info-bg:#e4ecfa; --chip:#efece6; --accent:#6b4bb8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a; --panel:#1f2125; --ink:#e7e8ea; --muted:#9aa1ad; --line:#33363c;
+    --ok:#6fd39b; --ok-bg:#1d3328; --warn:#f0b75c; --warn-bg:#3a2d17; --miss:#f08a84; --miss-bg:#3d201e;
+    --info:#8db3f2; --info-bg:#1e2a40; --chip:#2a2c31; --accent:#b49cf0;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16171a; --panel:#1f2125; --ink:#e7e8ea; --muted:#9aa1ad; --line:#33363c;
+  --ok:#6fd39b; --ok-bg:#1d3328; --warn:#f0b75c; --warn-bg:#3a2d17; --miss:#f08a84; --miss-bg:#3d201e;
+  --info:#8db3f2; --info-bg:#1e2a40; --chip:#2a2c31; --accent:#b49cf0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:26px;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 24px}
+h2{font-size:19px;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:16px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0 4px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-size:24px}
+.stat span{color:var(--muted);font-size:13px}
+.note{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin:10px 0}
+.note ul{margin:6px 0 0;padding-left:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.card-hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin-bottom:8px}
+.cls{font-weight:700;font-size:16px}
+.sk{color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.t-impl{background:var(--info-bg);color:var(--info)}
+.t-empty{background:var(--warn-bg);color:var(--warn)}
+.t-ok{background:var(--ok-bg);color:var(--ok)}
+.t-miss{background:var(--miss-bg);color:var(--miss)}
+.ver{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--muted)}
+dl{display:grid;grid-template-columns:110px 1fr;gap:4px 12px;margin:0}
+dt{color:var(--muted);font-size:13px;padding-top:1px}
+dd{margin:0}
+.miss-list{margin:4px 0 0;padding-left:18px}
+.miss-list li{margin:2px 0}
+.lock{color:var(--muted);font-size:13px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--chip);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+code{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--chip);padding:1px 5px;border-radius:4px}
+@media (max-width:600px){dl{grid-template-columns:1fr}dt{padding-top:6px}}
+</style>
+</head>
+<body>
+<main>
+<h1>각성기 이식 현황</h1>
+<p class="sub">CN 3.8.21 의 55레벨 각성기(<code>tt_*55G</code>)를 우리 맵으로 옮긴 결과와 빠진 것 · 기준 <span class="ver">v3.6.0awl</span> · 2026-11-14 · 전부 인게임 미검증(수룡술만 시전 확인)</p>
+
+<div class="grid">
+  <div class="stat"><b>20 / 20</b><span>이식 완료 직업</span></div>
+  <div class="stat"><b>8</b><span>CN 구현 그대로 옮김 (팬텀 · 레인저 · 팔라딘 · 크로노 · 아케인 · 파이로 · 섀블 · 클레릭)</span></div>
+  <div class="stat"><b>5</b><span>CN 이 빈 함수라 수치를 새로 정함</span></div>
+  <div class="stat"><b>0</b><span>옮긴 CN 강화 탤런트 (56·58·60레벨)</span></div>
+</div>
+
+<h2>모든 각성기에 공통으로 다른 점</h2>
+<div class="note">
+<ul>
+  <li><b>습득 조건</b> — CN: 55레벨 + 2차 고사(中等职业考核) 통과. 우리: <b>60레벨 + 2차 전직(Hero Trial of Sylph 2nd, <code>EQA≥2</code>)</b>, 탤런트 36번 칸 1점(파이터만 39번 칸 예정).</li>
+  <li><span class="tag t-miss">빠짐</span> <b>일반 플레이로 2차 전직을 마칠 방법이 없다.</b> Sylph 2차 시험 메뉴는 있지만 원작 시험 완료가 전부 1단계만 기록한다 — 지금은 <code>-테스트</code> 영웅(2차 전직 완료로 생성)만 각성기를 찍을 수 있다.</li>
+  <li><span class="tag t-miss">빠짐</span> <b>CN 강화 탤런트(56·58·60레벨)는 한 개도 옮기지 않았다.</b> 각성기 칸 하나만 넣었다. 탤런트 창 세 번째 덩어리에는 37·39·40·42·43번 칸이 남아 있어 자리는 있다(맨 오른쪽 열 32·35·38·41·44 는 비우는 규칙).</li>
+  <li><b>공통 장치</b> — G 버튼 (3,1) · 기본 Channel 연출 비움 · 한/영 설명(<code>-skill eng</code>) · <code>-ㅋ</code> 쿨 초기화 · <code>-sk</code> 「각성기」 줄(문맥 <code>p*10+9</code>) · Patrol 버튼은 명령 카드에서 뺐다(G 자리).</li>
+</ul>
+</div>
+
+<h2>이식한 각성기 (20)</h2>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Hydromancer</span><span class="sk">Water Dragon · 수룡술</span><span class="tag t-impl">CN 구현 이식 (9월)</span><span class="ver">asz</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지정 방향 최대 1000 돌진 · 반경 200 적 1회 주문 (66 + 4×SP) · 지나친 아군 1회 치유 (21 + 0.25×SP) · Purity of Water 점당 +5% · Boiling Water +35%(치유 없음) · 쿨 10 · 마나 50</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 기본형은 치유가 없고, 56 「용의 근원」을 찍어야 아군 치유 + 이동 거리 +333/666/1000. 우리는 9월 이식 때 치유를 기본에 넣었다.</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 용의 근원 — 아군 치유 · 이동 거리 +333/666/1000</li>
+      <li>58 용의 춤 — 피해·치유 +15/30/45%</li>
+      <li>56 용의 벽 — 아군 최대 1/2/3명에게 빙기옥골</li>
+      <li>58 용의 분노 — 사용 후 자신 피해 +8/16/24% 30초</li>
+      <li class="lock">60 어수룡 — CN 도 [미개방]</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Medicaster</span><span class="sk">Rest Note · 쉼표</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">atb</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>쓰면 <b>5초</b> 동안 Q W E R T Y(Ancient Shield · Tender Cure · Payback · Remorse · Natural Prey · Last Chance) 재사용 대기 없음 · 마나는 그대로 · 쿨 60 · 마나 300(CN 값)</dd>
+    <dt>정한 값</dt><dd>지속 5초 — CN 데이터에 지속시간이 없다(0).</dd>
+    <dt>빠진 CN 강화</dt><dd class="lock">CN 에도 강화 탤런트가 없다. (CN 정의는 최대 5점으로 되어 있으나 점수에 따른 효과가 없다 — 우리는 1점)</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Necromancer</span><span class="sk">Death Aura · 명계의 고리</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">ate</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지니고 있는 동안 반경 900 오라 — 아군 영웅 AP·SP·최대 체력 +10%, 네크로 소환수 공격력·최대 체력 +10% · G: 반경 600 주문 150 + 5×SP · 쿨 30 · 마나 150(CN 값)</dd>
+    <dt>정한 값</dt><dd>오라 900 · +10% · 폭발 피해 (사용자 선택 「보통」). CN 설명은 「공격력」만 — 캐스터도 쓰도록 AP·SP 둘 다 올림.</dd>
+    <dt>빠진 CN 강화</dt><dd class="lock">CN 에 강화 탤런트 없음.</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Barbarian</span><span class="sk">Primal Roar · 원시 포효</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">atg~atq</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>적 대상(사거리 200) · 물리 200 + 8×AP · 기절 2초 · 대상이 일직선으로 600 미끄러짐 · 부딪힌 적 100 + 4×AP · 바깥으로 150 튕김 · 이동속도 -40% 3초 · 쿨 30 · 마나 150</dd>
+    <dt>정한 값</dt><dd>피해·기절·밀침 거리·둔화 전부(「보통」 + 이후 요청: 대상 미끄러짐, 사거리 200).</dd>
+    <dt>빠진 CN 강화</dt><dd class="lock">56 강화 원시 포효 · 56 격세유전 · 58 상급 원시 포효 · 58 불굴의 용맹 · 60 원초 투사 — CN 도 전부 [미개방]</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Warrior</span><span class="sk">Blade Split · 검광 분화</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">atn · atq</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>G: 10초 활성 · 영웅 평타마다 대상 주변(400) 적 최대 3명에게 검광 물리 50 + 1.5×AP · 맞은 적에 「파격」 — 받는 물리 피해(평타·물리 스킬) +4%/중첩 · 최대 5 · 5초 · 쿨 30 · 마나 150</dd>
+    <dt>CN 과 다른 점</dt><dd>CN [미개방] 「파격」은 중첩당 물리 취약 5% + 피해 10% 감소, 최대 3중첩 — 우리는 각성기 본체에 4% · 5중첩만(피해 감소 없음).</dd>
+    <dt>빠진 CN 강화</dt><dd class="lock">56 강화 검광 분화 · 56 파격 · 58 상급 검광 분화(출혈) · 58 육신 성화 · 60 소르의 칼날 — CN 도 전부 [미개방]</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Phantom Stalker</span><span class="sk">Origin Assassination · 근원 암살</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">atp</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>적 대상(800) · 0.2초 뒤 등 뒤 150 순간이동 · 기절 1초 · 물리 (235 + 10×AP) × (1 + 0.1×50·55레벨 탤런트 포인트) · 쿨 30 · 마나 200</dd>
+    <dt>빠진 것</dt><dd><ul class="miss-list">
+      <li>CN 능력 2~4레벨(쿨 25/20/15 · 마나 250…) — 우리는 1레벨(쿨 30) 고정</li>
+      <li>56 천정령 — D키 돌격(점수만큼 거리)</li>
+      <li>58 도봉무영 — 돌격이 피해</li>
+      <li>56 강화 근원 암살 — 피해 +20/40/60%</li>
+      <li>58 상급 근원 암살 — 쿨 -5/10/15초</li>
+      <li class="lock">60 계도라후검 — CN 도 [미개방]</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Ranger</span><span class="sk">Star Shooting · 천성 화살</span><span class="tag t-impl">CN 구현 · 인장만 뺌</span><span class="ver">atr · ats</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지점(1200) 방향 <code>EnergySpark.mdx</code> · 속도 1600 · 2000 거리 · 폭 400 적 1회 물리 47 + 5.5×AP · 쿨 30 · 마나 150 · 크기·높이 CN 그대로</dd>
+    <dt><span class="tag t-miss">빠짐</span> 레인저 인장</dt><dd>우리 맵에 인장 체계 자체가 없다. CN 에서는:
+      <ul class="miss-list">
+        <li><b>거는 곳</b> — Multi-Shot: 「화력 집중」(우리 30번 Focused Fire) 5점, 주변 적 1~2명이면 집중 모드(+5발) · 대상 1~2명에 인장 10초 / Arcane Arrow: 「마법 폭발 화살」(우리 34번 Arcane Burst) 5점, 화살마다 인장 10초 / 56 「별의 빛」: 천성 화살이 인장 2/4/6중첩</li>
+        <li><b>효과</b> — 레인저에게 받는 피해 +3%/중첩 · Hail of Arrows +1%/중첩 · 천성 화살이 전부 흡수해 <b>+100%/중첩</b></li>
+      </ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 심력 집중 — 피해 +15/30/45%</li>
+      <li>56 별의 빛 — 맞은 적에게 인장 2/4/6중첩</li>
+      <li>58 심력 지속 — 3초 지속 피해 5/10/15%</li>
+      <li>58 은하 — 사용 후 자신 피해 +8/16/24% 30초</li>
+      <li>60 별의 부활 — 피해 +8~40% · 범위 증가 · 5점이면 2회 사용 후 쿨</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Paladin</span><span class="sk">War Hammer · 전투 망치</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">att</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>적 대상(225) · 주문 50 + 5×SP · 대상 주변 450 아군 치유 20 + 2×SP · 10초 동안 1초마다 주문 10% + 주변 300 아군 치유 33% · 쿨 10 · 마나 50</dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 강화 전투 망치 — 치유 반경 +50/100/150 · 치유량 +10/20/30%</li>
+      <li>58 상급 전투 망치 — 피해 +15/30/45%</li>
+      <li>56 전투 망치 징벌 — 징벌 인장(Mark of Replenishment) 피해 +20/40/60% · 3점: 전투 망치가 그 쿨을 초기화</li>
+      <li>58 전투 망치 신벌 — 신벌(Divine Wrath) 피해 +15/30/45% · 3점: 전투 망치가 그 쿨을 초기화</li>
+      <li class="lock">60 진리 — CN 도 [미개방]</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Venomancer</span><span class="sk">Dream Field · 몽경</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">atu</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지점(500)에 반경 400 결계 10초 · 0.25초마다 결계 안 무작위 적 1명에게 주문 20 + 0.6×SP(40발) · 쿨 60 · 마나 300</dd>
+    <dt>참고</dt><dd>CN 탤런트 정의가 능력을 기본 스킬 만다라(<code>ABILITY_ID_MANDALA</code>)로 잘못 가리킨다 — 실제 몽경 능력(<code>A0SA</code>)은 빈 함수.</dd>
+    <dt>결계 이펙트</dt><dd>외부 모델 <b>Green and Mana Vortex Aura</b>(제작 UgoUgo · Hive Workshop · <b>크레딧 표기 조건</b>) ×3.5 · 색 170 · 투명도 120(aua) · 모델 중앙 원반 투명도 ×0.4 · 파티클 알파 100(aub, 눈부심 완화) — 처음 쓴 StarfallCaster 가 드루이드와 겹쳐 바꿈.</dd>
+    <dt>빠진 CN 강화</dt><dd class="lock">CN 에 강화 탤런트 없음.</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Chronowarper</span><span class="sk">String Theory · 초끈</span><span class="tag t-impl">CN 구현 · 두 군데 다름</span><span class="ver">atv</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>주변 600 아군 영웅 15초 — 주는 피해 +10% · 받는 치유 +10% · 최대 체력·마나 + 시전자 최대값 10% · 시전자 자신은 4초마다 E Transcendimension 자동 시전(E 를 배웠을 때) · 쿨 30 · 마나 300</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 최대 마나 증가도 시전자 <b>최대 체력</b>으로 계산 — 버그로 보고 최대 마나로 고침</li><li>CN 은 모든 아군 유닛(소환수 포함), 우리는 아군 영웅만</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 대칭성 — 지속 +5/10/15초</li>
+      <li>58 통일성 — 효과 +2.5/5/7.5%</li>
+      <li>56 반 데시타 — 초끈 중 군단 소환(자동 시전 간격 4 → 3/2/1초)</li>
+      <li>58 홀로그램 — 초끈 유닛이 매초 20/40/60% 확률로 기광참</li>
+      <li class="lock">60 좌망 — CN 도 [미개방]</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Arcanist</span><span class="sk">Rainbow Light · 무지개빛</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">auc</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지점 대상 2000 — 그 지점이 비전 화신(Arcane Phantom) 400 안이거나 Arcanic Duet 분신 1000 안이고 길이 막히지 않았으면 순간이동, 반경 300 적에게 50 + 1.5×SP 주문 피해 · 쿨 0.5 · 마나 50</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>이동 못 하는 지점이면 CN 은 마나만 날림 → 마나 50 환급 + 안내 문구</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 강화 무지개빛 — 피해 +15/30/45%</li>
+      <li>58 홍광 위압 — 범위 +50/100/150 · 이속 -5/10/15% · 공속 -10/20/30%</li>
+      <li>56 홍광 유도탄 — 이후 비전 유도탄 1/2/3발</li>
+      <li>58 홍광 인령 — 이후 즉시 영혼 흡수 1/2/3회</li>
+      <li class="lock">60 별빛 작렬 — CN 도 [미개방]</li></ul></dd>
+    <dt>참고</dt><dd>화신은 55레벨 탤런트 Arcane Phantom(Arcanic Explosion 마다 하나), 분신은 Arcanic Duet. 둘 다 없으면 쓸 곳이 없다.</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Pyromancer</span><span class="sk">Phoenix Possession · 불사조 빙의</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">aud</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>아군 영웅 하나(500, 파이로맨서 제외)에게 10초 빙의 — 대상 어택파워·스펠파워 + 시전자 SP 25% · 대상 자리에 불사조 · 자신은 투명하게 대상 위에 붙어 다니며 받는 피해 전부 흡수(즉사 제외) · 시전 가능 · 대상이 죽으면 자신도 사망 · 쿨 30 · 마나 150</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>못 쓰는 대상이면 CN 은 마나·쿨만 날림 → 환급 + 쿨 초기화 + 문구</li><li>CN 은 1.1초 버프를 1초마다 다시 검(SP 변화 반영) → 10초 버프 한 번(걸 때 SP)</li><li>CN 비행 높이 60 은 지상 영웅이라 효과가 없어 뺌</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 꺼지지 않는 불꽃 — 효과 +5/10/15%</li>
+      <li>58 열반 지속 — 지속 +2/4/6초</li>
+      <li>56 광역 화염 — 빙의 중 화염 형태 범위 +100/200/300 · 피해 +15/30/45%</li>
+      <li>58 자동 유성 — 빙의 중 소형 유성 자동(간격 7/5/3초)</li>
+      <li class="lock">60 레이저 — CN 도 [미개방]</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Shadowblade</span><span class="sk">Abyss Falls · 심연 강림</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">auk</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>자신 둘레 반경 576 에 30초 동안 심연을 연다(땅은 그대로, 가장자리를 영혼 3개가 6초에 한 바퀴씩 돈다) — 0.2초마다 무작위 자리에 어둠의 타격(주문)·지옥의 손(물리)이 떨어져 반경 100 적에게 각 16 + 1.1×혼합 위력 · Abyssal Will 5포인트면 심연 안에서 AP·SP +30%×min(AP, SP) · 자신이 죽으면 닫힘 · 쿨 60 · 마나 300</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>이미 열려 있으면 CN 은 마나·쿨만 날림 → 환급 + 쿨 초기화 + 문구</li><li>CN 은 땅을 황폐 타일로 바꿈 → 땅은 그대로 두고 가장자리를 도는 영혼 3개로 범위 표시</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd><ul class="miss-list">
+      <li>56 강화 심연 강림 — 타격·손 개수 증가</li>
+      <li>56 마귀 순격 — 심연 안 흑마귀 공격이 순격(피해 10/20/30%)</li>
+      <li>58 상급 심연의 고사 — 피해 +15/30/45%</li>
+      <li>58 촉수 난무 — 심연 안 사악한 손길 피해 상한 +25/50/75%</li>
+      <li>60 심연 전환 — 피해 +10~50% · 완전 습득 시 슈퍼 악마 변신</li></ul></dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Earthquaker</span><span class="sk">Invincible Slash · 무적참</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">aup</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>적 하나(600)에게 0.2초 돌진 → 2초 동안 0.2초마다 둘레 300 적에게 물리 40 + 1.2×AP(10회) · 돌진부터 끝까지 받는 피해 전부 막음(즉사 제외) · 쿨 30 · 마나 150(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「주위 적을 빠르게 벰 · 자신 피해 100% 면역」)만 있고 동작이 비어 있음 — 돌진·횟수·피해는 새로 정함</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>없음</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Shadow Shaman</span><span class="sk">Shadow Avatar · 암영 화신</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">aus</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>8초 그림자 화신(검보라 색 · 발밑 부정 오라) — 받는 피해 전부 막음(즉사 제외) · 켜는 순간 Healing · Ancestral Blessing · Shadow · Earthen Totem 쿨 초기화 · Earthen Totem 은 여러 개가 각자 보호막(원작은 한 개만 — 겹치면 버그) · 쿨 60 · 마나 300(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「화신 형태 · 피해 면역 · 토템 즉시 초기화」)만 있고 동작이 비어 있음 — 지속 8초와 연출은 새로 정함</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>없음</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Fighter</span><span class="sk">Boundless Rebirth · 무상 전생</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">auu</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>슬롯 39 · 6초 동안 초식 재사용 대기시간 없음(켤 때 남은 쿨도 초기화, 마나는 그대로) · 받는 피해 70% 감소 · 쿨 30 · 마나 150(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「짧은 시간 무제한 초식 + 큰 피해 경감」)만 있고 동작이 비어 있음 — 6초 · 70% 는 새로 정함</li><li>CN 명령 shockwave 는 섀도 샤먼 토템과 겹쳐 berserk</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>없음</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Aeromancer</span><span class="sk">Lightning Spirit · 번개 정령</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">auw</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>지정한 자리(600)에 15초 번개 정령(이펙트 — 맞지도 집히지도 않음) · 1초마다 둘레 600 적 최대 3명에게 번개 주문 20 + 0.6×SP · 플레이어당 하나 · 쿨 20 · 마나 100(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「번개 원소 정령 소환 · 다양한 효과」)만 있고 동작이 비어 있음 — 지속·피해·대상 수는 새로 정함</li><li>CN 은 적 대상 → 우리는 지점 대상 · CN 명령 controlmagic 은 다른 능력과 겹쳐 townbellon</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>없음</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Druid</span><span class="sk">Elemental Aggregate · 원소 집합체</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">ava</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>20초 동안 원소 집합체(이펙트)가 곁을 따라다니며 1초마다 지금 형태에 따라 — 본체: 둘레 400 적 주문 30 + 0.8×SP · 곰: 둘레 400 적 물리 30 + 0.8×AP · 늑대: 둘레 600 아군 영웅 공속 +20%(2초) · 트리언트: 둘레 600 아군 영웅 회복 20 + 0.5×SP · 쿨 60 · 마나 300(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「집합체 소환 · 형태에 따라 기술이 바뀜」)만 있고 동작이 비어 있음 — 형태별 효과·수치는 새로 정함</li><li>CN 은 적 대상 → 우리는 무대상(자기 곁에 소환)</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>56·58·60 5종 — CN 도 전부 [미개방]</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Cleric</span><span class="sk">Manifold Divinity · 다중 신격</span><span class="tag t-impl">CN 구현 그대로</span><span class="ver">ave</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>Conjurator 를 배운 클레릭이 G 로 영매 형태(어둠 스킬) ↔ 신성 형태(빛 스킬) 전환 · 처음은 영매 · 형태마다 60초 따로 · 마나 300(CN 값)</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>쿨 중이거나 Conjurator 가 없으면 CN 은 마나만 날림 → 마나 환급</li><li>CN 명령 autoharvestlumber 는 다른 능력과 겹쳐 unavengerform</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>신문 4종 — CN 도 「아직 개발되지 않은 특성」</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <div class="card-hd"><span class="cls">Chaotic Knight</span><span class="sk">Chaos Sovereign · 혼돈 주인</span><span class="tag t-empty">CN 빈 함수 → 새로 만듦</span><span class="ver">avf</span></div>
+  <dl>
+    <dt>우리 동작</dt><dd>적 하나(200)에게 혼돈 주인 1중첩(마지막으로 건 뒤 12초) · 중첩마다 그 적이 주는 모든 피해 −5%(최대 3) · 3중첩이 되면 자신에게 최대 체력 15% 보호막(10초) · 중첩 3 유지 · 쿨 10 · 마나 50</dd>
+    <dt>CN 과 다른 점</dt><dd><ul class="miss-list"><li>CN 은 설명(「적 하나에 혼돈 주인 부여 · 중첩 가능」)만 있고 동작이 비어 있음 — 탱커형 효과는 새로 정함</li><li>사거리 600 → 200 · CN 명령 autodispel 은 다른 능력과 겹쳐 unholyfrenzy</li></ul></dd>
+    <dt>빠진 CN 강화</dt><dd>없음</dd>
+  </dl>
+</div>
+
+<h2>아직 안 한 각성기 (0)</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>직업</th><th>각성기</th><th>CN</th><th>CN 설명</th><th>CN 강화 탤런트</th></tr></thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+<h2>남은 큰 과제</h2>
+<div class="note">
+<ul>
+  <li><b>2차 전직 획득 경로</b> — 지금은 일반 플레이로 각성기를 못 찍는다. Sylph 2차 시험 완료 시 <code>EQA=2</code> 를 기록하는 길을 만들지 결정 필요.</li>
+  <li><b>레인저 인장 체계</b> — Focused Fire·Arcane Burst 5점 효과와 천성 화살 흡수가 같이 묶여 있다.</li>
+  <li><b>CN 강화 탤런트(56·58)</b> — 열려 있는 것만 옮길 경우: 하이드로 4 · 팬텀 4 · 레인저 5 · 팔라딘 4 · 크로노 4 · 아케 4 · 파이로 4 · 섀블 5. 각 직업 37·39·40·42·43번 칸에 들어갈 수 있다.</li>
+</ul>
+</div>
+</main>
+</body>
+</html>
