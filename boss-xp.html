@@ -1,0 +1,471 @@
+<meta charset="utf-8">
+<title>TKoK Eastern 3.6.0 — 보스별 경험치</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 이 파일은 wc3mpq/indexpage.py 가 통째로 다시 쓴다.
+     손으로 고치지 말고 그 안 LOG 에 한 줄 더한 뒤 다시 돌릴 것.
+     계수를 바꿨으면 skillcalc -> skillmodel -> indexpage 순서로. -->
+<style>
+:root{
+  --bg:#ffffff; --surface:#f7f6f3; --surface-2:#f1f0ed;
+  --ink:#37352f; --ink-strong:#1f1e1b; --muted:#787774; --faint:#9b9a97;
+  --rule:#e9e9e7; --rule-strong:#dcdbd8;
+  --accent:#d9730d; --accent-soft:#fbf3ec; --code-bg:#f2f1ee;
+  --d2:#d44c47; --d2-soft:#fbeeed;
+  --g-green:#3f7a5c; --g-green-soft:#eaf2ed;
+  --maxw:900px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191919; --surface:#202020; --surface-2:#252525;
+    --ink:#d4d4d4; --ink-strong:#ededec; --muted:#979695; --faint:#7a7977;
+    --rule:#2e2e2c; --rule-strong:#3a3a37;
+    --accent:#e59248; --accent-soft:#2a2119; --code-bg:#2a2a28;
+    --d2:#e3776f; --d2-soft:#2f1f1e;
+    --g-green:#72b08d; --g-green-soft:#1d2a24;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191919; --surface:#202020; --surface-2:#252525;
+  --ink:#d4d4d4; --ink-strong:#ededec; --muted:#979695; --faint:#7a7977;
+  --rule:#2e2e2c; --rule-strong:#3a3a37;
+  --accent:#e59248; --accent-soft:#2a2119; --code-bg:#2a2a28;
+  --d2:#e3776f; --d2-soft:#2f1f1e;
+  --g-green:#72b08d; --g-green-soft:#1d2a24;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR","Malgun Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:40px 22px 80px}
+.crumb{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint)}
+h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.02em;
+  color:var(--ink-strong);margin:12px 0 0;text-wrap:balance}
+.lede{color:var(--muted);font-size:15.5px;margin:10px 0 0;max-width:64ch}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:12px;padding:4px 10px;border-radius:4px;
+  background:var(--surface);border:1px solid var(--rule);color:var(--muted)}
+.status{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.seccap{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.secbody{display:flex;flex-direction:column;gap:16px}
+
+/* ---- 다운로드 단추 (탭 위, 항상 보인다) ---- */
+.dl{display:flex;align-items:center;gap:14px;text-decoration:none;margin:24px 0 0;
+  border:1px solid var(--rule);border-radius:10px;padding:15px 18px;
+  background:var(--surface);color:var(--ink);
+  transition:border-color .15s ease,background .15s ease,transform .15s ease,box-shadow .15s ease}
+.dl:hover{border-color:var(--accent);background:var(--accent-soft);
+  transform:translateY(-1px);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.dl:active{transform:translateY(0)}
+.dl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dl-ico{flex:none;width:40px;height:40px;border-radius:9px;display:grid;place-items:center;
+  background:var(--accent);color:#fff}
+.dl-t{display:flex;flex-direction:column;gap:1px;min-width:0}
+.dl-h{font-size:15.5px;font-weight:600;color:var(--ink-strong);line-height:1.4}
+.dl-s{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+.dl-go{flex:none;margin-left:auto;color:var(--faint);
+  transition:transform .15s ease,color .15s ease}
+.dl:hover .dl-go{color:var(--accent);transform:translateX(3px)}
+
+/* ---- 탭 ---- */
+.tabs{display:flex;flex-wrap:wrap;gap:2px;margin:30px 0 0;border-bottom:1px solid var(--rule-strong)}
+.tab{appearance:none;border:0;background:none;font:inherit;font-size:14.5px;cursor:pointer;
+  color:var(--muted);padding:11px 16px;border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .12s ease,border-color .12s ease}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:4px}
+.tabp{padding-top:26px}
+
+/* ---- 직업 고르는 알약 (옛 05절에서 가져왔다) ---- */
+.dps-chips{display:flex;flex-wrap:wrap;gap:6px}
+.dps-chip{border:1px solid var(--rule);border-radius:999px;padding:5px 12px;background:var(--bg);
+  font:inherit;font-size:13px;color:var(--ink);cursor:pointer}
+.dps-chip:hover{background:var(--surface-2)}
+.dps-chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);
+  background:var(--accent-soft);font-weight:600}
+.dps-chip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+/* ---- 업데이트 탭 ---- */
+.pn-item{border:1px solid var(--rule);border-radius:8px;padding:14px 16px 15px;
+  margin:0 0 12px;background:var(--surface)}
+.pn-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.pn-cls{font-size:11.5px;border-radius:3px;padding:1px 7px;background:var(--surface-2);color:var(--muted)}
+.pn-sk{font-size:16px;font-weight:600;color:var(--ink-strong)}
+.pn-fn{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);margin-left:auto}
+.pn-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;margin:0 0 9px}
+.pn-f{font-size:12.5px;color:var(--muted);min-width:92px}
+.pn-b,.pn-a{font-family:"IBM Plex Mono",monospace;font-size:13px;border-radius:4px;padding:2px 8px}
+.pn-b{background:var(--surface-2);color:var(--muted);text-decoration:line-through}
+.pn-a{background:var(--g-green-soft);color:var(--g-green);font-weight:600}
+.pn-ar{color:var(--faint)}
+.pn-why{margin:0;font-size:13.5px;line-height:1.75;color:var(--muted)}
+.pn-x{margin:9px 0 0;font-size:12.5px;line-height:1.7;background:var(--surface-2);
+  border-radius:5px;padding:8px 11px;color:var(--ink)}
+.pn-month,.pn-day{border:1px solid var(--rule);border-radius:8px;background:var(--surface);
+  margin:0 0 10px;overflow:hidden}
+.pn-month>summary,.pn-day>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;
+  gap:12px;flex-wrap:wrap;user-select:none}
+.pn-month>summary::-webkit-details-marker,.pn-day>summary::-webkit-details-marker{display:none}
+.pn-month>summary:hover,.pn-day>summary:hover{background:var(--surface-2)}
+.pn-month>summary:focus-visible,.pn-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pn-tri{flex:none;color:var(--faint);transition:transform .15s ease}
+.pn-month[open]>summary .pn-tri{transform:rotate(90deg)}
+.pn-day[open]>summary .pn-tri{transform:rotate(90deg)}
+.pn-d{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-strong);font-weight:600}
+.pn-cnt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:1px 7px;border-radius:3px;
+  background:var(--surface-2);color:var(--muted)}
+.pn-peek{font-size:12.5px;color:var(--muted);margin-left:auto;text-align:right}
+.pn-body{padding:0 14px 14px}
+.pn-mbody{padding:0 14px 14px}
+.pn-mbody>.pn-day:last-child{margin-bottom:0}
+.pn-day .pn-item{background:var(--bg)}
+
+/* ---- 업데이트 탭 · 날짜 안쪽 직업 토글 (2026-09-06) ---- */
+.pn-grp{border:1px solid var(--rule);border-radius:7px;background:var(--bg);
+  margin:0 0 8px;overflow:hidden}
+.pn-grp:last-child{margin-bottom:0}
+.pn-grp>summary{list-style:none;cursor:pointer;padding:10px 13px;display:flex;
+  align-items:center;gap:10px;flex-wrap:wrap;user-select:none}
+.pn-grp>summary::-webkit-details-marker{display:none}
+.pn-grp>summary:hover{background:var(--surface-2)}
+.pn-grp>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pn-grp[open]>summary{border-bottom:1px solid var(--rule)}
+.pn-grp[open]>summary .pn-tri{transform:rotate(90deg)}
+.pn-gc{font-size:13.5px;font-weight:600;color:var(--ink-strong)}
+.pn-gbody{padding:12px 12px 1px}
+.pn-grp .pn-item{background:var(--surface)}
+.pn-empty{font-size:14px;color:var(--muted)}
+@media (max-width:560px){
+  h1{font-size:29px}
+  .pn-fn{margin-left:0;width:100%}
+  .pn-peek{margin-left:0;width:100%;text-align:left}
+  .tab{padding:10px 11px;font-size:13.5px}
+}
+.sr-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.sr-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule-strong);padding-bottom:8px;margin-bottom:12px}
+.sr-hd h3{margin:0;font-size:19px}
+.sr-hd .who{font-size:12.5px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+.sr-rule{margin:0 0 14px;padding-left:18px;font-size:13.5px;line-height:1.75}
+.sr-rule li{margin:0}
+.sr-cap{margin:14px 0 6px;font-size:11.5px;letter-spacing:.06em;color:var(--muted);font-family:"IBM Plex Mono",monospace;text-transform:uppercase}
+.sr-sk{border:1px solid var(--rule);border-radius:7px;padding:13px 15px 15px;margin:0 0 12px;background:var(--surface)}
+.sr-sk h4{margin:0 0 8px;font-size:15.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sr-n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;background:var(--surface-2);color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:11px}
+.sr-cd{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-left:auto}
+.sr-desc{margin:0 0 10px;font-size:13.5px;line-height:1.8}
+.sr-note{margin:0 0 10px;font-size:13px;line-height:1.7;color:var(--d2);background:var(--d2-soft);border-radius:5px;padding:7px 10px}
+.sr-t{color:var(--accent);font-weight:600}
+.sr-f{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-strong);background:var(--surface-2);border-radius:3px;padding:0 4px}
+.sr-ty{font-size:11px;border-radius:3px;padding:1px 6px;background:var(--surface-2);color:var(--muted)}
+.sr-sl{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint)}
+.sr-lb{font-size:11.5px;color:var(--muted)}
+.sr-tab{border-collapse:collapse;width:100%;font-size:13px;margin:0 0 6px}
+.sr-tab th{text-align:left;font-size:11px;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--rule-strong);padding:4px 8px;font-weight:600}
+.sr-tab td{border-bottom:1px solid var(--rule);padding:5px 8px;vertical-align:top}
+.sr-fld{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.sr-eq{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-strong)}
+.sr-slots td{font-size:12.5px}
+.sr-slots{max-width:520px}
+.sr-fn{margin:8px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint)}
+.sr-tl li{margin:0}
+/* 조건별로 쌓아 올리는 스킬 표 (2026-09-07) */
+.sr-build td{font-size:12.5px}
+.sr-cond{color:var(--ink-strong)}
+.sr-why{color:var(--muted);font-size:11.5px}
+.sr-build tr.sr-r0 td,.sr-build tr.sr-r4 td{background:var(--surface-2)}
+.sr-build tr.sr-r4 td{border-bottom:none}
+.sr-build tr.sr-r1 .sr-cond,.sr-build tr.sr-r2 .sr-cond,.sr-build tr.sr-r3 .sr-cond{padding-left:16px}
+.sr-build tr.sr-r2 .sr-cond{color:var(--accent)}
+/* 참고 칸 — 피해에 안 더해진다. 한 눈에 구분되게 흐리고 위에 선을 긋는다 */
+.sr-build tr.sr-r5 td{color:var(--muted);border-top:1px dashed var(--rule-strong);background:transparent}
+.sr-build tr.sr-r5 .sr-cond{padding-left:0}
+
+/* ---- 레벨별 포인트 ---- */
+.lp-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.lp-card{padding:16px 18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+.lp-card span{display:block;color:var(--muted);font-size:13px}
+.lp-card strong{display:block;color:var(--ink-strong);font-size:27px;line-height:1.4}
+.lp-guide{margin:0 0 18px;color:var(--muted);font-size:14px}
+.lp-guide p{margin:7px 0}
+.lp-scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:8px}
+.lp-table{width:100%;border-collapse:collapse;min-width:460px;font-size:14px;font-variant-numeric:tabular-nums}
+.lp-table caption{padding:12px 14px;text-align:left;color:var(--muted);font-size:12px;background:var(--surface)}
+.lp-table th,.lp-table td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+.lp-table thead th{background:var(--surface-2);color:var(--muted);font-size:12.5px;font-weight:600}
+.lp-table tbody th{text-align:left;font-weight:500}
+.lp-table tbody tr:last-child>*{border-bottom:0}
+.lp-table tbody tr:nth-child(even){background:var(--surface)}
+.lp-table .lp-key{background:var(--accent-soft)!important;color:var(--ink-strong)}
+.lp-table .lp-key>*{font-weight:600}
+#tabp-bhp .lede+.seccap{margin-top:26px}#tabp-bhp .lp-scroll+.seccap,#tabp-bhp .lp-scroll+.lede+.seccap{margin-top:34px}#tabp-bhp .lp-guide{margin-bottom:14px}#tabp-bhp .lp-scroll+.lede{margin-top:10px}
+.bxi-ctl{display:flex;flex-wrap:wrap;gap:10px 18px;margin:0 0 14px;font-size:14px}
+.bxi-ctl input[type=number]{width:5.5em}
+.bxi-table{min-width:0;font-size:13px}.bxi-table th,.bxi-table td{padding:8px 7px}.bxi-table thead th{white-space:normal;line-height:1.3;word-break:keep-all}.bxi-table thead th:nth-child(1),.bxi-table thead th:nth-child(5){text-align:left}.bxi-table tbody th{white-space:normal;min-width:6.5em}.bxi-table td:nth-child(4){white-space:normal}.bxi-table td.bxi-c{text-align:left;white-space:normal;min-width:8em;color:var(--muted);font-size:12.5px}
+.lp-extra{margin-top:22px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+.lp-extra>summary{cursor:pointer;padding:13px 16px;font-weight:600}
+.lp-extra>div{padding:0 16px 16px;font-size:14px}
+.lp-extra ul{padding-left:20px;margin:8px 0}
+.lp-extra li{margin:8px 0}
+.lp-note{color:var(--muted);font-size:13px;margin:12px 0 0}
+
+
+/* Scoped game-style talent viewer. */
+.tt-intro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+.tt-intro p{margin:0;color:var(--muted);font-size:13px}
+.tt-roster{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;margin:0 0 22px}
+.tt-class{appearance:none;border:1px solid var(--rule);background:var(--surface);border-radius:5px;padding:7px 3px 6px;color:var(--muted);cursor:pointer;font:inherit;min-width:0;transition:border-color .15s,background .15s}
+.tt-class img{display:block;width:46px;height:46px;margin:auto;object-fit:cover;border:1px solid #6e6041;box-shadow:0 1px 4px #0007}
+.tt-class span{display:flex;align-items:center;justify-content:center;min-height:27px;margin-top:5px;font-size:10px;line-height:1.22;word-break:normal}
+.tt-class:hover{border-color:#a78b4e;background:var(--accent-soft)}
+.tt-class[aria-pressed="true"]{border-color:#b78b32;background:var(--accent-soft);color:var(--ink-strong);box-shadow:0 0 0 1px #b78b3255}
+.tt-class:focus-visible,.tt-node:focus-visible{outline:3px solid #f4ca65;outline-offset:3px}
+.tt-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.tt-selected{display:flex;align-items:center;gap:11px}
+.tt-selected img{width:38px;height:38px;border:1px solid #8a7343;border-radius:2px}
+.tt-selected strong{display:block;color:var(--ink-strong);font-size:17px;line-height:1.3}
+.tt-selected small{font-size:12px;color:var(--muted)}
+.tt-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.tt-controls label{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted)}
+.tt-controls select{font:inherit;font-size:12px;border:1px solid var(--rule-strong);border-radius:4px;background:var(--surface);color:var(--ink);padding:5px 7px}
+.tt-scroll{overflow-x:auto;padding:4px 4px 14px;overscroll-behavior-x:contain;scrollbar-width:thin}
+.tt-window{width:816px;max-width:100%;min-width:700px;margin:auto;background:#11100e;border:3px ridge #8b774b;box-shadow:0 5px 18px #0004,inset 0 0 0 2px #191611;color:#e6d8b1}
+.tt-window-head{height:39px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:linear-gradient(#39352a,#181712 65%,#28241b);border-bottom:2px ridge #8c7748;box-shadow:inset 0 0 8px #000;font-family:Georgia,'Times New Roman',serif;font-size:19px;letter-spacing:.03em;color:#ead69a;text-shadow:1px 2px #000}
+.tt-window-head small{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:0;color:#a89d81}
+.tt-board{position:relative;width:100%;height:432px;background:#211c12;isolation:isolate}
+.tt-backdrops{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);z-index:-2}
+.tt-backdrops img{display:block;width:100%;height:100%;object-fit:fill;border-right:2px ridge #7d6a3d}
+.tt-backdrops img:last-child{border:0}
+.tt-board:before{content:"";position:absolute;inset:0;background:#0002;z-index:-1;pointer-events:none}
+.tt-node{position:absolute;transform:translate(-50%,-50%);width:61px;height:61px;border:2px outset #a28c54;border-radius:0;box-shadow:0 0 0 1px #262014,0 3px 6px #000c;background:#191812;cursor:help;padding:0;color:#f3df8e;font:inherit;touch-action:manipulation}
+.tt-node img{display:block;width:100%;height:100%;object-fit:cover}
+.tt-node:hover,.tt-node[aria-expanded="true"]{border-color:#f9d77e;box-shadow:0 0 0 1px #f2c865,0 0 13px #ffdb6c88;z-index:4}
+.tt-node .tt-rank{position:absolute;right:-3px;bottom:-7px;min-width:27px;padding:0 3px;border:1px solid #8a7447;line-height:17px;background:#0c0c08;color:#f8df86;text-shadow:1px 1px #000;font:13px/17px Georgia,'Times New Roman',serif;pointer-events:none}
+.tt-node.tt-high{border-color:#a18a5c}
+.tt-node.tt-high:after{content:"55";position:absolute;left:-3px;top:-5px;padding:0 3px;color:#e5d6ad;font:10px/15px system-ui,sans-serif;background:#1c1912;border:1px solid #847145;pointer-events:none}
+.tt-window-foot{padding:9px 13px;border-top:2px ridge #77633b;background:#19170f;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#b0a489}
+.tt-tooltip{position:fixed;z-index:1000;width:390px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);overflow:auto;color:#ece6d7;background:linear-gradient(110deg,#151a1af5,#11130ff7);border:2px ridge #a58d59;border-radius:2px;box-shadow:0 6px 28px #0009,inset 0 0 0 1px #332c1d;padding:17px 19px;font:15px/1.5 Georgia,'Times New Roman','Malgun Gothic',serif;scrollbar-width:thin}
+.tt-tooltip[hidden]{display:none}
+.tt-tip-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;padding-right:16px}
+.tt-tip-top img{width:43px;height:43px;border:1px solid #9c8550;flex:none}
+.tt-tip-name{font-size:21px;line-height:1.2;color:#50bbc0;margin:0 0 6px;font-weight:400}
+.tt-tip-meta{font-size:13px;color:#c9bd9e;line-height:1.55}
+.tt-tip-meta .tt-prereq{color:#d9a75d}
+.tt-tip-desc{white-space:normal;overflow-wrap:anywhere}
+.tt-tip-desc b{font-weight:600;color:#f6d777}
+.tt-tip-desc br+br{display:block;content:"";margin-top:8px}
+.tt-tip-close{position:absolute;right:7px;top:5px;border:0;background:transparent;color:#bcae8b;font:21px/1.1 system-ui;cursor:pointer;padding:2px 5px}
+.tt-tip-close:hover{color:#fff0bd}
+.tt-note{margin:8px 0 0;color:var(--muted);font-size:12px}
+@media(max-width:640px){.tt-roster{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:18px}.tt-class img{width:40px;height:40px}.tt-class span{font-size:10px;min-height:25px}.tt-class{padding-top:5px}.tt-toolbar{align-items:flex-start}.tt-controls{gap:8px}.tt-scroll{margin:0 -8px}.tt-window{min-width:700px}.tt-window-head small{display:none}.tt-tooltip{font-size:14px;width:350px;padding:15px}.tt-tip-name{font-size:19px}}
+
+a.tab{text-decoration:none;display:inline-block}
+.tab[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.tabs{flex-wrap:wrap}
+</style>
+<div class="wrap">
+  <header>
+    <div class="crumb">TKoK Eastern 3.6.0</div>
+    <h1>스킬 · 성장 정보 · 업데이트</h1>
+    <p class="lede">스킬이 <b>어떤 식으로 계산되는지</b>와 <b>계수가 언제 얼마로 바뀌었는지</b>, <b>레벨별로 받는 포인트</b>를 함께 본다.</p>
+  </header>
+  <a class="dl" href="https://github.com/consr2/Tkok/raw/main/TKoK_Eastern-360.w3x" target="_blank" rel="noopener noreferrer">
+    <span class="dl-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dl-t"><span class="dl-h">TKoK RPG 현재 버전 다운로드</span><span class="dl-s">Download · GitHub (main 최신 커밋 · TKoK_Eastern-360.w3x)</span></span>
+    <svg class="dl-go" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <nav class="tabs" aria-label="페이지">
+    <a class="tab" href="index.html">업데이트</a>
+    <a class="tab" href="skill.html">직업별 스킬 계산식</a>
+    <a class="tab" href="tree.html">스킬 트리</a>
+    <a class="tab" href="points.html">레벨별 포인트</a>
+    <a class="tab" href="boss-xp.html" aria-current="page">보스별 경험치</a>
+    <a class="tab" href="boss-hp.html">보스 체력</a>
+    <a class="tab" href="credit.html">크레딧</a>
+  </nav>
+<div class="tabp" id="tabp-bxp">
+<p class="seccap">보스 처치 경험치 · 영웅 레벨과 난이도별</p>
+<p class="lede">무작위 0.8~1.2배가 처치마다 한 번 굴러서 범위로 보인다. 한 번 처치에 700 이상이면 650~750 으로 바뀐다(Zanatath 는 상한 500).</p>
+<div class="bxi-ctl">
+<label>영웅 레벨 <input id="bxi-level" type="number" min="1" max="60" value="47"></label>
+<label>XP 보너스 % <input id="bxi-bonus" type="number" min="-100" value="0"></label>
+<label><input id="bxi-vx" type="checkbox" checked> VX 성공</label>
+<label><input id="bxi-luck" type="checkbox"> 행운 2배 발동</label>
+</div>
+<div class="lp-scroll" tabindex="0" role="region" aria-label="보스별 경험치 표">
+<table class="lp-table bxi-table"><caption>현재 맵 기준 · v3.6.0awl</caption>
+<thead><tr><th scope="col">보스</th><th scope="col">레벨</th><th scope="col">기준 XP</th><th scope="col">VX 추가</th><th scope="col">VX 조건</th><th scope="col">Normal</th><th scope="col">Legendary</th><th scope="col">Heartcore</th><th scope="col">Nightmare</th></tr></thead>
+<tbody>
+<tr><th scope="row">Broodmother</th><td>8</td><td>60</td><td>+23</td><td class="bxi-c">알을 하나도 깨지 않기</td><td id="bxi-bm-1"></td><td id="bxi-bm-2"></td><td id="bxi-bm-3"></td><td id="bxi-bm-4"></td></tr>
+<tr><th scope="row">Narith</th><td>15</td><td>70</td><td>+25</td><td class="bxi-c">Narith 만 공격하고 통(container)을 하나도 부수지 않기</td><td id="bxi-nr-1"></td><td id="bxi-nr-2"></td><td id="bxi-nr-3"></td><td id="bxi-nr-4"></td></tr>
+<tr><th scope="row">Sand Golem</th><td>19</td><td>70</td><td>+26</td><td class="bxi-c">shardling 을 하나도 죽이지 않기</td><td id="bxi-sg-1"></td><td id="bxi-sg-2"></td><td id="bxi-sg-3"></td><td id="bxi-sg-4"></td></tr>
+<tr><th scope="row">Lord Naztar</th><td>21</td><td>80</td><td>없음</td><td class="bxi-c">항상 VX (경험치 추가 없음)</td><td id="bxi-nz-1"></td><td id="bxi-nz-2"></td><td id="bxi-nz-3"></td><td id="bxi-nz-4"></td></tr>
+<tr><th scope="row">Karrix</th><td>23</td><td>70</td><td>+28</td><td class="bxi-c">입장하자마자 새끼 전갈 5마리 먼저 처치</td><td id="bxi-kx-1"></td><td id="bxi-kx-2"></td><td id="bxi-kx-3"></td><td id="bxi-kx-4"></td></tr>
+<tr><th scope="row">Avnos</th><td>25</td><td>70</td><td>+28</td><td class="bxi-c">하수인 4마리를 잡아 Fire Orb 를 띄운 뒤 처치</td><td id="bxi-av-1"></td><td id="bxi-av-2"></td><td id="bxi-av-3"></td><td id="bxi-av-4"></td></tr>
+<tr><th scope="row">Karnos</th><td>25</td><td>70</td><td>+28</td><td class="bxi-c">Frostbite 50중첩 쌓기</td><td id="bxi-kn-1"></td><td id="bxi-kn-2"></td><td id="bxi-kn-3"></td><td id="bxi-kn-4"></td></tr>
+<tr><th scope="row">Karavnos</th><td>26</td><td>70</td><td>+29</td><td class="bxi-c">1페이즈에 파티 전원이 Avnos·Karnos 중첩 35 얻기</td><td id="bxi-kv-1"></td><td id="bxi-kv-2"></td><td id="bxi-kv-3"></td><td id="bxi-kv-4"></td></tr>
+<tr><th scope="row">Muarki</th><td>27</td><td>70</td><td>+29</td><td class="bxi-c">되살아난 수호자를 하나도 죽이지 않기</td><td id="bxi-mu-1"></td><td id="bxi-mu-2"></td><td id="bxi-mu-3"></td><td id="bxi-mu-4"></td></tr>
+<tr><th scope="row">원소 정령 (4종 각각)</th><td>27</td><td>70</td><td>없음</td><td class="bxi-c">없음 (Vjaier 전투 중 처치)</td><td id="bxi-el-1"></td><td id="bxi-el-2"></td><td id="bxi-el-3"></td><td id="bxi-el-4"></td></tr>
+<tr><th scope="row">Harbinger Ithan · Larthil</th><td>28</td><td>70</td><td>없음</td><td class="bxi-c">없음</td><td id="bxi-hb-1"></td><td id="bxi-hb-2"></td><td id="bxi-hb-3"></td><td id="bxi-hb-4"></td></tr>
+<tr><th scope="row">Vjaier</th><td>28</td><td>150</td><td>+29</td><td class="bxi-c">광선의 Empowered 중첩을 전체의 10% 넘게 받지 않기</td><td id="bxi-vj-1"></td><td id="bxi-vj-2"></td><td id="bxi-vj-3"></td><td id="bxi-vj-4"></td></tr>
+<tr><th scope="row">Warlord Crueltis</th><td>29</td><td>155</td><td>+30</td><td class="bxi-c">소환된 켄타우로스를 전부 Darkness 가 죽이게 두기</td><td id="bxi-cr-1"></td><td id="bxi-cr-2"></td><td id="bxi-cr-3"></td><td id="bxi-cr-4"></td></tr>
+<tr><th scope="row">Tal'navi</th><td>30</td><td>160</td><td>+30</td><td class="bxi-c">Living Boulder 가 하나도 죽지 않기</td><td id="bxi-tn-1"></td><td id="bxi-tn-2"></td><td id="bxi-tn-3"></td><td id="bxi-tn-4"></td></tr>
+<tr><th scope="row">M'Karsa</th><td>31</td><td>175</td><td>+30</td><td class="bxi-c">화로가 부서지기 전에 Rune of the Ages 꽂기</td><td id="bxi-mk-1"></td><td id="bxi-mk-2"></td><td id="bxi-mk-3"></td><td id="bxi-mk-4"></td></tr>
+<tr><th scope="row">Ancient Hydra</th><td>32</td><td>180</td><td>+31</td><td class="bxi-c">검은 책(black tome)을 먼저 집기</td><td id="bxi-ah-1"></td><td id="bxi-ah-2"></td><td id="bxi-ah-3"></td><td id="bxi-ah-4"></td></tr>
+<tr><th scope="row">Ortakna</th><td>33</td><td>215</td><td>+31 (항상)</td><td class="bxi-c">항상 VX</td><td id="bxi-ot-1"></td><td id="bxi-ot-2"></td><td id="bxi-ot-3"></td><td id="bxi-ot-4"></td></tr>
+<tr><th scope="row">Crypt Fiend</th><td>34</td><td>150</td><td>+42</td><td class="bxi-c">spawnling 4마리를 모두 잡아 처치</td><td id="bxi-cf-1"></td><td id="bxi-cf-2"></td><td id="bxi-cf-3"></td><td id="bxi-cf-4"></td></tr>
+<tr><th scope="row">Ghoul</th><td>35</td><td>170</td><td>+43</td><td class="bxi-c">작은 구울 4마리 처치 후 1명(6인 이상 2명)만 남기고 먹히기</td><td id="bxi-gh-1"></td><td id="bxi-gh-2"></td><td id="bxi-gh-3"></td><td id="bxi-gh-4"></td></tr>
+<tr><th scope="row">Twins</th><td>39</td><td>285</td><td>+33</td><td class="bxi-c">Glyph of Sun and Moon 을 줍고 시작</td><td id="bxi-tw-1"></td><td id="bxi-tw-2"></td><td id="bxi-tw-3"></td><td id="bxi-tw-4"></td></tr>
+<tr><th scope="row">Zanatath</th><td>41</td><td>180</td><td>실패 시 ×0.25</td><td class="bxi-c">고대 토템 셋이 모두 봉인되지 않기</td><td id="bxi-za-1"></td><td id="bxi-za-2"></td><td id="bxi-za-3"></td><td id="bxi-za-4"></td></tr>
+<tr><th scope="row">1F Parvin</th><td>44</td><td>210</td><td>+35</td><td class="bxi-c">단계 전환 2회 이상</td><td id="bxi-t1-1"></td><td id="bxi-t1-2"></td><td id="bxi-t1-3"></td><td id="bxi-t1-4"></td></tr>
+<tr><th scope="row">2F Villard</th><td>45</td><td>240</td><td>+35</td><td class="bxi-c">항상</td><td id="bxi-t2-1"></td><td id="bxi-t2-2"></td><td id="bxi-t2-3"></td><td id="bxi-t2-4"></td></tr>
+<tr><th scope="row">3F Arkham</th><td>46</td><td>270</td><td>+35</td><td class="bxi-c">전투 120초 초과</td><td id="bxi-t3-1"></td><td id="bxi-t3-2"></td><td id="bxi-t3-3"></td><td id="bxi-t3-4"></td></tr>
+<tr><th scope="row">4F Artoria</th><td>46</td><td>300</td><td>+35</td><td class="bxi-c">항상</td><td id="bxi-t4-1"></td><td id="bxi-t4-2"></td><td id="bxi-t4-3"></td><td id="bxi-t4-4"></td></tr>
+<tr><th scope="row">Talus</th><td>47</td><td>330</td><td>+36</td><td class="bxi-c">구석 대포 4개 모두 생존</td><td id="bxi-t5-1"></td><td id="bxi-t5-2"></td><td id="bxi-t5-3"></td><td id="bxi-t5-4"></td></tr>
+<tr><th scope="row">25 Ignisolith</th><td>50</td><td>350</td><td>+100</td><td class="bxi-c">메테오 조각을 한 번에 떨어진 것 전부 부수지 않기(1개 남기면 됨) + 광석 파편 하나도 부수지 않기</td><td id="bxi-247-1"></td><td id="bxi-247-2"></td><td id="bxi-247-3"></td><td id="bxi-247-4"></td></tr>
+<tr><th scope="row">26 Frostmaw</th><td>51</td><td>400</td><td>+110</td><td class="bxi-c">석탄 투척의 90% 이상을 탱커가 아닌 사람이 넣기 + 중앙 캠프파이어 체력 50 이상 유지</td><td id="bxi-244-1"></td><td id="bxi-244-2"></td><td id="bxi-244-3"></td><td id="bxi-244-4"></td></tr>
+<tr><th scope="row">27 Chaos Cube</th><td>52</td><td>430</td><td>+120</td><td class="bxi-c">보스에게 준 피해 중 직접 피해 비율 45~55% (테두리 피해와 반반)</td><td id="bxi-250-1"></td><td id="bxi-250-2"></td><td id="bxi-250-3"></td><td id="bxi-250-4"></td></tr>
+<tr><th scope="row">28 Voltrion</th><td>53</td><td>450</td><td>+130 (조건 미연결)</td><td class="bxi-c">조건 미연결</td><td id="bxi-28-1"></td><td id="bxi-28-2"></td><td id="bxi-28-3"></td><td id="bxi-28-4"></td></tr>
+</tbody></table></div>
+<details class="lp-extra"><summary>계산 방식</summary><div><ul>
+<li><b>기본:</b> 기준 XP × 난이도(1 / 1.25 / 1.4 / 1.8) × 무작위 × (1 + 0.18 × (보스 기준 레벨 − 영웅 레벨, 최대 3)) × (1 + XP 보너스). 보스 기준 레벨 = 유닛 레벨 + 난이도 단계(0~3), 41레벨 이상이면 −1.</li>
+<li><b>VX 추가:</b> (20 + 0.33 × 보스 레벨) × 무작위 × (1 + XP 보너스). 기본 경험치가 0 이면 붙지 않는다. 25~28번은 보스별 고정값.</li>
+<li><b>Avnos·Karnos·Karavnos·Muarki:</b> 넷 다 Avnos 의 기준 XP 70 을 쓰고, 레벨만 각자 것이 들어간다. Crypt Fiend·Ghoul 은 VX 추가에 +11 이 더 붙는다. Lord Naztar 는 일반 처치 경로라 VX 추가가 없다.</li>
+<li><b>0 이 되는 경우:</b> 영웅 레벨이 보스 기준 레벨보다 6 이상 높을 때. Talus 는 영웅 48레벨 미만이면 0 (위쪽은 공식대로 — 나이트메어면 54레벨까지 받는다).</li>
+<li><b>Zanatath:</b> 별도 공식. Normal 40~45 · Legendary 40~48(절반) · Heartcore 이상 40~51레벨 구간에서 레벨당 −9%. VX 를 놓치면 25%. 행운 2배는 적용되지 않는다.</li>
+<li><b>행운 2배:</b> 사람마다 따로 굴린다. 확률 = 100 × (√행운 − 200)/(√행운 + 200) + 100 (행운 150 ≈ 11.5%). Lucky Star 는 장착해야 +35.</li>
+</ul></div></details>
+<script>
+(function(){
+const BXI={"version": "v3.6.0awl", "ov": [1.0, 1.25, 1.4, 1.8], "rows": [{"code": "n00M", "name": "Broodmother", "level": 8, "registered": 60.0, "id": "bm", "base": 60.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "알을 하나도 깨지 않기"}, {"code": "n04W", "name": "Narith", "level": 15, "registered": 70.0, "id": "nr", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Narith 만 공격하고 통(container)을 하나도 부수지 않기"}, {"code": "n026", "name": "Sand Golem", "level": 19, "registered": 70.0, "id": "sg", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "shardling 을 하나도 죽이지 않기"}, {"code": "n03H", "name": "Lord Naztar", "level": 21, "registered": 80.0, "id": "nz", "base": 80.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "항상 VX (경험치 추가 없음)", "vx_bonus": 0.0, "vx_ready": false}, {"code": "n03P", "name": "Karrix", "level": 23, "registered": 70.0, "id": "kx", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "입장하자마자 새끼 전갈 5마리 먼저 처치"}, {"code": "n03U", "name": "Avnos", "level": 25, "registered": 70.0, "id": "av", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "하수인 4마리를 잡아 Fire Orb 를 띄운 뒤 처치"}, {"code": "n04B", "name": "Karnos", "level": 25, "registered": 70.0, "id": "kn", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Frostbite 50중첩 쌓기"}, {"code": "n053", "name": "Karavnos", "level": 26, "registered": 70.0, "id": "kv", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "1페이즈에 파티 전원이 Avnos·Karnos 중첩 35 얻기"}, {"code": "n05B", "name": "Muarki", "level": 27, "registered": 70.0, "id": "mu", "base": 70.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "되살아난 수호자를 하나도 죽이지 않기"}, {"code": "n01J", "name": "원소 정령 (4종 각각)", "level": 27, "registered": 70.0, "id": "el", "base": 70.0, "route": "TYP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "없음 (Vjaier 전투 중 처치)"}, {"code": "n02F", "name": "Harbinger Ithan · Larthil", "level": 28, "registered": 70.0, "id": "hb", "base": 70.0, "route": "TYP", "extra": "false", "tz": 0, "nightBlocked": false, "note": "없음"}, {"code": "n012", "name": "Vjaier", "level": 28, "registered": 150.0, "id": "vj", "base": 150.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "광선의 Empowered 중첩을 전체의 10% 넘게 받지 않기"}, {"code": "n029", "name": "Warlord Crueltis", "level": 29, "registered": 155.0, "id": "cr", "base": 155.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "소환된 켄타우로스를 전부 Darkness 가 죽이게 두기"}, {"code": "n00U", "name": "Tal'navi", "level": 30, "registered": 160.0, "id": "tn", "base": 160.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Living Boulder 가 하나도 죽지 않기"}, {"code": "n02V", "name": "M'Karsa", "level": 31, "registered": 175.0, "id": "mk", "base": 175.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "화로가 부서지기 전에 Rune of the Ages 꽂기"}, {"code": "n05P", "name": "Ancient Hydra", "level": 32, "registered": 180.0, "id": "ah", "base": 180.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "검은 책(black tome)을 먼저 집기"}, {"code": "n05O", "name": "Ortakna", "level": 33, "registered": 215.0, "id": "ot", "base": 215.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n062", "name": "Crypt Fiend", "level": 34, "registered": 150.0, "id": "cf", "base": 150.0, "route": "TYP", "extra": "vx", "tz": 11, "nightBlocked": false, "note": "spawnling 4마리를 모두 잡아 처치"}, {"code": "n067", "name": "Ghoul", "level": 35, "registered": 170.0, "id": "gh", "base": 170.0, "route": "TYP", "extra": "vx", "tz": 11, "nightBlocked": false, "note": "작은 구울 4마리 처치 후 1명(6인 이상 2명)만 남기고 먹히기"}, {"code": "n07D", "name": "Twins", "level": 39, "registered": 285.0, "id": "tw", "base": 285.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "Glyph of Sun and Moon 을 줍고 시작"}, {"code": "n06M", "name": "Zanatath", "level": 41, "registered": 180.0, "id": "za", "base": 180.0, "route": "MMT", "extra": "false", "tz": 0, "nightBlocked": false, "note": "고대 토템 셋이 모두 봉인되지 않기 · 실패 시 25%"}, {"code": "n08E", "name": "1F Parvin", "level": 44, "registered": 210.0, "id": "t1", "base": 210.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "단계 전환 2회 이상"}, {"code": "n08N", "name": "2F Villard", "level": 45, "registered": 240.0, "id": "t2", "base": 240.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08O", "name": "3F Arkham", "level": 46, "registered": 270.0, "id": "t3", "base": 270.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "note": "전투 120초 초과"}, {"code": "n08Q", "name": "4F Artoria", "level": 46, "registered": 300.0, "id": "t4", "base": 300.0, "route": "TYP", "extra": "true", "tz": 0, "nightBlocked": false, "note": "항상 VX"}, {"code": "n08S", "name": "Talus", "level": 47, "registered": 330.0, "id": "t5", "base": 330.0, "route": "TYP", "extra": "vx", "tz": 0, "nightBlocked": false, "talus": true, "note": "대포 4개 모두 생존"}, {"code": "ninf", "name": "25 Ignisolith", "level": 50, "registered": 350.0, "id": 247, "base": 350.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 100.0, "vx_ready": true}, {"code": "nmgd", "name": "26 Frostmaw", "level": 51, "registered": 400.0, "id": 244, "base": 400.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 110.0, "vx_ready": true}, {"code": "n0CB", "name": "27 Chaos Cube", "level": 52, "registered": 430.0, "id": 250, "base": 430.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 120.0, "vx_ready": true}, {"code": "nZDT", "name": "28 Voltrion", "level": 53, "registered": 450.0, "id": 28, "base": 450.0, "route": "TWP", "extra": "false", "tz": 0, "nightBlocked": true, "note": "기본 킬 보상 · VX 별도 XP 추가 없음", "vx_bonus": 130.0, "vx_ready": false}], "aux": [], "cap": 700, "cap_low": 650, "cap_high": 750};
+function bossXpValue(b,d,h,bonus,vx,luck,doubleXP,party,random){
+  if(b.nightBlocked&&d===4)return null;
+  if(b.route==='none'||b.route==='unimplemented')return 0;
+  const ov=BXI.ov[d-1],mult=Math.max(0,1+bonus/100);
+  if(b.route==='MMT'){
+    let f=0;
+    if(d===1&&h>=40&&h<=45)f=1-.09*(h-40);
+    if(d===2&&h>=40&&h<=48)f=(1-.09*(h-43))*.5;
+    if(d>=3&&h>=40&&h<=51)f=1-.09*(h-44);
+    return Math.trunc(Math.min(500,Math.max(0,b.base*ov*random*f*(vx?1:.25)*mult)));
+  }
+  let level=b.level+(d-1);
+  if((d===1&&b.level>=27)||b.level>40)level--;
+  let v=Math.max(0,Math.trunc(b.base*ov*random*(1+.18*Math.min(3,level-h))*mult+.4999));
+  if(b.route==='TYP'&&v>0&&(b.extra==='true'||(b.extra!=='false'&&vx)))
+    v+=Math.trunc((20+b.tz+.33*b.level)*random*mult+.4999);
+  if(b.route==='TWP'&&v>0&&vx&&b.vx_ready)v+=Math.trunc(b.vx_bonus*mult+.4999);
+  if(luck)v*=2;
+  if(b.route==='TYP'){
+    v=Math.trunc(v*(1-party/100));
+    if(doubleXP)v*=2;
+  }
+  if(b.talus&&h<48)v=0;
+  return v;
+}
+function bossXpRange(b,d,h,bonus,vx,luck,doubleXP,party){
+  const a=bossXpValue(b,d,h,bonus,vx,luck,doubleXP,party,.8);
+  const z=bossXpValue(b,d,h,bonus,vx,luck,doubleXP,party,1.2);
+  if(a===null)return '입장 불가';
+  if(b.route==='unimplemented')return '미구현';
+  let lo=a,hi=z;
+  if(b.route!=='MMT'&&hi>=BXI.cap){lo=lo>=BXI.cap?BXI.cap_low:Math.min(lo,BXI.cap_low);hi=BXI.cap_high;}
+  return lo===hi?lo.toLocaleString():lo.toLocaleString()+'–'+hi.toLocaleString();
+}
+function bxiRefresh(){
+  const g=id=>document.getElementById('bxi-'+id);
+  const h=Math.min(60,Math.max(1,Number(g('level').value)||1)),bonus=Number(g('bonus').value)||0;
+  for(const b of BXI.rows)for(let d=1;d<=4;d++)document.getElementById('bxi-'+b.id+'-'+d).textContent=bossXpRange(b,d,h,bonus,g('vx').checked,g('luck').checked,false,0);
+}
+document.getElementById('tabp-bxp').addEventListener('input',bxiRefresh);
+bxiRefresh();
+})();
+</script>
+</div>
+</div>
+<script>
+
+(function(){
+  var root=document.getElementById('tabp-tree');if(!root)return;
+  var data=JSON.parse(document.getElementById('tt-data').content.textContent);
+  var board=document.getElementById('tt-board'),roster=document.getElementById('tt-roster');
+  var tip=document.getElementById('tt-tooltip'),content=document.getElementById('tt-tip-content');
+  var rankSelect=document.getElementById('tt-rank'),langSelect=document.getElementById('tt-lang');
+  var selected=data.classes[0],active=null,pinned=false,hideTimer=0,hoverBlocked=false;
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function rank(n){return rankSelect.value==='max'?n.max:1;}
+  function description(n){
+    var raw=n[langSelect.value],point=rank(n);
+    raw=raw.replace(/\*([^*]*)\*/g,function(_,list){var values=list.split('/');return values.length===n.max+1?values[point]:values.join(' / ');});
+    var pieces=raw.split(/(\|c[0-9a-f]{8}|\|r|\^|\|n|\r?\n)/gi),color='',out='';
+    pieces.forEach(function(s){
+      if(/^\|c[0-9a-f]{8}$/i.test(s)){color='#'+s.slice(4);return;}
+      if(/^\|r$/i.test(s)){color='';return;}
+      if(s==='^'||/^\|n$/i.test(s)||/^\r?\n$/.test(s)){out+='<br>';return;}
+      out+=(color?'<span style="color:'+color+'">':'')+esc(s)+(color?'</span>':'');
+    });return out;
+  }
+  function hide(blockHover){clearTimeout(hideTimer);if(blockHover===true)hoverBlocked=true;tip.hidden=true;pinned=false;if(active)active.removeAttribute('aria-expanded');active=null;}
+  function position(){
+    if(!active||tip.hidden)return;
+    var a=active.getBoundingClientRect(),gap=13,w=tip.offsetWidth,h=tip.offsetHeight;
+    var x=a.right+gap;if(x+w>innerWidth-12)x=a.left-w-gap;
+    x=Math.max(12,Math.min(x,innerWidth-w-12));
+    var y=Math.max(12,Math.min(a.top-12,innerHeight-h-12));
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  }
+  function show(button,lock){
+    clearTimeout(hideTimer);if(active&&active!==button)active.removeAttribute('aria-expanded');
+    active=button;pinned=!!lock;button.setAttribute('aria-expanded','true');
+    var n=selected.nodes.find(function(v){return v.slot===Number(button.dataset.slot);}),en=langSelect.value==='en';
+    var level=n.level;if(selected.id===19&&n.slot===17){if(rank(n)>=3)level=Math.max(level,24);else if(rank(n)>=2)level=Math.max(level,20);}
+    content.innerHTML='<div class="tt-tip-top"><img alt="" src="'+data.images[n.icon]+'"><div><h3 class="tt-tip-name">'+esc(n.name)+'</h3><div class="tt-tip-meta">'+(en?'Required Level: ':'필요 레벨: ')+level+'<br>'+(n.requires_name?'<span class="tt-prereq">'+(en?'Requires: ':'선행 특성: ')+esc(n.requires_name)+' ('+n.requires_points+(en?(n.requires_points===1?' point':' points'):'포인트')+')</span><br>':'')+(en?'Points: ':'포인트: ')+rank(n)+' / '+n.max+'</div></div></div><div class="tt-tip-desc">'+description(n)+'</div>';
+    tip.hidden=false;tip.setAttribute('role',lock?'dialog':'tooltip');position();
+  }
+  function scheduleHide(){clearTimeout(hideTimer);if(!pinned)hideTimer=setTimeout(hide,110);}
+  function draw(){
+    hide();document.getElementById('tt-portrait').src=data.images[selected.portrait];
+    document.getElementById('tt-class-name').textContent=selected.name;
+    document.getElementById('tt-class-count').textContent=selected.nodes.length+'개의 스킬 · 특성';
+    roster.querySelectorAll('.tt-class').forEach(function(b){b.setAttribute('aria-pressed',Number(b.dataset.tree)===selected.id?'true':'false');});
+    board.replaceChildren();var bg=document.createElement('div');bg.className='tt-backdrops';bg.setAttribute('aria-hidden','true');
+    selected.backgrounds.forEach(function(key){var image=new Image();image.src=data.images[key];image.alt='';bg.appendChild(image);});board.appendChild(bg);
+    selected.nodes.forEach(function(n){
+      var b=document.createElement('button');b.type='button';b.className='tt-node'+(n.level>=55?' tt-high':'');b.dataset.slot=n.slot;
+      b.style.left=((n.panel*3+n.column+.5)/9*100)+'%';b.style.top=((n.row+.5)/5*100)+'%';
+      b.setAttribute('aria-label',n.name+' · Lv '+n.level);b.setAttribute('aria-describedby','tt-tooltip');
+      b.innerHTML='<img alt="" src="'+data.images[n.icon]+'" draggable="false"><span class="tt-rank">'+rank(n)+'/'+n.max+'</span>';
+      b.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch'&&!hoverBlocked)show(b,false);});
+      b.addEventListener('pointermove',function(e){if(hoverBlocked&&e.pointerType!=='touch'){hoverBlocked=false;show(b,false);}});
+      b.addEventListener('pointerleave',scheduleHide);b.addEventListener('focus',function(){show(b,false);});
+      b.addEventListener('blur',function(){if(!pinned)scheduleHide();});
+      b.addEventListener('click',function(){if(active===b&&pinned)hide();else show(b,true);});board.appendChild(b);
+    });
+  }
+  roster.addEventListener('click',function(e){var b=e.target.closest('.tt-class');if(!b)return;selected=data.classes.find(function(c){return c.id===Number(b.dataset.tree);});draw();});
+  rankSelect.addEventListener('change',draw);langSelect.addEventListener('change',function(){if(active)show(active,pinned);});
+  tip.addEventListener('pointerenter',function(){clearTimeout(hideTimer);});tip.addEventListener('pointerleave',scheduleHide);
+  tip.querySelector('.tt-tip-close').addEventListener('click',function(){hide(true);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')hide(true);});
+  document.addEventListener('pointerdown',function(e){if(pinned&&!tip.contains(e.target)&&!board.contains(e.target))hide();});
+  document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',hide);});
+  document.getElementById('tt-scroll').addEventListener('scroll',hide,{passive:true});
+  addEventListener('resize',position);addEventListener('scroll',function(){if(!tip.hidden)position();},{passive:true});
+  draw();
+})();
+
+</script>
+<script>
+  (function () {
+    var wrap = document.getElementById('sref-body');
+    if (!wrap) return;
+    var chips = Array.prototype.slice.call(document.querySelectorAll('#sref-chips .dps-chip'));
+    var blocks = Array.prototype.slice.call(wrap.querySelectorAll('.sr-cls'));
+    function show(id) {
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.cls === id ? 'true' : 'false'); });
+      blocks.forEach(function (b) { b.hidden = b.dataset.cls !== id; });
+    }
+    chips.forEach(function (c) { c.addEventListener('click', function () { show(c.dataset.cls); }); });
+    if (chips.length) show(chips[0].dataset.cls);
+  })();
+</script>
